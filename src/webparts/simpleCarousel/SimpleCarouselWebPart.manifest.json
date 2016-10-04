@@ -14,20 +14,17 @@
     "officeFabricIconFontName": "Picture",
     "properties": {
       "enableArrows": true,
-      "enableBullets": true,
-      "enablePlayButton": false,
-      "enableFullscreenButton": false,
-      "enableZoomPanel": false,
-      "controlsAlwaysOn": false,
-      "preserveRatio": true,
+      "enableBorder": false,
+      "enableIcons": true,
+      "borderColor": "#CCCCCC",
+      "border": 0,
+      "tileWidth": 160,
+      "tileHeight": 160,
       "pauseOnMouseover": true,
-      "carousel": true,
       "autoplay": true,
       "speed": 4000,
-      "transition": "slide",
-      "enableProgressIndicator": true,
       "textPanelEnable": true,
-      "textPanelAlwaysOnTop": true,
+      "textPanelAlwaysOnTop": false,
       "textPanelOpacity": 0.4
     }
   }]
