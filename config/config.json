@@ -21,6 +21,11 @@
       "outputPath": "./dist/slider-gallery.bundle.js"
     },
     {
+      "entry": "./lib/webparts/simpleCarousel/SimpleCarouselWebPart.js",
+      "manifest": "./src/webparts/simpleCarousel/SimpleCarouselWebPart.manifest.json",
+      "outputPath": "./dist/simple-carousel.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -64,6 +69,7 @@
     "arcTextStrings": "webparts/arcText/loc/{locale}.js",
     "tilesGalleryStrings": "webparts/tilesGallery/loc/{locale}.js",
     "sliderGalleryStrings": "webparts/sliderGallery/loc/{locale}.js",
+    "simpleCarouselStrings": "webparts/simpleCarousel/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

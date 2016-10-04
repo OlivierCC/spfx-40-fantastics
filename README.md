@@ -12,6 +12,7 @@ Overview |  Web Part |  Description
 ![3d carousel](./assets/overview3dcarousel.png) | 3D Carousel | Insert a 3D Carousel in your SharePoint pages
 ![Tiles Gallery](./assets/overviewtilesgallery.png) | Tiles Gallery |  Generate a Tiles pictures gallery from a SharePoint picture library
 ![Slider Gallery ](./assets/overviewslidergallery.png) | Slider Gallery | Insert a pictures slider with navigation from a SharePoint picture library
+![Simple Carousel](./assets/overviewsimplecarousel.png) | Simple | Insert a pictures carousel from a SharePoint picture library
 ![Photopile](./assets/overviewsliderphotopile.png) | Photopile | Generate a pile of photos from a SharePoint picture library
 ![ArcText](./assets/overviewarctext.png) | ArcText | Insert a curved text in your SharePoint pages
 
@@ -122,6 +123,30 @@ You can configure the following Web Part settings:
 * **Text Panel Font Color**: textpanel title color. if null - take from css
 * **Text Panel Background Color**: textpanel background color
 * **Text Panel Align**: textpanel title text align. if null - take from css
+
+# Simple Carousel Web Part
+
+The simple carousel Web Part renders a simple images pixs slideshow. This web part implements [unitegallery.js](https://github.com/vvvmax/unitegallery/)
+(a popular jquery script) as a client side web part for SharePoint.
+This web part is able to query a SharePoint Picture Library to find the images and render it as a carousel.
+
+![Simple carousel](./assets/simplecarouseloverview.gif)
+
+### Features
+
+You can configure the following Web Part settings:
+* **Query**: you must select a current web picture library and select order by conditions
+* **Enable Arrows**: enable arrows onslider element
+* **Pause On Mouseover**: true,false - pause on mouseover when playing slideshow true/false
+* **Autoplay**: true / false - begin slideshow autoplay on start
+* **Speed**: play interval of the slideshow
+* **Text Panel Enable**: enable textpanel
+* **Text Panel Always On Top**: textpanel always visible
+* **Text Panel Opacity**: textpanel background opacity
+* **Text Panel Font**: textpanel title font family. if null - take from css
+* **Text Panel Font Size**: textpanel title font size. if null - take from css
+* **Text Panel Font Color**: textpanel title color. if null - take from css
+* **Text Panel Background Color**: textpanel background color
 
 
 # Photopile Web Part
