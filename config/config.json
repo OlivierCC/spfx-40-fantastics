@@ -16,6 +16,11 @@
       "outputPath": "./dist/tiles-gallery.bundle.js"
     },
     {
+      "entry": "./lib/webparts/sliderGallery/SliderGalleryWebPart.js",
+      "manifest": "./src/webparts/sliderGallery/SliderGalleryWebPart.manifest.json",
+      "outputPath": "./dist/slider-gallery.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -58,6 +63,7 @@
     "carousel3DStrings": "webparts/carousel3D/loc/{locale}.js",
     "arcTextStrings": "webparts/arcText/loc/{locale}.js",
     "tilesGalleryStrings": "webparts/tilesGallery/loc/{locale}.js",
+    "sliderGalleryStrings": "webparts/sliderGallery/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }
