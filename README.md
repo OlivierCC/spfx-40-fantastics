@@ -137,6 +137,12 @@ This web part is able to query a SharePoint Picture Library to find the images a
 You can configure the following Web Part settings:
 * **Query**: you must select a current web picture library and select order by conditions
 * **Enable Arrows**: enable arrows onslider element
+* **Enable Icons**: enable icons in mouseover mode
+* **Enable Border**: enable border of the tile
+* **Tile Width**: tile width
+* **Tile Height**: tile height
+* **Border Color**: tile border color
+* **Border**: tile border width
 * **Pause On Mouseover**: true,false - pause on mouseover when playing slideshow true/false
 * **Autoplay**: true / false - begin slideshow autoplay on start
 * **Speed**: play interval of the slideshow
