@@ -3,6 +3,8 @@
 This package is a sample kit of great Client Side Web Parts built on the SharePoint Framework SPFx.
 You can find here different kind of high visual web parts as carousel, images galleries, etc.
 
+> Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production enviornments.
+
 ## Building the code
 
 ```bash
@@ -59,8 +61,6 @@ simulates a pile of photos scattered about on a surface. Thumbnail clicks remove
 (enlarging them as if being picked up by the user), and once in  view a secondary click returns the photo to the pile.
 
 ![Photpile Web Part displayed in SharePoint Workbench](./assets/photopileoverview.gif)
-
-> Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production enviornments.
 
 ### Features
 
