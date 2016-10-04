@@ -9,19 +9,15 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneSettings,
   IWebPartContext,
-  PropertyPaneTextField,
-  PropertyPaneDropdown,
-  IPropertyPaneDropdownOption,
   PropertyPaneToggle,
   PropertyPaneSlider
 } from '@microsoft/sp-client-preview';
 
-import styles from './SimpleCarousel.module.scss';
 import * as strings from 'simpleCarouselStrings';
 import { ISimpleCarouselWebPartProps } from './ISimpleCarouselWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 import { SPPicturesListService } from './SPPicturesListService';
-import { ISPList, ISPListItem } from './ISPList';
+import { ISPListItem } from './ISPList';
 
 import { PropertyFieldSPListQuery, PropertyFieldSPListQueryOrderBy } from 'sp-client-custom-fields/lib/PropertyFieldSPListQuery';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
