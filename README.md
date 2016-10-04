@@ -50,16 +50,33 @@ item is enabled or disabled, a link url (optional) and a link text (optional).
 * **Title Size**: sets the Title font size
 * **Title Color**: sets the Title font color
 
-# Tiles Immages Gallery Web Part
+# Tiles Images Gallery Web Part
 
 The tiles gallery renders a dynamic images gallery as titles. This web part implements [unitegallery.js](https://github.com/vvvmax/unitegallery/)
-(a popular jquery script) as a client side web part for SharePoint.
+(a popular jquery script) as a client side web part for SharePoint. This web part is able to query a SharePoint Picture Library to find the images and render it as a tiles gallery.
 
 ![tiles gallery](./assets/tilesgalleryoverview.gif)
 
 ### Features
 
-
+You can configure the following Web Part settings:
+* **Query**: you must select a current web picture library and select order by conditions
+* **Justified**: indicates if the tiles are justified or not
+* **Enable Icons**: enable icons in mouseover mode
+* **Enable Shadow**: enable shadow of the tile
+* **Enable Border**: enable border of the tile
+* **Space Between Cols**: space between images
+* **Border Color**: tile border color
+* **Border**: tile border width
+* **Text Panel Enable**: enable textpanel
+* **Text Panel Always On Top**: textpanel always visible
+* **Text Panel Position**: inside_bottom, inside_top, inside_center, top, bottom the position of the textpanel
+* **Text Panel Opacity**: textpanel background opacity
+* **Text Panel Font**: textpanel title font family. if null - take from css
+* **Text Panel Font Size**: textpanel title font size. if null - take from css
+* **Text Panel Font Color**: textpanel title color. if null - take from css
+* **Text Panel Background Color**: textpanel background color
+* **Text Panel Align**: textpanel title text align. if null - take from css
 
 # Photopile Web Part
 
