@@ -5,6 +5,16 @@ You can find here different kind of high visual web parts as carousel, images ga
 
 > Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production enviornments.
 
+You can find here the following web parts:
+
+Web Part |  Overview
+------------ | -----------
+3D Carousel | [3d carousel](./assets/overview3dcarousel.png)
+Tiles Gallery |  [Tiles Gallery](./assets/overviewtilesgallery.png)
+Slider Gallery |  [Slider Gallery ](./assets/overviewslidergallery.png)
+Photopile |  [Photopile](./assets/overviewphotopile.png)
+ArcText | [ArcText](./assets/overviewarctext.png)
+
 ## Building the code
 
 ```bash
