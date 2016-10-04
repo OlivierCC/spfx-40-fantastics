@@ -7,13 +7,13 @@ You can find here different kind of high visual web parts as carousel, images ga
 
 You can find here the following web parts:
 
-Overview |  Web Part
------------- | -----------
-![3d carousel](./assets/overview3dcarousel.png) | 3D Carousel
-![Tiles Gallery](./assets/overviewtilesgallery.png) |  Tiles Gallery
-![Slider Gallery ](./assets/overviewslidergallery.png) | Slider Gallery
-![Photopile](./assets/overviewsliderphotopile.png) | Photopile
-![ArcText](./assets/overviewarctext.png) | ArcText
+Overview |  Web Part |  Description
+------------ | ----------- | -----------
+![3d carousel](./assets/overview3dcarousel.png) | 3D Carousel | Insert a 3D Carousel in your SharePoint pages
+![Tiles Gallery](./assets/overviewtilesgallery.png) |  Generate a Tiles pictures gallery from a SharePoint picture library
+![Slider Gallery ](./assets/overviewslidergallery.png) | Insert a pictures slider with navigation from a SharePoint picture library
+![Photopile](./assets/overviewsliderphotopile.png) | Generate a pile of photos from a SharePoint picture library
+![ArcText](./assets/overviewarctext.png) | ArcText | Insert a curved text in your SharePoint pages
 
 ## Building the code
 
