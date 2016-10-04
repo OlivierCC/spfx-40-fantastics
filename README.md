@@ -163,7 +163,7 @@ This web part implements [unitegallery.js](https://github.com/vvvmax/unitegaller
 (a popular jquery script) as a client side web part for SharePoint.
 This web part is able to query a SharePoint Picture Library to find the images and render it as a carousel.
 
-![Grid Gallery](./assets/girdgalleryoverview.gif)
+![Grid Gallery](./assets/gridgalleryoverview.gif)
 
 ### Features
 
