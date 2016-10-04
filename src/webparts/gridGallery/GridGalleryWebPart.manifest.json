@@ -1,0 +1,38 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "3f3e8f3d-033d-34b6-8450-1731c427c275",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "4fae8f7d-099d-44b6-8450-17312bb0b275",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Grid Gallery" },
+    "description": { "default": "Carousel description" },
+    "officeFabricIconFontName": "Picture",
+    "properties": {
+      "enableArrows": true,
+      "enableBullets": false,
+      "enablePlayButton": true,
+      "enableFullscreenButton": true,
+      "enableZoomPanel": true,
+      "controlsAlwaysOn": false,
+      "preserveRatio": true,
+      "pauseOnMouseover": true,
+      "enableBorder": false,
+      "borderColor": "#CCCCCC",
+      "border": 0,
+      "tileWidth": 88,
+      "tileHeight": 50,
+      "autoplay": true,
+      "speed": 4000,
+      "textPanelEnable": true,
+      "textPanelAlwaysOnTop": false,
+      "textPanelOpacity": 0.4,
+      "position": "bottom",
+      "numCols": 2
+    }
+  }]
+}

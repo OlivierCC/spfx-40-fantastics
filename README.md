@@ -13,6 +13,7 @@ Overview |  Web Part |  Description
 ![Tiles Gallery](./assets/overviewtilesgallery.png) | **Tiles Gallery** |  Generate a Tiles pictures gallery from a SharePoint pictures library
 ![Slider Gallery ](./assets/overviewslidergallery.png) | **Slider Gallery** | Insert a pictures slider with navigation from a SharePoint pictures library
 ![Simple Carousel](./assets/overviewsimplecarousel.png) | **Simple Carousel** | Insert a pictures carousel from a SharePoint pictures library
+![Grid Gallery](./assets/overviewgridgallery.png) | **Grid CGallery** | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | **Photopile** | Generate a pile of photos from a SharePoint pictures library
 ![ArcText](./assets/overviewarctext.png) | **ArcText** | Insert a curved text in your SharePoint pages
 

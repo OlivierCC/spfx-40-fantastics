@@ -1,4 +1,4 @@
-declare interface ISliderGalleryStrings {
+declare interface IGridGalleryStrings {
   PropertyPaneDescription: string;
   PropertyPageGeneral: string;
   PropertyPageTextPanel: string;
@@ -43,9 +43,13 @@ declare interface ISliderGalleryStrings {
   Carousel: string;
   Autoplay: string;
   Speed: string;
+  TileWidth: string;
+  TileHeight: string;
+  Position: string;
+  NumCols: string;
 }
 
-declare module 'sliderGalleryStrings' {
-  const strings: ISliderGalleryStrings;
+declare module 'gridGalleryStrings' {
+  const strings: IGridGalleryStrings;
   export = strings;
 }
