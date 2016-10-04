@@ -30,6 +30,7 @@
       "speed": 4000,
       "textPanelEnable": true,
       "textPanelAlwaysOnTop": false,
+      "enableProgressIndicator": false,
       "textPanelOpacity": 0.4,
       "position": "bottom",
       "numCols": 2

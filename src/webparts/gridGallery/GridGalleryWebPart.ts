@@ -11,7 +11,6 @@ import {
   IWebPartContext,
   PropertyPaneToggle,
   PropertyPaneDropdown,
-  IPropertyPaneDropdownOption,
   PropertyPaneSlider
 } from '@microsoft/sp-client-preview';
 
