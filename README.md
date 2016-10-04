@@ -7,13 +7,13 @@ You can find here different kind of high visual web parts as carousel, images ga
 
 You can find here the following web parts:
 
-Web Part |  Overview
+Overview |  Web Part
 ------------ | -----------
-3D Carousel | ![3d carousel](./assets/overview3dcarousel.png)
-Tiles Gallery |  ![Tiles Gallery](./assets/overviewtilesgallery.png)
-Slider Gallery |  ![Slider Gallery ](./assets/overviewslidergallery.png)
-Photopile |  ![Photopile](./assets/overviewphotopile.png)
-ArcText | ![ArcText](./assets/overviewarctext.png)
+![3d carousel](./assets/overview3dcarousel.png) | 3D Carousel
+![Tiles Gallery](./assets/overviewtilesgallery.png) |  Tiles Gallery
+![Slider Gallery ](./assets/overviewslidergallery.png) | Slider Gallery
+![Photopile](./assets/overviewsliderphotopile.png) | Photopile
+![ArcText](./assets/overviewarctext.png) | ArcText
 
 ## Building the code
 
