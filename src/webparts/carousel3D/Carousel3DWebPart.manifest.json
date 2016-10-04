@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "b6330715-c92a-479c-ae83-510474079988",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "3D Carousel" },
+    "description": { "default": "Carousel3d description" },
+    "officeFabricIconFontName": "Sync",
+    "properties": {
+      "speed": 6,
+      "showButton": true,
+      "showTitle": true,
+      "autoPlay": true,
+      "autoPlayDelay": 2000,
+      "bringToFront": true,
+      "mirrorGap": 2,
+      "mirrorHeight": 0.2,
+      "mirrorOpacity": 0.4,
+      "yOrigin": 43,
+      "yRadius": 86,
+      "xOrigin": 383,
+      "xRadius": 320,
+      "height": 400,
+      "font": "\"Segoe UI\",Frutiger,\"Frutiger Linotype\",\"Dejavu Sans\",\"Helvetica Neue\",Arial,sans-serif",
+      "fontSize": "28px",
+      "fontColor": "#000000",
+      "itemHeight": 180,
+      "items": [
+        {"Title": "Skype", "Enabled": "true", "Link Text": "Download", "Link Url": "https://www.skype.com/en/business/skype-for-business/",
+          "Picture": "https://lh3.googleusercontent.com/Mn5QlwSK4FJpLpsMADvy28-K4eY2pM6q4Y5U2agiZS-K5XgPs4-JQRZuGCvY-RrGtns=w300"},
+        {"Title": "OneNote", "Enabled": "true", "Picture": "https://upload.wikimedia.org/wikipedia/fr/2/21/Logo_Microsoft_OneNote_2013.png"},
+        {"Title": "Delve", "Enabled": "true", "Picture": "https://www.uwlax.edu/uploadedImages/Offices-Services/ITS/Office365/logo%20DELVE.png"},
+        {"Title": "Office Video", "Enabled": "true", "Picture": "https://yotenet.collegeofidaho.edu/images/o365-video.png"},
+        {"Title": "Word", "Enabled": "true", "Picture": "https://upload.wikimedia.org/wikipedia/fr/9/94/Logo_Microsoft_Word_2013.png"},
+        {"Title": "Excel", "Enabled": "true", "Picture": "https://upload.wikimedia.org/wikipedia/fr/c/cf/Logo_Microsoft_Excel_2013.png"},
+        {"Title": "PowerPoint", "Enabled": "true", "Picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Microsoft_PowerPoint_2013_logo.svg/2000px-Microsoft_PowerPoint_2013_logo.svg.png"}
+      ]
+    }
+  }]
+}

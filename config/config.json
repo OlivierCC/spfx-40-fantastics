@@ -1,0 +1,63 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/carousel3D/Carousel3DWebPart.js",
+      "manifest": "./src/webparts/carousel3D/Carousel3DWebPart.manifest.json",
+      "outputPath": "./dist/carousel-3-d.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/arcText/ArcTextWebPart.js",
+      "manifest": "./src/webparts/arcText/ArcTextWebPart.manifest.json",
+      "outputPath": "./dist/arc-text.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/tilesGallery/TilesGalleryWebPart.js",
+      "manifest": "./src/webparts/tilesGallery/TilesGalleryWebPart.manifest.json",
+      "outputPath": "./dist/tiles-gallery.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
+      "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
+      "outputPath": "./dist/photopile-web-part.bundle.js"
+    }
+  ],
+  "externals": {
+    "@microsoft/sp-client-base": "node_modules/@microsoft/sp-client-base/dist/sp-client-base.js",
+    "@microsoft/sp-client-preview": "node_modules/@microsoft/sp-client-preview/dist/sp-client-preview.js",
+    "@microsoft/sp-lodash-subset": "node_modules/@microsoft/sp-lodash-subset/dist/sp-lodash-subset.js",
+    "office-ui-fabric-react": "node_modules/office-ui-fabric-react/dist/office-ui-fabric-react.js",
+    "react": "node_modules/react/dist/react.min.js",
+    "react-dom": "node_modules/react-dom/dist/react-dom.min.js",
+    "react-dom/server": "node_modules/react-dom/dist/react-dom-server.min.js",
+    "sp-client-custom-fields": "node_modules/sp-client-custom-fields/dist/sp-client-custom-fields.bundle.js",
+    "jquery": {
+      "path": "node_modules/jquery/dist/jquery.min.js",
+      "globalName": "jQuery"
+    },
+    "jqueryreflection": {
+      "path": "src/webparts/carousel3D/js/jquery.reflection.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "cloud9carousel": {
+      "path": "src/webparts/carousel3D/js/jquery.cloud9carousel.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery", "jqueryreflection" ]
+    },
+    "arctext": {
+      "path": "src/webparts/arcText/js/jquery.arctext.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "jqueryui": "node_modules/jqueryui/jquery-ui.js",
+    "photopileModule": "src/webparts/photopileWebPart/js/photopile.js"
+  },
+  "localizedResources": {
+    "sp-client-custom-fields/strings": "../node_modules/sp-client-custom-fields/lib/loc/{locale}.js",
+    "testStrings": "webparts/test/loc/{locale}.js",
+    "carousel3DStrings": "webparts/carousel3D/loc/{locale}.js",
+    "arcTextStrings": "webparts/arcText/loc/{locale}.js",
+    "tilesGalleryStrings": "webparts/tilesGallery/loc/{locale}.js",
+    "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
+  }
+}

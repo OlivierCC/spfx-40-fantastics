@@ -1,0 +1,32 @@
+define([], function() {
+  return {
+    "PropertyPaneDescription": "Customize your 3D carousel",
+    "BasicGroupName": "Play settings",
+    "DescriptionFieldLabel": "Description Field",
+    "SpeedFieldLabel": "Speed",
+    "AutoplayFieldLabel": "Autoplay",
+    "AutoplayDelayFieldLabel": "Autoplay delay",
+    "BringtoFrontFieldLabel": "Bring to front",
+    "ShowButtonsFieldLabel": "Show buttons",
+    "MirrorGapFieldLabel": "Mirror Gap",
+    "MirrorHeightFieldLabel": "Mirror height",
+    "MirrorOpacityFieldLabel": "Mirror opacity",
+    "YOriginFieldLabel": "Y Origin",
+    "YRadiusFieldLabel": "Y Radius",
+    "XOriginFieldLabel": "X Origin",
+    "XRadiusFieldLabel": "X Radius",
+    "MirrorGroupName": "Mirror",
+    "GeneralGroupName": "General",
+    "OriginGroupName": "Origin & Radius",
+    "ShowTitleFieldLabel": "Show title",
+    "DataGroupName": "Data",
+    "DataFieldLabel": "Carousel items",
+    "TitleGroupName": "Title",
+    "FontFieldLabel": "Font",
+    "FontSizeFieldLabel": "Size",
+    "ColorFieldLabel": "Color",
+    "HeightFieldLabel": "Height",
+    "ItemHeightFieldLabel": "Item Height",
+    "ReadMore": "Read more"
+  }
+});

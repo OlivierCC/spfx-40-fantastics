@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "6b1bd026-d733-4828-85ba-41fdae288a45",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "6b1bd026-d733-4828-85ba-41fdae288a45",
+    "group": { "default": "Under Development" },
+    "title": { "default": "ArcText" },
+    "description": { "default": "Text with a curved effect" },
+    "officeFabricIconFontName": "Font",
+    "properties": {
+      "text": "My lipsum sample curved title",
+      "align": "center",
+      "size": "28px",
+      "radius": "500",
+      "reverse": false,
+      "rotateLetters": true
+    }
+  }]
+}

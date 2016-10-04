@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "4fae8f7d-099d-44b6-8450-17312bb0b275",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "4fae8f7d-099d-44b6-8450-17312bb0b275",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Tiles Gallery" },
+    "description": { "default": "TilesGallery description" },
+    "officeFabricIconFontName": "Tiles",
+    "properties": {
+      "justified": true,
+      "enableIcons": true,
+      "enableShadow": false,
+      "enableBorder": false,
+      "spaceBetweenCols": 3,
+      "borderColor": "#CCCCCC",
+      "border": 2,
+      "textPanelEnable": true,
+      "textPanelAlwaysOnTop": false,
+      "textPanelPosition": "inline-bottom",
+      "textPanelOpacity": 0.4
+    }
+  }]
+}
