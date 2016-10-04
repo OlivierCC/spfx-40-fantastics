@@ -1,8 +1,9 @@
-## spfx-40-fantastics
+# spfx-40-fantastics
 
-This is where you include your web part docs.
+This package is a sample kit of great Client Side Web Parts built on the SharePoint Framework SPFx.
+You can find here different kind of high visual web parts as carousel, images galleries, etc.
 
-### Building the code
+## Building the code
 
 ```bash
 git clone the repo
@@ -11,7 +12,7 @@ npm i -g gulp
 gulp
 ```
 
-## 3D Carousel Web Part
+# 3D Carousel Web Part
 
 The 3D Carousel Web Part is a SharePoint client side web part built with the SharePoint Framework (SPFx) in the preview version.
 This web part adds a 3D carousel animation with picture, title and link.
@@ -23,7 +24,7 @@ Your title has now an awesome look.
 
 ![3DCarousel](./assets/3dcarouseloverview.gif)
 
-## Features
+### Features
 
 You can configure the following Web Part settings:
 * **Manage items**: Collection of carousel items. An item is composed of a Title (mnandatory), a Picture Url (mandatory), a boolean to indicate if the
@@ -47,7 +48,7 @@ item is enabled or disabled, a link url (optional) and a link text (optional).
 * **Title Size**: sets the Title font size
 * **Title Color**: sets the Title font color
 
-## Photopile Web Part
+# Photopile Web Part
 
 The photopile-web-part project is a SharePoint web part built using the SharePoint Framework (SPFx) in the preview version.
 This project implements the great [Photopile.Js](https://github.com/bigbhowell/Photopile-JS) created by Brian W. Howell
@@ -61,7 +62,7 @@ simulates a pile of photos scattered about on a surface. Thumbnail clicks remove
 
 > Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production enviornments.
 
-## Features
+### Features
 
 This web part uses React, Office UI Fabric, JQuery, JQuery UI and Photopile.js. This web part is available in English (en-us)
 and French (fr-fr). You can use this web part with SharePoint Online (Office 365) or SharePoint Server 2016.
@@ -83,7 +84,7 @@ If you are a SharePoint web developer, you can be interested by the following co
 * Etc.
 
 
-## ArcText Web Part
+# ArcText Web Part
 
 The ArcText Web Part is a SharePoint client side web part built with the SharePoint Framework (SPFx) in the preview version.
 This web part adds a curved text effect to your titles.
@@ -95,7 +96,7 @@ Your title has now an awesome look.
 
 ![ArcText](./assets/arctextoverview.gif)
 
-## Features
+### Features
 
 You can manage the following settings:
 * **Text**: sets your text
@@ -106,3 +107,13 @@ You can manage the following settings:
 * **Font**: specifies the font family as Arial, Verdana, etc.
 * **Size**: sets the font size
 * **Color**: sets the font color
+
+# The MIT License (MIT)
+
+Copyright (c) 2016 Olivier Carpentier
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
