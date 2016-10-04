@@ -13,7 +13,7 @@ Overview |  Web Part |  Description
 ![Tiles Gallery](./assets/overviewtilesgallery.png) | **Tiles Gallery** |  Generate a Tiles pictures gallery from a SharePoint pictures library
 ![Slider Gallery ](./assets/overviewslidergallery.png) | **Slider Gallery** | Insert a pictures slider with navigation from a SharePoint pictures library
 ![Simple Carousel](./assets/overviewsimplecarousel.png) | **Simple Carousel** | Insert a pictures carousel from a SharePoint pictures library
-![Grid Gallery](./assets/overviewgridgallery.png) | **Grid CGallery** | Insert a pictures gallery with a grid panel from a SharePoint pictures library
+![Grid Gallery](./assets/overviewgridgallery.png) | **Grid Gallery** | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | **Photopile** | Generate a pile of photos from a SharePoint pictures library
 ![ArcText](./assets/overviewarctext.png) | **ArcText** | Insert a curved text in your SharePoint pages
 
@@ -155,6 +155,42 @@ You can configure the following Web Part settings:
 * **Text Panel Font Color**: textpanel title color. if null - take from css
 * **Text Panel Background Color**: textpanel background color
 
+
+# Grid Gallery Web Part
+
+The grid gallery Web Part renders a pictures slideshow with grid of thumbnails.
+This web part implements [unitegallery.js](https://github.com/vvvmax/unitegallery/)
+(a popular jquery script) as a client side web part for SharePoint.
+This web part is able to query a SharePoint Picture Library to find the images and render it as a carousel.
+
+![Grid Gallery](./assets/girdgalleryoverview.gif)
+
+### Features
+
+You can configure the following Web Part settings:
+* **Query**: you must select a current web picture library and select order by conditions
+* **Enable Arrows**: enable arrows onslider element
+* **Enable Bullets**: enable the bullets onslider element
+* **Enable Play Button**: true,false - enable play / pause button onslider element
+* **Enable Fullscreen Button**: true,false - enable fullscreen button onslider element
+* **Enable Zoom Panel**: true,false - enable the zoom buttons, works together with zoom control.
+* **Controls Always On**: true,false - controls are always on, false - show only on mouseover
+* **Preserve Ratio**: true, false - preserver ratio when on window resize
+* **Enable Border**: enable border of the tile
+* **Tile Width**: tile width
+* **Tile Height**: tile height
+* **Border Color**: tile border color
+* **Border**: tile border width
+* **Pause On Mouseover**: true,false - pause on mouseover when playing slideshow true/false
+* **Autoplay**: true / false - begin slideshow autoplay on start
+* **Speed**: play interval of the slideshow
+* **Text Panel Enable**: enable textpanel
+* **Text Panel Always On Top**: textpanel always visible
+* **Text Panel Opacity**: textpanel background opacity
+* **Text Panel Font**: textpanel title font family. if null - take from css
+* **Text Panel Font Size**: textpanel title font size. if null - take from css
+* **Text Panel Font Color**: textpanel title color. if null - take from css
+* **Text Panel Background Color**: textpanel background color
 
 # Photopile Web Part
 
