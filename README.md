@@ -1,4 +1,4 @@
-# SPFx 40 fantastics Web Parts
+# SPFx 40 Fantastics Web Parts
 
 This package is a sample kit of great Client Side Web Parts built on the SharePoint Framework SPFx.
 You can find here different kind of high visual web parts as carousel, images galleries, etc.
