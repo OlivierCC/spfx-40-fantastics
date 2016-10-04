@@ -10,12 +10,12 @@ You can find here the following web parts:
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![3d carousel](./assets/overview3dcarousel.png) | [**3D Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/3D-Carousel) | Insert a 3D Carousel in your SharePoint pages
-![Tiles Gallery](./assets/overviewtilesgallery.png) | **Tiles Gallery** |  Generate a Tiles pictures gallery from a SharePoint pictures library
-![Slider Gallery ](./assets/overviewslidergallery.png) | **Slider Gallery** | Insert a pictures slider with navigation from a SharePoint pictures library
-![Simple Carousel](./assets/overviewsimplecarousel.png) | **Simple Carousel** | Insert a pictures carousel from a SharePoint pictures library
-![Grid Gallery](./assets/overviewgridgallery.png) | **Grid Gallery** | Insert a pictures gallery with a grid panel from a SharePoint pictures library
-![Photopile](./assets/overviewsliderphotopile.png) | **Photopile** | Generate a pile of photos from a SharePoint pictures library
-![ArcText](./assets/overviewarctext.png) | **ArcText** | Insert a curved text in your SharePoint pages
+![Tiles Gallery](./assets/overviewtilesgallery.png) | [**Tiles Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tiles-Gallery) |  Generate a Tiles pictures gallery from a SharePoint pictures library
+![Slider Gallery ](./assets/overviewslidergallery.png) | [**Slider Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Slider-Gallery) | Insert a pictures slider with navigation from a SharePoint pictures library
+![Simple Carousel](./assets/overviewsimplecarousel.png) | [**Simple Carousel**][(https://github.com/OlivierCC/spfx-40-fantastics/wiki/Simple-Carousel) | Insert a pictures carousel from a SharePoint pictures library
+![Grid Gallery](./assets/overviewgridgallery.png) | [**Grid Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Grid-Gallery) | Insert a pictures gallery with a grid panel from a SharePoint pictures library
+![Photopile](./assets/overviewsliderphotopile.png) | [**Photopile**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Photopile) | Generate a pile of photos from a SharePoint pictures library
+![ArcText](./assets/overviewarctext.png) | [**ArcText**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 
 ## Building the code
 
