@@ -50,6 +50,17 @@ item is enabled or disabled, a link url (optional) and a link text (optional).
 * **Title Size**: sets the Title font size
 * **Title Color**: sets the Title font color
 
+# Tiles Immages Gallery Web Part
+
+The tiles gallery renders a dynamic images gallery as titles. This web part implements [unitegallery.js](https://github.com/vvvmax/unitegallery/)
+(a popular jquery script) as a client side web part for SharePoint.
+
+![tiles gallery](./assets/tilesgalleryoverview.gif)
+
+### Features
+
+
+
 # Photopile Web Part
 
 The photopile-web-part project is a SharePoint web part built using the SharePoint Framework (SPFx) in the preview version.
