@@ -9,12 +9,12 @@ You can find here the following web parts:
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![3d carousel](./assets/overview3dcarousel.png) | 3D Carousel | Insert a 3D Carousel in your SharePoint pages
-![Tiles Gallery](./assets/overviewtilesgallery.png) | Tiles Gallery |  Generate a Tiles pictures gallery from a SharePoint picture library
-![Slider Gallery ](./assets/overviewslidergallery.png) | Slider Gallery | Insert a pictures slider with navigation from a SharePoint picture library
-![Simple Carousel](./assets/overviewsimplecarousel.png) | Simple | Insert a pictures carousel from a SharePoint picture library
-![Photopile](./assets/overviewsliderphotopile.png) | Photopile | Generate a pile of photos from a SharePoint picture library
-![ArcText](./assets/overviewarctext.png) | ArcText | Insert a curved text in your SharePoint pages
+![3d carousel](./assets/overview3dcarousel.png) | **3D Carousel** | Insert a 3D Carousel in your SharePoint pages
+![Tiles Gallery](./assets/overviewtilesgallery.png) | **Tiles Gallery** |  Generate a Tiles pictures gallery from a SharePoint pictures library
+![Slider Gallery ](./assets/overviewslidergallery.png) | **Slider Gallery** | Insert a pictures slider with navigation from a SharePoint pictures library
+![Simple Carousel](./assets/overviewsimplecarousel.png) | **Simple** | Insert a pictures carousel from a SharePoint pictures library
+![Photopile](./assets/overviewsliderphotopile.png) | **Photopile** | Generate a pile of photos from a SharePoint pictures library
+![ArcText](./assets/overviewarctext.png) | **ArcText** | Insert a curved text in your SharePoint pages
 
 ## Building the code
 
