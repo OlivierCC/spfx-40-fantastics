@@ -15,6 +15,7 @@ Overview |  Web Part |  Description
 ![Simple Carousel](./assets/overviewsimplecarousel.png) | [**Simple Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Simple-Carousel) | Insert a pictures carousel from a SharePoint pictures library
 ![Grid Gallery](./assets/overviewgridgallery.png) | [**Grid Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Grid-Gallery) | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | [**Photopile**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Photopile) | Generate a pile of photos from a SharePoint pictures library
+![Coverflow](./assets/overviewcoverflow.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow apple like menu in your pages
 ![ArcText](./assets/overviewarctext.png) | [**ArcText**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 
 ## Building the code
