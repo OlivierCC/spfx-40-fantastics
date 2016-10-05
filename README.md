@@ -3,7 +3,7 @@
 > Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production enviornments.
 
 This package is a sample kit of great Client Side Web Parts built on the SharePoint Framework SPFx.
-You can find here different kind of high visual web parts as carousel, images galleries, etc.
+You can find here different kind of high visual web parts as carousel, images galleries, etc. OK, now there is not 40 WP templates, but we're working on it.
 
 You can find here the following web parts:
 
