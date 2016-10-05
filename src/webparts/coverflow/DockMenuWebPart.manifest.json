@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "b63ccc15-cc2a-479c-ae83-510474c79c88",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Coverflow" },
+    "description": { "default": "Coverflow description" },
+    "officeFabricIconFontName": "Picture",
+    "properties": {
+      "speed": 6,
+      "showButton": true,
+      "showTitle": true,
+      "autoPlay": true,
+      "autoPlayDelay": 2000,
+      "bringToFront": true,
+      "mirrorGap": 2,
+      "mirrorHeight": 0.2,
+      "mirrorOpacity": 0.4,
+      "yOrigin": 43,
+      "yRadius": 86,
+      "xOrigin": 383,
+      "xRadius": 320,
+      "height": 400,
+      "font": "\"Segoe UI\",Frutiger,\"Frutiger Linotype\",\"Dejavu Sans\",\"Helvetica Neue\",Arial,sans-serif",
+      "fontSize": "28px",
+      "fontColor": "#000000",
+      "itemHeight": 180,
+      "items": [
+        {"Title": "Skype", "Enabled": "true", "Link Text": "Download", "Link Url": "https://vanderlee.github.io/coverflow/demo/attic.jpg",
+          "Picture": "https://vanderlee.github.io/coverflow/demo/attic.jpg"},
+        {"Title": "OneNote", "Enabled": "true", "Picture": "https://vanderlee.github.io/coverflow/demo/aurora.jpg"},
+        {"Title": "Delve", "Enabled": "true", "Picture": "https://vanderlee.github.io/coverflow/demo/barbecue.jpg"},
+        {"Title": "Office Video", "Enabled": "true", "Picture": "https://vanderlee.github.io/coverflow/demo/blackswan.jpg"},
+        {"Title": "Word", "Enabled": "true", "Picture": "https://vanderlee.github.io/coverflow/demo/chess.jpg"},
+        {"Title": "Excel", "Enabled": "true", "Picture": "https://vanderlee.github.io/coverflow/demo/fire.jpg"},
+        {"Title": "PowerPoint", "Enabled": "true", "Picture": "https://vanderlee.github.io/coverflow/demo/keyboard.jpg"}
+      ]
+    }
+  }]
+}
