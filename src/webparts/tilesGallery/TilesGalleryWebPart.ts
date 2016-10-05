@@ -33,6 +33,7 @@ import * as $ from 'jquery';
 export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGalleryWebPartProps> {
 
   private guid: string;
+  private scriptLoaded: boolean = false;
 
   public constructor(context: IWebPartContext) {
     super(context);
@@ -64,12 +65,13 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
       return;
     }
 
-    if (this.renderedOnce === false) {
+    if (this.renderedOnce === false || this.scriptLoaded === false) {
       ModuleLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', 'jQuery').then((): void => {
         ModuleLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/tiles/ug-theme-tiles.js', 'jQuery').then((): void => {
           this.renderContents();
         });
       });
+      this.scriptLoaded = true;
     }
 
     const picturesListService: SPPicturesListService = new SPPicturesListService(this.properties, this.context);

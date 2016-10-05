@@ -32,6 +32,7 @@ import * as $ from 'jquery';
 export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimpleCarouselWebPartProps> {
 
   private guid: string;
+  private scriptLoaded: boolean = false;
 
   public constructor(context: IWebPartContext) {
     super(context);
@@ -63,12 +64,13 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
       return;
     }
 
-    if (this.renderedOnce === false) {
+    if (this.renderedOnce === false || this.scriptLoaded === false) {
       ModuleLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', 'jQuery').then((): void => {
         ModuleLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/carousel/ug-theme-carousel.js', 'jQuery').then((): void => {
           this.renderContents();
         });
       });
+      this.scriptLoaded = true;
     }
 
     const picturesListService: SPPicturesListService = new SPPicturesListService(this.properties, this.context);
