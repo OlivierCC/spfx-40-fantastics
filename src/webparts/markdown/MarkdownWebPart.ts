@@ -14,8 +14,8 @@ import {
 } from '@microsoft/sp-client-preview';
 import { DisplayMode } from '@microsoft/sp-client-base';
 
-import * as strings from 'fckTextStrings';
-import { IFckTextWebPartProps } from './IFckTextWebPartProps';
+import * as strings from 'MarkdownStrings';
+import { IMarkdownWebPartProps } from './IMarkdownWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
 //require('jquery');
@@ -23,7 +23,7 @@ import ModuleLoader from '@microsoft/sp-module-loader';
 
 //import * as $ from 'jquery';
 
-export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPartProps> {
+export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebPartProps> {
 
   private guid: string;
 

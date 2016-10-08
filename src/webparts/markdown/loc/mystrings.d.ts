@@ -1,4 +1,4 @@
-declare interface IFckTextStrings {
+declare interface IMarkdownStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
@@ -50,7 +50,7 @@ declare interface IFckTextStrings {
   Theme: string;
 }
 
-declare module 'fckTextStrings' {
-  const strings: IFckTextStrings;
+declare module 'MarkdownStrings' {
+  const strings: IMarkdownStrings;
   export = strings;
 }

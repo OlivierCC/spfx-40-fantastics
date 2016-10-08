@@ -9,8 +9,8 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "Fck Text" },
-    "description": { "default": "FckText description" },
+    "title": { "default": "Markdown" },
+    "description": { "default": "Markdown description" },
     "officeFabricIconFontName": "Font",
     "properties": {
       "inline": true,

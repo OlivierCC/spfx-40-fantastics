@@ -5,7 +5,7 @@
  * Author: Olivier Carpentier
  * Copyright (c) 2016
  */
-export interface IFckTextWebPartProps {
+export interface IMarkdownWebPartProps {
   text: string;
   theme: string;
   mode: string;
