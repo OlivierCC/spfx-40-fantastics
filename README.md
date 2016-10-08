@@ -27,7 +27,7 @@ Overview |  Web Part |  Description
 ![Grid Gallery](./assets/overviewgridgallery.png) | [**Grid Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Grid-Gallery) | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | [**Photopile**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Photopile) | Generate a pile of photos from a SharePoint pictures library
 
-### Layout & Tools
+### Text Tools
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
