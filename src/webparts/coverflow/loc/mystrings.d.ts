@@ -26,7 +26,25 @@ declare interface IDockMenuStrings {
   ColorFieldLabel: string;
   HeightFieldLabel: string;
   ItemHeightFieldLabel: string;
+  ItemWidthFieldLabel: string;
   ReadMore: string;
+  Easing: string;
+  Density: string;
+  InnerOffset: string;
+  InnerScale: string;
+  Shadow: string;
+  PropertyPageTextPanel: string;
+  TextPanelGroupName: string;
+  TextPanelEnableFieldLabel: string;
+  TextPanelAlwaysOnTopFieldLabel: string;
+  TextPanelPositionFieldLabel: string;
+  TextPanelOpacityFieldLabel: string;
+  TextPanelFontFieldLabel: string;
+  TextPanelFontSizeFieldLabel: string;
+  TextPanelBackgroundColorFieldLabel: string;
+  TextPanelAlignFieldLabel: string;
+  TextPanelFontColorFieldLabel: string;
+
 }
 
 declare module 'dockMenuStrings' {

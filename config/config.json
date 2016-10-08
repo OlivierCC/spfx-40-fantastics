@@ -81,7 +81,7 @@
     "sliderGalleryStrings": "webparts/sliderGallery/loc/{locale}.js",
     "simpleCarouselStrings": "webparts/simpleCarousel/loc/{locale}.js",
     "gridGalleryStrings": "webparts/gridGallery/loc/{locale}.js",
-    "dockMenuStrings": "webparts/dockMenu/loc/{locale}.js",
+    "dockMenuStrings": "webparts/coverflow/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

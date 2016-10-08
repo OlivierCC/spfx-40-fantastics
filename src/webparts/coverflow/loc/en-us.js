@@ -1,7 +1,7 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Customize your 3D carousel",
-    "BasicGroupName": "Play settings",
+    "PropertyPaneDescription": "Customize your coverflow",
+    "BasicGroupName": "General",
     "DescriptionFieldLabel": "Description Field",
     "SpeedFieldLabel": "Speed",
     "AutoplayFieldLabel": "Autoplay",
@@ -27,6 +27,23 @@ define([], function() {
     "ColorFieldLabel": "Color",
     "HeightFieldLabel": "Height",
     "ItemHeightFieldLabel": "Item Height",
-    "ReadMore": "Read more"
+    "ItemWidthFieldLabel": "Item Width",
+    "ReadMore": "Read more",
+    "Easing": "Easing",
+    "Density": "Density",
+    "InnerOffset": "Inner Offset",
+    "InnerScale": "Inner Scale",
+    "Shadow": "Enable Shadow",
+    "PropertyPageTextPanel": "Customize the Text Panel settings",
+    "TextPanelGroupName": "Text Panel",
+    "TextPanelEnableFieldLabel": "Enable textpanel",
+    "TextPanelAlwaysOnTopFieldLabel": "Always on top",
+    "TextPanelPositionFieldLabel": "Position",
+    "TextPanelOpacityFieldLabel": "Opacity",
+    "TextPanelFontFieldLabel": "Font",
+    "TextPanelFontSizeFieldLabel": "Font Size",
+    "TextPanelFontColorFieldLabel": "Font Color",
+    "TextPanelBackgroundColorFieldLabel": "Background Color",
+    "TextPanelAlignFieldLabel": "Text align"
   }
 });
