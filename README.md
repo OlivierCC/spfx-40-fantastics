@@ -31,7 +31,8 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![ArcText](./assets/overviewarctext.png) | [**ArcText**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
+![FckText](./assets/overviewfcktext.png) | [**Fck Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/FckText) | Insert text in your pages and edit it with the popular FCK Editor
+![ArcText](./assets/overviewarctext.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 
 ## Building the code
 

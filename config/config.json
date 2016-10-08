@@ -36,6 +36,11 @@
       "outputPath": "./dist/coverflow.bundle.js"
     },
     {
+      "entry": "./lib/webparts/fckText/FckTextWebPart.js",
+      "manifest": "./src/webparts/fckText/FckTextWebPart.manifest.json",
+      "outputPath": "./dist/fckText.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -82,6 +87,7 @@
     "simpleCarouselStrings": "webparts/simpleCarousel/loc/{locale}.js",
     "gridGalleryStrings": "webparts/gridGallery/loc/{locale}.js",
     "dockMenuStrings": "webparts/coverflow/loc/{locale}.js",
+    "fckTextStrings": "webparts/fckText/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }
