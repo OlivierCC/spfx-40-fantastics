@@ -42,33 +42,13 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
     if (this.displayMode == DisplayMode.Edit) {
       //Edit mode
       var html = '';
-      html += "<textarea name='" + this.guid + "-editor' id='" + this.guid + "-editor'>" + this.properties.text + "</textarea>";
+      html += "<div id='epiceditor'></div>";
       this.domElement.innerHTML = html;
 
-      var fMode = 'standard';
-      if (this.properties.mode != null)
-        fMode = this.properties.mode;
-      var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
-      ModuleLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
-        if (this.properties.inline == null || this.properties.inline === false)
-          CKEDITOR.replace( this.guid + '-editor', {
-              skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
-          }  );
-        else
-          CKEDITOR.inline( this.guid + '-editor', {
-              skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
-          }   );
-
-        for (var i in CKEDITOR.instances) {
-          CKEDITOR.instances[i].on('change', (elm?, val?) =>
-          {
-            CKEDITOR.instances[i].updateElement();
-            var value = ((document.getElementById(this.guid + '-editor')) as any).value;
-            if (this.onPropertyChange && value != null) {
-              this.properties.text = value;
-            }
-          });
-        }
+      ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/epiceditor/0.2.2/js/epiceditor.js', 'EpicEditor').then((EpicEditor?: any): void => {
+        var editor = new EpicEditor({
+          //container: this.guid + '-epiceditor',
+          basePath: '//cdnjs.cloudflare.com/ajax/libs/epiceditor/0.2.2/'}).load();
       });
     }
     else {
