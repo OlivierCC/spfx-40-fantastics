@@ -47,6 +47,11 @@ define([], function() {
     "TextPanelAlignFieldLabel": "Text align",
     "Inline": "Inline",
     "Mode": "Toolbar (must refresh page)",
-    "Theme": "Theme (must refresh page)"
+    "Theme": "Theme (must refresh page)",
+
+    "Toolbar": "Show toolbar",
+    "ToolbarTips": "Show toolbar tips",
+    "Status": "Show status bar",
+    "SpellChecker": "Enable spell checker"
   }
 });

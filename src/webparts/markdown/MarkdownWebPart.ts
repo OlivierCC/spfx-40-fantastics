@@ -18,11 +18,6 @@ import * as strings from 'MarkdownStrings';
 import { IMarkdownWebPartProps } from './IMarkdownWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
-//require('jquery');
-//require('jqueryui');
-
-//import * as $ from 'jquery';
-
 export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebPartProps> {
 
   private guid: string;
@@ -31,10 +26,7 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
     super(context);
 
     this.guid = this.getGuid();
-
-    //Hack: to invoke correctly the onPropertyChange function outside this class
-    //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    ModuleLoader.loadCss('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css');
   }
 
   public render(): void {
@@ -42,18 +34,58 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
     if (this.displayMode == DisplayMode.Edit) {
       //Edit mode
       var html = '';
-      html += "<div id='epiceditor'></div>";
+      html += "<textarea id='" + this.guid + "-editor'>" + this.properties.text + "</textarea>";
       this.domElement.innerHTML = html;
 
-      ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/epiceditor/0.2.2/js/epiceditor.js', 'EpicEditor').then((EpicEditor?: any): void => {
-        var editor = new EpicEditor({
-          //container: this.guid + '-epiceditor',
-          basePath: '//cdnjs.cloudflare.com/ajax/libs/epiceditor/0.2.2/'}).load();
+      ModuleLoader.loadScript('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js', 'SimpleMDE').then((SimpleMDE?: any): void => {
+        var simplemde;
+        if (this.properties.toolbar === false) {
+          if (this.properties.status === false) {
+            simplemde = new SimpleMDE({
+              element: document.getElementById(this.guid + "-editor"),
+              toolbar: this.properties.toolbar,
+              toolbarTips: this.properties.toolbarTips,
+              status: this.properties.status,
+              spellChecker: this.properties.spellChecker
+            });
+          }
+          else {
+            simplemde = new SimpleMDE({
+              element: document.getElementById(this.guid + "-editor"),
+              toolbar: this.properties.toolbar,
+              toolbarTips: this.properties.toolbarTips,
+              spellChecker: this.properties.spellChecker
+            });
+          }
+        }
+        else {
+          if (this.properties.status === false) {
+            simplemde = new SimpleMDE({
+              element: document.getElementById(this.guid + "-editor"),
+              toolbarTips: this.properties.toolbarTips,
+              status: this.properties.status,
+              spellChecker: this.properties.spellChecker
+            });
+          }
+          else {
+            simplemde = new SimpleMDE({
+              element: document.getElementById(this.guid + "-editor"),
+              toolbarTips: this.properties.toolbarTips,
+              spellChecker: this.properties.spellChecker
+            });
+          }
+        }
+        simplemde.codemirror.on("change", function(){
+            this.properties.text = simplemde.value();
+        }.bind(this));
       });
     }
     else {
       //Read Mode
-      this.domElement.innerHTML = this.properties.text;
+      ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/showdown/1.4.3/showdown.min.js', 'showdown').then((showdown?: any): void => {
+        var converter = new showdown.Converter();
+        this.domElement.innerHTML = converter.makeHtml(this.properties.text);
+      });
     }
   }
 
@@ -80,23 +112,17 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneToggle('inline', {
-                  label: strings.Inline,
+                PropertyPaneToggle('toolbar', {
+                  label: strings.Toolbar,
                 }),
-                PropertyPaneDropdown('mode', {
-                  label: strings.Mode,
-                  options: [
-                    {key: 'basic', text: 'basic'},
-                    {key: 'standard', text: 'standard'},
-                    {key: 'full', text: 'full'}
-                  ]
+                PropertyPaneToggle('toolbarTips', {
+                  label: strings.ToolbarTips,
                 }),
-                PropertyPaneDropdown('theme', {
-                  label: strings.Theme,
-                  options: [
-                    {key: 'kama', text: 'kama'},
-                    {key: 'moono', text: 'moono'}
-                  ]
+                PropertyPaneToggle('status', {
+                  label: strings.Status,
+                }),
+                PropertyPaneToggle('spellChecker', {
+                  label: strings.SpellChecker,
                 })
               ]
             }

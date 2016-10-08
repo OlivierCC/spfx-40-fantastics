@@ -13,9 +13,11 @@
     "description": { "default": "Markdown description" },
     "officeFabricIconFontName": "Font",
     "properties": {
-      "inline": true,
-      "mode": "full",
-      "theme": "kama"
+      "text": "",
+      "toolbar": true,
+      "toolbarTips": true,
+      "status": true,
+      "spellChecker": false
     }
   }]
 }

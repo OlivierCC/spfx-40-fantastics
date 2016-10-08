@@ -48,6 +48,11 @@ declare interface IMarkdownStrings {
   Inline: string;
   Mode: string;
   Theme: string;
+
+  Toolbar: string;
+  ToolbarTips: string;
+  Status: string;
+  SpellChecker: string;
 }
 
 declare module 'MarkdownStrings' {

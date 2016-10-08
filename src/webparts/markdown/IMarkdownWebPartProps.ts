@@ -7,7 +7,8 @@
  */
 export interface IMarkdownWebPartProps {
   text: string;
-  theme: string;
-  mode: string;
-  inline: boolean;
+  toolbar: boolean;
+  toolbarTips: boolean;
+  status: boolean;
+  spellChecker: boolean;
 }
