@@ -41,7 +41,7 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![MessageBar](./assets/overviemessagebar.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/MessageBar) | Insert a message bar to your page, for example set a maintenance warning text, etc.
+![MessageBar](./assets/overviewmessagebar.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/MessageBar) | Insert a message bar to your page, for example set a maintenance warning text, etc.
 
 
 ## Building the code
