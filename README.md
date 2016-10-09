@@ -33,6 +33,7 @@ Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![Markdown](./assets/overviewmarkdown.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Markdown) | Insert a text with a Markdown (MD) editor & markdown syntax
 ![FckText](./assets/overviewfcktextsmall.png) | [**Fck Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/FckText) | Insert text in your pages and edit it with the popular FCK Editor
+![AnimatedText](./assets/overviewanimatedtext.png) | [**Animated Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/AnimatedText) | Insert a text with an effect as fade, swing, etc.
 ![ArcText](./assets/overviewarctext.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 ![TypeWriting](./assets/overviewtypewriting.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/TypeWriting) | Insert a text with a type writing effect
 
