@@ -84,10 +84,7 @@
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
-    "typewriting": {
-      "path": "node_modules/typewriting/build/typewriting.min.js",
-      "globalName": "typewriting"
-    },
+    "typewriting": "node_modules/typewriting/build/typewriting.min.js",
     "jqueryui": "node_modules/jqueryui/jquery-ui.js",
     "photopileModule": "src/webparts/photopileWebPart/js/photopile.js"
   },

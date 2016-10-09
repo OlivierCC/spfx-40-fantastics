@@ -13,7 +13,15 @@
     "description": { "default": "TypeWriting description" },
     "officeFabricIconFontName": "Font",
     "properties": {
-
+      "text": "Lipsum",
+      "splitLines": true,
+      "font":  "",
+      "fontSize":  "normal",
+      "fontColor":  "#000000",
+      "backgroundColor":  "#FFFFFF",
+      "typingInterval":  130,
+      "blinkInterval":  1000,
+      "cursorColor":  "#00fd55"
     }
   }]
 }
