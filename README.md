@@ -37,6 +37,13 @@ Overview |  Web Part |  Description
 ![ArcText](./assets/overviewarctext.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 ![TypeWriting](./assets/overviewtypewriting.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/TypeWriting) | Insert a text with a type writing effect
 
+### Tools
+
+Overview |  Web Part |  Description
+------------ | ----------- | -----------
+![MessageBar](./assets/overviemessagebar.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/MessageBar) | Insert a message bar to your page, for example set a maintenance warning text, etc.
+
+
 ## Building the code
 
 ```bash
