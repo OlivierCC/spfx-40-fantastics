@@ -14,7 +14,8 @@
     "office-ui-fabric-react": "0.36.0",
     "react": "0.14.8",
     "react-dom": "0.14.8",
-    "sp-client-custom-fields": "^0.9.9"
+    "sp-client-custom-fields": "^0.9.9",
+    "typewriting": "^1.2.2"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~0.6.0",

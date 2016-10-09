@@ -9,7 +9,6 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneSettings,
   IWebPartContext,
-  PropertyPaneDropdown,
   PropertyPaneToggle
 } from '@microsoft/sp-client-preview';
 import { DisplayMode } from '@microsoft/sp-client-base';
