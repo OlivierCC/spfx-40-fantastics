@@ -1,6 +1,6 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Customize your type writing settings",
+    "PropertyPaneDescription": "Customize your text effect settings",
     "BasicGroupName": "General",
     "LayoutGroupName": "Layout",
     "Text": "Text",
