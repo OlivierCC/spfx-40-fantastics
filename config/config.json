@@ -56,6 +56,21 @@
       "outputPath": "./dist/animatedText.bundle.js"
     },
     {
+      "entry": "./lib/webparts/code/CodeWebPart.js",
+      "manifest": "./src/webparts/code/CodeWebPart.manifest.json",
+      "outputPath": "./dist/code.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/messageBar/MessageBarWebPart.js",
+      "manifest": "./src/webparts/messageBar/MessageBarWebPart.manifest.json",
+      "outputPath": "./dist/messageBar.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/textRotator/TextRotatorWebPart.js",
+      "manifest": "./src/webparts/textRotator/TextRotatorWebPart.manifest.json",
+      "outputPath": "./dist/textRotator.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -106,6 +121,9 @@
     "MarkdownStrings": "webparts/markdown/loc/{locale}.js",
     "TypeWritingStrings": "webparts/typeWriting/loc/{locale}.js",
     "AnimatedTextStrings": "webparts/animatedText/loc/{locale}.js",
+    "CodeStrings": "webparts/code/loc/{locale}.js",
+    "MessageBarStrings": "webparts/messageBar/loc/{locale}.js",
+    "TextRotatorStrings": "webparts/textRotator/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

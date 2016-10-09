@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "1d2f44ed-0aa7-499b-a99b-9e23a7351499",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "TextRotator" },
+    "description": { "default": "TextRotator description" },
+    "officeFabricIconFontName": "Font",
+    "properties": {
+      "text": "Lipsum lipsum",
+      "font":  "",
+      "fontSize":  "",
+      "fontColor":  "#000000",
+      "backgroundColor":  "#FFFFFF",
+      "effect": "spin",
+      "effectDirection": "forward",
+      "timing": 50,
+      "duration": 800,
+      "letterEnd": "restore",
+      "elementEnd": "restore"
+    }
+  }]
+}

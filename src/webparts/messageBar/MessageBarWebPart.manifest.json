@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "7bded87d-c81a-461b-b704-adab5e3adc2c",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Message Bar" },
+    "description": { "default": "MessageBar description" },
+    "officeFabricIconFontName": "Font",
+    "properties": {
+      "text": "<p>Warning: this site is <b>under maintenance</b>. <a href='#'>More info</a></p>",
+      "font":  "",
+      "fontSize":  "18px",
+      "fontColor":  "#000000",
+      "backgroundColor":  "#ffeaea",
+      "icon": "ms-Icon--Warning",
+      "enabled": true
+    }
+  }]
+}
