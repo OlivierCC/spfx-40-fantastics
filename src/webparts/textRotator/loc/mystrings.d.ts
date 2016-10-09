@@ -8,11 +8,8 @@ declare interface ITextRotatorStrings {
   FontColor: string;
   BackgroundColor: string;
   Effet: string;
-  Direction: string;
-  Timing: string;
   Duration: string;
-  LetterEnd: string;
-  ElementEnd: string;
+  Align: string;
 }
 
 declare module 'TextRotatorStrings' {

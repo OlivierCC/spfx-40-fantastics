@@ -21,6 +21,7 @@ import ModuleLoader from '@microsoft/sp-module-loader';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
+import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
 require('jquery');
 
@@ -41,12 +42,15 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     this.guid = this.getGuid();
     this.scriptLoaded = false;
 
-    ModuleLoader.loadCss('//tuxsudo.com/letterfx/letterfx.css');
+    ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+    ModuleLoader.loadCss('//morphext.fyianlai.com/assets/css/morphext.css');
   }
 
   public render(): void {
 
-    var style = "style='padding: 5px;";
+    var style = "style='";
+    if (this.properties.align != null)
+      style += "text-align: " + this.properties.align + ";";
     if (this.properties.font != null)
       style += "font-family: " + this.properties.font + ';';
     if (this.properties.fontSize != null)
@@ -56,11 +60,11 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     if (this.properties.backgroundColor != null)
       style += "background-color: " + this.properties.backgroundColor  + ';';
     style += "'";
-    var html = "<span " + style + " id='" + this.guid + "-TextRotator'>" + this.properties.text + "</span>";
+    var html = "<div " + style + " id='" + this.guid + "-TextRotator'>" + this.properties.text + "</div>";
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
-      ModuleLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', 'jQuery').then((): void => {
+      ModuleLoader.loadScript('//morphext.fyianlai.com/assets/js/morphext.js', 'jQuery').then((): void => {
         this.renderContent();
       });
       this.scriptLoaded = true;
@@ -72,13 +76,16 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
   }
 
   private renderContent(): void {
-    ($ as any)('#' + this.guid + "-TextRotator").letterfx({
-      "fx": this.properties.effect != null ? this.properties.effect : "spin",
-      "backwards": this.properties.effectDirection == "backwards" ? true : false,
-      "timing":  this.properties.timing != null ? this.properties.timing : 50,
-      "fx_duration": this.properties.duration != null ? this.properties.duration + "ms" : "1000ms",
-      "letter_end": this.properties.letterEnd != null ? this.properties.letterEnd : "restore",
-      "element_end": this.properties.elementEnd != null ? this.properties.elementEnd : "restore"
+    ($ as any)('#' + this.guid + "-TextRotator").Morphext({
+        // The [in] animation type. Refer to Animate.css for a list of available animations.
+        animation: this.properties.effect,
+        // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+        separator: "\n",
+        // The delay between the changing of each phrase in milliseconds.
+        speed: this.properties.duration,
+        complete: () => {
+            // Called after the entrance animation is executed.
+        }
     });
   }
 
@@ -112,60 +119,99 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                 PropertyPaneDropdown('effect', {
                   label: strings.Effet,
                   options: [
-                    {key: 'spin', text: 'spin'},
-                    {key: 'fade', text: 'fade'},
-                    {key: 'grow', text: 'grow'},
-                    {key: 'smear', text: 'smear'},
-                    {key: 'fall', text: 'fall'},
-                    {key: 'swirl', text: 'swirl'},
-                    {key: 'wave', text: 'wave'},
-                    {key: 'fly-top', text: 'fly-top'},
-                    {key: 'fly-bottom', text: 'fly-bottom'},
-                    {key: 'fly-left', text: 'fly-left'},
-                    {key: 'fly-right', text: 'fly-right'}
+                    {key: 'bounce', text: "bounce"},
+                    {key: 'flash', text: "flash"},
+                    {key: 'pulse', text: "pulse"},
+                    {key: 'rubberBand', text: "rubberBand"},
+                    {key: 'shake', text: "shake"},
+                    {key: 'headShake', text: "headShake"},
+                    {key: 'swing', text: "swing"},
+                    {key: 'tada', text: "tada"},
+                    {key: 'wobble', text: "wobble"},
+                    {key: 'jello', text: "jello"},
+                    {key: 'bounceIn', text: "bounceIn"},
+                    {key: 'bounceInDown', text: "bounceInDown"},
+                    {key: 'bounceInLeft', text: "bounceInLeft"},
+                    {key: 'bounceInRight', text: "bounceInRight"},
+                    {key: 'bounceInUp', text: "bounceInUp"},
+                    {key: 'bounceOut', text: "bounceOut"},
+                    {key: 'bounceOutDown', text: "bounceOutDown"},
+                    {key: 'bounceOutLeft', text: "bounceOutLeft"},
+                    {key: 'bounceOutRight', text: "bounceOutRight"},
+                    {key: 'bounceOutUp', text: "bounceOutUp"},
+                    {key: 'fadeIn', text: "fadeIn"},
+                    {key: 'fadeInDown', text: "fadeInDown"},
+                    {key: 'fadeInDownBig', text: "fadeInDownBig"},
+                    {key: 'fadeInLeft', text: "fadeInLeft"},
+                    {key: 'fadeInLeftBig', text: "fadeInLeftBig"},
+                    {key: 'fadeInRight', text: "fadeInRight"},
+                    {key: 'fadeInRightBig', text: "fadeInRightBig"},
+                    {key: 'fadeInUp', text: "fadeInUp"},
+                    {key: 'fadeInUpBig', text: "fadeInUpBig"},
+                    {key: 'fadeOut', text: "fadeOut"},
+                    {key: 'fadeOutDown', text: "fadeOutDown"},
+                    {key: 'fadeOutDownBig', text: "fadeOutDownBig"},
+                    {key: 'fadeOutLeft', text: "fadeOutLeft"},
+                    {key: 'fadeOutLeftBig', text: "fadeOutLeftBig"},
+                    {key: 'fadeOutRight', text: "fadeOutRight"},
+                    {key: 'fadeOutRightBig', text: "fadeOutRightBig"},
+                    {key: 'fadeOutUp', text: "fadeOutUp"},
+                    {key: 'fadeOutUpBig', text: "fadeOutUpBig"},
+                    {key: 'flipInX', text: "flipInX"},
+                    {key: 'flipInY', text: "flipInY"},
+                    {key: 'flipOutX', text: "flipOutX"},
+                    {key: 'flipOutY', text: "flipOutY"},
+                    {key: 'lightSpeedIn', text: "lightSpeedIn"},
+                    {key: 'lightSpeedOut', text: "lightSpeedOut"},
+                    {key: 'rotateIn', text: "rotateIn"},
+                    {key: 'rotateInDownLeft', text: "rotateInDownLeft"},
+                    {key: 'rotateInDownRight', text: "rotateInDownRight"},
+                    {key: 'rotateInUpLeft', text: "rotateInUpLeft"},
+                    {key: 'rotateInUpRight', text: "rotateInUpRight"},
+                    {key: 'rotateOut', text: "rotateOut"},
+                    {key: 'rotateOutDownLeft', text: "rotateOutDownLeft"},
+                    {key: 'rotateOutDownRight', text: "rotateOutDownRight"},
+                    {key: 'rotateOutUpLeft', text: "rotateOutUpLeft"},
+                    {key: 'rotateOutUpRight', text: "rotateOutUpRight"},
+                    {key: 'hinge', text: "hinge"},
+                    {key: 'rollIn', text: "rollIn"},
+                    {key: 'rollOut', text: "rollOut"},
+                    {key: 'zoomIn', text: "zoomIn"},
+                    {key: 'zoomInDown', text: "zoomInDown"},
+                    {key: 'zoomInLeft', text: "zoomInLeft"},
+                    {key: 'zoomInRight', text: "zoomInRight"},
+                    {key: 'zoomInUp', text: "zoomInUp"},
+                    {key: 'zoomOut', text: "zoomOut"},
+                    {key: 'zoomOutDown', text: "zoomOutDown"},
+                    {key: 'zoomOutLeft', text: "zoomOutLeft"},
+                    {key: 'zoomOutRight', text: "zoomOutRight"},
+                    {key: 'zoomOutUp', text: "zoomOutUp"},
+                    {key: 'slideInDown', text: "slideInDown"},
+                    {key: 'slideInLeft', text: "slideInLeft"},
+                    {key: 'slideInRight', text: "slideInRight"},
+                    {key: 'slideInUp', text: "slideInUp"},
+                    {key: 'slideOutDown', text: "slideOutDown"},
+                    {key: 'slideOutLeft', text: "slideOutLeft"},
+                    {key: 'slideOutRight', text: "slideOutRight"},
+                    {key: 'slideOutUp', text: "slideOutUp"}
                   ]
-                }),
-                PropertyPaneDropdown('effectDirection', {
-                  label: strings.Direction,
-                  options: [
-                    {key: 'forward', text: 'forward'},
-                    {key: 'backwards', text: 'backwards'}
-                  ]
-                }),
-                PropertyPaneSlider('timing', {
-                  label: strings.Timing,
-                  min: 0,
-                  max: 100,
-                  step: 1
                 }),
                 PropertyPaneSlider('duration', {
                   label: strings.Duration,
                   min: 0,
-                  max: 2000,
-                  step: 50
-                }),
-                PropertyPaneDropdown('letterEnd', {
-                  label: strings.LetterEnd,
-                  options: [
-                    {key: 'restore', text: 'restore'},
-                    {key: 'stay', text: 'stay'},
-                    {key: 'destroy', text: 'destroy'},
-                    {key: 'rewind', text: 'rewind'}
-                  ]
-                }),
-                PropertyPaneDropdown('elementEnd', {
-                  label: strings.ElementEnd,
-                  options: [
-                    {key: 'restore', text: 'restore'},
-                    {key: 'stay', text: 'stay'},
-                    {key: 'destroy', text: 'destroy'}
-                  ]
+                  max: 5000,
+                  step: 100
                 })
               ]
             },
             {
               groupName: strings.LayoutGroupName,
               groupFields: [
+                PropertyFieldAlignPicker('align', {
+                  label: strings.Align,
+                  initialValue: this.properties.align,
+                  onPropertyChange: this.onPropertyChange
+                }),
                 PropertyFieldFontPicker('font', {
                   label: strings.Font,
                   useSafeFont: true,

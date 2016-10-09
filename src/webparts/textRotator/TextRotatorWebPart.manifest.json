@@ -9,21 +9,18 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "TextRotator" },
-    "description": { "default": "TextRotator description" },
+    "title": { "default": "Text Rotator" },
+    "description": { "default": "Text Rotator description" },
     "officeFabricIconFontName": "Font",
     "properties": {
-      "text": "Lipsum lipsum",
+      "text": "Lipsum lipsum\ncorpus vae vista",
       "font":  "",
-      "fontSize":  "",
+      "fontSize":  "18px",
       "fontColor":  "#000000",
       "backgroundColor":  "#FFFFFF",
-      "effect": "spin",
-      "effectDirection": "forward",
-      "timing": 50,
-      "duration": 800,
-      "letterEnd": "restore",
-      "elementEnd": "restore"
+      "effect": "bounceInRight",
+      "duration": 2000,
+      "align": "left"
     }
   }]
 }

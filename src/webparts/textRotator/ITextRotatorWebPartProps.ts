@@ -8,13 +8,10 @@
 export interface ITextRotatorWebPartProps {
   text: string;
   effect: string;
-  effectDirection: string;
-  timing: number;
   duration: number;
-  letterEnd: string;
-  elementEnd: string;
   font: string;
   fontSize: string;
   fontColor: string;
   backgroundColor: string;
+  align: string;
 }
