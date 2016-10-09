@@ -13,6 +13,7 @@ define([], function() {
     "Timing":  "Timing (ms)",
     "Duration":  "Duration (ms)",
     "LetterEnd":  "Letter End",
-    "ElementEnd":  "Element End"
+    "ElementEnd":  "Element End",
+    "Align": "Align"
   }
 });

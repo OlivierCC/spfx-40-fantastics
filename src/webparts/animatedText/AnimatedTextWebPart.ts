@@ -21,6 +21,7 @@ import ModuleLoader from '@microsoft/sp-module-loader';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
+import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
 require('jquery');
 
@@ -47,6 +48,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
   public render(): void {
 
     var style = "style='padding: 5px;";
+    if (this.properties.align != null)
+      style += "text-align: " + this.properties.align + ';';
     if (this.properties.font != null)
       style += "font-family: " + this.properties.font + ';';
     if (this.properties.fontSize != null)
@@ -56,7 +59,7 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
     if (this.properties.backgroundColor != null)
       style += "background-color: " + this.properties.backgroundColor  + ';';
     style += "'";
-    var html = "<span " + style + " id='" + this.guid + "-AnimatedText'>" + this.properties.text + "</span>";
+    var html = "<div " + style + " id='" + this.guid + "-AnimatedText'>" + this.properties.text + "</div>";
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
@@ -166,6 +169,11 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
             {
               groupName: strings.LayoutGroupName,
               groupFields: [
+                PropertyFieldAlignPicker('align', {
+                  label: strings.Align,
+                  initialValue: this.properties.align,
+                  onPropertyChange: this.onPropertyChange
+                }),
                 PropertyFieldFontPicker('font', {
                   label: strings.Font,
                   useSafeFont: true,

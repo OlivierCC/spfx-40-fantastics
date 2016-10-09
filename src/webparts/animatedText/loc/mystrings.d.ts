@@ -13,6 +13,7 @@ declare interface IAnimatedTextStrings {
   Duration: string;
   LetterEnd: string;
   ElementEnd: string;
+  Align: string;
 }
 
 declare module 'AnimatedTextStrings' {

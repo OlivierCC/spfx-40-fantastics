@@ -23,7 +23,8 @@
       "timing": 50,
       "duration": 800,
       "letterEnd": "restore",
-      "elementEnd": "restore"
+      "elementEnd": "restore",
+      "align": "left"
     }
   }]
 }

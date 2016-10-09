@@ -17,4 +17,5 @@ export interface IAnimatedTextWebPartProps {
   fontSize: string;
   fontColor: string;
   backgroundColor: string;
+  align: string;
 }
