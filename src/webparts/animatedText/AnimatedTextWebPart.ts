@@ -1,6 +1,6 @@
 /**
  * @file
- * 3D Carousel Web Part for SharePoint Framework SPFx
+ * Animated Text Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016
@@ -9,25 +9,27 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneSettings,
   PropertyPaneSlider,
-  PropertyPaneToggle,
   PropertyPaneTextField,
+  PropertyPaneDropdown,
   IWebPartContext
 } from '@microsoft/sp-client-preview';
 
-import * as strings from 'TypeWritingStrings';
-import { ITypeWritingWebPartProps } from './ITypeWritingWebPartProps';
+import * as strings from 'AnimatedTextStrings';
+import { IAnimatedTextWebPartProps } from './IAnimatedTextWebPartProps';
+import ModuleLoader from '@microsoft/sp-module-loader';
 
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
+require('jquery');
 
-var TypeWriting = require('typewriting');
+import * as $ from 'jquery';
 
-export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWritingWebPartProps> {
+export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimatedTextWebPartProps> {
 
   private guid: string;
-  private typeWriting: any;
+  private scriptLoaded: boolean;
 
   public constructor(context: IWebPartContext) {
     super(context);
@@ -37,6 +39,9 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
     this.onPropertyChange = this.onPropertyChange.bind(this);
 
     this.guid = this.getGuid();
+    this.scriptLoaded = false;
+
+    ModuleLoader.loadCss('//tuxsudo.com/letterfx/letterfx.css');
   }
 
   public render(): void {
@@ -51,33 +56,30 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
     if (this.properties.backgroundColor != null)
       style += "background-color: " + this.properties.backgroundColor  + ';';
     style += "'";
-    var html = "<div " + style + " id='" + this.guid + "-typewriting'></div>";
+    var html = "<span " + style + " id='" + this.guid + "-AnimatedText'>" + this.properties.text + "</span>";
     this.domElement.innerHTML = html;
 
-    var text = this.properties.text;
-    if (this.properties.splitLines === true && text != null) {
-      var splitted = text.split("\n");
-      text = splitted[0];
+    if (this.renderedOnce === false || this.scriptLoaded === false) {
+      ModuleLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', 'jQuery').then((): void => {
+        this.renderContent();
+      });
+      this.scriptLoaded = true;
+    }
+    else {
+      this.renderContent();
     }
 
-    if (this.typeWriting != null)
-      this.typeWriting = null;
-    this.typeWriting = new TypeWriting({
-        targetElement   : document.getElementById(this.guid + "-typewriting"),
-        inputString     : text,
-        typing_interval : this.properties.typingInterval,
-        blink_interval  : this.properties.blinkInterval + 'ms',
-        cursor_color    : this.properties.cursorColor,
-    }, () => {
-        //console.log("END");
-    });
+  }
 
-     if (this.properties.splitLines === true && text != null) {
-       var splitted2 = this.properties.text.split("\n");
-       for (var i = 1; i < splitted2.length; i++) {
-          this.typeWriting.rewrite(splitted2[i], () => {});
-       }
-     }
+  private renderContent(): void {
+    ($ as any)('#' + this.guid + "-AnimatedText").letterfx({
+      "fx": this.properties.effect != null ? this.properties.effect : "spin",
+      "backwards": this.properties.effectDirection == "backwards" ? true : false,
+      "timing":  this.properties.timing != null ? this.properties.timing : 50,
+      "fx_duration": this.properties.duration != null ? this.properties.duration + "ms" : "1000ms",
+      "letter_end": this.properties.letterEnd != null ? this.properties.letterEnd : "restore",
+      "element_end": this.properties.elementEnd != null ? this.properties.elementEnd : "restore"
+    });
   }
 
   private getGuid(): string {
@@ -107,30 +109,57 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   label: strings.Text,
                   multiline: true
                 }),
-                PropertyPaneToggle('splitLines', {
-                  label: strings.SplitLines
-                })
-              ]
-            },
-            {
-              groupName: strings.TypeWritingGroupName,
-              groupFields: [
-                PropertyPaneSlider('typingInterval', {
-                  label: strings.TypingInterval,
-                  min: 0,
-                  max: 500,
-                  step: 10
+                PropertyPaneDropdown('effect', {
+                  label: strings.Effet,
+                  options: [
+                    {key: 'spin', text: 'spin'},
+                    {key: 'fade', text: 'fade'},
+                    {key: 'grow', text: 'grow'},
+                    {key: 'smear', text: 'smear'},
+                    {key: 'fall', text: 'fall'},
+                    {key: 'swirl', text: 'swirl'},
+                    {key: 'wave', text: 'wave'},
+                    {key: 'fly-top', text: 'fly-top'},
+                    {key: 'fly-bottom', text: 'fly-bottom'},
+                    {key: 'fly-left', text: 'fly-left'},
+                    {key: 'fly-right', text: 'fly-right'}
+                  ]
                 }),
-                PropertyPaneSlider('blinkInterval', {
-                  label: strings.BlinkInterval,
+                PropertyPaneDropdown('effectDirection', {
+                  label: strings.Direction,
+                  options: [
+                    {key: 'forward', text: 'forward'},
+                    {key: 'backwards', text: 'backwards'}
+                  ]
+                }),
+                PropertyPaneSlider('timing', {
+                  label: strings.Timing,
                   min: 0,
-                  max: 5000,
+                  max: 100,
+                  step: 1
+                }),
+                PropertyPaneSlider('duration', {
+                  label: strings.Duration,
+                  min: 0,
+                  max: 2000,
                   step: 50
                 }),
-                PropertyFieldColorPicker('cursorColor', {
-                  label: strings.CursorColor,
-                  initialColor: this.properties.cursorColor,
-                  onPropertyChange: this.onPropertyChange
+                PropertyPaneDropdown('letterEnd', {
+                  label: strings.LetterEnd,
+                  options: [
+                    {key: 'restore', text: 'restore'},
+                    {key: 'stay', text: 'stay'},
+                    {key: 'destroy', text: 'destroy'},
+                    {key: 'rewind', text: 'rewind'}
+                  ]
+                }),
+                PropertyPaneDropdown('elementEnd', {
+                  label: strings.ElementEnd,
+                  options: [
+                    {key: 'restore', text: 'restore'},
+                    {key: 'stay', text: 'stay'},
+                    {key: 'destroy', text: 'destroy'}
+                  ]
                 })
               ]
             },
