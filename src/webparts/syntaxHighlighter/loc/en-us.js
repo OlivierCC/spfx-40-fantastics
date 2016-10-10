@@ -1,6 +1,6 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Customize your text effect settings",
+    "PropertyPaneDescription": "Customize your syntax highlighter settings",
     "BasicGroupName": "General",
     "Language":  "Language (could force to refresh the page)",
     "Theme":  "Theme",
