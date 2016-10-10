@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "7bd1d81d-c811-461b-1704-ad1b5e31dc2c",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Image Color" },
+    "description": { "default": "ImageColor description" },
+    "officeFabricIconFontName": "Font",
+    "properties": {
+      "alt": "",
+      "linkText": "",
+      "linkUrl": ""
+    }
+  }]
+}

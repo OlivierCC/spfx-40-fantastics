@@ -71,6 +71,11 @@
       "outputPath": "./dist/textRotator.bundle.js"
     },
     {
+      "entry": "./lib/webparts/imageColor/ImageColorWebPart.js",
+      "manifest": "./src/webparts/imageColor/ImageColorWebPart.manifest.json",
+      "outputPath": "./dist/imageColor.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -124,6 +129,7 @@
     "SyntaxHighlighterStrings": "webparts/code/loc/{locale}.js",
     "MessageBarStrings": "webparts/messageBar/loc/{locale}.js",
     "TextRotatorStrings": "webparts/textRotator/loc/{locale}.js",
+    "ImageColorStrings": "webparts/imageColor/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

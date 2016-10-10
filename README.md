@@ -27,6 +27,13 @@ Overview |  Web Part |  Description
 ![Grid Gallery](./assets/overviewgridgallery.png) | [**Grid Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Grid-Gallery) | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | [**Photopile**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Photopile) | Generate a pile of photos from a SharePoint pictures library
 
+### Images Tools
+
+Overview |  Web Part |  Description
+------------ | ----------- | -----------
+![Image Color](./assets/overviewimagecolor.png) | [**Image Color**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Color) |  A web part to insert a picture and choose a color effect to apply on it.
+
+
 ### Text Tools
 
 Overview |  Web Part |  Description
