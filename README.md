@@ -32,6 +32,7 @@ Overview |  Web Part |  Description
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![Markdown](./assets/overviewmarkdown.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Markdown) | Insert a text with a Markdown (MD) editor & markdown syntax
+![Syntax Highlighter](./assets/overviewsyntaxhighlighter.png) | [**Syntax Highlighter**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Syntax-Highlighter) | Insert a web part to display code with automatic syntax highlighter (Js, C#, VB, etc.)
 ![FckText](./assets/overviewfcktextsmall.png) | [**Fck Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Fck-Text) | Insert text in your pages and edit it with the popular FCK Editor
 ![AnimatedText](./assets/overviewanimatedtext.png) | [**Animated Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/AnimatedText) | Insert a text with an effect as fade, swing, etc.
 ![Text Rotator](./assets/overviewtextrotator.png) | [**Text Rotator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Text-Rotator) | Automatic rotator between text messages with a transition effect

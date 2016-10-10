@@ -56,9 +56,9 @@
       "outputPath": "./dist/animatedText.bundle.js"
     },
     {
-      "entry": "./lib/webparts/code/CodeWebPart.js",
-      "manifest": "./src/webparts/code/CodeWebPart.manifest.json",
-      "outputPath": "./dist/code.bundle.js"
+      "entry": "./lib/webparts/syntaxHighlighter/SyntaxHighlighterWebPart.js",
+      "manifest": "./src/webparts/syntaxHighlighter/SyntaxHighlighterWebPart.manifest.json",
+      "outputPath": "./dist/syntaxHighlighter.bundle.js"
     },
     {
       "entry": "./lib/webparts/messageBar/MessageBarWebPart.js",
@@ -121,7 +121,7 @@
     "MarkdownStrings": "webparts/markdown/loc/{locale}.js",
     "TypeWritingStrings": "webparts/typeWriting/loc/{locale}.js",
     "AnimatedTextStrings": "webparts/animatedText/loc/{locale}.js",
-    "CodeStrings": "webparts/code/loc/{locale}.js",
+    "SyntaxHighlighterStrings": "webparts/code/loc/{locale}.js",
     "MessageBarStrings": "webparts/messageBar/loc/{locale}.js",
     "TextRotatorStrings": "webparts/textRotator/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"

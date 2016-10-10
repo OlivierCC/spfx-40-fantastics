@@ -9,11 +9,17 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "Code" },
-    "description": { "default": "Code description" },
+    "title": { "default": "Syntax Highlighter" },
+    "description": { "default": "Syntax Highlighter description" },
     "officeFabricIconFontName": "Font",
     "properties": {
-      "text": ""
+      "code": "function hello(){\n  console.writeLine('hello !');\n}",
+      "language": "js",
+      "theme": "shThemeDefault.min.css",
+      "toolbar": true,
+      "gutter": true,
+      "autoLinks": true,
+      "smartTabs": true
     }
   }]
 }
