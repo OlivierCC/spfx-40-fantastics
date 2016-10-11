@@ -9,7 +9,7 @@ define([], function() {
     "Linkedin": "Linkedin",
     "Twitter": "Twitter",
     "Facebook": "Facebook",
-    "GooglePlus": "GooglePlus",
+    "GooglePlus": "Google Plus",
     "More": "More Button",
     "Count": "Show Count",
     "Services": "Additional Services"
