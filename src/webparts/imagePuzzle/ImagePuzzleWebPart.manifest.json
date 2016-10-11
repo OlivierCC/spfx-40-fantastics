@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "65c7a7f0-6875-4731-8956-2a8d423edc1d",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Image Puzzle" },
+    "description": { "default": "ImagePuzzle description" },
+    "officeFabricIconFontName": "Picture",
+    "properties": {
+      "image": "",
+      "alt": "",
+      "linkText": "",
+      "linkUrl": "",
+      "width": "",
+      "height": "",
+      "frequence": 2000,
+      "columns": 4,
+      "rows" : 4,
+      "margin": 2,
+      "distinct": false
+    }
+  }]
+}

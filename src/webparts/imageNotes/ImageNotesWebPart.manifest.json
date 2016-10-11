@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "d0f9e0eb-7a28-4c30-8459-e04a48beda2a",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Image Notes" },
+    "description": { "default": "ImageNotes description" },
+    "officeFabricIconFontName": "Picture",
+    "properties": {
+      "alt": "",
+      "linkText": "",
+      "linkUrl": ""
+    }
+  }]
+}

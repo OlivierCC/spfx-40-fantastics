@@ -32,7 +32,7 @@ Overview |  Web Part |  Description
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![Image Color](./assets/overviewimagecolor.png) | [**Image Color**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Color) |  A web part to insert a picture and choose a color effect to apply on it.
-
+![Image Puzzle](./assets/overviewimagepuzzle.png) | [**Image Puzzle**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Puzzle) |  A web part to insert a picture and add a puzzle split animation.
 
 ### Text Tools
 

@@ -76,6 +76,11 @@
       "outputPath": "./dist/imageColor.bundle.js"
     },
     {
+      "entry": "./lib/webparts/imagePuzzle/ImagePuzzleWebPart.js",
+      "manifest": "./src/webparts/imagePuzzle/ImagePuzzleWebPart.manifest.json",
+      "outputPath": "./dist/imagePuzzle.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -109,6 +114,11 @@
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
+    "jigsaw": {
+      "path": "src/webparts/imagePuzzle/js/jquery.image-jigsaw.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
     "typewriting": "node_modules/typewriting/build/typewriting.min.js",
     "jqueryui": "node_modules/jqueryui/jquery-ui.js",
     "photopileModule": "src/webparts/photopileWebPart/js/photopile.js"
@@ -130,6 +140,7 @@
     "MessageBarStrings": "webparts/messageBar/loc/{locale}.js",
     "TextRotatorStrings": "webparts/textRotator/loc/{locale}.js",
     "ImageColorStrings": "webparts/imageColor/loc/{locale}.js",
+    "ImagePuzzleStrings": "webparts/imagePuzzle/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }
