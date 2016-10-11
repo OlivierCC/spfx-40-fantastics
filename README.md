@@ -38,7 +38,7 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![Tweets Feed](./assets/overviewtweetsfeed.png) | [**Tweets Feed**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tweets-Feed) |  A web part to insert twitter feed from a specified account in a SharePoint page.
+![Tweets Feed](./assets/overviewtweedsfeed.png) | [**Tweets Feed**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tweets-Feed) |  A web part to insert twitter feed from a specified account in a SharePoint page.
 
 ### Text Tools
 
