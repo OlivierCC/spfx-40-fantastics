@@ -17,6 +17,13 @@ Overview |  Web Part |  Description
 ![3d carousel](./assets/overview3dcarousel.png) | [**3D Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/3D-Carousel) | Insert a 3D Carousel in your SharePoint pages
 ![Coverflow](./assets/overviewcoverflow.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow apple like menu in your pages
 
+### Social Tools
+
+Overview |  Web Part |  Description
+------------ | ----------- | -----------
+![Tweets Feed](./assets/overviewtweedsfeed.png) | [**Tweets Feed**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tweets-Feed) |  A web part to insert twitter feed from a specified account in a SharePoint page.
+![Social Share](./assets/overviewtsocialshare.png) | [**Social Share**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Share) |  A web part to insert social share buttons as Yammer, Linkedin, Twitter, Facebook and more than 100 other social providers thanks to the Addthis services.
+
 ### Images Galleries
 
 Overview |  Web Part |  Description
@@ -26,20 +33,6 @@ Overview |  Web Part |  Description
 ![Simple Carousel](./assets/overviewsimplecarousel.png) | [**Simple Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Simple-Carousel) | Insert a pictures carousel from a SharePoint pictures library
 ![Grid Gallery](./assets/overviewgridgallery.png) | [**Grid Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Grid-Gallery) | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | [**Photopile**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Photopile) | Generate a pile of photos from a SharePoint pictures library
-
-### Images Tools
-
-Overview |  Web Part |  Description
------------- | ----------- | -----------
-![Image Color](./assets/overviewimagecolor.png) | [**Image Color**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Color) |  A web part to insert a picture and choose a color effect to apply on it.
-![Image Puzzle](./assets/overviewimagepuzzle.png) | [**Image Puzzle**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Puzzle) |  A web part to insert a picture and add a puzzle split animation.
-
-### Social Tools
-
-Overview |  Web Part |  Description
------------- | ----------- | -----------
-![Tweets Feed](./assets/overviewtweedsfeed.png) | [**Tweets Feed**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tweets-Feed) |  A web part to insert twitter feed from a specified account in a SharePoint page.
-![Social Share](./assets/overviewtsocialshare.png) | [**Social Share**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Share) |  A web part to insert social share buttons as Yammer, Linkedin, Twitter, Facebook and more than 100 other social providers thanks to the Addthis services.
 
 ### Text Tools
 
@@ -52,6 +45,13 @@ Overview |  Web Part |  Description
 ![Text Rotator](./assets/overviewtextrotator.png) | [**Text Rotator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Text-Rotator) | Automatic rotator between text messages with a transition effect
 ![ArcText](./assets/overviewarctext.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 ![TypeWriting](./assets/overviewtypewriting.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Type-Writing) | Insert a text with a type writing effect
+
+### Images Tools
+
+Overview |  Web Part |  Description
+------------ | ----------- | -----------
+![Image Color](./assets/overviewimagecolor.png) | [**Image Color**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Color) |  A web part to insert a picture and choose a color effect to apply on it.
+![Image Puzzle](./assets/overviewimagepuzzle.png) | [**Image Puzzle**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Puzzle) |  A web part to insert a picture and add a puzzle split animation.
 
 ### Tools
 
