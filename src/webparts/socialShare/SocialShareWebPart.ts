@@ -90,7 +90,7 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
                   label: strings.Pubid
                 }),
                 PropertyPaneDropdown('size', {
-                  label: strings.Style,
+                  label: strings.Size,
                   options: [
                     {key: '16x16', text: '16x16'},
                     {key: '32x32', text: '32x32'},
