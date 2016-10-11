@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "74ebd2e5-98b8-46cf-89a1-cacef2f52203",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Social Share" },
+    "description": { "default": "Tweets Feed description" },
+    "officeFabricIconFontName": "Share",
+    "properties": {
+      "pubid": "ra-",
+      "size": "32x32",
+      "style": "default",
+      "yammer": true,
+      "linkedin": true,
+      "twitter": true,
+      "facebook": true,
+      "googlePlus": true,
+      "more": true,
+      "count": true,
+      "services": []
+    }
+  }]
+}

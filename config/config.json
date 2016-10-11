@@ -91,6 +91,11 @@
       "outputPath": "./dist/tweetsFeed.bundle.js"
     },
     {
+      "entry": "./lib/webparts/socialShare/SocialShareWebPart.js",
+      "manifest": "./src/webparts/socialShare/SocialShareWebPart.manifest.json",
+      "outputPath": "./dist/socialShare.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -153,6 +158,7 @@
     "ImagePuzzleStrings": "webparts/imagePuzzle/loc/{locale}.js",
     "QrCodeStrings": "webparts/qrCode/loc/{locale}.js",
     "TweetsFeedStrings": "webparts/tweetsFeed/loc/{locale}.js",
+    "SocialShareStrings": "webparts/socialShare/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }
