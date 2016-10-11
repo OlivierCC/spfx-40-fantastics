@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Text Rotator" },
     "description": { "default": "Text Rotator description" },
-    "officeFabricIconFontName": "Font",
+    "officeFabricIconFontName": "Refresh",
     "properties": {
       "text": "Lipsum lipsum\ncorpus vae vista",
       "font":  "",

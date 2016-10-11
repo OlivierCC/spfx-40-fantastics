@@ -11,7 +11,7 @@
     "group": { "default": "Default" },
     "title": { "default": "Photopile" },
     "description": { "default": "PhotopileWebPart description" },
-    "officeFabricIconFontName": "PhotoCollection",
+    "officeFabricIconFontName": "StackIndicator",
     "properties": {
       "listName": "",
       "orderBy": "ID",

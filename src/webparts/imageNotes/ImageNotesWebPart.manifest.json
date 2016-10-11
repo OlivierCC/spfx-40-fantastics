@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Image Notes" },
     "description": { "default": "ImageNotes description" },
-    "officeFabricIconFontName": "Picture",
+    "officeFabricIconFontName": "POI",
     "properties": {
       "alt": "",
       "linkText": "",

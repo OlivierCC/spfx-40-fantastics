@@ -1,7 +1,7 @@
 {
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
-  "id": "1631c215-2c2a-479c-ae83-510474c79c88",
+  "id": "89bdfa67-e90d-4b2b-b2db-18dbba2c71cd",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,
@@ -9,14 +9,14 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "Fck Text" },
-    "description": { "default": "FckText description" },
-    "officeFabricIconFontName": "ClearFormatting",
+    "title": { "default": "QR Code" },
+    "description": { "default": "QrCode description" },
+    "officeFabricIconFontName": "Camera",
     "properties": {
-      "text": "",
-      "inline": true,
-      "mode": "full",
-      "theme": "kama"
+      "text": "https://contoso.sharepoint.com",
+      "width": 250,
+      "height": 250,
+      "mode": "canvas"
     }
   }]
 }

@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "TypeWriting" },
     "description": { "default": "TypeWriting description" },
-    "officeFabricIconFontName": "Font",
+    "officeFabricIconFontName": "Underline",
     "properties": {
       "text": "Lipsum",
       "splitLines": true,

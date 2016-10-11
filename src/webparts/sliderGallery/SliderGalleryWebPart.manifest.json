@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Slider Gallery" },
     "description": { "default": "Slider description" },
-    "officeFabricIconFontName": "Picture",
+    "officeFabricIconFontName": "Play",
     "properties": {
       "enableArrows": true,
       "enableBullets": true,

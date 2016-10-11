@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Image Color" },
     "description": { "default": "ImageColor description" },
-    "officeFabricIconFontName": "Picture",
+    "officeFabricIconFontName": "Photo2Add",
     "properties": {
       "alt": "",
       "linkText": "",

@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Markdown" },
     "description": { "default": "Markdown description" },
-    "officeFabricIconFontName": "Font",
+    "officeFabricIconFontName": "Header",
     "properties": {
       "text": "",
       "toolbar": true,

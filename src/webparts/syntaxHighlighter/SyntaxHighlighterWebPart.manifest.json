@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Syntax Highlighter" },
     "description": { "default": "Syntax Highlighter description" },
-    "officeFabricIconFontName": "Font",
+    "officeFabricIconFontName": "Embed",
     "properties": {
       "code": "function hello(){\n  console.writeLine('hello !');\n}",
       "language": "js",
