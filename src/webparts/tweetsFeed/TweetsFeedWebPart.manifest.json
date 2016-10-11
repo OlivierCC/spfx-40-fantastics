@@ -9,13 +9,19 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "Image Notes" },
-    "description": { "default": "ImageNotes description" },
-    "officeFabricIconFontName": "POI",
+    "title": { "default": "Tweets Feed" },
+    "description": { "default": "Tweets Feed description" },
+    "officeFabricIconFontName": "TwitterLogo",
     "properties": {
-      "alt": "",
-      "linkText": "",
-      "linkUrl": ""
+      "autoLimit": true,
+      "limit": 250,
+      "header": true,
+      "footer": false,
+      "borders": false,
+      "scrollbars": true,
+      "transparent": true,
+      "linkColor": "#820bbb",
+      "borderColor": "#a80000"
     }
   }]
 }
