@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "cc3483eb-bb8b-45ac-95f5-8dd8529a2a5c",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Polar Chart" },
+    "description": { "default": "Polar Chart description" },
+    "officeFabricIconFontName": "Chart",
+    "properties": {
+        "responsive": false,
+        "width": 450,
+        "height": 450,
+        "animateRotate": true,
+        "animateScale": false,
+        "position": "top",
+        "title": "Colors Polar Chart",
+        "titleEnable": true,
+        "titleColor": "#666",
+        "titleSize": "12px",
+        "legendEnable": true,
+        "legendPosition": "top",
+        "legendColor": "#666",
+        "legendSize": "12px",
+        "items": [
+          { "Label": "Red", "Value": 11, "Color": "#FF6384", "Hover Color": "#FF6384"},
+          { "Label": "Green", "Value": 16, "Color": "#4BC0C0", "Hover Color": "#4BC0C0"},
+          { "Label": "Yellow", "Value": 7, "Color": "#FFCE56", "Hover Color": "#FFCE56"},
+          { "Label": "Grey", "Value": 3, "Color": "#E7E9ED", "Hover Color": "#E7E9ED"},
+          { "Label": "Blue", "Value": 14, "Color": "#36A2EB", "Hover Color": "#36A2EB"}
+        ]
+    }
+  }]
+}
