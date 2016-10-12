@@ -111,6 +111,11 @@
       "outputPath": "./dist/polarChart.bundle.js"
     },
     {
+      "entry": "./lib/webparts/lineChart/LineChartWebPart.js",
+      "manifest": "./src/webparts/lineChart/LineChartWebPart.manifest.json",
+      "outputPath": "./dist/lineChart.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/stockInfo/StockInfoWebPart.js",
       "manifest": "./src/webparts/stockInfo/StockInfoWebPart.manifest.json",
       "outputPath": "./dist/stockInfo.bundle.js"
@@ -182,6 +187,7 @@
     "PieChartStrings": "webparts/pieChart/loc/{locale}.js",
     "BarChartStrings": "webparts/barChart/loc/{locale}.js",
     "PolarChartStrings": "webparts/polarChart/loc/{locale}.js",
+    "LineChartStrings": "webparts/lineChart/loc/{locale}.js",
     "StockInfoStrings": "webparts/stockInfo/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }

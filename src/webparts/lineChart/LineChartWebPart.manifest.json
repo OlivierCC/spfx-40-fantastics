@@ -1,0 +1,43 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "802fdd09-ea24-4929-bf84-be665dd89420",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Line Chart" },
+    "description": { "default": "Line Chart description" },
+    "officeFabricIconFontName": "Chart",
+    "properties": {
+        "responsive": false,
+        "horizontal": true,
+        "xAxesEnable": true,
+        "yAxesEnable": true,
+        "width": 450,
+        "height": 450,
+        "position": "top",
+        "title": "Months Line Chart",
+        "titleEnable": true,
+        "titleColor": "#666",
+        "titleSize": "12px",
+        "pointStyle": "circle",
+        "fill": true,
+        "lineTension": 0.25,
+        "showLine": true,
+        "steppedLine": false,
+        "fillColor": "rgba(75, 192, 192, 0.2)",
+        "items": [
+          { "Label": "January", "Value": 65},
+          { "Label": "February", "Value": 59},
+          { "Label": "March", "Value": 80},
+          { "Label": "April", "Value": 81},
+          { "Label": "May", "Value": 56},
+          { "Label": "June", "Value": 55}
+        ]
+    }
+  }]
+}
