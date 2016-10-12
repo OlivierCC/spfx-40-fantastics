@@ -66,6 +66,7 @@ Overview |  Web Part |  Description
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![MessageBar](./assets/overviewmessagebar.png) | [**Message Bar**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Message-Bar) | Insert a message bar to your page, for example set a maintenance warning text, etc.
+![StockInfo](./assets/overviewstockinfo.png) | [**Stock Info**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Stock-Info) | Generates as graph picture the current stock value of a specified stock.
 ![QRCode](./assets/overviewqrcode.png) | [**QR Code**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/QR-Code) | Insert a QR Code in your SharePoint pages and modify the associated text, size, etc.
 
 ## Building the code

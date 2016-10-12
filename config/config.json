@@ -111,6 +111,11 @@
       "outputPath": "./dist/polarChart.bundle.js"
     },
     {
+      "entry": "./lib/webparts/stockInfo/StockInfoWebPart.js",
+      "manifest": "./src/webparts/stockInfo/StockInfoWebPart.manifest.json",
+      "outputPath": "./dist/stockInfo.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -177,6 +182,7 @@
     "PieChartStrings": "webparts/pieChart/loc/{locale}.js",
     "BarChartStrings": "webparts/barChart/loc/{locale}.js",
     "PolarChartStrings": "webparts/polarChart/loc/{locale}.js",
+    "StockInfoStrings": "webparts/stockInfo/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "944744d9-a870-4bb7-a732-f63da7558609",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Stock Info" },
+    "description": { "default": "StockInfo description" },
+    "officeFabricIconFontName": "Financial",
+    "properties": {
+      "stock": "MSFT",
+      "lang": "en-US",
+      "region": "US",
+      "width": 250,
+      "height": 250
+    }
+  }]
+}
