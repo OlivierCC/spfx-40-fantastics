@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "6510e024-b86d-479b-8a75-39b439bfc34d",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Pie Chart" },
+    "description": { "default": "Pie Chart description" },
+    "officeFabricIconFontName": "Chart",
+    "properties": {
+        "responsive": false,
+        "width": 400,
+        "height": 400,
+        "cutoutPercentage": 0,
+        "animateRotate": true,
+        "animateScale": false,
+        "position": "top",
+        "title": "Colors Pie",
+        "titleEnable": true,
+        "titleColor": "#666",
+        "titleSize": "12px",
+        "legendEnable": true,
+        "legendPosition": "top",
+        "legendColor": "#666",
+        "legendSize": "12px",
+
+        "items": [
+          { "Label": "Red", "Value": 300, "Color": "#FF6384", "Hover Color": "#FF6384"},
+          { "Label": "Blue", "Value": 50, "Color": "#36A2EB", "Hover Color": "#36A2EB"},
+          { "Label": "Yellow", "Value": 100, "Color": "#FFCE56", "Hover Color": "#FFCE56"}
+        ]
+    }
+  }]
+}
