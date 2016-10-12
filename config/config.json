@@ -101,6 +101,11 @@
       "outputPath": "./dist/pieChart.bundle.js"
     },
     {
+      "entry": "./lib/webparts/barChart/BarChartWebPart.js",
+      "manifest": "./src/webparts/barChart/BarChartWebPart.manifest.json",
+      "outputPath": "./dist/barChart.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -165,6 +170,7 @@
     "TweetsFeedStrings": "webparts/tweetsFeed/loc/{locale}.js",
     "SocialShareStrings": "webparts/socialShare/loc/{locale}.js",
     "PieChartStrings": "webparts/pieChart/loc/{locale}.js",
+    "BarChartStrings": "webparts/barChart/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

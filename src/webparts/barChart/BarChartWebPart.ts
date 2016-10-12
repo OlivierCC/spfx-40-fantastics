@@ -1,6 +1,6 @@
 /**
  * @file
- * Pie Chart Web Part for SharePoint Framework SPFx
+ * Bar Chart Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016
@@ -15,8 +15,8 @@ import {
   IWebPartContext
 } from '@microsoft/sp-client-preview';
 
-import * as strings from 'PieChartStrings';
-import { IPieChartWebPartProps } from './IPieChartWebPartProps';
+import * as strings from 'BarChartStrings';
+import { IBarChartWebPartProps } from './IBarChartWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
@@ -24,7 +24,7 @@ import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
-export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebPartProps> {
+export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebPartProps> {
 
   private guid: string;
 
@@ -65,11 +65,6 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
       };
       var options = {
         responsive: this.properties.responsive != null ? this.properties.responsive : false,
-        cutoutPercentage: this.properties.cutoutPercentage != null ? this.properties.cutoutPercentage : 0,
-        animation: {
-            animateRotate: this.properties.animateRotate,
-            animateScale: this.properties.animateScale
-        },
         title: {
             display: this.properties.titleEnable,
             text: this.properties.title,
@@ -79,6 +74,18 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
             fontColor: this.properties.titleColor != null ? this.properties.titleColor : "#666"
         },
         legend: {
+            display: false
+        },
+        scales: {
+            xAxes: [{
+                display: this.properties.xAxesEnable
+            }],
+            yAxes: [{
+                display: this.properties.yAxesEnable
+            }]
+        }
+        /*
+        legend: {
             display: this.properties.legendEnable,
             position: this.properties.legendPosition != null ? this.properties.legendPosition : 'top',
             labels: {
@@ -86,11 +93,11 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                 fontFamily: this.properties.legendFont != null ? this.properties.legendFont : "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
                 fontSize: this.properties.legendSize != null ? Number(this.properties.legendSize.replace("px", "")) : 12
             }
-        }
+        }*/
       };
       var ctx = document.getElementById(this.guid);
       new Chart(ctx, {
-          type: 'pie',
+          type: this.properties.horizontal === true ? 'horizontalBar' : 'bar',
           data: data,
           options: options
       });
@@ -156,17 +163,14 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
             {
               groupName: strings.OptionsGroupName,
               groupFields: [
-                PropertyPaneSlider('cutoutPercentage', {
-                  label: strings.CutoutPercentage,
-                  min: 0,
-                  max: 99,
-                  step: 1
+                PropertyPaneToggle('horizontal', {
+                  label: strings.Horizontal
                 }),
-                PropertyPaneToggle('animateRotate', {
-                  label: strings.AnimateRotate
+                PropertyPaneToggle('xAxesEnable', {
+                  label: strings.XAxesEnable
                 }),
-                PropertyPaneToggle('animateScale', {
-                  label: strings.AnimateScale
+                PropertyPaneToggle('yAxesEnable', {
+                  label: strings.YAxesEnable
                 })
               ]
             },
@@ -205,42 +209,6 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
-                  onPropertyChange: this.onPropertyChange
-                })
-              ]
-            },
-            {
-              groupName: strings.LegendGroupName,
-              groupFields: [
-                PropertyPaneToggle('legendEnable', {
-                  label: strings.LegendEnable
-                }),
-                PropertyPaneDropdown('legendPosition', {
-                  label: strings.LegendPosition,
-                  options: [
-                    {key: 'top', text: 'top'},
-                    {key: 'left', text: 'left'},
-                    {key: 'bottom', text: 'bottom'},
-                    {key: 'right', text: 'right'}
-                  ]
-                }),
-                PropertyFieldFontPicker('legendFont', {
-                  label: strings.LegendFont,
-                  useSafeFont: true,
-                  previewFonts: true,
-                  initialValue: this.properties.legendFont,
-                  onPropertyChange: this.onPropertyChange
-                }),
-                PropertyFieldFontSizePicker('legendSize', {
-                  label: strings.LegendSize,
-                  usePixels: true,
-                  preview: true,
-                  initialValue: this.properties.legendSize,
-                  onPropertyChange: this.onPropertyChange
-                }),
-                PropertyFieldColorPicker('legendColor', {
-                  label: strings.LegendColor,
-                  initialColor: this.properties.legendColor,
                   onPropertyChange: this.onPropertyChange
                 })
               ]
