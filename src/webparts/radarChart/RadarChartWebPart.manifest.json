@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "fd2d0897-88b8-42a8-a825-1ec3bf68277f",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Radar Chart" },
+    "description": { "default": "Radar Chart description" },
+    "officeFabricIconFontName": "Chart",
+    "properties": {
+        "responsive": false,
+        "horizontal": true,
+        "xAxesEnable": true,
+        "yAxesEnable": true,
+        "width": 450,
+        "height": 450,
+        "position": "top",
+        "title": "Months Radar",
+        "titleEnable": true,
+        "titleColor": "#666",
+        "titleSize": "12px",
+        "pointStyle": "circle",
+        "fill": true,
+        "lineTension": 0.05,
+        "fillColor": "rgba(75, 192, 192, 0.3)",
+        "items": [
+          { "Label": "January", "Value": 65},
+          { "Label": "February", "Value": 59},
+          { "Label": "March", "Value": 90},
+          { "Label": "April", "Value": 81},
+          { "Label": "May", "Value": 56},
+          { "Label": "June", "Value": 55}
+        ]
+    }
+  }]
+}

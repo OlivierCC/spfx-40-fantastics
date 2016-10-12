@@ -116,6 +116,11 @@
       "outputPath": "./dist/lineChart.bundle.js"
     },
     {
+      "entry": "./lib/webparts/radarChart/RadarChartWebPart.js",
+      "manifest": "./src/webparts/radarChart/RadarChartWebPart.manifest.json",
+      "outputPath": "./dist/radarChart.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/stockInfo/StockInfoWebPart.js",
       "manifest": "./src/webparts/stockInfo/StockInfoWebPart.manifest.json",
       "outputPath": "./dist/stockInfo.bundle.js"
@@ -188,6 +193,7 @@
     "BarChartStrings": "webparts/barChart/loc/{locale}.js",
     "PolarChartStrings": "webparts/polarChart/loc/{locale}.js",
     "LineChartStrings": "webparts/lineChart/loc/{locale}.js",
+    "RadarChartStrings": "webparts/radarChart/loc/{locale}.js",
     "StockInfoStrings": "webparts/stockInfo/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }

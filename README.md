@@ -32,6 +32,7 @@ Overview |  Web Part |  Description
 ![Bar Chart](./assets/overviewbarchart.png) | [**Bar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bar-Chart) |  A web part to insert a bar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Polar Chart](./assets/overviewpolarchart.png) | [**Polar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Polar-Chart) |  A web part to insert a polar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Line Chart](./assets/overviewlinechart.png) | [**Line Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Line-Chart) |  A web part to insert a line chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
+![Radar Chart](./assets/overviewradarchart.png) | [**Radar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Radar-Chart) |  A web part to insert a radar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 
 ### Images Galleries
 
