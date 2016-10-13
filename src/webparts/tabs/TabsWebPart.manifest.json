@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "0824a209-e4f0-45a8-b630-99e5d72df5f5",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Tabs" },
+    "description": { "default": "Tabs description" },
+    "officeFabricIconFontName": "PageAdd",
+    "properties": {
+      "inline": false,
+      "mode": "full",
+      "theme": "kama",
+      "disableColor": "#f8f7ee",
+      "selectedColor": "#9cc943",
+      "tabs": [
+        { "Title": "Elementum", "Content": "<h1>Lorem ipsum dolor sit amet</h1><p>consectetur adipiscing elit. Fusce fringilla neque id metus egestas, vitae pharetra arcu porttitor. Nullam consequat id urna eu pellentesque. Fusce ut velit pellentesque, ornare libero sit amet, tristique neque. Cras   incidunt et nisl nec mattis. Proin nisi nunc, rhoncus ac laoreet eget, pulvinar quis nisl. Vestibulum libero massa, eleifend ut suscipit et, aliquet id lorem. Aliquam in ornare arcu. Curabitur non turpis tortor.</p> <p>Nunc vehicula convallis augue, a molestie elit feugiat id. Fusce semper fermentum est vel viverra. Nam pellentesque tempus tempus. In molestie rutrum maximus. Pellentesque eget nulla neque. Phasellus egestas tempus eros, et fermentum sem mattis eget. Fusce vulputate nisl et mauris condimentum, non semper nisl elementum. Duis placerat purus id libero aliquet, at fermentum nisi malesuada. Morbi congue orci id ipsum pellentesque, non consequat enim fringilla.</p>"},
+        { "Title": "Tab 2", "Content": "<b>Sample with rich html</b>"},
+        { "Title": "Tab 3", "Content": "<a href='#'>Link</a>"}
+      ]
+    }
+  }]
+}

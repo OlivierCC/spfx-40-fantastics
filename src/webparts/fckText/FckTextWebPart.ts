@@ -62,7 +62,8 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
         for (var i in CKEDITOR.instances) {
           CKEDITOR.instances[i].on('change', (elm?, val?) =>
           {
-            CKEDITOR.instances[i].updateElement();
+            //CKEDITOR.instances[i].updateElement();
+            elm.sender.updateElement();
             var value = ((document.getElementById(this.guid + '-editor')) as any).value;
             if (this.onPropertyChange && value != null) {
               this.properties.text = value;
