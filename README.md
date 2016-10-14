@@ -52,6 +52,7 @@ Overview |  Web Part |  Description
 ![Syntax Highlighter](./assets/overviewsyntaxhighlighter.png) | [**Syntax Highlighter**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Syntax-Highlighter) | Insert a web part to display code with automatic syntax highlighter (Js, C#, VB, etc.)
 ![FckText](./assets/overviewfcktextsmall.png) | [**Fck Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Fck-Text) | Insert text in your pages and edit it with the popular FCK Editor
 ![Tabs](./assets/overviewtabs.png) | [**Tabs**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tabs) | Insert a responsive and dynamic Tabs and edit the content of each tab with WYSIWYG editor
+![Accordion](./assets/overviewaccordion.png) | [**Accordion**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Accordion) | Insert an accordion and manage dynamically the tabs and the content thanks to the WYSIWYG editor
 ![AnimatedText](./assets/overviewanimatedtext.png) | [**Animated Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/AnimatedText) | Insert a text with an effect as fade, swing, etc.
 ![Text Rotator](./assets/overviewtextrotator.png) | [**Text Rotator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Text-Rotator) | Automatic rotator between text messages with a transition effect
 ![ArcText](./assets/overviewarctext.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
