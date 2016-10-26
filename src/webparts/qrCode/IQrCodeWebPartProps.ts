@@ -1,6 +1,6 @@
 /**
  * @file
- * 3D Carousel Web Part for SharePoint Framework SPFx
+ * QR Code Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016

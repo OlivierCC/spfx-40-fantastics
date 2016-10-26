@@ -1,6 +1,6 @@
 /**
  * @file
- * Animated Text Web Part for SharePoint Framework SPFx
+ * Image Puzzle Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016

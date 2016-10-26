@@ -1,6 +1,6 @@
 /**
  * @file
- * 3D Carousel Web Part for SharePoint Framework SPFx
+ * Accordion Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016

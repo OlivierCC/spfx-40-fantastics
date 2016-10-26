@@ -1,6 +1,6 @@
 /**
  * @file
- * Tiles Gallery Web Part for SharePoint Framework SPFx
+ * Grid Gallery Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016

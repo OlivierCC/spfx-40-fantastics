@@ -1,6 +1,6 @@
 /**
  * @file
- * Pie Chart Web Part for SharePoint Framework SPFx
+ * Line Chart Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016

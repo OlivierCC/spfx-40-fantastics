@@ -1,6 +1,6 @@
 /**
  * @file
- * 3D Carousel Web Part for SharePoint Framework SPFx
+ * Tweets Feed Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016

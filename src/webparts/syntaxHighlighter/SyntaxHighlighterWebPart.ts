@@ -1,6 +1,6 @@
 /**
  * @file
- * Animated Text Web Part for SharePoint Framework SPFx
+ * Syntax Highlighter Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016
