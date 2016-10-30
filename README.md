@@ -17,6 +17,12 @@ Overview |  Web Part |  Description
 ![3d carousel](./assets/overview3dcarousel.png) | [**3D Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/3D-Carousel) | Insert a 3D Carousel in your SharePoint pages
 ![Coverflow](./assets/overviewcoverflow.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow apple like menu in your pages
 
+### News Management
+
+Overview |  Web Part |  Description
+------------ | ----------- | -----------
+![News Carousel](./assets/overviewnewscarousel.png) | [**News Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Carousel) | Insert a News Carousel to add content highlight to your pages
+
 ### Social Tools
 
 Overview |  Web Part |  Description
