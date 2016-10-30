@@ -10,17 +10,13 @@ These WebParts are mainly based on best-class jQuery, React or Angular plugins a
 
 You can find here the following web parts:
 
-### Menu carousels
+### Menu & Carousels & News Management
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![3d carousel](./assets/overview3dcarousel.png) | [**3D Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/3D-Carousel) | Insert a 3D Carousel in your SharePoint pages
 ![Coverflow](./assets/overviewcoverflow.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow apple like menu in your pages
-
-### News Management
-
-Overview |  Web Part |  Description
------------- | ----------- | -----------
+![Tiles Menu](./assets/overviewtilesmenu.png) | [**Tiles Menu**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tiles-Menu) | Insert a menu items as smart tiles
 ![News Carousel](./assets/overviewnewscarousel.png) | [**News Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Carousel) | Insert a News Carousel to add content highlight to your pages
 
 ### Social Tools
