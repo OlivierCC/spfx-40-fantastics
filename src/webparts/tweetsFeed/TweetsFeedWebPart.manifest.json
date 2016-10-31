@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Tweets Feed" },
     "description": { "default": "Tweets Feed description" },
-    "officeFabricIconFontName": "TwitterLogo",
+    "officeFabricIconFontName": "Share",
     "properties": {
       "autoLimit": true,
       "limit": 250,

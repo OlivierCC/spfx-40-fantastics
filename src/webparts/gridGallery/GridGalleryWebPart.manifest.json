@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Grid Gallery" },
     "description": { "default": "Carousel description" },
-    "officeFabricIconFontName": "PhotoCollection",
+    "officeFabricIconFontName": "Photo2",
     "properties": {
       "enableArrows": true,
       "enableBullets": false,
