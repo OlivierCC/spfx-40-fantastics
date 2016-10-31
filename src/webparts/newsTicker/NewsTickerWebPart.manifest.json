@@ -1,0 +1,60 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "60564c9b-8561-489d-9ff7-1846c8358964",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "News Ticker" },
+    "description": { "default": "News Ticker description" },
+    "officeFabricIconFontName": "News",
+    "properties": {
+      "title": "Latest News",
+      "width": "100%",
+      "height": "30px",
+      "backgroundColor": "#347fd0",
+      "font": "Helvetica",
+      "fontSize": "16px",
+      "fontColor": "#ffffff",
+      "speed": "10",
+      "borderRadius": 4,
+      "pausedMouseHover": true,
+      "items": [
+        {
+          "Title": "Discover the new work station",
+          "Enable": "true",
+          "Link Url": "#"
+        },
+        {
+          "Title": "All the Intranet in your Smart Phone",
+          "Enable": "true",
+          "Link Url": "#"
+        },
+        {
+          "Title": "Take a break!",
+          "Enable": "true",
+          "Link Url": "#"
+        },
+        {
+          "Title": "Discover the new meeting areas",
+          "Enable": "true",
+          "Link Url": "#"
+        },
+        {
+          "Title": "New travel policies",
+          "Enable": "true",
+          "Link Url": "#"
+        },
+        {
+          "Title": "New commons",
+          "Enable": "false",
+          "Link Url": "#"
+        }
+      ]
+    }
+  }]
+}

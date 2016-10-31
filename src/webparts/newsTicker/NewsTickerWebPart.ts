@@ -1,0 +1,221 @@
+/**
+ * @file
+ * News Ticker Web Part for SharePoint Framework SPFx
+ *
+ * Author: Olivier Carpentier
+ * Copyright (c) 2016
+ */
+import {
+  BaseClientSideWebPart,
+  IPropertyPaneSettings,
+  PropertyPaneTextField,
+  PropertyPaneSlider,
+  PropertyPaneToggle,
+  IWebPartContext
+} from '@microsoft/sp-client-preview';
+
+import * as strings from 'NewsTickerStrings';
+import { INewsTickerWebPartProps } from './INewsTickerWebPartProps';
+
+import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
+import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
+import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
+
+export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTickerWebPartProps> {
+
+   private guid: string;
+
+  public constructor(context: IWebPartContext) {
+    super(context);
+
+    this.guid = this.getGuid();
+
+    //Hack: to invoke correctly the onPropertyChange function outside this class
+    //we need to bind this object on it first
+    this.onPropertyChange = this.onPropertyChange.bind(this);
+  }
+
+  public render(): void {
+
+    var html = '';
+    html += `
+<div class="news-${this.guid} color-${this.guid}">
+	<span>${this.properties.title}</span>
+	<ul>
+  `;
+
+    for (var i = 0; i < this.properties.items.length; i++) {
+      var item = this.properties.items[i];
+      if (item['Enable'] != 'false') {
+        html += '<li><a href="' + item['Link Url'] + '">' + item['Title'] + '</li>';
+      }
+    }
+
+    var paused = 'paused';
+    if (this.properties.pausedMouseHover === false)
+      paused = 'running';
+
+  html += `
+	</ul>
+</div>
+<style>
+@keyframes ticker {
+	0%   {margin-top: 0}
+	25%  {margin-top: -30px}
+	50%  {margin-top: -60px}
+	75%  {margin-top: -90px}
+	100% {margin-top: 0}
+}
+
+.news-${this.guid} {
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  width: ${this.properties.width};
+  height: ${this.properties.height};
+  overflow: hidden;
+  border-radius: ${this.properties.borderRadius}px;
+  padding: 3px;
+  -webkit-user-select: none
+}
+
+.news-${this.guid} span {
+  float: left;
+  color: ${this.properties.fontColor};
+  padding: 6px;
+  position: relative;
+  top: 1%;
+  border-radius: ${this.properties.borderRadius}px;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);
+  font: ${this.properties.fontSize} ${this.properties.font};
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer
+}
+
+.news-${this.guid} ul {
+  float: left;
+  padding-left: 20px;
+  animation: ticker ${this.properties.speed}s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.news-${this.guid} ul li {line-height: 30px; list-style: none }
+
+.news-${this.guid} ul li a {
+  color: #fff;
+  text-decoration: none;
+  font: 14px Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+
+.news-${this.guid} ul:hover { animation-play-state: ${paused} }
+.news-${this.guid} span:hover+ul { animation-play-state: ${paused} }
+
+/* OTHER COLORS */
+.color-${this.guid} { background: ${this.properties.backgroundColor} }
+</style>
+    `;
+    this.domElement.innerHTML = html;
+
+  }
+
+  private getGuid(): string {
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
+      this.s4() + '-' + this.s4() + this.s4() + this.s4();
+  }
+
+  private s4(): string {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+
+  protected get propertyPaneSettings(): IPropertyPaneSettings {
+    return {
+      pages: [
+        {
+          header: {
+            description: strings.PropertyPaneDescription
+          },
+          displayGroupsAsAccordion: true,
+          groups: [
+            {
+              groupName: strings.BasicGroupName,
+              groupFields: [
+                PropertyFieldCustomList('items', {
+                  label: strings.Items,
+                  value: this.properties.items,
+                  headerText: strings.ManageItems,
+                  fields: [
+                    { title: 'Title', required: true, type: CustomListFieldType.string },
+                    { title: 'Enable', required: true, type: CustomListFieldType.boolean },
+                    { title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
+                  ],
+                  onPropertyChange: this.onPropertyChange,
+                  context: this.context
+                }),
+                PropertyPaneSlider('speed', {
+                  label: strings.Speed,
+                  min: 1,
+                  max: 20,
+                  step: 1
+                }),
+                PropertyPaneToggle('pausedMouseHover', {
+                  label: strings.PausedMouseHover
+                })
+              ]
+            },
+            {
+              groupName: strings.LayoutGroupName,
+              groupFields: [
+                PropertyPaneTextField('width', {
+                  label: strings.Width
+                }),
+                PropertyPaneTextField('height', {
+                  label: strings.Height
+                }),
+                PropertyPaneSlider('borderRadius', {
+                  label: strings.BorderRadius,
+                  min: 0,
+                  max: 10,
+                  step: 1
+                }),
+                PropertyFieldColorPicker('backgroundColor', {
+                  label: strings.BackgroundColor,
+                  initialColor: this.properties.backgroundColor,
+                  onPropertyChange: this.onPropertyChange
+                })
+              ]
+            },
+            {
+              groupName: strings.TitleGroupName,
+              groupFields: [
+                PropertyPaneTextField('title', {
+                  label: strings.Title
+                }),
+                PropertyFieldFontPicker('font', {
+                  label: strings.Font,
+                  initialValue: this.properties.font,
+                  onPropertyChange: this.onPropertyChange
+                }),
+                PropertyFieldFontSizePicker('fontSize', {
+                  label: strings.FontSize,
+                  initialValue: this.properties.fontSize,
+                  usePixels: true,
+                  preview: true,
+                  onPropertyChange: this.onPropertyChange
+                }),
+                PropertyFieldColorPicker('fontColor', {
+                  label: strings.FontColor,
+                  initialColor: this.properties.fontColor,
+                  onPropertyChange: this.onPropertyChange
+                })
+              ]
+            }
+          ]
+        }
+      ]
+    };
+  }
+}
