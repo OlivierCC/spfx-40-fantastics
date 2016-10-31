@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "984ed076-d223-4a06-b7a2-0d47cbd815ce",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Bing Map" },
+    "description": { "default": "Bing Map description" },
+    "officeFabricIconFontName": "Globe",
+    "properties": {
+      "api": "",
+      "width": 800,
+      "height": 600,
+      "zoomLevel": 10,
+      "mapMode": "2D",
+      "mapStyle": "Road",
+      "pushPin": true,
+      "showDashBoard": true,
+      "dashBoardStyle": "Normal",
+      "showScaleBar": true,
+      "allowMouseWheelZoom": true
+    }
+  }]
+}

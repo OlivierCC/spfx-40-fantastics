@@ -146,6 +146,16 @@
       "outputPath": "./dist/tilesMenu.bundle.js"
     },
     {
+      "entry": "./lib/webparts/simplePoll/SimplePollWebPart.js",
+      "manifest": "./src/webparts/simplePoll/SimplePollWebPart.manifest.json",
+      "outputPath": "./dist/simplePoll.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/bingMap/BingMapWebPart.js",
+      "manifest": "./src/webparts/bingMap/BingMapWebPart.manifest.json",
+      "outputPath": "./dist/bingMap.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -184,6 +194,11 @@
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
+    "bingmap": {
+      "path": "src/webparts/bingMap/js/BingMap.1.1-min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
     "typewriting": "node_modules/typewriting/build/typewriting.min.js",
     "jqueryui": "node_modules/jqueryui/jquery-ui.js",
     "photopileModule": "src/webparts/photopileWebPart/js/photopile.js"
@@ -219,6 +234,8 @@
     "AccordionStrings": "webparts/accordion/loc/{locale}.js",
     "NewsCarouselStrings": "webparts/newsCarousel/loc/{locale}.js",
     "TilesMenuStrings": "webparts/tilesMenu/loc/{locale}.js",
+    "SimplePollStrings": "webparts/simplePoll/loc/{locale}.js",
+    "BingMapStrings": "webparts/bingMap/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

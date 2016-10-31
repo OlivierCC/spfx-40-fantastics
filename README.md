@@ -26,10 +26,11 @@ Overview |  Web Part |  Description
 ![Tweets Feed](./assets/overviewtweedsfeed.png) | [**Tweets Feed**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tweets-Feed) |  A web part to insert twitter feed from a specified account in a SharePoint page.
 ![Social Share](./assets/overviewtsocialshare.png) | [**Social Share**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Share) |  A web part to insert social share buttons as Yammer, Linkedin, Twitter, Facebook and more than 100 other social providers thanks to the Addthis services.
 
-### Charts & Graphs
+### Maps, Charts & Graphs
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
+![Bing Map](./assets/overviewbingmap.png) | [**Bing Map**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Map) |  A web part to insert an interactive map built with Bing Map Services in your pages.
 ![Pie Chart](./assets/overviewpiechart.png) | [**Pie Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Pie-Chart) |  A web part to insert a pie chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Bar Chart](./assets/overviewbarchart.png) | [**Bar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bar-Chart) |  A web part to insert a bar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Polar Chart](./assets/overviewpolarchart.png) | [**Polar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Polar-Chart) |  A web part to insert a polar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
