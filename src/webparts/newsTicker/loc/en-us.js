@@ -4,6 +4,7 @@ define([], function() {
     "BasicGroupName": "Items Settings",
     "LayoutGroupName": "Layout Settings",
     "TitleGroupName": "Title Settings",
+    "ItemsGroupName": "News Settings",
     "Width": "Width",
     "Height": "Height",
     "ManageItems": "Manage News Items",

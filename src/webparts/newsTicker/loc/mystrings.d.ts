@@ -3,6 +3,7 @@ declare interface INewsTickerStrings {
   BasicGroupName: string;
   LayoutGroupName: string;
   TitleGroupName: string;
+  ItemsGroupName: string;
   Title: string;
   Width: string;
   Height: string;

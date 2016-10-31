@@ -14,6 +14,9 @@ export interface INewsTickerWebPartProps {
   font: string;
   fontSize: string;
   fontColor: string;
+  fontMssg: string;
+  fontSizeMssg: string;
+  fontColorMssg: string;
   speed: number;
   align: string;
   borderRadius: number;

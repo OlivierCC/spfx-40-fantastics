@@ -99,12 +99,12 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
   -webkit-user-select: none
 }
 
-.news-${this.guid} ul li {line-height: 30px; list-style: none }
+.news-${this.guid} ul li {line-height: ${this.properties.height}; list-style: none }
 
 .news-${this.guid} ul li a {
-  color: #fff;
+  color: ${this.properties.fontColorMssg};
   text-decoration: none;
-  font: 14px Helvetica, Arial, sans-serif;
+  font: ${this.properties.fontSizeMssg} ${this.properties.fontMssg};
   -webkit-font-smoothing: antialiased;
   -webkit-user-select: none
 }
@@ -209,6 +209,28 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
+                  onPropertyChange: this.onPropertyChange
+                })
+              ]
+            },
+            {
+              groupName: strings.ItemsGroupName,
+              groupFields: [
+                PropertyFieldFontPicker('fontMssg', {
+                  label: strings.Font,
+                  initialValue: this.properties.fontMssg,
+                  onPropertyChange: this.onPropertyChange
+                }),
+                PropertyFieldFontSizePicker('fontSizeMssg', {
+                  label: strings.FontSize,
+                  initialValue: this.properties.fontSizeMssg,
+                  usePixels: true,
+                  preview: true,
+                  onPropertyChange: this.onPropertyChange
+                }),
+                PropertyFieldColorPicker('fontColorMssg', {
+                  label: strings.FontColor,
+                  initialColor: this.properties.fontColorMssg,
                   onPropertyChange: this.onPropertyChange
                 })
               ]

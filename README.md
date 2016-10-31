@@ -18,6 +18,7 @@ Overview |  Web Part |  Description
 ![Coverflow](./assets/overviewcoverflow.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow apple like menu in your pages
 ![Tiles Menu](./assets/overviewtilesmenu.png) | [**Tiles Menu**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tiles-Menu) | Insert a menu items as smart tiles
 ![News Carousel](./assets/overviewnewscarousel.png) | [**News Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Carousel) | Insert a News Carousel to add content highlight to your pages
+![News Ticker](./assets/overviewnewsticker.png) | [**News Ticker**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Ticker) | Insert a simple News Ticker to display news as a simple ribbon
 
 ### Social Tools
 
