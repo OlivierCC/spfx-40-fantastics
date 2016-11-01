@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "b27e9f72-10b4-4880-95e3-5ca8fb223a1c",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Media Player" },
+    "description": { "default": "MediaPlayer description" },
+    "officeFabricIconFontName": "Play",
+    "properties": {
+      "player": "youtube",
+      "html5video": "//cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.mp4",
+      "html5cover": "//cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.jpg",
+      "html5captions": [
+        { "Title": "English", "SrcLen": "en", "Url": "//cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.en.vtt" }
+      ],
+      "youtubeVideoId": "bTqVqk7FSmY",
+      "vimeoVideoId": "143418951",
+      "audio": "//cdn.selz.com/plyr/1.5/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3"
+    }
+  }]
+}

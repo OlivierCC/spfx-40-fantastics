@@ -50,6 +50,12 @@ Overview |  Web Part |  Description
 ![Grid Gallery](./assets/overviewgridgallery.png) | [**Grid Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Grid-Gallery) | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | [**Photopile**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Photopile) | Generate a pile of photos from a SharePoint pictures library
 
+### Video & Audio
+
+Overview |  Web Part |  Description
+------------ | ----------- | -----------
+![Media Player](./assets/overviewmediaplayer.png) | [**Media Player**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Media-Player) |  Insert a smart media player in your page with support of HTML 5 Audio & Video, Youtube and Vimeo
+
 ### Text Tools
 
 Overview |  Web Part |  Description

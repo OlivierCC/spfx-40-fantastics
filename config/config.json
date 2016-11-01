@@ -171,6 +171,11 @@
       "outputPath": "./dist/rssReader.bundle.js"
     },
     {
+      "entry": "./lib/webparts/mediaPlayer/MediaPlayerWebPart.js",
+      "manifest": "./src/webparts/mediaPlayer/MediaPlayerWebPart.manifest.json",
+      "outputPath": "./dist/mediaPlayer.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -254,6 +259,7 @@
     "NewsTickerStrings": "webparts/newsTicker/loc/{locale}.js",
     "NewsSliderStrings": "webparts/newsSlider/loc/{locale}.js",
     "RssReaderStrings": "webparts/rssReader/loc/{locale}.js",
+    "MediaPlayerStrings": "webparts/mediaPlayer/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }
