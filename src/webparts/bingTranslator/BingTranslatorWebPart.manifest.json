@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "81146368-785c-47c2-b313-66d83f1bb4f8",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Bing Translator" },
+    "description": { "default": "Bing Translator description" },
+    "officeFabricIconFontName": "Camera",
+    "properties": {
+      "theme": "Dark",
+      "color": "#ffffff",
+      "backgroundColor": "#555555",
+      "start": "Manual",
+      "language": ""
+    }
+  }]
+}
