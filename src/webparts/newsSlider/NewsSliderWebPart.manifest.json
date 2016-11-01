@@ -1,0 +1,75 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "f6adeeb5-6e0c-46e8-a2e3-88b193b6c424",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "4fae8f7d-099d-44b6-8450-17312bb0b275",
+    "group": { "default": "Under Development" },
+    "title": { "default": "News Slider" },
+    "description": { "default": "News Slider description" },
+    "officeFabricIconFontName": "News",
+    "properties": {
+      "enableArrows": true,
+      "enableBorder": false,
+      "enableIcons": false,
+      "borderColor": "#CCCCCC",
+      "border": 0,
+      "tileWidth": 160,
+      "tileHeight": 160,
+      "pauseOnMouseover": true,
+      "autoplay": true,
+      "speed": 2000,
+      "textPanelEnable": true,
+      "textPanelAlwaysOnTop": false,
+      "textPanelOpacity": 0.4,
+      "items": [
+        {
+          "Title": "Discover the new work station",
+          "Enable": "true",
+          "Description": "Smart, fast & easy: discover the new work station",
+          "Link Url": "#",
+          "Picture": "//static.pexels.com/photos/204611/pexels-photo-204611-large.jpeg"
+        },
+        {
+          "Title": "All the Intranet in your Smart Phone",
+          "Enable": "true",
+          "Description": "Stay connected with the Intranet App",
+          "Link Url": "#",
+          "Picture": "//static.pexels.com/photos/7423/pexels-photo-large.jpg"
+        },
+        {
+          "Title": "Take a break!",
+          "Enable": "true",
+          "Description": "Discover the new coffees selection",
+          "Link Url": "#",
+          "Picture": "//static.pexels.com/photos/70221/pexels-photo-70221-large.jpeg"
+        },
+        {
+          "Title": "Discover the new meeting areas",
+          "Enable": "true",
+          "Description": "New meeting areas available at Level 2",
+          "Link Url": "#",
+          "Picture": "//static.pexels.com/photos/7070/space-desk-workspace-coworking-large.jpg"
+        },
+        {
+          "Title": "New travel policies",
+          "Enable": "true",
+          "Description": "The new travel policies are available",
+          "Link Url": "#",
+          "Picture": "//static.pexels.com/photos/21014/pexels-photo-large.jpg"
+        },
+        {
+          "Title": "New commons",
+          "Enable": "false",
+          "Description": "View the video of the new commons",
+          "Link Url": "#",
+          "Picture": "//static.pexels.com/photos/58801/pexels-photo-58801-large.jpeg"
+        }
+      ]
+    }
+  }]
+}

@@ -161,6 +161,11 @@
       "outputPath": "./dist/newsTicker.bundle.js"
     },
     {
+      "entry": "./lib/webparts/newsSlider/NewsSliderWebPart.js",
+      "manifest": "./src/webparts/newsSlider/NewsSliderWebPart.manifest.json",
+      "outputPath": "./dist/newsSlider.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -242,6 +247,7 @@
     "SimplePollStrings": "webparts/simplePoll/loc/{locale}.js",
     "BingMapStrings": "webparts/bingMap/loc/{locale}.js",
     "NewsTickerStrings": "webparts/newsTicker/loc/{locale}.js",
+    "NewsSliderStrings": "webparts/newsSlider/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }
