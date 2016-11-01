@@ -27,6 +27,7 @@ Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![Tweets Feed](./assets/overviewtweedsfeed.png) | [**Tweets Feed**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tweets-Feed) |  A web part to insert twitter feed from a specified account in a SharePoint page.
 ![Social Share](./assets/overviewtsocialshare.png) | [**Social Share**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Share) |  A web part to insert social share buttons as Yammer, Linkedin, Twitter, Facebook and more than 100 other social providers thanks to the Addthis services.
+![RSS Reader](./assets/overviewrssreader.png) | [**RSS Reader**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Rss-Reader) |  A web part to insert a full client side RSS/Atom Feed in your SharePoint pages.
 
 ### Maps, Charts & Graphs
 
