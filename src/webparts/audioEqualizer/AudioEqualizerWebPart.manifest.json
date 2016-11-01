@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "e762c85a-f068-4067-a8c0-b5cdbf4fcce7",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Audio Equalizer" },
+    "description": { "default": "Audio Equalizer description" },
+    "officeFabricIconFontName": "Play",
+    "properties": {
+      "audio": "",
+      "audioType": "audio/mp3",
+      "width": 600,
+      "height": 150,
+      "color": "#800080",
+      "color1": "#B837F2",
+      "color2": "#009AD9",
+      "bars": 20,
+      "barMargin": 1,
+      "components": 10,
+      "componentMargin": 1,
+      "frequency": 9,
+      "refreshTime": 100
+    }
+  }]
+}
