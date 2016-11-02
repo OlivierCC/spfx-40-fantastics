@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "438e1c92-f33f-4952-aa36-add7530b6937",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "b6330715-c92a-479c-ae83-510474079988",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Social Photo Stream" },
+    "description": { "default": "Social Photo Stream description" },
+    "officeFabricIconFontName": "Share",
+    "properties": {
+      "network": "pinterest",
+      "userName": "microsoft",
+      "limit": 20,
+      "overlay": true,
+      "width": 100,
+      "height": 100,
+      "spacing": 5
+    }
+  }]
+}

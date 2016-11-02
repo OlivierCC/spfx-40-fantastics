@@ -186,6 +186,11 @@
       "outputPath": "./dist/bingTranslator.bundle.js"
     },
     {
+      "entry": "./lib/webparts/socialPhotoStream/SocialPhotoStreamWebPart.js",
+      "manifest": "./src/webparts/socialPhotoStream/SocialPhotoStreamWebPart.manifest.json",
+      "outputPath": "./dist/socialPhotoStream.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -239,6 +244,11 @@
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
+    "socialstream": {
+      "path": "src/webparts/socialPhotoStream/js/socialstream.jquery.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
     "typewriting": "node_modules/typewriting/build/typewriting.min.js",
     "jqueryui": "node_modules/jqueryui/jquery-ui.js",
     "photopileModule": "src/webparts/photopileWebPart/js/photopile.js"
@@ -282,6 +292,7 @@
     "MediaPlayerStrings": "webparts/mediaPlayer/loc/{locale}.js",
     "AudioEqualizerStrings": "webparts/audioEqualizer/loc/{locale}.js",
     "BingTranslatorStrings": "webparts/bingTranslator/loc/{locale}.js",
+    "SocialPhotoStreamStrings": "webparts/socialPhotoStream/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }
