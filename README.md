@@ -42,7 +42,7 @@ Overview |  Web Part |  Description
 ![Line Chart](./assets/overviewlinechart.png) | [**Line Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Line-Chart) |  A web part to insert a line chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Radar Chart](./assets/overviewradarchart.png) | [**Radar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Radar-Chart) |  A web part to insert a radar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 
-### Images Galleries
+### Images Galleries & Tools
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
@@ -51,6 +51,8 @@ Overview |  Web Part |  Description
 ![Simple Carousel](./assets/overviewsimplecarousel.png) | [**Simple Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Simple-Carousel) | Insert a pictures carousel from a SharePoint pictures library
 ![Grid Gallery](./assets/overviewgridgallery.png) | [**Grid Gallery**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Grid-Gallery) | Insert a pictures gallery with a grid panel from a SharePoint pictures library
 ![Photopile](./assets/overviewsliderphotopile.png) | [**Photopile**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Photopile) | Generate a pile of photos from a SharePoint pictures library
+![Image Color](./assets/overviewimagecolor.png) | [**Image Color**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Color) |  A web part to insert a picture and choose a color effect to apply on it.
+![Image Puzzle](./assets/overviewimagepuzzle.png) | [**Image Puzzle**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Puzzle) |  A web part to insert a picture and add a puzzle split animation.
 
 ### Video & Audio
 
@@ -72,13 +74,6 @@ Overview |  Web Part |  Description
 ![Text Rotator](./assets/overviewtextrotator_final.png) | [**Text Rotator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Text-Rotator) | Automatic rotator between text messages with a transition effect
 ![ArcText](./assets/overviewarctext_final.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 ![TypeWriting](./assets/overviewtypewriting_final.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Type-Writing) | Insert a text with a type writing effect
-
-### Images Tools
-
-Overview |  Web Part |  Description
------------- | ----------- | -----------
-![Image Color](./assets/overviewimagecolor.png) | [**Image Color**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Color) |  A web part to insert a picture and choose a color effect to apply on it.
-![Image Puzzle](./assets/overviewimagepuzzle.png) | [**Image Puzzle**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Puzzle) |  A web part to insert a picture and add a puzzle split animation.
 
 ### Tools
 
