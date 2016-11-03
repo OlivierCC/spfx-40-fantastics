@@ -6,7 +6,7 @@ This package is a sample kit of great Client Side Web Parts built on the SharePo
 You can find here different kind of high visual web parts as carousel, images galleries, etc. OK, now there is not 40 WP templates, but we're working on it.
 These WebParts are mainly based on best-class jQuery, React or Angular plugins and use the [sp-client-custom-fields library](https://github.com/OlivierCC/sp-client-custom-fields) to optimize the edit experience.
 
-![Logo](./assets/logo.png)
+![Logo](./assets/logo_final.png)
 
 You can find here the following web parts:
 
