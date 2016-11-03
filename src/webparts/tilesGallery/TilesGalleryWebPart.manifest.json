@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Tiles Gallery" },
     "description": { "default": "TilesGallery description" },
-    "officeFabricIconFontName": "Tiles",
+    "officeFabricIconFontName": "ViewAll2",
     "properties": {
       "justified": true,
       "enableIcons": true,

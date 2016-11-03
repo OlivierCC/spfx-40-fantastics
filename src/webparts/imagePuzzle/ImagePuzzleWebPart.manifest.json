@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Image Puzzle" },
     "description": { "default": "ImagePuzzle description" },
-    "officeFabricIconFontName": "Photo2Add",
+    "officeFabricIconFontName": "Puzzle",
     "properties": {
       "image": "",
       "alt": "",

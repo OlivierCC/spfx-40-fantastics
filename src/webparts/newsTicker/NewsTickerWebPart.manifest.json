@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "News Ticker" },
     "description": { "default": "News Ticker description" },
-    "officeFabricIconFontName": "News",
+    "officeFabricIconFontName": "NumberedList",
     "properties": {
       "title": "Latest News",
       "width": "100%",

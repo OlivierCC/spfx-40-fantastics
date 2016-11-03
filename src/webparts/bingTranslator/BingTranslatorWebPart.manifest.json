@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Bing Translator" },
     "description": { "default": "Bing Translator description" },
-    "officeFabricIconFontName": "Sync",
+    "officeFabricIconFontName": "BingLogo",
     "properties": {
       "theme": "Dark",
       "color": "#ffffff",

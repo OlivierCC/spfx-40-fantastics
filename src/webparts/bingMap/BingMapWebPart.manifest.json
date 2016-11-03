@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Bing Map" },
     "description": { "default": "Bing Map description" },
-    "officeFabricIconFontName": "Globe",
+    "officeFabricIconFontName": "POI",
     "properties": {
       "api": "",
       "width": 800,

@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Bar Chart" },
     "description": { "default": "Bar Chart description" },
-    "officeFabricIconFontName": "Chart",
+    "officeFabricIconFontName": "BarChart4",
     "properties": {
         "responsive": false,
         "horizontal": true,

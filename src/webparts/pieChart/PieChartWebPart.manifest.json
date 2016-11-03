@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Pie Chart" },
     "description": { "default": "Pie Chart description" },
-    "officeFabricIconFontName": "Chart",
+    "officeFabricIconFontName": "PieDouble",
     "properties": {
         "responsive": false,
         "width": 400,

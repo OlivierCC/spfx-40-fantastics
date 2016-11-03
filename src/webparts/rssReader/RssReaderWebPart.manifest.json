@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "RSS Reader" },
     "description": { "default": "RssReader description" },
-    "officeFabricIconFontName": "Share",
+    "officeFabricIconFontName": "InternetSharing",
     "properties": {
       "feedUrl": "https://blogs.office.com/feed/",
       "maxCount": 10,

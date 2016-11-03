@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Simple Poll" },
     "description": { "default": "Simple Poll Web Part" },
-    "officeFabricIconFontName": "MultiSelect",
+    "officeFabricIconFontName": "CustomList",
     "properties": {
       "question": "My lipsum sample curved title",
       "size": "28px"

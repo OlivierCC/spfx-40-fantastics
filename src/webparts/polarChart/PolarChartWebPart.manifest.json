@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Polar Chart" },
     "description": { "default": "Polar Chart description" },
-    "officeFabricIconFontName": "Chart",
+    "officeFabricIconFontName": "MarketDown",
     "properties": {
         "responsive": false,
         "width": 450,

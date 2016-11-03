@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Message Bar" },
     "description": { "default": "MessageBar description" },
-    "officeFabricIconFontName": "Message",
+    "officeFabricIconFontName": "Error",
     "properties": {
       "text": "<p>Warning: this site is <b>under maintenance</b>. <a href='#'>More info</a></p>",
       "font":  "",

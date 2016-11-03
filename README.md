@@ -35,6 +35,7 @@ Overview |  Web Part |  Description
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![Bing Map](./assets/overviewbingmap.png) | [**Bing Map**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Map) |  A web part to insert an interactive map built with Bing Map Services in your pages.
+![Vertical Timeline](./assets/overviewverticaltimeline.png) | [**Vertical Timeline**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Vertical-Timeline) |  A web part to generate a Facebook like vertical Timeline from SharePoint Calendar list items.
 ![Pie Chart](./assets/overviewpiechart.png) | [**Pie Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Pie-Chart) |  A web part to insert a pie chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Bar Chart](./assets/overviewbarchart.png) | [**Bar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bar-Chart) |  A web part to insert a bar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Polar Chart](./assets/overviewpolarchart.png) | [**Polar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Polar-Chart) |  A web part to insert a polar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.

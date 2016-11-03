@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Radar Chart" },
     "description": { "default": "Radar Chart description" },
-    "officeFabricIconFontName": "Chart",
+    "officeFabricIconFontName": "Starburst",
     "properties": {
         "responsive": false,
         "horizontal": true,

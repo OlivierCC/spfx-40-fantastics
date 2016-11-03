@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Accordion" },
     "description": { "default": "Accordion description" },
-    "officeFabricIconFontName": "PageAdd",
+    "officeFabricIconFontName": "DoubleChevronDown",
     "properties": {
       "inline": false,
       "mode": "full",

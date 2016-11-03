@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Audio Equalizer" },
     "description": { "default": "Audio Equalizer description" },
-    "officeFabricIconFontName": "Play",
+    "officeFabricIconFontName": "Equalizer",
     "properties": {
       "audio": "",
       "audioType": "audio/mp3",

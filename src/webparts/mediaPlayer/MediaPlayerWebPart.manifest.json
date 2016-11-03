@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Media Player" },
     "description": { "default": "MediaPlayer description" },
-    "officeFabricIconFontName": "Play",
+    "officeFabricIconFontName": "MusicInCollectionFill",
     "properties": {
       "player": "youtube",
       "html5video": "//cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.mp4",

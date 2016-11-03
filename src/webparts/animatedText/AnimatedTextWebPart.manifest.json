@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "AnimatedText" },
     "description": { "default": "AnimatedText description" },
-    "officeFabricIconFontName": "Font",
+    "officeFabricIconFontName": "FontSize",
     "properties": {
       "text": "Lipsum lipsum",
       "font":  "",

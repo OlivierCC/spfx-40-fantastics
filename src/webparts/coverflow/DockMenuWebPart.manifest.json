@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Coverflow" },
     "description": { "default": "Coverflow description" },
-    "officeFabricIconFontName": "StackIndicator",
+    "officeFabricIconFontName": "Sections",
     "properties": {
       "duration": "normal",
       "easing": "swing",

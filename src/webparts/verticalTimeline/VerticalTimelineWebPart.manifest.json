@@ -1,7 +1,7 @@
 {
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
-  "id": "438e1c92-f33f-4952-aa36-add7530b6937",
+  "id": "40ff328d-4e5e-4a07-9f71-7c17f42744e2",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,
@@ -9,17 +9,13 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "Social Photo Stream" },
-    "description": { "default": "Social Photo Stream description" },
-    "officeFabricIconFontName": "Photo2",
+    "title": { "default": "Vertical Timeline" },
+    "description": { "default": "Vertical Timeline description" },
+    "officeFabricIconFontName": "Timeline",
     "properties": {
-      "network": "pinterest",
-      "userName": "microsoft",
-      "limit": 20,
-      "overlay": true,
-      "width": 100,
-      "height": 100,
-      "spacing": 5
+      "icon": "ms-Icon--Calendar",
+      "color": "#000000",
+      "backgroundColor": "#efffef"
     }
   }]
 }

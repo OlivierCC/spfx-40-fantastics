@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Social Share" },
     "description": { "default": "Tweets Feed description" },
-    "officeFabricIconFontName": "Share",
+    "officeFabricIconFontName": "Like",
     "properties": {
       "pubid": "ra-",
       "size": "32x32",

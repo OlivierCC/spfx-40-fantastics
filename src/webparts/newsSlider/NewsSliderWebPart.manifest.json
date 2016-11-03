@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "News Slider" },
     "description": { "default": "News Slider description" },
-    "officeFabricIconFontName": "News",
+    "officeFabricIconFontName": "PageRight",
     "properties": {
       "enableArrows": true,
       "enableBorder": false,

@@ -191,6 +191,11 @@
       "outputPath": "./dist/socialPhotoStream.bundle.js"
     },
     {
+      "entry": "./lib/webparts/verticalTimeline/VerticalTimelineWebPart.js",
+      "manifest": "./src/webparts/verticalTimeline/VerticalTimelineWebPart.manifest.json",
+      "outputPath": "./dist/verticalTimeline.bundle.js"
+    },
+    {
       "entry": "./lib/webparts/photopileWebPart/PhotopileWebPartWebPart.js",
       "manifest": "./src/webparts/photopileWebPart/PhotopileWebPartWebPart.manifest.json",
       "outputPath": "./dist/photopile-web-part.bundle.js"
@@ -293,6 +298,7 @@
     "AudioEqualizerStrings": "webparts/audioEqualizer/loc/{locale}.js",
     "BingTranslatorStrings": "webparts/bingTranslator/loc/{locale}.js",
     "SocialPhotoStreamStrings": "webparts/socialPhotoStream/loc/{locale}.js",
+    "VerticalTimelineStrings": "webparts/verticalTimeline/loc/{locale}.js",
     "mystrings": "webparts/photopileWebPart/loc/{locale}.js"
   }
 }

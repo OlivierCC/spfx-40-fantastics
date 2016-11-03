@@ -11,7 +11,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "Tabs" },
     "description": { "default": "Tabs description" },
-    "officeFabricIconFontName": "PageAdd",
+    "officeFabricIconFontName": "Sections",
     "properties": {
       "inline": false,
       "mode": "full",
