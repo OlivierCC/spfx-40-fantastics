@@ -63,15 +63,15 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![Markdown](./assets/overviewmarkdown.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Markdown) | Insert a text with a Markdown (MD) editor & markdown syntax
-![Syntax Highlighter](./assets/overviewsyntaxhighlighter.png) | [**Syntax Highlighter**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Syntax-Highlighter) | Insert a web part to display code with automatic syntax highlighter (Js, C#, VB, etc.)
-![FckText](./assets/overviewfcktextsmall.png) | [**Fck Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Fck-Text) | Insert text in your pages and edit it with the popular FCK Editor
+![Markdown](./assets/overviewmarkdown_final.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Markdown) | Insert a text with a Markdown (MD) editor & markdown syntax
+![Syntax Highlighter](./assets/overviewsyntaxhighlighter_final.png) | [**Syntax Highlighter**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Syntax-Highlighter) | Insert a web part to display code with automatic syntax highlighter (Js, C#, VB, etc.)
+![FckText](./assets/overviewfcktextsmall_final.png) | [**Fck Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Fck-Text) | Insert text in your pages and edit it with the popular FCK Editor
 ![Tabs](./assets/overviewtabs.png) | [**Tabs**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tabs) | Insert a responsive and dynamic Tabs and edit the content of each tab with WYSIWYG editor
 ![Accordion](./assets/overviewaccordion.png) | [**Accordion**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Accordion) | Insert an accordion and manage dynamically the tabs and the content thanks to the WYSIWYG editor
-![AnimatedText](./assets/overviewanimatedtext.png) | [**Animated Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/AnimatedText) | Insert a text with an effect as fade, swing, etc.
-![Text Rotator](./assets/overviewtextrotator.png) | [**Text Rotator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Text-Rotator) | Automatic rotator between text messages with a transition effect
-![ArcText](./assets/overviewarctext.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
-![TypeWriting](./assets/overviewtypewriting.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Type-Writing) | Insert a text with a type writing effect
+![AnimatedText](./assets/overviewanimatedtext_final.png) | [**Animated Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/AnimatedText) | Insert a text with an effect as fade, swing, etc.
+![Text Rotator](./assets/overviewtextrotator_final.png) | [**Text Rotator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Text-Rotator) | Automatic rotator between text messages with a transition effect
+![ArcText](./assets/overviewarctext_final.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
+![TypeWriting](./assets/overviewtypewriting_final.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Type-Writing) | Insert a text with a type writing effect
 
 ### Images Tools
 
