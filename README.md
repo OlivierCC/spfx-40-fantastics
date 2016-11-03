@@ -14,12 +14,12 @@ You can find here the following web parts:
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![3d carousel](./assets/overview3dcarousel_final.png) | [**3D Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/3D-Carousel) | Insert a 3D Carousel in your SharePoint pages
-![Coverflow](./assets/overviewcoverflow_final.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow apple like menu in your pages
-![Tiles Menu](./assets/overviewtilesmenu.png) | [**Tiles Menu**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tiles-Menu) | Insert a menu items as smart tiles
-![News Carousel](./assets/overviewnewscarousel.png) | [**News Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Carousel) | Insert a News Carousel to add content focus to your pages
+![3d carousel](./assets/overview3dcarousel_final.png) | [**3D Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/3D-Carousel) | Insert a 3D Carousel in your SharePoint pages. With this Web Part, you can manage your menu items and create automatically a 3D carousel.
+![Coverflow](./assets/overviewcoverflow_final.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow Apple like menu in your pages. Manage your menu items with title and picture and create a cool coverflow menu.
+![News Carousel](./assets/overviewnewscarousel.png) | [**News Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Carousel) | Insert a classical and responsive cool News Carousel. With this web part, you can add easily news focus in your SharePoint site.
+![Tiles Menu](./assets/overviewtilesmenu.png) | [**Tiles Menu**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tiles-Menu) | Create a smart Tiles based menu in your pages
 ![News Slider](./assets/overviewnewsslider.png) | [**News Slider**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Slider) | Insert a News Slider Tiles control to your pages
-![News Ticker](./assets/overviewnewsticker.png) | [**News Ticker**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Ticker) | Insert a simple News Ticker to display news as a simple ribbon
+![News Ticker](./assets/overviewnewsticker.png) | [**News Ticker**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Ticker) | Insert a simple vertical News Ticker to display news as a simple ribbon. This web part is usefull if you want to display Breaking News BBC like information in your site
 
 ### Social Tools
 
