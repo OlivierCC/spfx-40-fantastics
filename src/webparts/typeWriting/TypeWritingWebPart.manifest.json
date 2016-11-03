@@ -9,8 +9,8 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "TypeWriting" },
-    "description": { "default": "TypeWriting description" },
+    "title": { "default": "Type Writing" },
+    "description": { "default": "Type Writing description" },
     "officeFabricIconFontName": "Underline",
     "properties": {
       "text": "Lipsum",

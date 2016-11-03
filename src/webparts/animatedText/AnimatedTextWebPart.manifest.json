@@ -9,7 +9,7 @@
   "preconfiguredEntries": [{
     "groupId": "b6330715-c92a-479c-ae83-510474079988",
     "group": { "default": "Under Development" },
-    "title": { "default": "AnimatedText" },
+    "title": { "default": "Animated Text" },
     "description": { "default": "AnimatedText description" },
     "officeFabricIconFontName": "FontSize",
     "properties": {
