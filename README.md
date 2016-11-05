@@ -57,7 +57,7 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![Media Player](./assets/overviewmediaplayer.png) | [**Media Player**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Media-Player) |  Insert a smart media player in your page with support of HTML 5 Audio & Video, Youtube and Vimeo
+![Media Player](./assets/overviewmediaplayer.png) | [**Media Player**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Media-Player) |  This Web Part is an alternative player for videos or audio files. This player allows you to play video files in HTML5 mode, with streamed videos to different formats and also from Youtube or Vimeo. This player is elegant and also lets you add subtitles to videos in different languages.
 ![Audio Equalizer](./assets/overviewaudioequalizer.png) | [**Audio Equalizer**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Audio-Equalizer) |  Insert a html5 audio player with an pure JavaScript equalizer animation
 
 ## Text Tools
