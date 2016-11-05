@@ -5,6 +5,7 @@
 This package is a sample kit of 40 great Client Side Web Parts built on the SharePoint Framework SPFx.
 You can find here different kind of high visual web parts as carousel, images galleries, custom editors, polls, charts, map, animations, etc.
 These WebParts are mainly based on best-class jQuery, React or Angular plugins and use the [sp-client-custom-fields library](https://github.com/OlivierCC/sp-client-custom-fields) to optimize the edit experience.
+Oh, and Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
 
 ![Logo](./assets/logo_final.png)
 
@@ -16,7 +17,7 @@ Overview |  Web Part |  Description
 ![Coverflow](./assets/overviewcoverflow_final.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow Apple like menu in your pages. Manage your menu items with title and picture and create a cool coverflow menu.
 ![News Carousel](./assets/overviewnewscarousel.png) | [**News Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Carousel) | Insert a classical and responsive cool News Carousel. With this web part, you can add easily news focus in your SharePoint site.
 ![Tiles Menu](./assets/overviewtilesmenu.png) | [**Tiles Menu**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tiles-Menu) | This Web Part allows you to very easily create a menu in form of tiles that is responsive and adapted for mobile. You can directly manage the items on your menu, with a title, an image and manage Visual rendering options.
-![News Slider](./assets/overviewnewsslider.png) | [**News Slider**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Slider) | Insert a News Slider Tiles control to your pages
+![News Slider](./assets/overviewnewsslider.png) | [**News Slider**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Slider) | Insert a News Slider Tiles control to your pages. In a few clicks you can create a slider with buttons allowing you to navigate horizontally in tiles. You can define your elements and customize the look and feel of your slider. This Web Part is responsive.
 ![News Ticker](./assets/overviewnewsticker.png) | [**News Ticker**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Ticker) | Insert a simple vertical News Ticker to display news as a simple ribbon. This web part is usefull if you want to display Breaking News BBC like information in your site
 
 ## Social Tools
