@@ -5,4 +5,22 @@
     //margin: 0px auto;
     //box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   }
+
+  .workingOnItSpinner {
+    display: block;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 33.33333%;
+    line-height: 1.5em;
+    padding: 20px 20px;
+  }
+
+  .loadingLabel {
+    position: relative;
+    top: -25px;
+
+    left: 35px;
+  }
+
 }

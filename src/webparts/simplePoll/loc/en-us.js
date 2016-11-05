@@ -1,13 +1,13 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Configure your arc text",
-    "BasicGroupName": "Layout",
+    "PropertyPaneDescription": "Configure your poll",
+    "BasicGroupName": "General Settings",
     "DescriptionFieldLabel": "Description Field",
     "TextFieldLabel": "Text",
     "FontFieldLabel": "Font",
     "FontSizeFieldLabel": "Size",
     "ColorFieldLabel": "Color",
-    "EffectGroupName": "Effect",
+    "EffectGroupName": "Poll Settings",
     "RadiusFieldLabel": "Radius",
     "DirectionFieldLabel": "Reverse",
     "RotateLetterFieldLabel": "Rotate letters",
@@ -16,6 +16,20 @@ define([], function() {
     "AlignCenter": "Center",
     "AlignRight": "Right",
     "ManageAnswers": "Manage answers",
-    "Answers": "Answers"
+    "Answers": "Answers",
+    "surveyList": "Survey List",
+    "chartType": "Results Chart Type",
+    "forceVoteToViewResults": "Force vote to view results",
+    "TankYou": "Thank you",
+    "OK": "OK",
+    "Error": "Error",
+    "Recorded": "Thank you, your vote has been recorded.",
+    "SelectVote": "You need to select a value to vote.",
+    "Vote": "Vote",
+    "AlreadyVote": "Thank you for your vote",
+    "Back": "Back",
+    "ViewResults": "View results",
+    "ErrorNoItems": "No items found in the current library. Please insert inside or select another library.",
+    "ErrorSelectList": "Please edit the webpart and select a survey list. If the survey dropdown list is empty, please create a new survey Library in the current web site and create at least one question."
   }
 });

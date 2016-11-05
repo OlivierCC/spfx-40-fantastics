@@ -1,7 +1,9 @@
 export interface ISimplePollWebPartProps {
-  question: string;
-  answers: any[];
+  surveyList: string;
   font: string;
   size: string;
   color: string;
+  context?: any;
+  chartType?: string;
+  forceVoteToViewResults?: boolean;
 }

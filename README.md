@@ -79,6 +79,7 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
+![Simple Poll](./assets/overviewsimplepoll.png) | [**Simple Poll**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Simple-Poll) | Insert a simple poll (one question) based on a SharePoint survey list. This Web Part is perfect for simple surveys to insert on a homepage for example. Users can vote in 1 click and see the results in the form of a pie or bar chart.
 ![Bing Translator](./assets/overviewbingtranslators.png) | [**Bing Translator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Translator) | Insert a Bing Translator widget to automatically translate the current page in another language.
 ![MessageBar](./assets/overviewmessagebar.png) | [**Message Bar**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Message-Bar) | Insert a message bar to your page, for example set a maintenance warning text, etc.
 ![StockInfo](./assets/overviewstockinfo.png) | [**Stock Info**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Stock-Info) | Generates as graph picture the current stock value of a specified stock.
