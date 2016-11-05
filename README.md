@@ -8,9 +8,7 @@ These WebParts are mainly based on best-class jQuery, React or Angular plugins a
 
 ![Logo](./assets/logo_final.png)
 
-You can find here the following web parts:
-
-### Menu & Carousels & News Management
+## Menu & Carousels & News Management
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
@@ -21,7 +19,7 @@ Overview |  Web Part |  Description
 ![News Slider](./assets/overviewnewsslider.png) | [**News Slider**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Slider) | Insert a News Slider Tiles control to your pages
 ![News Ticker](./assets/overviewnewsticker.png) | [**News Ticker**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Ticker) | Insert a simple vertical News Ticker to display news as a simple ribbon. This web part is usefull if you want to display Breaking News BBC like information in your site
 
-### Social Tools
+## Social Tools
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
@@ -30,7 +28,7 @@ Overview |  Web Part |  Description
 ![RSS Reader](./assets/overviewrssreader.png) | [**RSS Reader**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Rss-Reader) |  A web part to insert a full client side RSS/Atom Feed in your SharePoint pages.
 ![Social Photo Stream](./assets/overviewsocialphotostream.png) | [**Social Photo Stream**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Photo-Stream) |  A web part to insert a list of photo from populars photos sharing plateforms as Instagram, Pinterest, Flickr, Deviantart, Dribbble, Picasa, Youtube & Newsfeed.
 
-### Maps, Charts & Graphs
+## Maps, Charts & Graphs
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
@@ -42,7 +40,7 @@ Overview |  Web Part |  Description
 ![Line Chart](./assets/overviewlinechart.png) | [**Line Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Line-Chart) |  A web part to insert a line chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 ![Radar Chart](./assets/overviewradarchart.png) | [**Radar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Radar-Chart) |  A web part to insert a radar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 
-### Images Galleries & Tools
+## Images Galleries & Tools
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
@@ -54,14 +52,14 @@ Overview |  Web Part |  Description
 ![Image Color](./assets/overviewimagecolor.png) | [**Image Color**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Color) |  A web part to insert a picture and choose a color effect to apply on it.
 ![Image Puzzle](./assets/overviewimagepuzzle.png) | [**Image Puzzle**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Image-Puzzle) |  A web part to insert a picture and add a puzzle split animation.
 
-### Video & Audio
+## Video & Audio
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![Media Player](./assets/overviewmediaplayer.png) | [**Media Player**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Media-Player) |  Insert a smart media player in your page with support of HTML 5 Audio & Video, Youtube and Vimeo
 ![Audio Equalizer](./assets/overviewaudioequalizer.png) | [**Audio Equalizer**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Audio-Equalizer) |  Insert a html5 audio player with an pure JavaScript equalizer animation
 
-### Text Tools
+## Text Tools
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
@@ -75,7 +73,7 @@ Overview |  Web Part |  Description
 ![ArcText](./assets/overviewarctext_final.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | Insert a curved text in your SharePoint pages
 ![TypeWriting](./assets/overviewtypewriting_final.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Type-Writing) | Insert a text with a type writing effect
 
-### Tools
+## Tools
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
@@ -91,8 +89,18 @@ Overview |  Web Part |  Description
 git clone the repo
 npm i
 npm i -g gulp
-gulp
+gulp serve
 ```
+
+Applies to :
+* [SharePoint Framework Developer Preview](http://dev.office.com/sharepoint/docs/spfx/sharepoint-framework-overview)
+* [Office 365 developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
+
+## Solution
+
+Solution|Author(s)
+--------|---------
+spfx-40-fantastics | Olivier Carpentier (@olivierc)
 
 # The MIT License (MIT)
 
