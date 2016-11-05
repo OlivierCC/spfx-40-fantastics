@@ -64,7 +64,7 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![Markdown](./assets/overviewmarkdown_final.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Markdown) | Insert a text with a Markdown (MD) editor & markdown syntax
+![Markdown](./assets/overviewmarkdown_final.png) | [**Markdown**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Markdown) | f you like the Markdown type syntax, this Web Part is made for you! With this Web Part, you can add a player of Markdown in your page and edit its content through a specialized Editor. It has never been as easy to use the power of Markdown in SharePoint.
 ![Syntax Highlighter](./assets/overviewsyntaxhighlighter_final.png) | [**Syntax Highlighter**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Syntax-Highlighter) | Insert a web part to display code with automatic syntax highlighter (Js, C#, VB, etc.)
 ![FckText](./assets/overviewfcktextsmall_final.png) | [**Fck Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Fck-Text) | Insert text in your pages and edit it with the popular FCK Editor
 ![Tabs](./assets/overviewtabs.png) | [**Tabs**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tabs) | Insert a responsive and dynamic Tabs and edit the content of each tab with WYSIWYG editor
