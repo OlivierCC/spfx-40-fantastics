@@ -79,6 +79,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
     this.closeVote = this.closeVote.bind(this);
     this.closeError = this.closeError.bind(this);
     this.onVoteChanged = this.onVoteChanged.bind(this);
+    this.loadQuestions = this.loadQuestions.bind(this);
 	};
 
   /**
@@ -384,16 +385,13 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
       this.setState(this.state);
   }
 
-
-  /**
-   * @function
-   * Function called when the component did mount
-   */
-  public componentDidMount(): void {
+  private loadQuestions(props: ISimplePollWebPartProps): void {
+    if (props.surveyList == null || props.surveyList == '')
+      return;
 
     //Request the survey questions
-    const listService: SPSurveyService = new SPSurveyService(this.props, this.myPageContext);
-    listService.getQuestions(this.props.surveyList).then((response) => {
+    const listService: SPSurveyService = new SPSurveyService(props, this.myPageContext);
+    listService.getQuestions(props.surveyList).then((response) => {
       var responseVal = response.value;
       if (responseVal == null || responseVal.length == 0)
         return;
@@ -403,7 +401,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
       this.state.questionInternalName = item.StaticName;
 
       //Request the existing votes to get current user voting status
-      listService.getVoteForUser(this.props.surveyList, item.StaticName, this.myPageContext.pageContext.user.loginName).then((responseVote) => {
+      listService.getVoteForUser(props.surveyList, item.StaticName, this.myPageContext.pageContext.user.loginName).then((responseVote) => {
         var responseVoteVal = responseVote.value;
 
         if (responseVoteVal.length > 0) {
@@ -419,6 +417,15 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
     });
   }
 
+
+  /**
+   * @function
+   * Function called when the component did mount
+   */
+  public componentDidMount(): void {
+    this.loadQuestions(this.props);
+  }
+
   /**
    * @function
    * Function called when the web part properties has changed
@@ -427,6 +434,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
     this.state.resultsLoaded = false;
     this.state.results = [];
     this.setState(this.state);
+    this.loadQuestions(nextProps);
 	}
 
   /**
@@ -434,8 +442,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
    * Function called when the component has been rendered (ie HTML code is ready)
    */
   public componentDidUpdate(prevProps: ISimplePollWebPartProps, prevState: ISimplePollState): void {
-
-
+    //his.loadQuestions();
   }
 
 }

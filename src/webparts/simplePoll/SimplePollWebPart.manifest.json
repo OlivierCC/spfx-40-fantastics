@@ -13,7 +13,10 @@
     "description": { "default": "Simple Poll Web Part" },
     "officeFabricIconFontName": "CustomList",
     "properties": {
-
+      "chartType": "pie",
+      "forceVoteToViewResults": false,
+      "size": "24px",
+      "colo": "#323232"
     }
   }]
 }
