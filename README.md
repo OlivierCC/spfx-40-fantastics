@@ -79,9 +79,9 @@ Overview |  Web Part |  Description
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
 ![Simple Poll](./assets/overviewsimplepoll.png) | [**Simple Poll**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Simple-Poll) | Insert a simple poll (one question) based on a SharePoint survey list. This Web Part is perfect for simple surveys to insert on a homepage for example. Users can vote in 1 click and see the results in the form of a pie or bar chart.
-![Bing Translator](./assets/overviewbingtranslators.png) | [**Bing Translator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Translator) | Insert a Bing Translator widget to automatically translate the current page in another language.
-![MessageBar](./assets/overviewmessagebar.png) | [**Message Bar**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Message-Bar) | Insert a message bar to your page, for example set a maintenance warning text, etc.
-![StockInfo](./assets/overviewstockinfo.png) | [**Stock Info**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Stock-Info) | Generates as graph picture the current stock value of a specified stock.
+![Bing Translator](./assets/overviewbingtranslators.png) | [**Bing Translator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Translator) | Insert a Bing Translator widget to automatically translate the current page in another language. This WebPart is going to add to your page a "Translate" button. When user click on this button, it can translate in-place and automatically the content of the page in the language of his choice.
+![MessageBar](./assets/overviewmessagebar.png) | [**Message Bar**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Message-Bar) | Insert a message bar to your page, for example set a maintenance warning text, etc. Very convenient to share a simple and highly visible message to your visitors.
+![StockInfo](./assets/overviewstockinfo.png) | [**Stock Info**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Stock-Info) | Generates as graph picture the current stock value of a specified stock. With this Web Part, you can for example share the current stock price of your company on your homepage. This Web Part uses the Yahoo! Financial Services.
 ![QRCode](./assets/overviewqrcode.png) | [**QR Code**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/QR-Code) | Insert a QR Code in your SharePoint pages and modify the associated text, size, etc.
 
 ## Building the code
