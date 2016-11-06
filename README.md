@@ -1,6 +1,6 @@
 # SPFx 40 Fantastics Web Parts
 
-> Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production enviornments.
+> Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production environments.
 
 This package is a sample kit of 40 great Client Side Web Parts built on the SharePoint Framework SPFx.
 You can find here different kind of high visual web parts as carousel, images galleries, custom editors, polls, charts, map, animations, etc.
