@@ -72,7 +72,7 @@ Overview |  Web Part |  Description
 ![AnimatedText](./assets/overviewanimatedtext_final.png) | [**Animated Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/AnimatedText) | This Web Part allows you to add a text with an animation. You can choose among a large number of animation (fade, resizing, time, rotation, etc.), choose do it, color, size, etc.
 ![Text Rotator](./assets/overviewtextrotator_final.png) | [**Text Rotator**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Text-Rotator) | This Web Part allows you to display several sentences one after the other with a transition effect.
 ![ArcText](./assets/overviewarctext_final.png) | [**Arc Text**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/ArcText) | With this Web Part, you can add a text with effect of curve. You can editing your title appearance, and choose the degree of the curve.
-![TypeWriting](./assets/overviewtypewriting_final.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Type-Writing) | Insert a text with a type writing effect
+![TypeWriting](./assets/overviewtypewriting_final.png) | [**TypeWriting**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Type-Writing) | Insert a text with a typwriter effect. It will simulate a mechanical or electromechanical machine for writing in characters similar to those produced by printer.
 
 ## Tools
 
