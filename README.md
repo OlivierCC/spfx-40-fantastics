@@ -84,7 +84,7 @@ Overview |  Web Part |  Description
 ![StockInfo](./assets/overviewstockinfo.png) | [**Stock Info**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Stock-Info) | Generates as graph picture the current stock value of a specified stock. With this Web Part, you can for example share the current stock price of your company on your homepage. This Web Part uses the Yahoo! Financial Services.
 ![QRCode](./assets/overviewqrcode.png) | [**QR Code**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/QR-Code) | Insert a QR Code in your SharePoint pages and modify the associated text, size, etc. A QRCode is very handy for example to allow your users to access simply and quickly to a page on your Intranet from a smartphone.
 
-## Building the code
+# Building the code
 
 ```bash
 git clone the repo
@@ -97,7 +97,7 @@ Applies to :
 * [SharePoint Framework Developer Preview](http://dev.office.com/sharepoint/docs/spfx/sharepoint-framework-overview)
 * [Office 365 developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
-## Solution
+# Solution
 
 Solution|Author(s)
 --------|---------
