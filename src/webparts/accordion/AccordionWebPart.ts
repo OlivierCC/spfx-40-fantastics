@@ -21,85 +21,111 @@ import { IAccordionWebPartProps } from './IAccordionWebPartProps';
 import importableModuleLoader from '@microsoft/sp-module-loader';
 
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
-//import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 
+//Loads JQuery & JQuery UI
 require('jquery');
 require('jqueryui');
-
 import * as $ from 'jquery';
 
+/**
+ * @class
+ * Accordion Web part
+ */
 export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWebPartProps> {
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
+    //Initialize unique GUID
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyChange = this.onPropertyChange.bind(this);
 
+    //Load the JQuery smoothness CSS file
     importableModuleLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     var html = '';
 
-    html += '<div class="accordion">';
+    //Define the main div
+    html += '<div class="accordion" id="' + this.guid + '">';
 
+    //Iterates on tabs
     this.properties.tabs.map((tab: any, index: number) => {
       if (this.displayMode == DisplayMode.Edit) {
+        //If diplay Mode is edit, include the textarea to edit the tab's content
         html += '<h3>' + (tab.Title != null ? tab.Title : '') + '</h3>';
         html += '<div style="min-height: 400px"><textarea name="' + this.guid + '-editor-' + index + '" id="' + this.guid + '-editor-' + index + '">' + (tab.Content != null ? tab.Content : '') + '</textarea></div>';
       }
       else {
+        //Display Mode only, so display the tab content
         html += '<h3>' + (tab.Title != null ? tab.Title : '') + '</h3>';
         html += '<div>' + (tab.Content != null ? tab.Content : '') + '</div>';
       }
     });
     html += '</div>';
 
+    //Flush the output HTML code
     this.domElement.innerHTML = html;
 
+    //Inits JQuery UI accordion options
     const accordionOptions: JQueryUI.AccordionOptions = {
       animate: this.properties.animate != false ? this.properties.speed : false,
       collapsible: this.properties.collapsible,
       heightStyle: this.properties.heightStyle
     };
-    $(this.domElement).children('.accordion').accordion(accordionOptions);
+    //Call the JQuery UI accordion plugin on main div
+    $('#' + this.guid).accordion(accordionOptions);
 
     if (this.displayMode == DisplayMode.Edit) {
-
+        //If the display mode is Edit, loads the CK Editor plugin
         var fMode = 'standard';
         if (this.properties.mode != null)
           fMode = this.properties.mode;
         var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
+        //Loads the Javascript from the CKEditor CDN
         ModuleLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
           if (this.properties.inline == null || this.properties.inline === false) {
+            //If mode is not inline, loads the script with the replace method
             for (var tab = 0; tab < this.properties.tabs.length; tab++) {
               CKEDITOR.replace( this.guid + '-editor-' + tab, {
                     skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
-              }  );
+              });
             }
 
           }
           else {
+            //Mode is inline, so loads the script with the inline method
             for (var tab2 = 0; tab2 < this.properties.tabs.length; tab2++) {
               CKEDITOR.inline( this.guid + '-editor-' + tab2, {
                     skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
-              }   );
+              });
             }
           }
-
+          //Catch the CKEditor instances change event to save the content
           for (var i in CKEDITOR.instances) {
             CKEDITOR.instances[i].on('change', (elm?, val?) =>
             {
+              //Updates the textarea
               elm.sender.updateElement();
+              //Gets the value
               var value = ((document.getElementById(elm.sender.name)) as any).value;
               var id = elm.sender.name.split("-editor-")[1];
+              //Save the content in properties
               this.properties.tabs[id].Content = value;
             });
           }
@@ -108,17 +134,29 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
     }
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [
