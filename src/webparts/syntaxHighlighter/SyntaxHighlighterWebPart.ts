@@ -49,6 +49,10 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
                       {key: 'xml', text: 'shBrushXml.js'}
   ];
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -73,6 +77,10 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
     return 'shBrushJScript.js';
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.displayMode == DisplayMode.Read) {
@@ -122,17 +130,6 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
     this.properties.code = elm.currentTarget.value;
   }
 
-  private getGuid(): string {
-    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
-      this.s4() + '-' + this.s4() + this.s4() + this.s4();
-  }
-
-  private s4(): string {
-      return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    }
-
   private renderContent(): void {
     var brush = this.getBrushPath(this.properties.language);
     ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/' + brush, 'SyntaxHighlighter').then((SyntaxHighlighter?: any): void => {
@@ -140,6 +137,29 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
+  private getGuid(): string {
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
+      this.s4() + '-' + this.s4() + this.s4() + this.s4();
+  }
+
+  /**
+   * @function
+   * Generates a GUID part
+   */
+  private s4(): string {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+  }
+
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

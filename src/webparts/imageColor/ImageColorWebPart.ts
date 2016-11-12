@@ -16,10 +16,15 @@ import {
 import * as strings from 'ImageColorStrings';
 import { IImageColorWebPartProps } from './IImageColorWebPartProps';
 
+//Imports property pane custom fields
 import { PropertyFieldPicturePicker } from 'sp-client-custom-fields/lib/PropertyFieldPicturePicker';
 
 export default class ImageColorWebPart extends BaseClientSideWebPart<IImageColorWebPartProps> {
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -28,6 +33,10 @@ export default class ImageColorWebPart extends BaseClientSideWebPart<IImageColor
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.properties.image == null || this.properties.image == '') {
@@ -304,6 +313,11 @@ export default class ImageColorWebPart extends BaseClientSideWebPart<IImageColor
     this.domElement.innerHTML = html;
   }
 
+
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

@@ -18,16 +18,27 @@ import {
 
 import * as strings from 'BingMapStrings';
 import { IBingMapWebPartProps } from './IBingMapWebPartProps';
+
+//Imports the property pane custom fields
 import { PropertyFieldMapPicker } from 'sp-client-custom-fields/lib/PropertyFieldMapPicker';
 
+//Loads JQuery end Bingmap.js lib
 require('jquery');
 import * as $ from 'jquery';
 require('bingmap');
 
+/**
+ * @class
+ * Bing Map Web Part
+ */
 export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPartProps> {
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -38,11 +49,17 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
+    //Inits the main div container
     var html = '<div id="' + this.guid + '"></div>';
     this.domElement.innerHTML = html;
 
+    //Calls the Bingmap.js JQuery plugin init method
     ($ as any)("#" + this.guid).BingMap({
         Height: this.properties.height,
         Width: this.properties.width,
@@ -63,17 +80,29 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

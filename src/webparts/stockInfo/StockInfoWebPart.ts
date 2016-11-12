@@ -18,7 +18,10 @@ import { IStockInfoWebPartProps } from './IStockInfoWebPartProps';
 
 export default class StockInfoWebPart extends BaseClientSideWebPart<IStockInfoWebPartProps> {
 
-
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -27,6 +30,10 @@ export default class StockInfoWebPart extends BaseClientSideWebPart<IStockInfoWe
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.properties.stock == null || this.properties.stock == '') {
@@ -51,6 +58,10 @@ export default class StockInfoWebPart extends BaseClientSideWebPart<IStockInfoWe
     this.domElement.innerHTML = html;
   }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

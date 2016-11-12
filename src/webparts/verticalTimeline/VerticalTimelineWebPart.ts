@@ -16,6 +16,7 @@ import { IVerticalTimelineWebPartProps } from './IVerticalTimelineWebPartProps';
 import { SPCalendarService } from './SPCalendarService';
 import { ISPListItem } from './ISPList';
 
+//Imports property pane custom fields
 import { PropertyFieldSPListQuery, PropertyFieldSPListQueryOrderBy } from 'sp-client-custom-fields/lib/PropertyFieldSPListQuery';
 import { PropertyFieldIconPicker } from 'sp-client-custom-fields/lib/PropertyFieldIconPicker';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -27,6 +28,10 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -38,6 +43,10 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.properties.query == null || this.properties.query == '') {
@@ -358,17 +367,29 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

@@ -17,6 +17,7 @@ import {
 import * as strings from 'TypeWritingStrings';
 import { ITypeWritingWebPartProps } from './ITypeWritingWebPartProps';
 
+//Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
@@ -29,6 +30,10 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
   private guid: string;
   private typeWriting: any;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -39,6 +44,10 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
     this.guid = this.getGuid();
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     var style = "style='padding: 5px;";
@@ -80,17 +89,29 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
      }
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

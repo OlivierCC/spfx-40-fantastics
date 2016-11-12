@@ -18,6 +18,8 @@ import {
 import * as strings from 'SimplePollStrings';
 import { ISimplePollWebPartProps } from './ISimplePollWebPartProps';
 import SimplePollWebPartHost from './components/SimplePollWebPartHost';
+
+//Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
@@ -25,6 +27,10 @@ import { PropertyFieldSPListPicker, PropertyFieldSPListPickerOrderBy } from 'sp-
 
 export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePollWebPartProps> {
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -33,6 +39,10 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     //Constructs the react element code to JSX
@@ -51,6 +61,10 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
 
   }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

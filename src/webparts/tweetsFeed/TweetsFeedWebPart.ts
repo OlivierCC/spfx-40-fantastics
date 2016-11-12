@@ -17,16 +17,18 @@ import {
 import * as strings from 'TweetsFeedStrings';
 import { ITweetsFeedWebPartProps } from './ITweetsFeedWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
+
+//Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
-
-require('jquery');
-
-//import * as $ from 'jquery';
 
 export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeedWebPartProps> {
 
   private twttr: any;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -35,6 +37,10 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.properties.account == null || this.properties.account == '') {
@@ -83,6 +89,10 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
     }
   }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

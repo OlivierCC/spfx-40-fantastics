@@ -18,21 +18,21 @@ import * as strings from 'dockMenuStrings';
 import { IDockMenuWebPartProps } from './IDockMenuWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
+//Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
-//require('jquery');
-//require('jqueryui');
-
-//import * as $ from 'jquery';
-
 export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebPartProps> {
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -43,6 +43,10 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     var html = '';
@@ -127,6 +131,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
     `;
 
     html += '<div class="photos" style="position: relative; width: 100%;" id="' + this.guid + '-bigCarousel">';
+
+
     if (this.properties.items != null) {
       this.properties.items.map(item => {
         if (item != null && item.Enabled != "false") {
@@ -158,12 +164,12 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false) {
-      ModuleLoader.loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js', 'jQuery').then((): void => {
-        ModuleLoader.loadScript('https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js', 'jQuery').then((): void => {
-          ModuleLoader.loadScript('https://vanderlee.github.io/coverflow/jquery.coverflow.js', 'jQuery').then((): void => {
-            ModuleLoader.loadScript('https://vanderlee.github.io/coverflow/jquery.interpolate.min.js', 'jQuery').then((): void => {
-              ModuleLoader.loadScript('https://vanderlee.github.io/coverflow/jquery.touchSwipe.min.js', 'jQuery').then((): void => {
-                ModuleLoader.loadScript('https://vanderlee.github.io/coverflow/reflection.js', 'jQuery').then((): void => {
+      ModuleLoader.loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js', 'jQuery').then((): void => {
+        ModuleLoader.loadScript('//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js', 'jQuery').then((): void => {
+          ModuleLoader.loadScript('//vanderlee.github.io/coverflow/jquery.coverflow.js', 'jQuery').then((): void => {
+            ModuleLoader.loadScript('//vanderlee.github.io/coverflow/jquery.interpolate.min.js', 'jQuery').then((): void => {
+              ModuleLoader.loadScript('//vanderlee.github.io/coverflow/jquery.touchSwipe.min.js', 'jQuery').then((): void => {
+                ModuleLoader.loadScript('//vanderlee.github.io/coverflow/reflection.js', 'jQuery').then((): void => {
                   this.renderContents();
                 });
               });
@@ -176,18 +182,6 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
       this.renderContents();
     }
   }
-
-  private getGuid(): string {
-    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
-      this.s4() + '-' + this.s4() + this.s4() + this.s4();
-  }
-
-  private s4(): string {
-      return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    }
-
 
   private renderContents(): void {
 
@@ -224,6 +218,29 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
     }
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
+  private getGuid(): string {
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
+      this.s4() + '-' + this.s4() + this.s4() + this.s4();
+  }
+
+  /**
+   * @function
+   * Generates a GUID part
+   */
+  private s4(): string {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+  }
+
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

@@ -16,6 +16,7 @@ import {
 import * as strings from 'ImagePuzzleStrings';
 import { IImagePuzzleWebPartProps } from './IImagePuzzleWebPartProps';
 
+//Imports property pane custom fields
 import { PropertyFieldPicturePicker } from 'sp-client-custom-fields/lib/PropertyFieldPicturePicker';
 
 require('jquery');
@@ -27,6 +28,10 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -37,6 +42,10 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
     this.guid = this.getGuid();
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.properties.image == null || this.properties.image == '') {
@@ -72,17 +81,29 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

@@ -17,12 +17,18 @@ import {
 import * as strings from 'SocialShareStrings';
 import { ISocialShareWebPartProps } from './ISocialShareWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
+
+//Imports property pane custom fields
 import { PropertyFieldDropDownSelect } from 'sp-client-custom-fields/lib/PropertyFieldDropDownSelect';
 
 export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialShareWebPartProps> {
 
   private addthis: any;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -31,6 +37,10 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     var html = '<div class="addthis_toolbox addthis_' + this.properties.style + '_style addthis_' + this.properties.size + '_style">';
@@ -74,6 +84,10 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
     }
   }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

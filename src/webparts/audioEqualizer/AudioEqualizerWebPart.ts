@@ -1,6 +1,6 @@
 /**
  * @file
- * QR Code Web Part for SharePoint Framework SPFx
+ * Audio Equalizer Web Part for SharePoint Framework SPFx
  *
  * Author: Olivier Carpentier
  * Copyright (c) 2016
@@ -15,17 +15,28 @@ import {
 
 import * as strings from 'AudioEqualizerStrings';
 import { IAudioEqualizerWebPartProps } from './IAudioEqualizerWebPartProps';
+
+//Imports the property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 
+//Loads JQuery, Reverseorder & equalizer JavaScript libs
 require('jquery');
 import * as $ from 'jquery';
 require('reverseorder');
 require('equalizer');
 
+/**
+ * @class
+ * Audio Equalizer Web Part
+ */
 export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioEqualizerWebPartProps> {
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -36,8 +47,13 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
+    //Defines the output HTML code width HTML5 audio player & CSS styles
     var html = `
     <div class="${this.guid} equalizer"></div>
     <audio controls loop id="${this.guid}">
@@ -61,9 +77,10 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
 	width: 100%;
 }
     </style>
-    `;//'<div id="' + this.guid + '"></div>';
+    `;
     this.domElement.innerHTML = html;
 
+    //Calls the Equalizer JavaScript plugin init method
     ($ as any)('#' + this.guid).equalizer({
         width: this.properties.width, // in pixels - default is 600 pixels
         height: this.properties.height, // in pixels - default is 150 pixels
@@ -79,17 +96,29 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

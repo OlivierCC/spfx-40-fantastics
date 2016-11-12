@@ -16,6 +16,7 @@ import {
 import * as strings from 'carousel3DStrings';
 import { ICarousel3DWebPartProps } from './ICarousel3DWebPartProps';
 
+//Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
@@ -31,29 +32,44 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
+    //Generates the unique ID
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyChange = this.onPropertyChange.bind(this);
+
+    //Binds the async method
     this.rendered = this.rendered.bind(this);
     this.onLoaded = this.onLoaded.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
+    //Checks if the carousel is already loaded. If yes, desacrivate it
     if (($ as any)('#' + this.guid + '-carousel').data("carousel") != null) {
         ($ as any)('#' + this.guid + '-carousel').data("carousel").deactivate();
         ($ as any)('#' + this.guid + '-carousel').data("carousel").onRendered = null;
     }
 
+    //Defines the main DIV container
     var html = '<div id="' + this.guid + '-bigCarousel" style="height:0px; visibility: hidden"><div id="' + this.guid + '-carousel"> ';
     if (this.properties.items != null) {
+      //Browse the items collection
       this.properties.items.map(item => {
         if (item != null && item.Enabled != "false") {
+          //Adds a new Carousel entry
           html += '<img class="cloud9-item" style="cursor: pointer" dataText="'+ item['Link Text'] + '" dataUrl="'+ item['Link Url'] + '" src="' + item.Picture + '" height="' + this.properties.itemHeight + '" alt="' + item.Title + '" />';
         }
       });
@@ -62,10 +78,12 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
         </div>
        `;
     if (this.properties.showTitle === true) {
+      //Shows the title
       html += '<div style=\'font-size: ' + this.properties.fontSize + '; color: ' + this.properties.fontColor + '; font-family:'
         + this.properties.font  + '\'><div id="' + this.guid + '-item-title" style="position: absolute; bottom:0; width: 100%; text-align: center;">&nbsp;</div></div>';
     }
     if (this.properties.showButton === true) {
+      //Shows the button to navigate
       html += '<div id="' + this.guid + '-buttons" style="height: 100%">';
       html += `
           <button class="left" style="float:left; height: 60px; position: absolute; top: 45%; cursor: pointer;">
@@ -85,22 +103,14 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
     this.renderContents();
   }
 
-  private getGuid(): string {
-    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
-      this.s4() + '-' + this.s4() + this.s4() + this.s4();
-  }
-
-  private s4(): string {
-      return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    }
-
-
+  /**
+   * @function
+   * Renders JavaScript JQuery plugin
+   */
   private renderContents(): void {
 
     if (($ as any)('#' + this.guid + '-carousel') != null) {
-
+      //Calls the jquery carousel init method
       ($ as any)('#' + this.guid + '-carousel').Cloud9Carousel({
         buttonLeft: $("#" + this.guid + "-buttons > .left"),
         buttonRight: $("#" + this.guid + "-buttons > .right"),
@@ -123,6 +133,10 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
     }
   }
 
+  /**
+   * @function
+   * Occurs when the carousel jquery plugin is loaded. So, change the visiblity
+   */
   private onLoaded(): void  {
     $("#" + this.guid + "-bigCarousel").css( 'visibility', 'visible' );
     $("#" + this.guid + "-bigCarousel").css( 'height', this.properties.height);
@@ -132,6 +146,10 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
     $("#" + this.guid + "-carousel").fadeIn( 1500 );
   }
 
+  /**
+   * @function
+   * Occurs when the carousel is rendered. So, display the item
+   */
   private rendered(carousel: any) {
     if ($('#' + this.guid + '-item-title') != null) {
 
@@ -157,6 +175,29 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
   }
 
 
+  /**
+   * @function
+   * Generates a GUID
+   */
+  private getGuid(): string {
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
+      this.s4() + '-' + this.s4() + this.s4() + this.s4();
+  }
+
+  /**
+   * @function
+   * Generates a GUID part
+   */
+  private s4(): string {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+  }
+
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

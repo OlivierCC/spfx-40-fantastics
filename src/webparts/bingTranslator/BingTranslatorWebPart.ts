@@ -15,12 +15,18 @@ import {
 import * as strings from 'BingTranslatorStrings';
 import { IBingTranslatorWebPartProps } from './IBingTranslatorWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
+
+//Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 
 export default class BingTranslatorWebPart extends BaseClientSideWebPart<IBingTranslatorWebPartProps> {
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -31,27 +37,45 @@ export default class BingTranslatorWebPart extends BaseClientSideWebPart<IBingTr
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
+    //Define the main DIV container
     var html = `
     <div id='MicrosoftTranslatorWidget' class='${this.properties.theme}' style='color:${this.properties.color};background-color:${this.properties.backgroundColor}'></div>
     `;
     this.domElement.innerHTML = html;
+    //Loads the microsoft translator JavaScript from CDN
     ModuleLoader.loadScript('//www.microsofttranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=False&ui=true&settings=' + this.properties.start + '&from=' + this.properties.language, 'bingtranslator').then((): void => {
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

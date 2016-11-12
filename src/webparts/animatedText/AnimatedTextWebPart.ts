@@ -18,20 +18,29 @@ import * as strings from 'AnimatedTextStrings';
 import { IAnimatedTextWebPartProps } from './IAnimatedTextWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
+//Imports the property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
+//Loads JQuery
 require('jquery');
-
 import * as $ from 'jquery';
 
+/**
+ * @class
+ * AnimatedText Web Part
+ */
 export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimatedTextWebPartProps> {
 
   private guid: string;
   private scriptLoaded: boolean;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -39,14 +48,21 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
     //we need to bind this object on it first
     this.onPropertyChange = this.onPropertyChange.bind(this);
 
+    //Inits the WebParts GUID
     this.guid = this.getGuid();
     this.scriptLoaded = false;
 
+    //Loads the LetterFX Jquery plugin CSS file
     ModuleLoader.loadCss('//tuxsudo.com/letterfx/letterfx.css');
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
+    //Defines the main DIV container
     var style = "style='padding: 5px;";
     if (this.properties.align != null)
       style += "text-align: " + this.properties.align + ';';
@@ -63,6 +79,7 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
+      //loads the letterfx.Js plugin from the CDN
       ModuleLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', 'jQuery').then((): void => {
         this.renderContent();
       });
@@ -74,7 +91,12 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
 
   }
 
+  /**
+   * @function
+   * Renders Javascript content
+   */
   private renderContent(): void {
+    //Calls the LetterFX JQuery plugin init method with properties
     ($ as any)('#' + this.guid + "-AnimatedText").letterfx({
       "fx": this.properties.effect != null ? this.properties.effect : "spin",
       "backwards": this.properties.effectDirection == "backwards" ? true : false,
@@ -85,17 +107,29 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

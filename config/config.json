@@ -271,7 +271,7 @@
     "MarkdownStrings": "webparts/markdown/loc/{locale}.js",
     "TypeWritingStrings": "webparts/typeWriting/loc/{locale}.js",
     "AnimatedTextStrings": "webparts/animatedText/loc/{locale}.js",
-    "SyntaxHighlighterStrings": "webparts/code/loc/{locale}.js",
+    "SyntaxHighlighterStrings": "webparts/syntaxHighlighter/loc/{locale}.js",
     "MessageBarStrings": "webparts/messageBar/loc/{locale}.js",
     "TextRotatorStrings": "webparts/textRotator/loc/{locale}.js",
     "ImageColorStrings": "webparts/imageColor/loc/{locale}.js",

@@ -15,6 +15,7 @@ import {
 import * as strings from 'MessageBarStrings';
 import { IMessageBarWebPartProps } from './IMessageBarWebPartProps';
 
+//Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
@@ -23,6 +24,10 @@ import { PropertyFieldRichTextBox } from 'sp-client-custom-fields/lib/PropertyFi
 
 export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBarWebPartProps> {
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -31,6 +36,10 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     var style = "style='";
@@ -62,6 +71,10 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
     this.domElement.innerHTML = html;
   }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

@@ -19,15 +19,24 @@ import * as strings from 'BarChartStrings';
 import { IBarChartWebPartProps } from './IBarChartWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
+//Imports the property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
+/**
+ * @class
+ * Bar Chart Web Part
+ */
 export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebPartProps> {
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -38,6 +47,10 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Transforms the item collection in a flat string collection of property for the Chart.js call
+   */
   private getDataTab(property: string): string[] {
     var res: string[] = [];
     this.properties.items.map((item: any) => {
@@ -46,14 +59,21 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
     return  res;
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
+    //Create the unique main canvas container
     var html = '<canvas id="' + this.guid + '" width="' + this.properties.width + '" height="' + this.properties.width + '"></canvas>';
     this.domElement.innerHTML = html;
 
+    //Loads the Chart.js lib from the cdnjs.cloudflare.com CDN
     ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', 'Chart').then((Chart?: any): void => {
 
-        var data = {
+      //Inits the data
+      var data = {
         labels: this.getDataTab(strings.Label),
         datasets: [
             {
@@ -63,6 +83,7 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
             }
         ]
       };
+      //Inits the options
       var options = {
         responsive: this.properties.responsive != null ? this.properties.responsive : false,
         title: {
@@ -95,7 +116,9 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
             }
         }*/
       };
+      //Inits the context for the canvas html element
       var ctx = document.getElementById(this.guid);
+      //Create the Chart object with data & options
       new Chart(ctx, {
           type: this.properties.horizontal === true ? 'horizontalBar' : 'bar',
           data: data,
@@ -107,17 +130,29 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
 
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

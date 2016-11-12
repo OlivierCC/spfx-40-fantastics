@@ -18,6 +18,7 @@ import * as strings from 'NewsCarouselStrings';
 import { INewsCarouselWebPartProps } from './INewsCarouselWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
+//Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
@@ -32,6 +33,10 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -43,6 +48,10 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
     ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.properties.items == null || this.properties.items.length == 0) {
@@ -128,17 +137,29 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
     }
   }
 
-   private getGuid(): string {
+   /**
+   * @function
+   * Generates a GUID
+   */
+  private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

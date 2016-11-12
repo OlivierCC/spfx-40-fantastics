@@ -18,33 +18,57 @@ import {
 import * as strings from 'arcTextStrings';
 import { IArcTextWebPartProps } from './IArcTextWebPartProps';
 
+//Loads the property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
+//Loads JQuery & Arctext Javascript libraries
 require('jquery');
 require('arctext');
-
 import * as $ from 'jquery';
 
+/**
+ * @class
+ * ArcText Web Part
+ */
 export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPartProps> {
 
+  private guid: string;
+
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
+
+    //Inits the WebParts GUID
+    this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
-    this.domElement.innerHTML = `<div style='text-align: ${this.properties.align}; font-family: ${this.properties.font}; font-size: ${this.properties.size}; color: ${this.properties.color};'><h3 class="arcText">${this.properties.text}</h3></div>`;
+    //Defines the main DIV container with output HTML code
+    this.domElement.innerHTML = `<div style='text-align: ${this.properties.align}; font-family: ${this.properties.font}; font-size: ${this.properties.size}; color: ${this.properties.color};'><h3 class="arcText" id="${this.guid + '-arc'}">${this.properties.text}</h3></div>`;
     this.renderContents();
   }
 
+  /**
+   * @function
+   * Renders JavaScript JQuery calls
+   */
   private renderContents(): void {
-    if (($ as any)('.arcText') != null) {
-      ($ as any)('.arcText').arctext({
+    if (($ as any)('#' + this.guid + '-arc') != null) {
+      //Calls the arctext plugin init method
+      ($ as any)('#' + this.guid + '-arc').arctext({
           radius: this.properties.radius,
           rotate: this.properties.rotateLetters,
           dir: this.properties.reverse === true ? -1 : 1
@@ -52,6 +76,29 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
     }
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
+  private getGuid(): string {
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
+      this.s4() + '-' + this.s4() + this.s4() + this.s4();
+  }
+
+  /**
+   * @function
+   * Generates a GUID part
+   */
+  private s4(): string {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+  }
+
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

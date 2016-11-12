@@ -18,15 +18,14 @@ import * as strings from 'fckTextStrings';
 import { IFckTextWebPartProps } from './IFckTextWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
-//require('jquery');
-//require('jqueryui');
-
-//import * as $ from 'jquery';
-
 export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPartProps> {
 
   private guid: string;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -37,6 +36,10 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
     this.onPropertyChange = this.onPropertyChange.bind(this);
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     if (this.displayMode == DisplayMode.Edit) {
@@ -78,17 +81,29 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
     }
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [

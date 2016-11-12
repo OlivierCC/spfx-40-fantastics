@@ -18,13 +18,13 @@ import * as strings from 'TextRotatorStrings';
 import { ITextRotatorWebPartProps } from './ITextRotatorWebPartProps';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
+//Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
 require('jquery');
-
 import * as $ from 'jquery';
 
 export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotatorWebPartProps> {
@@ -32,6 +32,10 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
   private guid: string;
   private scriptLoaded: boolean;
 
+  /**
+   * @function
+   * Web part contructor.
+   */
   public constructor(context: IWebPartContext) {
     super(context);
 
@@ -46,6 +50,10 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     ModuleLoader.loadCss('//morphext.fyianlai.com/assets/css/morphext.css');
   }
 
+  /**
+   * @function
+   * Renders HTML code
+   */
   public render(): void {
 
     var style = "style='";
@@ -89,17 +97,29 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     });
   }
 
+  /**
+   * @function
+   * Generates a GUID
+   */
   private getGuid(): string {
     return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
       this.s4() + '-' + this.s4() + this.s4() + this.s4();
   }
 
+  /**
+   * @function
+   * Generates a GUID part
+   */
   private s4(): string {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    }
+  }
 
+  /**
+   * @function
+   * PropertyPanel settings definition
+   */
   protected get propertyPaneSettings(): IPropertyPaneSettings {
     return {
       pages: [
