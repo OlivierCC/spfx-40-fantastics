@@ -14,7 +14,7 @@ import {
   PropertyPaneToggle,
   PropertyPaneLink,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'BingMapStrings';
 import { IBingMapWebPartProps } from './IBingMapWebPartProps';
@@ -46,7 +46,7 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -141,7 +141,8 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
                   label: strings.Position,
                   longitude: this.properties.position != null ? this.properties.position.substr(0, this.properties.position.indexOf(",")) : '0',
                   latitude: this.properties.position != null ? this.properties.position.substr(this.properties.position.indexOf(",") + 1, this.properties.position.length - this.properties.position.indexOf(",")) : '0',
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             },

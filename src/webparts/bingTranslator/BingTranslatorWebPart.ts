@@ -10,7 +10,7 @@ import {
   IPropertyPaneSettings,
   PropertyPaneDropdown,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'BingTranslatorStrings';
 import { IBingTranslatorWebPartProps } from './IBingTranslatorWebPartProps';
@@ -34,7 +34,7 @@ export default class BingTranslatorWebPart extends BaseClientSideWebPart<IBingTr
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -170,12 +170,14 @@ export default class BingTranslatorWebPart extends BaseClientSideWebPart<IBingTr
                 PropertyFieldColorPicker('color', {
                   label: strings.color,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

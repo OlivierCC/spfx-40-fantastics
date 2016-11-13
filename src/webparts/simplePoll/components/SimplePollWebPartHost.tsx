@@ -12,7 +12,7 @@ import { Dialog, DialogType } from 'office-ui-fabric-react/lib/Dialog';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Button, ButtonType } from 'office-ui-fabric-react/lib/Button';
 import { ISimplePollWebPartProps } from '../ISimplePollWebPartProps';
-import { IWebPartContext } from '@microsoft/sp-client-preview';
+import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import * as strings from 'SimplePollStrings';
 import { SPSurveyService } from '../SPSurveyService';
 import styles from '../SimplePoll.module.scss';

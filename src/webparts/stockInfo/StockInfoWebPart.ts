@@ -11,7 +11,7 @@ import {
   PropertyPaneTextField,
   PropertyPaneSlider,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'StockInfoStrings';
 import { IStockInfoWebPartProps } from './IStockInfoWebPartProps';
@@ -27,7 +27,7 @@ export default class StockInfoWebPart extends BaseClientSideWebPart<IStockInfoWe
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**

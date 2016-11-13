@@ -12,7 +12,7 @@ import {
   PropertyPaneToggle,
   PropertyPaneDropdown,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SocialShareStrings';
 import { ISocialShareWebPartProps } from './ISocialShareWebPartProps';
@@ -34,7 +34,7 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -461,7 +461,8 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
                     {key:'adfty', text:'Adfty'}
                   ],
                   initialValue: this.properties.services,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyPaneToggle('yammer', {
                   label: strings.Yammer

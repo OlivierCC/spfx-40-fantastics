@@ -15,7 +15,7 @@ import {
   PropertyPaneDropdown,
   IPropertyPaneDropdownOption,
   PropertyPaneSlider
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'mystrings';
 import { IPhotopileWebPartProps } from './IPhotopileWebPartProps';

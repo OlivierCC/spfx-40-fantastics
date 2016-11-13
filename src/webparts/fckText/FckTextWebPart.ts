@@ -11,7 +11,7 @@ import {
   IWebPartContext,
   PropertyPaneDropdown,
   PropertyPaneToggle
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 import { DisplayMode } from '@microsoft/sp-client-base';
 
 import * as strings from 'fckTextStrings';
@@ -33,7 +33,7 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -68,7 +68,7 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
             //CKEDITOR.instances[i].updateElement();
             elm.sender.updateElement();
             var value = ((document.getElementById(this.guid + '-editor')) as any).value;
-            if (this.onPropertyChange && value != null) {
+            if (this.onPropertyChanged && value != null) {
               this.properties.text = value;
             }
           });

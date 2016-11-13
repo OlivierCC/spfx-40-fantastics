@@ -12,7 +12,7 @@ import {
   PropertyPaneSlider,
   PropertyPaneDropdown,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'QrCodeStrings';
 import { IQrCodeWebPartProps } from './IQrCodeWebPartProps';
@@ -37,7 +37,7 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**

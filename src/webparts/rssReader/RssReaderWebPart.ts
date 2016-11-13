@@ -12,7 +12,7 @@ import {
   PropertyPaneSlider,
   PropertyPaneToggle,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'RssReaderStrings';
 import { IRssReaderWebPartProps } from './IRssReaderWebPartProps';
@@ -41,7 +41,7 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -152,24 +152,28 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                 PropertyFieldFontPicker('font', {
                   label: strings.font,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.fontSize,
                   initialValue: this.properties.fontSize,
                   usePixels: true,
                   preview: true,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.fontColor,
                   initialColor: this.properties.fontColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

@@ -10,7 +10,7 @@ import {
   IPropertyPaneSettings,
   IWebPartContext,
   PropertyPaneToggle
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 import { DisplayMode } from '@microsoft/sp-client-base';
 
 import * as strings from 'MarkdownStrings';

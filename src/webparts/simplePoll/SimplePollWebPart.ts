@@ -13,7 +13,7 @@ import {
   PropertyPaneDropdown,
   PropertyPaneToggle,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SimplePollStrings';
 import { ISimplePollWebPartProps } from './ISimplePollWebPartProps';
@@ -36,7 +36,7 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -83,8 +83,9 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   includeHidden: false,
                   baseTemplate: 102,
                   orderBy: PropertyFieldSPListPickerOrderBy.Title,
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 }),
                 PropertyPaneDropdown('chartType', {
                   label: strings.chartType,
@@ -106,19 +107,22 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('size', {
                   label: strings.FontSizeFieldLabel,
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.size,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('color', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

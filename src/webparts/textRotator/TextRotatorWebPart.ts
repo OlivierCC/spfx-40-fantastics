@@ -12,7 +12,7 @@ import {
   PropertyPaneTextField,
   PropertyPaneDropdown,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'TextRotatorStrings';
 import { ITextRotatorWebPartProps } from './ITextRotatorWebPartProps';
@@ -41,7 +41,7 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
 
     this.guid = this.getGuid();
     this.scriptLoaded = false;
@@ -230,31 +230,36 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                 PropertyFieldAlignPicker('align', {
                   label: strings.Align,
                   initialValue: this.properties.align,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChanged: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontPicker('font', {
                   label: strings.Font,
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSize,
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.fontSize,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

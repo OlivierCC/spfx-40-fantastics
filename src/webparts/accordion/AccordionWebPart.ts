@@ -12,7 +12,7 @@ import {
   PropertyPaneDropdown,
   PropertyPaneToggle,
   PropertyPaneSlider
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 import { DisplayMode } from '@microsoft/sp-client-base';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
@@ -47,7 +47,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
 
     //Load the JQuery smoothness CSS file
     importableModuleLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
@@ -176,7 +176,8 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
                   fields: [
                     { title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChange,
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties,
                   context: this.context
                 }),
                 PropertyPaneToggle('collapsible', {

@@ -4,7 +4,7 @@
  *
  * Author: Olivier Carpentier
  */
-import { IWebPartContext } from '@microsoft/sp-client-preview';
+import { IWebPartContext } from '@microsoft/sp-webpart-base';
 
 export interface IPhotopileWebPartWebPartProps {
   listName: string;

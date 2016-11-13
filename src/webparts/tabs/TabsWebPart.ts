@@ -11,7 +11,7 @@ import {
   IWebPartContext,
   PropertyPaneDropdown,
   PropertyPaneToggle
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 import { DisplayMode } from '@microsoft/sp-client-base';
 import ModuleLoader from '@microsoft/sp-module-loader';
 
@@ -40,7 +40,7 @@ export default class TabsWebPart extends BaseClientSideWebPart<ITabsWebPartProps
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -434,8 +434,9 @@ Main components
                   fields: [
                     { title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 })
               ]
             },
@@ -468,12 +469,14 @@ Main components
                 PropertyFieldColorPicker('disableColor', {
                   label: strings.DisableColor,
                   initialColor: this.properties.disableColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('selectedColor', {
                   label: strings.SelectedColor,
                   initialColor: this.properties.selectedColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

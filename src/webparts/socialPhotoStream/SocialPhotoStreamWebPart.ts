@@ -13,7 +13,7 @@ import {
   PropertyPaneDropdown,
   PropertyPaneToggle,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SocialPhotoStreamStrings';
 import { ISocialPhotoStreamWebPartProps } from './ISocialPhotoStreamWebPartProps';
@@ -37,7 +37,7 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**

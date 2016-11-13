@@ -11,7 +11,7 @@ import {
   IWebPartContext,
   PropertyPaneToggle,
   PropertyPaneSlider
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'carousel3DStrings';
 import { ICarousel3DWebPartProps } from './ICarousel3DWebPartProps';
@@ -44,7 +44,7 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
 
     //Binds the async method
     this.rendered = this.rendered.bind(this);
@@ -222,8 +222,9 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                     { title: 'Link Url', required: false, type: CustomListFieldType.string, hidden: true },
                     { title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }
                   ],
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 }),
                 PropertyPaneSlider('itemHeight', {
                   label: strings.ItemHeightFieldLabel,
@@ -344,19 +345,22 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSizeFieldLabel,
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.fontSize,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.fontColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

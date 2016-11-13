@@ -9,7 +9,7 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneSettings,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'VerticalTimelineStrings';
 import { IVerticalTimelineWebPartProps } from './IVerticalTimelineWebPartProps';
@@ -40,7 +40,7 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -412,8 +412,9 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   showMax: true,
                   showFilters: true,
                   max: 100,
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 })
               ]
             },
@@ -424,17 +425,20 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   label: strings.icon,
                   initialValue: this.properties.icon,
                   orderAlphabetical: true,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('color', {
                   label: strings.color,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

@@ -5,7 +5,7 @@
  * Author: Olivier Carpentier
  */
 import { ISPListItems, ISPListItem } from './ISPList';
-import { IWebPartContext } from '@microsoft/sp-client-preview';
+import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import { IVerticalTimelineWebPartProps } from './IVerticalTimelineWebPartProps';
 import { EnvironmentType } from '@microsoft/sp-client-base';
 import MockHttpClient from './MockHttpClient';

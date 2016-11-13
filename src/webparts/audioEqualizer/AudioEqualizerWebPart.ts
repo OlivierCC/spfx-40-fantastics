@@ -11,7 +11,7 @@ import {
   PropertyPaneTextField,
   PropertyPaneSlider,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'AudioEqualizerStrings';
 import { IAudioEqualizerWebPartProps } from './IAudioEqualizerWebPartProps';
@@ -44,7 +44,7 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -188,17 +188,20 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                 PropertyFieldColorPicker('color', {
                   label: strings.color,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('color1', {
                   label: strings.color1,
                   initialColor: this.properties.color1,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('color2', {
                   label: strings.color2,
                   initialColor: this.properties.color2,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

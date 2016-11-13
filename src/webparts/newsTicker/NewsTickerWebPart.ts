@@ -12,7 +12,7 @@ import {
   PropertyPaneSlider,
   PropertyPaneToggle,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'NewsTickerStrings';
 import { INewsTickerWebPartProps } from './INewsTickerWebPartProps';
@@ -38,7 +38,7 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -173,8 +173,9 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                     { title: 'Enable', required: true, type: CustomListFieldType.boolean },
                     { title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 }),
                 PropertyPaneSlider('speed', {
                   label: strings.Speed,
@@ -205,7 +206,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             },
@@ -218,19 +220,22 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                 PropertyFieldFontPicker('font', {
                   label: strings.Font,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSize,
                   initialValue: this.properties.fontSize,
                   usePixels: true,
                   preview: true,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             },
@@ -240,19 +245,22 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                 PropertyFieldFontPicker('fontMssg', {
                   label: strings.Font,
                   initialValue: this.properties.fontMssg,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSizeMssg', {
                   label: strings.FontSize,
                   initialValue: this.properties.fontSizeMssg,
                   usePixels: true,
                   preview: true,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColorMssg', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColorMssg,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

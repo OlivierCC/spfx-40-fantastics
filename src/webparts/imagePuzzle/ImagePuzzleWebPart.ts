@@ -11,7 +11,7 @@ import {
   PropertyPaneSlider,
   PropertyPaneTextField,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'ImagePuzzleStrings';
 import { IImagePuzzleWebPartProps } from './IImagePuzzleWebPartProps';
@@ -37,7 +37,7 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
 
     this.guid = this.getGuid();
   }
@@ -119,8 +119,9 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
                 PropertyFieldPicturePicker('image', {
                   label: strings.Image,
                   initialValue: this.properties.image,
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 }),
                 PropertyPaneTextField('width', {
                   label: strings.Width

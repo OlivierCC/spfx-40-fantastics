@@ -11,7 +11,7 @@ import {
   PropertyPaneDropdown,
   PropertyPaneToggle,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SyntaxHighlighterStrings';
 import { ISyntaxHighlighterWebPartProps } from './ISyntaxHighlighterWebPartProps';
@@ -58,7 +58,7 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
     this.renderContent = this.renderContent.bind(this);
     this.onSyntaxHighlighterChanged = this.onSyntaxHighlighterChanged.bind(this);
 

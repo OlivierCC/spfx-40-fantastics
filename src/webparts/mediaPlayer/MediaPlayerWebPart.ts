@@ -11,7 +11,7 @@ import {
   PropertyPaneTextField,
   PropertyPaneDropdown,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'MediaPlayerStrings';
 import { IMediaPlayerWebPartProps } from './IMediaPlayerWebPartProps';
@@ -35,7 +35,7 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
 
     ModuleLoader.loadCss('//cdn.plyr.io/2.0.9/plyr.css');
   }
@@ -148,8 +148,9 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
                     { title: 'SrcLen', required: false, hidden: false, type: CustomListFieldType.string },
                     { title: 'Url', required: true, hidden: false, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 })
               ]
             }

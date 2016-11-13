@@ -13,7 +13,7 @@ import {
   PropertyPaneToggle,
   PropertyPaneDropdown,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'BarChartStrings';
 import { IBarChartWebPartProps } from './IBarChartWebPartProps';
@@ -44,7 +44,7 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -175,8 +175,9 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
                     { title: strings.Color, required: true, type: CustomListFieldType.color },
                     { title: strings.HoverColor, required: true, type: CustomListFieldType.color }
                   ],
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 }),
                 PropertyPaneToggle('responsive', {
                   label: strings.Responsive,
@@ -232,19 +233,22 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('titleSize', {
                   label: strings.TitleSize,
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.titleSize,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

@@ -11,7 +11,7 @@ import {
   PropertyPaneDropdown,
   PropertyPaneTextField,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'ImageColorStrings';
 import { IImageColorWebPartProps } from './IImageColorWebPartProps';
@@ -30,7 +30,7 @@ export default class ImageColorWebPart extends BaseClientSideWebPart<IImageColor
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -333,8 +333,9 @@ export default class ImageColorWebPart extends BaseClientSideWebPart<IImageColor
                 PropertyFieldPicturePicker('image', {
                   label: strings.Image,
                   initialValue: this.properties.image,
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 }),
                 PropertyPaneDropdown('color', {
                   label: strings.Color,

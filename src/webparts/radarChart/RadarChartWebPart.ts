@@ -13,7 +13,7 @@ import {
   PropertyPaneToggle,
   PropertyPaneDropdown,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'RadarChartStrings';
 import { IRadarChartWebPartProps } from './IRadarChartWebPartProps';
@@ -40,7 +40,7 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   private getDataTab(property: string): string[] {
@@ -164,8 +164,9 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                     { title: strings.Label, required: true, type: CustomListFieldType.string },
                     { title: strings.Value, required: true, type: CustomListFieldType.number }
                   ],
-                  onPropertyChange: this.onPropertyChange,
-                  context: this.context
+                  onPropertyChange: this.onPropertyChanged,
+                  context: this.context,
+                  properties: this.properties
                 }),
                 PropertyPaneToggle('responsive', {
                   label: strings.Responsive,
@@ -219,7 +220,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                 PropertyFieldColorPicker('fillColor', {
                   label: strings.FillColor,
                   initialColor: this.properties.fillColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             },
@@ -246,19 +248,22 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('titleSize', {
                   label: strings.TitleSize,
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.titleSize,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }

@@ -12,7 +12,7 @@ import {
   PropertyPaneToggle,
   PropertyPaneSlider,
   IWebPartContext
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'TweetsFeedStrings';
 import { ITweetsFeedWebPartProps } from './ITweetsFeedWebPartProps';
@@ -34,7 +34,7 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChange = this.onPropertyChange.bind(this);
+    this.onPropertyChanged = this.onPropertyChanged.bind(this);
   }
 
   /**
@@ -146,12 +146,14 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
                 PropertyFieldColorPicker('linkColor', {
                   label: strings.LinkColor,
                   initialColor: this.properties.linkColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 }),
                 PropertyFieldColorPicker('borderColor', {
                   label: strings.BorderColor,
                   initialColor: this.properties.borderColor,
-                  onPropertyChange: this.onPropertyChange
+                  onPropertyChange: this.onPropertyChanged,
+                  properties: this.properties
                 })
               ]
             }
