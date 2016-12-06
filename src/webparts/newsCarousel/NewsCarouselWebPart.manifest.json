@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "3f378f3d-733d-34b6-8470-17317bb0b275",
+  "alias": "NewsCarousel",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

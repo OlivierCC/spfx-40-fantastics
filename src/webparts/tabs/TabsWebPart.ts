@@ -40,7 +40,7 @@ export default class TabsWebPart extends BaseClientSideWebPart<ITabsWebPartProps
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -434,7 +434,7 @@ Main components
                   fields: [
                     { title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 })
@@ -469,13 +469,13 @@ Main components
                 PropertyFieldColorPicker('disableColor', {
                   label: strings.DisableColor,
                   initialColor: this.properties.disableColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('selectedColor', {
                   label: strings.SelectedColor,
                   initialColor: this.properties.selectedColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

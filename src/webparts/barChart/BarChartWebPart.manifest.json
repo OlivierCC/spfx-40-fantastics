@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "28d3013b-a43a-4869-ac4d-48cd421d2101",
+  "alias": "BarChart",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

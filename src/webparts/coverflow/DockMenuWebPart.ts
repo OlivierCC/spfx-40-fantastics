@@ -40,7 +40,7 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -265,7 +265,7 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                     { title: 'Link Url', required: false, type: CustomListFieldType.string, hidden: true },
                     { title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 })
@@ -359,13 +359,13 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                 PropertyFieldAlignPicker('textPanelAlign', {
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
-                  onPropertyChanged: this.onPropertyChanged,
+                  onPropertyChanged: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontPicker('textPanelFont', {
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('textPanelFontSize', {
@@ -373,19 +373,19 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   initialValue: this.properties.textPanelFontSize,
                   usePixels: true,
                   preview: true,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('textPanelFontColor', {
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('textPanelBackgroundColor', {
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

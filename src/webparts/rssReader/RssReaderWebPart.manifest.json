@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "d13752b9-1a71-45ca-96fe-918f0c9631cb",
+  "alias": "RSSReader",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

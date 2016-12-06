@@ -35,7 +35,7 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
     ModuleLoader.loadCss('//cdn.plyr.io/2.0.9/plyr.css');
   }
@@ -148,7 +148,7 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
                     { title: 'SrcLen', required: false, hidden: false, type: CustomListFieldType.string },
                     { title: 'Url', required: true, hidden: false, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 })

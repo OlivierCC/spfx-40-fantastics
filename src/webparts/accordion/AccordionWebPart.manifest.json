@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "89d609dd-9fb6-4353-aab4-6215ac1bb7f6",
+  "alias": "Accordion",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

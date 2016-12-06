@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "e762c85a-f068-4067-a8c0-b5cdbf4fcce7",
+  "alias": "AudioEqualizer",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

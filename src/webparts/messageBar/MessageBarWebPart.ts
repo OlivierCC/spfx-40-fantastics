@@ -33,7 +33,7 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -94,7 +94,7 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   label: strings.Icon,
                   initialValue: this.properties.icon,
                   orderAlphabetical: true,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldRichTextBox('text', {
@@ -103,7 +103,7 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   inline: false,
                   minHeight: 100,
                   mode: 'basic',
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]
@@ -116,7 +116,7 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
@@ -124,19 +124,19 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.fontSize,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

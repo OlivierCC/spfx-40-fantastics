@@ -48,7 +48,7 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -146,7 +146,7 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('size', {
@@ -154,13 +154,13 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.size,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('color', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

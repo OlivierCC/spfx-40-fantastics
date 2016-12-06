@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "b6330715-c92a-479c-ae83-510474079988",
+  "alias": "3DCarousel",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

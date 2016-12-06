@@ -36,7 +36,7 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -83,7 +83,7 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   includeHidden: false,
                   baseTemplate: 102,
                   orderBy: PropertyFieldSPListPickerOrderBy.Title,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 }),
@@ -107,7 +107,7 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('size', {
@@ -115,13 +115,13 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.size,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('color', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

@@ -44,7 +44,7 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -188,19 +188,19 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                 PropertyFieldColorPicker('color', {
                   label: strings.color,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('color1', {
                   label: strings.color1,
                   initialColor: this.properties.color1,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('color2', {
                   label: strings.color2,
                   initialColor: this.properties.color2,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

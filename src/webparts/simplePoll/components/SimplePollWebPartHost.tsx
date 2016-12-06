@@ -170,7 +170,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
                 <div style={{lineHeight: '28px'}}>
                 {this.state.choices.map((answer: string, i: number) => {
                   return (
-                    <div><input type='radio' defaultChecked={answer == this.state.selectedValue ? true : false} onChange={this.onVoteChanged} disabled={this.state.alreadyVote} name={this.guid} value={answer} /> {answer}</div>
+                    <div><input type='radio' defaultChecked={answer == this.state.selectedValue ? true : false} aria-checked={answer == this.state.selectedValue ? true : false} onChange={this.onVoteChanged} disabled={this.state.alreadyVote} name={this.guid} value={answer} /> {answer}</div>
                   );
                 })}
                 </div>

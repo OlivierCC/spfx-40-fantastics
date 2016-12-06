@@ -41,7 +41,7 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -152,7 +152,7 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                 PropertyFieldFontPicker('font', {
                   label: strings.font,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
@@ -160,19 +160,19 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                   initialValue: this.properties.fontSize,
                   usePixels: true,
                   preview: true,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.fontColor,
                   initialColor: this.properties.fontColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

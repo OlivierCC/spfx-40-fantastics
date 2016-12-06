@@ -7,7 +7,7 @@
 import { ISPLists, ISPListItems, ISPListItem } from './ISPList';
 import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import { ITilesGalleryWebPartProps } from './ITilesGalleryWebPartProps';
-import { EnvironmentType } from '@microsoft/sp-client-base';
+import { Environment, EnvironmentType } from '@microsoft/sp-client-base';
 import MockHttpClient from './MockHttpClient';
 
 /**
@@ -49,7 +49,7 @@ export class SPPicturesListService implements ISPPicturesListService {
    * Gets the list of picture libs in the current SharePoint site
    */
   public getPictureLibs(): Promise<ISPLists> {
-    if (this.context.environment.type === EnvironmentType.Local) {
+    if (Environment.type === EnvironmentType.Local) {
       //If the running environment is local, load the data from the mock
       return this.getPictureLibsFromMock();
     }
@@ -88,7 +88,7 @@ export class SPPicturesListService implements ISPPicturesListService {
    * Gets the pictures from a SharePoint list
    */
   public getPictures(queryUrl: string): Promise<ISPListItems> {
-    if (this.context.environment.type === EnvironmentType.Local) {
+    if (Environment.type === EnvironmentType.Local) {
       //If the running environment is local, load the data from the mock
       return this.getPicturesFromMock('1');
     }

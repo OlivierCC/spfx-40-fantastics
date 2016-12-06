@@ -40,7 +40,7 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   private getDataTab(property: string): string[] {
@@ -164,7 +164,7 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                     { title: strings.Label, required: true, type: CustomListFieldType.string },
                     { title: strings.Value, required: true, type: CustomListFieldType.number }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 }),
@@ -226,7 +226,7 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                 PropertyFieldColorPicker('fillColor', {
                   label: strings.FillColor,
                   initialColor: this.properties.fillColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]
@@ -254,7 +254,7 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('titleSize', {
@@ -262,13 +262,13 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.titleSize,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "b27e9f72-10b4-4880-95e3-5ca8fb223a1c",
+  "alias": "MediaPlayer",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

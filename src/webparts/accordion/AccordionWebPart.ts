@@ -47,7 +47,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
     //Load the JQuery smoothness CSS file
     importableModuleLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
@@ -176,7 +176,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
                   fields: [
                     { title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties,
                   context: this.context
                 }),

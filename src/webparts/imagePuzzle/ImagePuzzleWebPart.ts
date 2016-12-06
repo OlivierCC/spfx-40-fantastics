@@ -37,7 +37,7 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
     this.guid = this.getGuid();
   }
@@ -119,7 +119,7 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
                 PropertyFieldPicturePicker('image', {
                   label: strings.Image,
                   initialValue: this.properties.image,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 }),

@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "81146368-785c-47c2-b313-66d83f1bb4f8",
+  "alias": "BingTranslator",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

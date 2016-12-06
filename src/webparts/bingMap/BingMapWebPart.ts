@@ -46,7 +46,7 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -141,7 +141,7 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
                   label: strings.Position,
                   longitude: this.properties.position != null ? this.properties.position.substr(0, this.properties.position.indexOf(",")) : '0',
                   latitude: this.properties.position != null ? this.properties.position.substr(this.properties.position.indexOf(",") + 1, this.properties.position.length - this.properties.position.indexOf(",")) : '0',
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

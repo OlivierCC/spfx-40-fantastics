@@ -34,7 +34,7 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -146,13 +146,13 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
                 PropertyFieldColorPicker('linkColor', {
                   label: strings.LinkColor,
                   initialColor: this.properties.linkColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('borderColor', {
                   label: strings.BorderColor,
                   initialColor: this.properties.borderColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

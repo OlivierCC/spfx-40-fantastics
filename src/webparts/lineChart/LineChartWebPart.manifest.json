@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "802fdd09-ea24-4929-bf84-be665dd89420",
+  "alias": "LineChart",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

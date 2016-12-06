@@ -44,7 +44,7 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
     //Binds the async method
     this.rendered = this.rendered.bind(this);
@@ -222,7 +222,7 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                     { title: 'Link Url', required: false, type: CustomListFieldType.string, hidden: true },
                     { title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 }),
@@ -345,7 +345,7 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.font,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
@@ -353,13 +353,13 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.fontSize,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.fontColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

@@ -7,7 +7,7 @@
 import { ISPListItems, ISPListItem } from './ISPList';
 import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import { ISimplePollWebPartProps } from './ISimplePollWebPartProps';
-import { EnvironmentType, IHttpClientOptions } from '@microsoft/sp-client-base';
+import { Environment, EnvironmentType, IHttpClientOptions } from '@microsoft/sp-client-base';
 import MockHttpClient from './MockHttpClient';
 
 /**
@@ -155,7 +155,7 @@ export class SPSurveyService implements ISPSurveyService {
    * Gets the survey questions from a SharePoint list
    */
   public getQuestions(surveyListId: string): Promise<ISPListItems> {
-    if (this.context.environment.type === EnvironmentType.Local) {
+    if (Environment.type === EnvironmentType.Local) {
       //If the running environment is local, load the data from the mock
       return this.getItemsFromMock('1');
     }

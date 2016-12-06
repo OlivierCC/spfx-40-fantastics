@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "40ff328d-4e5e-4a07-9f71-7c17f42744e2",
+  "alias": "VerticalTimeline",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

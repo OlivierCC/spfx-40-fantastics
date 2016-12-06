@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "1431cddd-2c55-475c-5483-51aa74c7bc88",
+  "alias": "TypeWriting",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

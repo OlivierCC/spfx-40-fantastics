@@ -40,7 +40,7 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   private getDataTab(property: string): string[] {
@@ -154,7 +154,7 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                     { title: strings.Color, required: true, type: CustomListFieldType.color },
                     { title: strings.HoverColor, required: true, type: CustomListFieldType.color }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 }),
@@ -215,7 +215,7 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('titleSize', {
@@ -223,13 +223,13 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.titleSize,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]
@@ -254,7 +254,7 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   useSafeFont: true,
                   previewFonts: true,
                   initialValue: this.properties.legendFont,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('legendSize', {
@@ -262,13 +262,13 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   usePixels: true,
                   preview: true,
                   initialValue: this.properties.legendSize,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('legendColor', {
                   label: strings.LegendColor,
                   initialColor: this.properties.legendColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

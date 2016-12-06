@@ -33,7 +33,7 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -68,7 +68,7 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
             //CKEDITOR.instances[i].updateElement();
             elm.sender.updateElement();
             var value = ((document.getElementById(this.guid + '-editor')) as any).value;
-            if (this.onPropertyChanged && value != null) {
+            if (this.onPropertyPaneFieldChanged && value != null) {
               this.properties.text = value;
             }
           });

@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "60564c9b-8561-489d-9ff7-1846c8358964",
+  "alias": "NewsTicker",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,

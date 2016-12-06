@@ -37,7 +37,7 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**

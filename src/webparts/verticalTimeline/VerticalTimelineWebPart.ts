@@ -40,7 +40,7 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -412,7 +412,7 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   showMax: true,
                   showFilters: true,
                   max: 100,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 })
@@ -425,19 +425,19 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   label: strings.icon,
                   initialValue: this.properties.icon,
                   orderAlphabetical: true,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('color', {
                   label: strings.color,
                   initialColor: this.properties.color,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

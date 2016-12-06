@@ -41,7 +41,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
 
     this.guid = this.getGuid();
 
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
     ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
     ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
@@ -179,7 +179,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                     { title: 'Picture', required: true, hidden: true, type: CustomListFieldType.string },
                     { title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
                   properties: this.properties
                 })
@@ -250,13 +250,13 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                 PropertyFieldAlignPicker('textPanelAlign', {
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
-                  onPropertyChanged: this.onPropertyChanged,
+                  onPropertyChanged: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontPicker('textPanelFont', {
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldFontSizePicker('textPanelFontSize', {
@@ -264,19 +264,19 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   initialValue: this.properties.textPanelFontSize,
                   usePixels: true,
                   preview: true,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('textPanelFontColor', {
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyFieldColorPicker('textPanelBackgroundColor', {
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]
@@ -303,7 +303,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                 PropertyFieldColorPicker('borderColor', {
                   label: strings.BorderColorFieldLabel,
                   initialColor: this.properties.borderColor,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 })
               ]

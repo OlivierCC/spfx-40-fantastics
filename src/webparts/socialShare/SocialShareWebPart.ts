@@ -34,7 +34,7 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
-    this.onPropertyChanged = this.onPropertyChanged.bind(this);
+    this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
   }
 
   /**
@@ -461,7 +461,7 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
                     {key:'adfty', text:'Adfty'}
                   ],
                   initialValue: this.properties.services,
-                  onPropertyChange: this.onPropertyChanged,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties
                 }),
                 PropertyPaneToggle('yammer', {

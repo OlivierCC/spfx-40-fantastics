@@ -2,6 +2,7 @@
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
   "id": "74ebd2e5-98b8-46cf-89a1-cacef2f52203",
+  "alias": "SocialShare",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,
