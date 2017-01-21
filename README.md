@@ -8,6 +8,7 @@ These WebParts are mainly based on best-class jQuery, React or Angular plugins a
 Oh, and Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
 
 **Current Version**: v0.9.2
+
 **Current SPFx Drop support** - [RC0](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-RC0)
 
 ![Logo](./assets/logo_final.gif)
