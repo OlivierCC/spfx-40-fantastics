@@ -7,18 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneDropdown,
   PropertyPaneToggle,
   PropertyPaneSlider
 } from '@microsoft/sp-webpart-base';
-import { DisplayMode } from '@microsoft/sp-client-base';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { DisplayMode, Version } from '@microsoft/sp-core-library';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 import * as strings from 'AccordionStrings';
 import { IAccordionWebPartProps } from './IAccordionWebPartProps';
-import importableModuleLoader from '@microsoft/sp-module-loader';
 
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 
@@ -26,6 +25,7 @@ import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-f
 require('jquery');
 require('jqueryui');
 import * as $ from 'jquery';
+import * as JQueryUI from 'jqueryui';
 
 /**
  * @class
@@ -39,8 +39,8 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Initialize unique GUID
     this.guid = this.getGuid();
@@ -50,7 +50,15 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
     //Load the JQuery smoothness CSS file
-    importableModuleLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+    SPComponentLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -98,7 +106,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
           fMode = this.properties.mode;
         var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
         //Loads the Javascript from the CKEditor CDN
-        ModuleLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
+        SPComponentLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
           if (this.properties.inline == null || this.properties.inline === false) {
             //If mode is not inline, loads the script with the replace method
             for (var tab = 0; tab < this.properties.tabs.length; tab++) {
@@ -157,7 +165,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

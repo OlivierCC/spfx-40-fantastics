@@ -7,7 +7,7 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneDropdown,
   PropertyPaneToggle,
   IWebPartContext
@@ -15,8 +15,8 @@ import {
 
 import * as strings from 'SyntaxHighlighterStrings';
 import { ISyntaxHighlighterWebPartProps } from './ISyntaxHighlighterWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
-import { DisplayMode } from '@microsoft/sp-client-base';
+import { SPComponentLoader } from '@microsoft/sp-loader';
+import { DisplayMode, Version } from '@microsoft/sp-core-library';
 
 /**
  * @class
@@ -73,8 +73,8 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
@@ -87,7 +87,15 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
     this.scriptLoaded = false;
 
     //Load the SyntaxHighlighter core CSS styles
-    ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css');
+    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css');
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -137,12 +145,12 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
       var theme = this.properties.theme;
       if (theme == null || theme == '')
         theme = 'shThemeDefault.min.css';
-      ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/' + theme);
+      SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/' + theme);
 
       //Checks if the scripts has been already loaded
       if (this.scriptLoaded === false) {
         //If not, load the SyntaxHightligter core JS lib from CDN
-        ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js', 'SyntaxHighlighter').then((SyntaxHighlighter?: any): void => {
+        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js', 'SyntaxHighlighter').then((SyntaxHighlighter?: any): void => {
           //Saves the SyntaxHighlighter object instance
           this.SyntaxHighlighter = SyntaxHighlighter;
           //Calls the render JS method
@@ -181,7 +189,7 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
     //Gets the selected brush from current selected language
     var brush = this.getBrushPath(this.properties.language);
     //Loads the SyntaxHighlighter brush JavaScript lib from CDN
-    ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/' + brush, 'SyntaxHighlighter').then((SyntaxHighlighter?: any): void => {
+    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/' + brush, 'SyntaxHighlighter').then((SyntaxHighlighter?: any): void => {
       //Calls the SyntaxHighlighter highlight method
       this.SyntaxHighlighter.highlight();
     });
@@ -210,7 +218,7 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

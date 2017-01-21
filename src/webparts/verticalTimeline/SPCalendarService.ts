@@ -7,7 +7,9 @@
 import { ISPListItems, ISPListItem } from './ISPList';
 import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import { IVerticalTimelineWebPartProps } from './IVerticalTimelineWebPartProps';
-import { Environment, EnvironmentType } from '@microsoft/sp-client-base';
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
+import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
+
 import MockHttpClient from './MockHttpClient';
 
 /**
@@ -51,7 +53,7 @@ export class SPCalendarService implements ISPCalendarService {
     }
     else {
       //Request the SharePoint web service
-      return this.context.httpClient.get(queryUrl).then((response: Response) => {
+      return this.context.spHttpClient.get(queryUrl, SPHttpClient.configurations.v1).then((response: SPHttpClientResponse) => {
           return response.json().then((responseFormated: any) => {
               var formatedResponse: ISPListItems = { value: []};
               //Fetchs the Json response to construct the final items list

@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneToggle,
   PropertyPaneDropdown,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'SocialShareStrings';
 import { ISocialShareWebPartProps } from './ISocialShareWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldDropDownSelect } from 'sp-client-custom-fields/lib/PropertyFieldDropDownSelect';
@@ -29,12 +30,20 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -70,7 +79,7 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
     this.domElement.innerHTML = html;
 
     if (this.addthis == null) {
-      ModuleLoader.loadScript('//s7.addthis.com/js/300/addthis_widget.js#async=1#pubid=' + this.properties.pubid, 'addthis').then((addthis?: any)=> {
+      SPComponentLoader.loadScript('//s7.addthis.com/js/300/addthis_widget.js#async=1#pubid=' + this.properties.pubid, 'addthis').then((addthis?: any)=> {
         this.addthis = addthis;
         this.addthis.init();
         this.addthis.toolbox('.addthis_toolbox');
@@ -88,7 +97,7 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

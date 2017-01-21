@@ -7,7 +7,9 @@
 import { ISPListItems, ISPListItem } from './ISPList';
 import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import { ISimplePollWebPartProps } from './ISimplePollWebPartProps';
-import { Environment, EnvironmentType, IHttpClientOptions } from '@microsoft/sp-client-base';
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
+import { SPHttpClient, SPHttpClientResponse, ISPHttpClientOptions } from '@microsoft/sp-http';
+
 import MockHttpClient from './MockHttpClient';
 
 /**
@@ -47,7 +49,7 @@ export class SPSurveyService implements ISPSurveyService {
       restUrl += surveyListId;
       restUrl += "')/items?$select=" + question + "&$top=9999";
 
-      return this.context.httpClient.get(restUrl).then((response: Response) => {
+      return this.context.spHttpClient.get(restUrl, SPHttpClient.configurations.v1).then((response: SPHttpClientResponse) => {
           return response.json().then((responseFormated: any) => {
 
             var res: number[] = [];
@@ -81,7 +83,7 @@ export class SPSurveyService implements ISPSurveyService {
       };
       item[question] = choice;
 
-      var options: IHttpClientOptions = {
+      var options: ISPHttpClientOptions = {
         headers: {
           "odata-version": "3.0",
           "Accept": "application/json"
@@ -89,7 +91,7 @@ export class SPSurveyService implements ISPSurveyService {
         body: JSON.stringify(item),
         webUrl: this.context.pageContext.web.absoluteUrl
       };
-      return this.context.httpClient.post(restUrl, options).then((response: Response) => {
+      return this.context.spHttpClient.post(restUrl, SPHttpClient.configurations.v1, options).then((response: SPHttpClientResponse) => {
         return response.json().then((responseFormated: any) => {
           return true;
         });
@@ -103,13 +105,13 @@ export class SPSurveyService implements ISPSurveyService {
     restUrl += "/_api/Web/Lists(guid'";
     restUrl += listId;
     restUrl += "')?$select=Title";
-    var options: IHttpClientOptions = {
+    var options: ISPHttpClientOptions = {
       headers: {
         "odata-version": "3.0",
         "Accept": "application/json"
       }
     };
-    return this.context.httpClient.get(restUrl, options).then((response: Response) => {
+    return this.context.spHttpClient.get(restUrl, SPHttpClient.configurations.v1, options).then((response: SPHttpClientResponse) => {
         return response.text().then((responseFormated: string) => {
             var iTitle = responseFormated.indexOf("<d:Title>");
             var newStr = responseFormated.slice(iTitle + 9, responseFormated.length);
@@ -130,7 +132,7 @@ export class SPSurveyService implements ISPSurveyService {
     restUrl += surveyListId;
     restUrl += "')/items?$expand=Author&$select=" + question + ",Author/EMail&$top=999";
 
-     return this.context.httpClient.get(restUrl).then((response: Response) => {
+     return this.context.spHttpClient.get(restUrl, SPHttpClient.configurations.v1).then((response: SPHttpClientResponse) => {
           return response.json().then((responseFormated: any) => {
               var formatedResponse: ISPListItems = { value: []};
               //Fetchs the Json response to construct the final items list
@@ -166,7 +168,7 @@ export class SPSurveyService implements ISPSurveyService {
       restUrl += surveyListId;
       restUrl += "')/fields?$filter=(CanBeDeleted%20eq%20true)&$top=1";
 
-      return this.context.httpClient.get(restUrl).then((response: Response) => {
+      return this.context.spHttpClient.get(restUrl, SPHttpClient.configurations.v1).then((response: SPHttpClientResponse) => {
           return response.json().then((responseFormated: any) => {
               var formatedResponse: ISPListItems = { value: []};
               //Fetchs the Json response to construct the final items list

@@ -7,7 +7,7 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneSlider,
   PropertyPaneDropdown,
@@ -15,6 +15,7 @@ import {
   PropertyPaneLink,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'BingMapStrings';
 import { IBingMapWebPartProps } from './IBingMapWebPartProps';
@@ -39,14 +40,22 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -103,7 +112,7 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

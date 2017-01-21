@@ -16,7 +16,7 @@ import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import * as strings from 'SimplePollStrings';
 import { SPSurveyService } from '../SPSurveyService';
 import styles from '../SimplePoll.module.scss';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 /**
  * @interface
@@ -253,7 +253,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
       const listService: SPSurveyService = new SPSurveyService(this.props, this.myPageContext);
       listService.getResults(this.props.surveyList, this.state.questionInternalName, this.state.choices).then((num: number[]) => {
         this.state.results = num;
-        ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', 'Chart').then((Chart?: any): void => {
+        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', 'Chart').then((Chart?: any): void => {
           this.state.loaded = true;
           this.setState(this.state);
           this.Chart = Chart;

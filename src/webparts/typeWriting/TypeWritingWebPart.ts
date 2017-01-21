@@ -7,12 +7,13 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneSlider,
   PropertyPaneToggle,
   PropertyPaneTextField,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'TypeWritingStrings';
 import { ITypeWritingWebPartProps } from './ITypeWritingWebPartProps';
@@ -23,7 +24,7 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
 
-var TypeWriting = require('typewriting');
+var TypeWriting: any = require('typewriting');
 
 export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWritingWebPartProps> {
 
@@ -34,8 +35,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
@@ -43,6 +44,15 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
 
     this.guid = this.getGuid();
   }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
+  }
+
 
   /**
    * @function
@@ -112,7 +122,7 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

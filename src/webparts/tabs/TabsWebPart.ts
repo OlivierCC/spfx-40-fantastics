@@ -7,13 +7,13 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneDropdown,
   PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
-import { DisplayMode } from '@microsoft/sp-client-base';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { DisplayMode, Version } from '@microsoft/sp-core-library';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 import * as strings from 'TabsStrings';
 import { ITabsWebPartProps } from './ITabsWebPartProps';
@@ -33,14 +33,22 @@ export default class TabsWebPart extends BaseClientSideWebPart<ITabsWebPartProps
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -308,7 +316,7 @@ Main components
         if (this.properties.mode != null)
           fMode = this.properties.mode;
         var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
-        ModuleLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
+        SPComponentLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
           if (this.properties.inline == null || this.properties.inline === false) {
             for (var tab = 0; tab < this.properties.tabs.length; tab++) {
               CKEDITOR.replace( this.guid + '-editor-' + tab, {
@@ -415,7 +423,7 @@ Main components
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

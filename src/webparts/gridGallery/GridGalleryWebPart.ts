@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneToggle,
   PropertyPaneDropdown,
   PropertyPaneSlider
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'gridGalleryStrings';
 import { IGridGalleryWebPartProps } from './IGridGalleryWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 import { SPPicturesListService } from './SPPicturesListService';
 import { ISPListItem } from './ISPList';
 
@@ -39,15 +40,23 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
-    ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
-    ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
+    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
+    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -74,8 +83,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
     }
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
-      ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', 'jQuery').then((): void => {
-        ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/grid/ug-theme-grid.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', 'jQuery').then((): void => {
+        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/grid/ug-theme-grid.js', 'jQuery').then((): void => {
           this.renderContents();
         });
       });
@@ -173,7 +182,7 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

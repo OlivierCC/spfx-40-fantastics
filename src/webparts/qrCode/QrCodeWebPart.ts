@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneSlider,
   PropertyPaneDropdown,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'QrCodeStrings';
 import { IQrCodeWebPartProps } from './IQrCodeWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 require('jquery');
 
@@ -30,14 +31,22 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -49,7 +58,7 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
     var html = '<div id="' + this.guid + '"></div>';
     this.domElement.innerHTML = html;
 
-     ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', 'jQuery').then((): void => {
+     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', 'jQuery').then((): void => {
         if (this.properties.mode == "table") {
             ($ as any)('#' + this.guid).qrcode({
                 render: "table",
@@ -91,7 +100,7 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

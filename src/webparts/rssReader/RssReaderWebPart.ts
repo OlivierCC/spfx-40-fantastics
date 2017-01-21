@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneSlider,
   PropertyPaneToggle,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'RssReaderStrings';
 import { IRssReaderWebPartProps } from './IRssReaderWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -34,14 +35,22 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -63,8 +72,8 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
     `;
     this.domElement.innerHTML = html;
 
-     ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js', 'jQuery').then((): void => {
-       ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/js/FeedEk.min.js', 'jQuery').then((): void => {
+     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js', 'jQuery').then((): void => {
+       SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/js/FeedEk.min.js', 'jQuery').then((): void => {
         ($ as any)('#' + this.guid).FeedEk({
             FeedUrl: this.properties.feedUrl,
             MaxCount : this.properties.maxCount,
@@ -102,7 +111,7 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

@@ -7,15 +7,15 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
-import { DisplayMode } from '@microsoft/sp-client-base';
+import { DisplayMode, Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'MarkdownStrings';
 import { IMarkdownWebPartProps } from './IMarkdownWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 /**
  * @class
@@ -29,13 +29,21 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Loads the CSS styles of the Markdown editor
-    ModuleLoader.loadCss('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css');
+    SPComponentLoader.loadCss('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css');
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -53,7 +61,7 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
       this.domElement.innerHTML = html;
 
       //Loads Simplemde.js from cdn
-      ModuleLoader.loadScript('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js', 'SimpleMDE').then((SimpleMDE?: any): void => {
+      SPComponentLoader.loadScript('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js', 'SimpleMDE').then((SimpleMDE?: any): void => {
         var simplemde;
         if (this.properties.toolbar === false) {
           if (this.properties.status === false) {
@@ -104,7 +112,7 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
     else {
       //Read Mode
       //Loads the showdown.js library to render MD code as HTML
-      ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/showdown/1.4.3/showdown.min.js', 'showdown').then((showdown?: any): void => {
+      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/showdown/1.4.3/showdown.min.js', 'showdown').then((showdown?: any): void => {
         //Inits the converter
         var converter = new showdown.Converter();
         //Converts MD to HTML
@@ -136,7 +144,7 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

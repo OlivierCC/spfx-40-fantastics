@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneSlider,
   PropertyPaneTextField,
   PropertyPaneDropdown,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'TextRotatorStrings';
 import { ITextRotatorWebPartProps } from './ITextRotatorWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -36,8 +37,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
@@ -46,8 +47,16 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     this.guid = this.getGuid();
     this.scriptLoaded = false;
 
-    ModuleLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
-    ModuleLoader.loadCss('//morphext.fyianlai.com/assets/css/morphext.css');
+    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+    SPComponentLoader.loadCss('//morphext.fyianlai.com/assets/css/morphext.css');
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -72,7 +81,7 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
-      ModuleLoader.loadScript('//morphext.fyianlai.com/assets/js/morphext.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//morphext.fyianlai.com/assets/js/morphext.js', 'jQuery').then((): void => {
         this.renderContent();
       });
       this.scriptLoaded = true;
@@ -120,7 +129,7 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

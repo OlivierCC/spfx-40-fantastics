@@ -7,17 +7,18 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneSlider,
   PropertyPaneToggle,
   PropertyPaneDropdown,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'BarChartStrings';
 import { IBarChartWebPartProps } from './IBarChartWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports the property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
@@ -37,14 +38,22 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -70,7 +79,7 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
     this.domElement.innerHTML = html;
 
     //Loads the Chart.js lib from the cdnjs.cloudflare.com CDN
-    ModuleLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', 'Chart').then((Chart?: any): void => {
+    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', 'Chart').then((Chart?: any): void => {
 
       //Inits the data
       var data = {
@@ -153,7 +162,7 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

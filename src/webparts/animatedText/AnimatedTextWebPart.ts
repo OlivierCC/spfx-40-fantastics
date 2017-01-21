@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneSlider,
   PropertyPaneTextField,
   PropertyPaneDropdown,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'AnimatedTextStrings';
 import { IAnimatedTextWebPartProps } from './IAnimatedTextWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports the property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -41,8 +42,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
@@ -53,7 +54,15 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
     this.scriptLoaded = false;
 
     //Loads the LetterFX Jquery plugin CSS file
-    ModuleLoader.loadCss('//tuxsudo.com/letterfx/letterfx.css');
+    SPComponentLoader.loadCss('//tuxsudo.com/letterfx/letterfx.css');
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -80,7 +89,7 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
       //loads the letterfx.Js plugin from the CDN
-      ModuleLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', 'jQuery').then((): void => {
         this.renderContent();
       });
       this.scriptLoaded = true;
@@ -130,7 +139,7 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

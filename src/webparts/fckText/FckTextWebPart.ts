@@ -7,16 +7,16 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneDropdown,
   PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
-import { DisplayMode } from '@microsoft/sp-client-base';
+import { DisplayMode, Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'fckTextStrings';
 import { IFckTextWebPartProps } from './IFckTextWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPartProps> {
 
@@ -26,14 +26,22 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -52,7 +60,7 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
       if (this.properties.mode != null)
         fMode = this.properties.mode;
       var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
-      ModuleLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
+      SPComponentLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
         if (this.properties.inline == null || this.properties.inline === false)
           CKEDITOR.replace( this.guid + '-editor', {
               skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
@@ -104,7 +112,7 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

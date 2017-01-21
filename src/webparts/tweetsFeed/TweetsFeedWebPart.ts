@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneToggle,
   PropertyPaneSlider,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'TweetsFeedStrings';
 import { ITweetsFeedWebPartProps } from './ITweetsFeedWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -29,12 +30,20 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -80,7 +89,7 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
     this.domElement.innerHTML = html;
 
     if (this.twttr == null) {
-      ModuleLoader.loadScript('//platform.twitter.com/widgets.js', 'twttr').then((twttr?: any)=> {
+      SPComponentLoader.loadScript('//platform.twitter.com/widgets.js', 'twttr').then((twttr?: any)=> {
         this.twttr = twttr;
       });
     }
@@ -93,7 +102,7 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

@@ -7,16 +7,17 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneDropdown,
   PropertyPaneSlider,
   PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'dockMenuStrings';
 import { IDockMenuWebPartProps } from './IDockMenuWebPartProps';
-import ModuleLoader from '@microsoft/sp-module-loader';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
@@ -28,19 +29,28 @@ import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFi
 export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebPartProps> {
 
   private guid: string;
+  private jQuery: any;
 
   /**
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     this.guid = this.getGuid();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -164,12 +174,13 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false) {
-      ModuleLoader.loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js', 'jQuery').then((): void => {
-        ModuleLoader.loadScript('//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js', 'jQuery').then((): void => {
-          ModuleLoader.loadScript('//vanderlee.github.io/coverflow/jquery.coverflow.js', 'jQuery').then((): void => {
-            ModuleLoader.loadScript('//vanderlee.github.io/coverflow/jquery.interpolate.min.js', 'jQuery').then((): void => {
-              ModuleLoader.loadScript('//vanderlee.github.io/coverflow/jquery.touchSwipe.min.js', 'jQuery').then((): void => {
-                ModuleLoader.loadScript('//vanderlee.github.io/coverflow/reflection.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js', 'jQuery').then((jQuery: any): void => {
+        this.jQuery = jQuery;
+        SPComponentLoader.loadScript('//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js', 'jQuery').then((): void => {
+          SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.coverflow.js', 'jQuery').then((): void => {
+            SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.interpolate.min.js', 'jQuery').then((): void => {
+              SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.touchSwipe.min.js', 'jQuery').then((): void => {
+                SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/reflection.js', 'jQuery').then((): void => {
                   this.renderContents();
                 });
               });
@@ -185,13 +196,13 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
 
   private renderContents(): void {
 
-    if (($ as any)('#' + this.guid + '-bigCarousel') != null) {
+    if ((this.jQuery as any)('#' + this.guid + '-bigCarousel') != null) {
 
-      if (this.properties.shadow === true && $.fn.reflect) {
-        ($ as any)('#' + this.guid + '-bigCarousel .cover').reflect();
+      if (this.properties.shadow === true && this.jQuery.fn.reflect) {
+        (this.jQuery as any)('#' + this.guid + '-bigCarousel .cover').reflect();
       }
 
-      ($ as any)('#' + this.guid + '-bigCarousel').coverflow(
+      (this.jQuery as any)('#' + this.guid + '-bigCarousel').coverflow(
         {
 					easing:			this.properties.easing,
 					duration:		this.properties.duration,
@@ -241,7 +252,7 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

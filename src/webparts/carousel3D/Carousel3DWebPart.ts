@@ -7,11 +7,12 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneToggle,
   PropertyPaneSlider
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'carousel3DStrings';
 import { ICarousel3DWebPartProps } from './ICarousel3DWebPartProps';
@@ -36,8 +37,8 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Generates the unique ID
     this.guid = this.getGuid();
@@ -49,6 +50,14 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
     //Binds the async method
     this.rendered = this.rendered.bind(this);
     this.onLoaded = this.onLoaded.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -198,7 +207,7 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

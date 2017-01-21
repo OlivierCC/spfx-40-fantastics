@@ -8,7 +8,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneTextField,
   PropertyPaneToggle,
@@ -16,6 +16,7 @@ import {
   IPropertyPaneDropdownOption,
   PropertyPaneSlider
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'mystrings';
 import { IPhotopileWebPartProps } from './IPhotopileWebPartProps';
@@ -40,8 +41,16 @@ export default class PhotopileWebPartWebPart extends BaseClientSideWebPart<IPhot
    * @function
    * Web Part constructor
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -111,7 +120,7 @@ export default class PhotopileWebPartWebPart extends BaseClientSideWebPart<IPhot
    * @function
    * Gets the web part properties panel settings
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

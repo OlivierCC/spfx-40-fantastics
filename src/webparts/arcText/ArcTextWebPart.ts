@@ -7,13 +7,14 @@
  */
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   IWebPartContext,
   PropertyPaneTextField,
   PropertyPaneToggle,
   PropertyPaneSlider,
   PropertyPaneDropdown
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'arcTextStrings';
 import { IArcTextWebPartProps } from './IArcTextWebPartProps';
@@ -40,8 +41,8 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Inits the WebParts GUID
     this.guid = this.getGuid();
@@ -49,6 +50,14 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -99,7 +108,7 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

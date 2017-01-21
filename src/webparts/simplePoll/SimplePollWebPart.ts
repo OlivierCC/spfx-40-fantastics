@@ -9,11 +9,12 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
+  IPropertyPaneConfiguration,
   PropertyPaneDropdown,
   PropertyPaneToggle,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
+import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'SimplePollStrings';
 import { ISimplePollWebPartProps } from './ISimplePollWebPartProps';
@@ -31,12 +32,20 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
    * @function
    * Web part contructor.
    */
-  public constructor(context: IWebPartContext) {
-    super(context);
+  public constructor(context?: IWebPartContext) {
+    super();
 
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+  }
+
+  /**
+   * @function
+   * Gets WP data version
+   */
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
   }
 
   /**
@@ -65,7 +74,7 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
    * @function
    * PropertyPanel settings definition
    */
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {
