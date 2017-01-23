@@ -106,8 +106,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     outputHtml += '</div>';
     this.domElement.innerHTML = outputHtml;
 
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', 'jQuery').then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/carousel/ug-theme-carousel.js', 'jQuery').then((): void => {
+    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
+        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/carousel/ug-theme-carousel.js', { globalExportsName: 'jQuery' }).then((): void => {
           this.renderContents();
         });
     });

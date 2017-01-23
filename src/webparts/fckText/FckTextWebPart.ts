@@ -59,8 +59,8 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
       var fMode = 'standard';
       if (this.properties.mode != null)
         fMode = this.properties.mode;
-      var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
-      SPComponentLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
+      var ckEditorCdn: string = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
+      SPComponentLoader.loadScript(ckEditorCdn, { globalExportsName: 'CKEDITOR' }).then((CKEDITOR: any): void => {
         if (this.properties.inline == null || this.properties.inline === false)
           CKEDITOR.replace( this.guid + '-editor', {
               skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'

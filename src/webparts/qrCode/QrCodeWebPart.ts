@@ -58,7 +58,7 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
     var html = '<div id="' + this.guid + '"></div>';
     this.domElement.innerHTML = html;
 
-     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', 'jQuery').then((): void => {
+     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', { globalExportsName: 'jQuery' }).then((): void => {
         if (this.properties.mode == "table") {
             ($ as any)('#' + this.guid).qrcode({
                 render: "table",

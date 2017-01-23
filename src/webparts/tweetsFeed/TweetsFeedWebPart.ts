@@ -89,7 +89,7 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
     this.domElement.innerHTML = html;
 
     if (this.twttr == null) {
-      SPComponentLoader.loadScript('//platform.twitter.com/widgets.js', 'twttr').then((twttr?: any)=> {
+      SPComponentLoader.loadScript('//platform.twitter.com/widgets.js', { globalExportsName: 'twttr' }).then((twttr?: any)=> {
         this.twttr = twttr;
       });
     }

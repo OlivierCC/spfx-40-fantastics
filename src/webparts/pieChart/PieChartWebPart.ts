@@ -69,7 +69,7 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
     var html = '<canvas id="' + this.guid + '" width="' + this.properties.width + '" height="' + this.properties.width + '"></canvas>';
     this.domElement.innerHTML = html;
 
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', 'Chart').then((Chart?: any): void => {
+    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', { globalExportsName: 'Chart' }).then((Chart?: any): void => {
 
         var data = {
         labels: this.getDataTab(strings.Label),

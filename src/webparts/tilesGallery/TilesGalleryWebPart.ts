@@ -83,8 +83,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
     }
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
-      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', 'jQuery').then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/tiles/ug-theme-tiles.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
+        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/tiles/ug-theme-tiles.js', { globalExportsName: 'jQuery' }).then((): void => {
           this.renderContents();
         });
       });

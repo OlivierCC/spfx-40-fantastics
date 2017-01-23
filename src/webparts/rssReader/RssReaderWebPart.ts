@@ -72,8 +72,8 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
     `;
     this.domElement.innerHTML = html;
 
-     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js', 'jQuery').then((): void => {
-       SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/js/FeedEk.min.js', 'jQuery').then((): void => {
+     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js', { globalExportsName: 'jQuery' }).then((): void => {
+       SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/js/FeedEk.min.js', { globalExportsName: 'jQuery' }).then((): void => {
         ($ as any)('#' + this.guid).FeedEk({
             FeedUrl: this.properties.feedUrl,
             MaxCount : this.properties.maxCount,

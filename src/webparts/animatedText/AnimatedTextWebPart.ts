@@ -89,7 +89,7 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
       //loads the letterfx.Js plugin from the CDN
-      SPComponentLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', { globalExportsName: '$' }).then((): void => {
         this.renderContent();
       });
       this.scriptLoaded = true;

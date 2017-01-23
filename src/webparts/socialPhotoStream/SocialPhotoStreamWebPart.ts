@@ -87,7 +87,7 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
 
     this.domElement.innerHTML = html;
 
-     SPComponentLoader.loadScript('//www.jqueryscript.net/demo/jQuery-Plugin-To-Show-Photo-Streams-Form-Social-Networks/socialstream.jquery.js', 'jQuery').then((): void => {
+     SPComponentLoader.loadScript('//www.jqueryscript.net/demo/jQuery-Plugin-To-Show-Photo-Streams-Form-Social-Networks/socialstream.jquery.js', { globalExportsName: 'jQuery' }).then((): void => {
       ($ as any)('#' + this.guid).socialstream({
         socialnetwork: this.properties.network,
         limit: this.properties.limit,

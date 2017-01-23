@@ -1,6 +1,6 @@
 {
   "name": "spfx-40-fantastics",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "private": true,
   "engines": {
     "node": ">=0.10.0"
@@ -24,7 +24,7 @@
     "react": "0.14.8",
     "react-dom": "0.14.8",
     "orchestrator": "^0.3.8",
-    "sp-client-custom-fields": "^1.0.6",
+    "sp-client-custom-fields": "^1.0.7",
     "through2": "^2.0.3",
     "typescript": "^2.1.5",
     "typewriting": "^1.2.2"

@@ -61,7 +61,7 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
       this.domElement.innerHTML = html;
 
       //Loads Simplemde.js from cdn
-      SPComponentLoader.loadScript('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js', 'SimpleMDE').then((SimpleMDE?: any): void => {
+      SPComponentLoader.loadScript('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js', { globalExportsName: 'SimpleMDE' }).then((SimpleMDE?: any): void => {
         var simplemde;
         if (this.properties.toolbar === false) {
           if (this.properties.status === false) {
@@ -112,7 +112,7 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
     else {
       //Read Mode
       //Loads the showdown.js library to render MD code as HTML
-      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/showdown/1.4.3/showdown.min.js', 'showdown').then((showdown?: any): void => {
+      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/showdown/1.4.3/showdown.min.js', { globalExportsName: 'showdown' }).then((showdown?: any): void => {
         //Inits the converter
         var converter = new showdown.Converter();
         //Converts MD to HTML

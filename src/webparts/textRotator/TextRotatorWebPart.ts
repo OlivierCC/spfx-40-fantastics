@@ -81,7 +81,7 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false || this.scriptLoaded === false) {
-      SPComponentLoader.loadScript('//morphext.fyianlai.com/assets/js/morphext.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//morphext.fyianlai.com/assets/js/morphext.js', { globalExportsName: 'jQuery' }).then((): void => {
         this.renderContent();
       });
       this.scriptLoaded = true;

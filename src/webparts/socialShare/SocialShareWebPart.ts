@@ -79,7 +79,7 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
     this.domElement.innerHTML = html;
 
     if (this.addthis == null) {
-      SPComponentLoader.loadScript('//s7.addthis.com/js/300/addthis_widget.js#async=1#pubid=' + this.properties.pubid, 'addthis').then((addthis?: any)=> {
+      SPComponentLoader.loadScript('//s7.addthis.com/js/300/addthis_widget.js#async=1#pubid=' + this.properties.pubid, { globalExportsName: 'addthis' }).then((addthis?: any)=> {
         this.addthis = addthis;
         this.addthis.init();
         this.addthis.toolbox('.addthis_toolbox');

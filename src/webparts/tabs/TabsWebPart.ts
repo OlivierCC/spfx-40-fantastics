@@ -316,7 +316,7 @@ Main components
         if (this.properties.mode != null)
           fMode = this.properties.mode;
         var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
-        SPComponentLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
+        SPComponentLoader.loadScript(ckEditorCdn, { globalExportsName: 'CKEDITOR' }).then((CKEDITOR: any): void => {
           if (this.properties.inline == null || this.properties.inline === false) {
             for (var tab = 0; tab < this.properties.tabs.length; tab++) {
               CKEDITOR.replace( this.guid + '-editor-' + tab, {

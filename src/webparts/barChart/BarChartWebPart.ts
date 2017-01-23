@@ -79,7 +79,7 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
     this.domElement.innerHTML = html;
 
     //Loads the Chart.js lib from the cdnjs.cloudflare.com CDN
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', 'Chart').then((Chart?: any): void => {
+    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', { globalExportsName: 'Chart' }).then((Chart?: any): void => {
 
       //Inits the data
       var data = {

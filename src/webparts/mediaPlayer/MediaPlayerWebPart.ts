@@ -84,7 +84,7 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
     }
     this.domElement.innerHTML = html;
 
-    SPComponentLoader.loadScript('//cdn.plyr.io/2.0.9/plyr.js', 'plyr').then((plyr?: any): void => {
+    SPComponentLoader.loadScript('//cdn.plyr.io/2.0.9/plyr.js', { globalExportsName: 'plyr' }).then((plyr?: any): void => {
       plyr.setup();
     });
   }

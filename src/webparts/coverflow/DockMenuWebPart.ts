@@ -174,13 +174,13 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
     this.domElement.innerHTML = html;
 
     if (this.renderedOnce === false) {
-      SPComponentLoader.loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js', 'jQuery').then((jQuery: any): void => {
+      SPComponentLoader.loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js', { globalExportsName: 'jQuery' }).then((jQuery: any): void => {
         this.jQuery = jQuery;
-        SPComponentLoader.loadScript('//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js', 'jQuery').then((): void => {
-          SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.coverflow.js', 'jQuery').then((): void => {
-            SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.interpolate.min.js', 'jQuery').then((): void => {
-              SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.touchSwipe.min.js', 'jQuery').then((): void => {
-                SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/reflection.js', 'jQuery').then((): void => {
+        SPComponentLoader.loadScript('//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js',  { globalExportsName: 'jQuery' }).then((): void => {
+          SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.coverflow.js',  { globalExportsName: 'jQuery' }).then((): void => {
+            SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.interpolate.min.js',  { globalExportsName: 'jQuery' }).then((): void => {
+              SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/jquery.touchSwipe.min.js',  { globalExportsName: 'jQuery' }).then((): void => {
+                SPComponentLoader.loadScript('//vanderlee.github.io/coverflow/reflection.js',  { globalExportsName: 'jQuery' }).then((): void => {
                   this.renderContents();
                 });
               });

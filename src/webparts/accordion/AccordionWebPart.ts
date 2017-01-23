@@ -106,7 +106,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
           fMode = this.properties.mode;
         var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
         //Loads the Javascript from the CKEditor CDN
-        SPComponentLoader.loadScript(ckEditorCdn, 'CKEDITOR').then((CKEDITOR: any): void => {
+        SPComponentLoader.loadScript(ckEditorCdn, { globalExportsName: 'CKEDITOR' }).then((CKEDITOR: any): void => {
           if (this.properties.inline == null || this.properties.inline === false) {
             //If mode is not inline, loads the script with the replace method
             for (var tab = 0; tab < this.properties.tabs.length; tab++) {

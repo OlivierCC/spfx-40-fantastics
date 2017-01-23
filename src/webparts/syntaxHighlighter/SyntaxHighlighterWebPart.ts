@@ -150,7 +150,7 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
       //Checks if the scripts has been already loaded
       if (this.scriptLoaded === false) {
         //If not, load the SyntaxHightligter core JS lib from CDN
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js', 'SyntaxHighlighter').then((SyntaxHighlighter?: any): void => {
+        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js', { globalExportsName: 'SyntaxHighlighter' }).then((SyntaxHighlighter?: any): void => {
           //Saves the SyntaxHighlighter object instance
           this.SyntaxHighlighter = SyntaxHighlighter;
           //Calls the render JS method
@@ -189,7 +189,7 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
     //Gets the selected brush from current selected language
     var brush = this.getBrushPath(this.properties.language);
     //Loads the SyntaxHighlighter brush JavaScript lib from CDN
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/' + brush, 'SyntaxHighlighter').then((SyntaxHighlighter?: any): void => {
+    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/' + brush, { globalExportsName: 'SyntaxHighlighter' }).then((SyntaxHighlighter?: any): void => {
       //Calls the SyntaxHighlighter highlight method
       this.SyntaxHighlighter.highlight();
     });

@@ -58,7 +58,7 @@ export default class BingTranslatorWebPart extends BaseClientSideWebPart<IBingTr
     `;
     this.domElement.innerHTML = html;
     //Loads the microsoft translator JavaScript from CDN
-    SPComponentLoader.loadScript('//www.microsofttranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=False&ui=true&settings=' + this.properties.start + '&from=' + this.properties.language, 'bingtranslator').then((): void => {
+    SPComponentLoader.loadScript('//www.microsofttranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=False&ui=true&settings=' + this.properties.start + '&from=' + this.properties.language, { globalExportsName: 'bingtranslator' }).then((): void => {
     });
   }
 

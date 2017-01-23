@@ -83,8 +83,8 @@ export default class SliderGalleryWebPart extends BaseClientSideWebPart<ISliderG
     }
 
     if (this.renderedOnce === false || this.scriptLoaded == false) {
-      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', 'jQuery').then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/slider/ug-theme-slider.js', 'jQuery').then((): void => {
+      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
+        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/slider/ug-theme-slider.js', { globalExportsName: 'jQuery' }).then((): void => {
           this.renderContents();
         });
       });
