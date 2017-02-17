@@ -6,8 +6,7 @@ declare interface IImagePuzzleStrings {
   Alt: string;
   LinkText: string;
   LinkUrl: string;
-  Width: string;
-  Height: string;
+  Dimension: string;
   PuzzleGroupName: string;
   Frequence: string;
   Columns: string;

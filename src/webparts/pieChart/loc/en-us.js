@@ -2,8 +2,7 @@ define([], function() {
   return {
     "PropertyPaneDescription": "Customize your Pie Chart",
     "BasicGroupName": "Data",
-    "Width": "Width",
-    "Height": "Height",
+    "Dimension": "Size",
     "Items": "Items",
     "ManageItems": "Manage Pie Items",
     "Label": "Label",

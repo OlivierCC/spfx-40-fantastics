@@ -4,14 +4,14 @@
   "id": "0824a209-e4f0-45a8-b630-99e5d72df5f5",
   "alias": "TabsWebPart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "4a6dc2e5-7bd2-4ab7-a830-8107d2b7ee5a",
+    "group": { "default": "Text Tools" },
     "title": { "default": "Tabs" },
-    "description": { "default": "Tabs description" },
+    "description": { "default": "You can dynamically create sections to view your content in the form of tabs. In edit mode, you can directly modify the contents of each tab with a WYSIWYG editor and preview your Web Part in your page. The tabs are responsives and adapt with the size of the screen." },
     "officeFabricIconFontName": "Sections",
     "properties": {
       "inline": false,

@@ -4,22 +4,24 @@
   "id": "28d3013b-a43a-4869-ac4d-48cd421d2101",
   "alias": "BarChart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "7a7091d9-d176-450b-a04f-9fa48ca1981b",
+    "group": { "default": "Charts, Graphs and Maps" },
     "title": { "default": "Bar Chart" },
-    "description": { "default": "Bar Chart description" },
+    "description": { "default": "To generate a chart in the form of a vertical or horizontal diagram. You can simply edit the data of the chart, change the values, labels, or colors. Create simply and effectively elegant and effective dashboards for your employees." },
     "officeFabricIconFontName": "BarChart4",
     "properties": {
         "responsive": false,
         "horizontal": true,
         "xAxesEnable": true,
         "yAxesEnable": true,
-        "width": 450,
-        "height": 450,
+        "dimension": {
+          "width": "450px",
+          "height": "450px"
+        },
         "position": "top",
         "title": "Months Bar Chart",
         "titleEnable": true,

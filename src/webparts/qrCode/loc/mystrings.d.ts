@@ -3,8 +3,7 @@ declare interface IQrCodeStrings {
   BasicGroupName: string;
   Text: string;
   Mode: string;
-  Width: string;
-  Height: string;
+  Dimension: string;
 }
 
 declare module 'QrCodeStrings' {

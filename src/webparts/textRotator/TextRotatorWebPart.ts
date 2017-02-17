@@ -240,7 +240,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   label: strings.Align,
                   initialValue: this.properties.align,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'textRotatorAlignField'
                 }),
                 PropertyFieldFontPicker('font', {
                   label: strings.Font,
@@ -248,7 +249,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'textRotatorFontField'
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSize,
@@ -256,19 +258,22 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'textRotatorFontSizeField'
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'textRotatorFontColorField'
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'textRotatorBgColorField'
                 })
               ]
             }

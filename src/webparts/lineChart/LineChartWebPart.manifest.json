@@ -4,22 +4,24 @@
   "id": "802fdd09-ea24-4929-bf84-be665dd89420",
   "alias": "LineChart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "7a7091d9-d176-450b-a04f-9fa48ca1981b",
+    "group": { "default": "Charts, Graphs and Maps" },
     "title": { "default": "Line Chart" },
-    "description": { "default": "Line Chart description" },
+    "description": { "default": "A simple and effective Web Part to generate a line chart in a page. You can choose the points on the line, set the line and fill, color, etc. Convenient to view financial results for example." },
     "officeFabricIconFontName": "Chart",
     "properties": {
         "responsive": false,
         "horizontal": true,
         "xAxesEnable": true,
         "yAxesEnable": true,
-        "width": 450,
-        "height": 450,
+        "dimension": {
+          "width": "450px",
+          "height": "450px"
+        },
         "position": "top",
         "title": "Months Line Chart",
         "titleEnable": true,

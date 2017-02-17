@@ -4,8 +4,7 @@ declare interface IBingMapStrings {
   MapGroupName: string;
   LocationGroupName: string;
   Register: string;
-  Width: string;
-  Height: string;
+  Dimension: string;
   Api: string;
   Position: string;
   Address: string;

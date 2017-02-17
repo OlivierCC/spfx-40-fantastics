@@ -186,7 +186,8 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties,
-                  context: this.context
+                  context: this.context,
+                  key: "accordionCustomListField"
                 }),
                 PropertyPaneToggle('collapsible', {
                   label: strings.Collapsible,

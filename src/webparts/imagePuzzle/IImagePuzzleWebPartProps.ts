@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 /**
  * @file
  * Image Puzzle Web Part for SharePoint Framework SPFx
@@ -7,8 +9,7 @@
  */
 export interface IImagePuzzleWebPartProps {
   image: string;
-  width: string;
-  height: string;
+  dimension: IPropertyFieldDimension;
   frequence: number;
   columns: number;
   rows: number;

@@ -43,8 +43,7 @@ declare interface INewsSliderStrings {
   Carousel: string;
   Autoplay: string;
   Speed: string;
-  TileWidth: string;
-  TileHeight: string;
+  TileDimension: string;
 
   Items: string;
   ManageItems: string;

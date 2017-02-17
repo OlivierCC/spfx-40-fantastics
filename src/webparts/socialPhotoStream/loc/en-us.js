@@ -6,8 +6,7 @@ define([], function() {
     "userName": "User Name",
     "limit": "Limit",
     "overlay": "Overlay",
-    "width": "Thumbnail Width",
-    "height": "Thumbnail Height",
+    "dimension": "Thumbnail size",
     "spacing": "Spacing"
   }
 });

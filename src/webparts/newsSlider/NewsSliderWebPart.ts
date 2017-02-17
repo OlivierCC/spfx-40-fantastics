@@ -24,6 +24,7 @@ import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 require('jquery');
 
@@ -115,6 +116,9 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
 
   private renderContents(): void {
 
+    var width: number = Number(this.properties.tileDimension.width.replace("px", "").replace("%", ""));
+    var height: number = Number(this.properties.tileDimension.height.replace("px", "").replace("%", ""));
+
       ($ as any)("#" + this.guid + "-gallery").unitegallery({
         gallery_theme: "carousel",
         tile_as_link: true,
@@ -133,8 +137,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
         carousel_autoplay_timeout: this.properties.speed,
         carousel_autoplay_pause_onhover: this.properties.pauseOnMouseover,
         tile_enable_icons: this.properties.enableIcons,
-        tile_width: this.properties.tileWidth,
-        tile_height: this.properties.tileHeight,
+        tile_width: width,
+        tile_height: height,
         tile_textpanel_title_font_size: this.properties.textPanelFontSize != null ? this.properties.textPanelFontSize.replace("px", "") : ''
       });
   }
@@ -190,7 +194,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsSliderListField'
                 })
               ]
             },
@@ -203,17 +208,17 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                 PropertyPaneToggle('enableIcons', {
                   label: strings.EnableIconsFieldLabel
                 }),
-                PropertyPaneSlider('tileWidth', {
-                  label: strings.TileWidth,
-                  min: 1,
-                  max: 500,
-                  step: 1
-                }),
-                PropertyPaneSlider('tileHeight', {
-                  label: strings.TileHeight,
-                  min: 1,
-                  max: 500,
-                  step: 1
+                PropertyFieldDimensionPicker('tileDimension', {
+                  label: strings.TileDimension,
+                  initialValue: this.properties.tileDimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'newsSliderDimensionFieldId'
                 })
               ]
             },
@@ -260,13 +265,15 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsSliderAlignField'
                 }),
                 PropertyFieldFontPicker('textPanelFont', {
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsSliderFontField'
                 }),
                 PropertyFieldFontSizePicker('textPanelFontSize', {
                   label: strings.TextPanelFontSizeFieldLabel,
@@ -274,19 +281,22 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsSliderFontSizeField'
                 }),
                 PropertyFieldColorPicker('textPanelFontColor', {
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsSliderFontColorField'
                 }),
                 PropertyFieldColorPicker('textPanelBackgroundColor', {
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsSliderBgColorField'
                 })
               ]
             }
@@ -313,7 +323,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   label: strings.BorderColorFieldLabel,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsSliderBorderColorField'
                 })
               ]
             }

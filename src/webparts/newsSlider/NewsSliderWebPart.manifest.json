@@ -4,14 +4,14 @@
   "id": "f6adeeb5-6e0c-46e8-a2e3-88b193b6c424",
   "alias": "NewsSlider",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "4fae8f7d-099d-44b6-8450-17312bb0b275",
-    "group": { "default": "Under Development" },
+    "groupId": "72505c62-b3c0-4cc3-89d8-f2adc8d962a0",
+    "group": { "default": "News Management" },
     "title": { "default": "News Slider" },
-    "description": { "default": "News Slider description" },
+    "description": { "default": "Insert a News Slider Tiles control to your pages. In a few clicks you can create a slider with buttons allowing you to navigate horizontally in tiles. You can define your elements and customize the look and feel of your slider. This Web Part is responsive." },
     "officeFabricIconFontName": "PageRight",
     "properties": {
       "enableArrows": true,
@@ -19,8 +19,10 @@
       "enableIcons": false,
       "borderColor": "#CCCCCC",
       "border": 0,
-      "tileWidth": 160,
-      "tileHeight": 160,
+      "tileDimension": {
+        "width": "160px",
+        "height": "160px"
+      },
       "pauseOnMouseover": true,
       "autoplay": true,
       "speed": 2000,

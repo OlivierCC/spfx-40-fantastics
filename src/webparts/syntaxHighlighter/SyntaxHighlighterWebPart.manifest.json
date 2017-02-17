@@ -4,14 +4,14 @@
   "id": "52785d1a-a41a-4541-a4a5-a03142a21cf0",
   "alias": "SyntaxHighlighter",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "4a6dc2e5-7bd2-4ab7-a830-8107d2b7ee5a",
+    "group": { "default": "Text Tools" },
     "title": { "default": "Syntax Highlighter" },
-    "description": { "default": "Syntax Highlighter description" },
+    "description": { "default": "With this Web Part, you can copy and paste the code in a page and automatically benefit from a syntax highlighter to read the code. This Web Part supports many languages as ActionScript3, Bash/shell, ColdFusion, c#, C++, CSS, Delphi, Diff, Erlang, Groovy, JavaScript, Java, JavaFX, Perl, PHP, Plain Text, PowerShell, Python, Ruby, Scala, SQL, Visual Basic and XML." },
     "officeFabricIconFontName": "Code",
     "properties": {
       "code": "function hello(){\n  console.writeLine('hello !');\n}",

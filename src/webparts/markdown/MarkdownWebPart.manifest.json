@@ -4,14 +4,14 @@
   "id": "1431c215-2c2a-479c-a483-51b474c7bc88",
   "alias": "Markdown",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "4a6dc2e5-7bd2-4ab7-a830-8107d2b7ee5a",
+    "group": { "default": "Text Tools" },
     "title": { "default": "Markdown" },
-    "description": { "default": "Markdown description" },
+    "description": { "default": "If you like the Markdown (MD) syntax, this Web Part is made for you! With this Web Part, you can add a player of Markdown in your page and edit its content through a specialized Editor. It has never been as easy to use the power of Markdown in SharePoint." },
     "officeFabricIconFontName": "Header1",
     "properties": {
       "text": "",

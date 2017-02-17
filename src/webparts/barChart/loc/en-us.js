@@ -2,8 +2,7 @@ define([], function() {
   return {
     "PropertyPaneDescription": "Customize your Bar Chart",
     "BasicGroupName": "Data",
-    "Width": "Width",
-    "Height": "Height",
+    "Dimension": "Size",
     "Items": "Items",
     "ManageItems": "Manage Bar Chart Items",
     "Label": "Label",

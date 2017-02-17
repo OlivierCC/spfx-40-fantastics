@@ -9,7 +9,6 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
-  PropertyPaneSlider,
   PropertyPaneDropdown,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
@@ -18,6 +17,8 @@ import { Version } from '@microsoft/sp-core-library';
 import * as strings from 'QrCodeStrings';
 import { IQrCodeWebPartProps } from './IQrCodeWebPartProps';
 import { SPComponentLoader } from '@microsoft/sp-loader';
+
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 require('jquery');
 
@@ -57,21 +58,23 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
 
     var html = '<div id="' + this.guid + '"></div>';
     this.domElement.innerHTML = html;
+    var width: number = Number(this.properties.dimension.width.replace("px", "").replace("%", ""));
+    var height: number = Number(this.properties.dimension.height.replace("px", "").replace("%", ""));
 
      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', { globalExportsName: 'jQuery' }).then((): void => {
         if (this.properties.mode == "table") {
             ($ as any)('#' + this.guid).qrcode({
                 render: "table",
                 text: this.properties.text,
-                width: this.properties.width,
-                height: this.properties.height
+                width: width,
+                height: height
             });
         }
         else {
             ($ as any)('#' + this.guid).qrcode({
                 text: this.properties.text,
-                width: this.properties.width,
-                height: this.properties.height
+                width: width,
+                height: height
             });
         }
     });
@@ -115,17 +118,17 @@ export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartP
                 PropertyPaneTextField('text', {
                   label: strings.Text
                 }),
-                PropertyPaneSlider('width', {
-                  label: strings.Width,
-                  min: 1,
-                  max: 800,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.Height,
-                  min: 1,
-                  max: 800,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.Dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'qrCodeDimensionFieldId'
                 }),
                 PropertyPaneDropdown('mode', {
                   label: strings.Mode,

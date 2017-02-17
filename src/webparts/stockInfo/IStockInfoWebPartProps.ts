@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 /**
  * @file
  * Stock Info Web Part for SharePoint Framework SPFx
@@ -9,6 +11,5 @@ export interface IStockInfoWebPartProps {
   stock: string;
   lang: string;
   region: string;
-  width: number;
-  height: number;
+  dimension: IPropertyFieldDimension;
 }

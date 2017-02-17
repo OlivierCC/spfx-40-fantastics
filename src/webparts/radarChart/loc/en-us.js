@@ -2,8 +2,7 @@ define([], function() {
   return {
     "PropertyPaneDescription": "Customize your Radar Chart",
     "BasicGroupName": "Data",
-    "Width": "Width",
-    "Height": "Height",
+    "Dimension": "Size",
     "Items": "Items",
     "ManageItems": "Manage Radar Chart Items",
     "Label": "Label",

@@ -4,14 +4,14 @@
   "id": "6b1bd026-d733-4828-85ba-41fdae288a45",
   "alias": "ArcText",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "6b1bd026-d733-4828-85ba-41fdae288a45",
-    "group": { "default": "Under Development" },
+    "groupId": "4a6dc2e5-7bd2-4ab7-a830-8107d2b7ee5a",
+    "group": { "default": "Text Tools" },
     "title": { "default": "ArcText" },
-    "description": { "default": "Text with a curved effect" },
+    "description": { "default": "With this Web Part, you can add a text with effect of curve. You can editing your title appearance, and choose the degree of the curve." },
     "officeFabricIconFontName": "Font",
     "properties": {
       "text": "My lipsum sample curved title",

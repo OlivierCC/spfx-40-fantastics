@@ -156,13 +156,15 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
                   label: strings.LinkColor,
                   initialColor: this.properties.linkColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'tweetsFeedLinkColorField'
                 }),
                 PropertyFieldColorPicker('borderColor', {
                   label: strings.BorderColor,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'tweetsFeedBorderColorField'
                 })
               ]
             }

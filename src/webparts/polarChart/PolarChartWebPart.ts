@@ -9,7 +9,6 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
-  PropertyPaneSlider,
   PropertyPaneToggle,
   PropertyPaneDropdown,
   IWebPartContext
@@ -25,6 +24,7 @@ import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-f
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChartWebPartProps> {
 
@@ -66,7 +66,7 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
    */
   public render(): void {
 
-    var html = '<canvas id="' + this.guid + '" width="' + this.properties.width + '" height="' + this.properties.width + '"></canvas>';
+    var html = '<canvas id="' + this.guid + '" width="' + this.properties.dimension.width + '" height="' + this.properties.dimension.height + '"></canvas>';
     this.domElement.innerHTML = html;
 
     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', { globalExportsName: 'Chart' }).then((Chart?: any): void => {
@@ -164,22 +164,23 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'polarChartListField'
                 }),
                 PropertyPaneToggle('responsive', {
                   label: strings.Responsive,
                 }),
-                PropertyPaneSlider('width', {
-                  label: strings.Width,
-                  min: 1,
-                  max: 800,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.Height,
-                  min: 1,
-                  max: 800,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.Dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'polarChartDimensionFieldId'
                 })
               ]
             },
@@ -218,7 +219,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'polarChartTitleFontField'
                 }),
                 PropertyFieldFontSizePicker('titleSize', {
                   label: strings.TitleSize,
@@ -226,13 +228,15 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   preview: true,
                   initialValue: this.properties.titleSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'polarChartTitleSizeField'
                 }),
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'polarChartTitleColorField'
                 })
               ]
             },
@@ -257,7 +261,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   previewFonts: true,
                   initialValue: this.properties.legendFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'polarChartLegendFontField'
                 }),
                 PropertyFieldFontSizePicker('legendSize', {
                   label: strings.LegendSize,
@@ -265,13 +270,15 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   preview: true,
                   initialValue: this.properties.legendSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'polarChartLegendSizeField'
                 }),
                 PropertyFieldColorPicker('legendColor', {
                   label: strings.LegendColor,
                   initialColor: this.properties.legendColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'polarChartLegendColorField'
                 })
               ]
             }

@@ -4,14 +4,14 @@
   "id": "d13752b9-1a71-45ca-96fe-918f0c9631cb",
   "alias": "RSSReader",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "8be34b8b-4fe8-4adb-b4b6-cc88a51f8646",
+    "group": { "default": "Social Tools" },
     "title": { "default": "RSS Reader" },
-    "description": { "default": "RssReader description" },
+    "description": { "default": "A web part to insert a full client side RSS/Atom Feed in your SharePoint pages. You can easily integrated a topical or competitive intelligence stream into your pages to your favorite RSS feeds." },
     "officeFabricIconFontName": "InternetSharing",
     "properties": {
       "feedUrl": "https://blogs.office.com/feed/",

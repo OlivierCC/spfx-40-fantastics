@@ -4,14 +4,14 @@
   "id": "b63ccc15-cc2a-479c-ae83-510474c79c88",
   "alias": "coverflow",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "72505c62-b3c0-4cc3-89d8-f2adc8d962a0",
+    "group": { "default": "News Management" },
     "title": { "default": "Coverflow" },
-    "description": { "default": "Coverflow description" },
+    "description": { "default": "Generates a Coverflow Apple like menu in your pages. Manage your menu items with title and picture and create a cool coverflow menu." },
     "officeFabricIconFontName": "Sections",
     "properties": {
       "duration": "normal",

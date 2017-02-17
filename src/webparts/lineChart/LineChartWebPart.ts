@@ -25,6 +25,7 @@ import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-f
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWebPartProps> {
 
@@ -66,7 +67,7 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
    */
   public render(): void {
 
-    var html = '<canvas id="' + this.guid + '" width="' + this.properties.width + '" height="' + this.properties.width + '"></canvas>';
+    var html = '<canvas id="' + this.guid + '" width="' + this.properties.dimension.width + '" height="' + this.properties.dimension.height + '"></canvas>';
     this.domElement.innerHTML = html;
 
     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', { globalExportsName: 'Chart' }).then((Chart?: any): void => {
@@ -175,22 +176,23 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'lineChartListField'
                 }),
                 PropertyPaneToggle('responsive', {
                   label: strings.Responsive,
                 }),
-                PropertyPaneSlider('width', {
-                  label: strings.Width,
-                  min: 1,
-                  max: 800,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.Height,
-                  min: 1,
-                  max: 800,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.Dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'lineChartDimensionFieldId'
                 })
               ]
             },
@@ -236,7 +238,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   label: strings.FillColor,
                   initialColor: this.properties.fillColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'lineChartFillColorField'
                 })
               ]
             },
@@ -264,7 +267,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'lineChartTitleFontField'
                 }),
                 PropertyFieldFontSizePicker('titleSize', {
                   label: strings.TitleSize,
@@ -272,13 +276,15 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   preview: true,
                   initialValue: this.properties.titleSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'lineChartTitleSizeField'
                 }),
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'lineChartTitleColorField'
                 })
               ]
             }

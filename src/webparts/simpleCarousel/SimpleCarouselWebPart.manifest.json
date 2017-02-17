@@ -4,14 +4,14 @@
   "id": "3f3e8f3d-033d-34b6-8450-173122222275",
   "alias": "SimpleCarousel",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "4fae8f7d-099d-44b6-8450-17312bb0b275",
-    "group": { "default": "Under Development" },
+    "groupId": "a509fe47-209d-48b7-b27a-6f3841c4033a",
+    "group": { "default": "Images Galleries and Tools" },
     "title": { "default": "Simple Carousel" },
-    "description": { "default": "Carousel description" },
+    "description": { "default": "The Web Part Simple Carousel allows you to browse a library of images in forms of thumbnails that scroll horizontally." },
     "officeFabricIconFontName": "Forward",
     "properties": {
       "enableArrows": true,
@@ -19,8 +19,10 @@
       "enableIcons": true,
       "borderColor": "#CCCCCC",
       "border": 0,
-      "tileWidth": 160,
-      "tileHeight": 160,
+      "tileDimension": {
+        "width": "160px",
+        "height": "160px"
+      },
       "pauseOnMouseover": true,
       "autoplay": true,
       "speed": 4000,

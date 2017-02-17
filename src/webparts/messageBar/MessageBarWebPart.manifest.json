@@ -4,14 +4,14 @@
   "id": "7bded87d-c81a-461b-b704-adab5e3adc2c",
   "alias": "MessageBar",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "1df557f4-e29a-4d2d-b1bf-a6b0b68aae90",
+    "group": { "default": "Tools" },
     "title": { "default": "Message Bar" },
-    "description": { "default": "MessageBar description" },
+    "description": { "default": "Insert a message bar to your page, for example set a maintenance warning text, etc. Very convenient to share a simple and highly visible message to your visitors." },
     "officeFabricIconFontName": "Error",
     "properties": {
       "text": "<p>Warning: this site is <b>under maintenance</b>. <a href='#'>More info</a></p>",

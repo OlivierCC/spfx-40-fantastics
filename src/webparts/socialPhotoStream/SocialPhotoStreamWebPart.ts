@@ -20,6 +20,8 @@ import * as strings from 'SocialPhotoStreamStrings';
 import { ISocialPhotoStreamWebPartProps } from './ISocialPhotoStreamWebPartProps';
 import { SPComponentLoader } from '@microsoft/sp-loader';
 
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 require('jquery');
 import * as $ from 'jquery';
 
@@ -68,8 +70,8 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
 }
 
 .socialstream li {
-  width: ${this.properties.width}px;
-  height: ${this.properties.height}px;
+  width: ${this.properties.dimension.width};
+  height: ${this.properties.dimension.height};
   list-style: none;
   float: left;
   margin-right: ${this.properties.spacing}px;
@@ -77,8 +79,8 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
 }
 
 .socialstream li img {
-  width: ${this.properties.width}px;
-  height: ${this.properties.height}px;
+  width: ${this.properties.dimension.width};
+  height: ${this.properties.dimension.height};
 }
 </style>
     `;
@@ -158,17 +160,17 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
                 PropertyPaneToggle('overlay', {
                   label: strings.overlay
                 }),
-                PropertyPaneSlider('width', {
-                  label: strings.width,
-                  min: 1,
-                  max: 400,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.height,
-                  min: 1,
-                  max: 400,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'socialPhotoStreamDimensionFieldId'
                 }),
                 PropertyPaneSlider('spacing', {
                   label: strings.spacing,

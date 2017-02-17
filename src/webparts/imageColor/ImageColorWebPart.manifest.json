@@ -4,14 +4,14 @@
   "id": "7bd1d81d-c811-461b-1704-ad1b5e31dc2c",
   "alias": "ImageColor",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "a509fe47-209d-48b7-b27a-6f3841c4033a",
+    "group": { "default": "Images Galleries and Tools" },
     "title": { "default": "Image Color" },
-    "description": { "default": "ImageColor description" },
+    "description": { "default": "This Web Part allows you to select an image and automatically apply a color effect. This Web Part uses libraries of CSS3 effects to color images." },
     "officeFabricIconFontName": "EditPhoto",
     "properties": {
       "alt": "",

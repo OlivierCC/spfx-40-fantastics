@@ -278,7 +278,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "coverflowListField"
                 })
               ]
             },
@@ -371,13 +372,15 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "coverflowAlignField"
                 }),
                 PropertyFieldFontPicker('textPanelFont', {
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "coverflowFontField"
                 }),
                 PropertyFieldFontSizePicker('textPanelFontSize', {
                   label: strings.TextPanelFontSizeFieldLabel,
@@ -385,19 +388,22 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "coverflowFontSizeField"
                 }),
                 PropertyFieldColorPicker('textPanelFontColor', {
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "coverflowFontColorField"
                 }),
                 PropertyFieldColorPicker('textPanelBackgroundColor', {
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "coverflowBackgroundColorField"
                 })
               ]
             }

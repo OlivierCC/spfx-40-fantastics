@@ -216,7 +216,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   label: strings.Align,
                   initialValue: this.properties.align,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "animatedTextAlignField"
                 }),
                 PropertyFieldFontPicker('font', {
                   label: strings.Font,
@@ -224,7 +225,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "animatedTextFontField"
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSize,
@@ -232,19 +234,22 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "animatedTextFontSizeField"
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "animatedTextFontColorField"
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "animatedTextBgColorField"
                 })
               ]
             }

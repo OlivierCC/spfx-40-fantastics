@@ -25,6 +25,7 @@ import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-f
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebPartProps> {
 
@@ -66,7 +67,7 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
    */
   public render(): void {
 
-    var html = '<canvas id="' + this.guid + '" width="' + this.properties.width + '" height="' + this.properties.width + '"></canvas>';
+    var html = '<canvas id="' + this.guid + '" width="' + this.properties.dimension.width + '" height="' + this.properties.dimension.height + '"></canvas>';
     this.domElement.innerHTML = html;
 
     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', { globalExportsName: 'Chart' }).then((Chart?: any): void => {
@@ -165,22 +166,23 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'pieChartListField'
                 }),
                 PropertyPaneToggle('responsive', {
                   label: strings.Responsive,
                 }),
-                PropertyPaneSlider('width', {
-                  label: strings.Width,
-                  min: 1,
-                  max: 800,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.Height,
-                  min: 1,
-                  max: 800,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.Dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'pieChartDimensionFieldId'
                 })
               ]
             },
@@ -225,7 +227,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'pieChartTitleFontField'
                 }),
                 PropertyFieldFontSizePicker('titleSize', {
                   label: strings.TitleSize,
@@ -233,13 +236,15 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   preview: true,
                   initialValue: this.properties.titleSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'pieChartTitleSizeField'
                 }),
                 PropertyFieldColorPicker('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'pieChartTitleColorField'
                 })
               ]
             },
@@ -264,7 +269,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   previewFonts: true,
                   initialValue: this.properties.legendFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'pieChartLegendFontField'
                 }),
                 PropertyFieldFontSizePicker('legendSize', {
                   label: strings.LegendSize,
@@ -272,13 +278,15 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   preview: true,
                   initialValue: this.properties.legendSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'pieChartLegendSizeField'
                 }),
                 PropertyFieldColorPicker('legendColor', {
                   label: strings.LegendColor,
                   initialColor: this.properties.legendColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'pieChartLegendColorField'
                 })
               ]
             }

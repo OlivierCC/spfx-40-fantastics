@@ -4,21 +4,23 @@
   "id": "944744d9-a870-4bb7-a732-f63da7558609",
   "alias": "StockInfo",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "1df557f4-e29a-4d2d-b1bf-a6b0b68aae90",
+    "group": { "default": "Tools" },
     "title": { "default": "Stock Info" },
-    "description": { "default": "StockInfo description" },
+    "description": { "default": "Generates as graph picture the current stock value of a specified stock. With this Web Part, you can for example share the current stock price of your company on your homepage. This Web Part uses the Yahoo! Financial Services." },
     "officeFabricIconFontName": "Financial",
     "properties": {
       "stock": "MSFT",
       "lang": "en-US",
       "region": "US",
-      "width": 250,
-      "height": 250
+      "dimension": {
+        "width": "250px",
+        "height": "250px"
+      }
     }
   }]
 }

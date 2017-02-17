@@ -27,6 +27,7 @@ import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 require('jquery');
 import * as $ from 'jquery';
@@ -128,6 +129,9 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
 
   private renderContents(): void {
 
+    var width: number = Number(this.properties.tileDimension.width.replace("px", "").replace("%", ""));
+    var height: number = Number(this.properties.tileDimension.height.replace("px", "").replace("%", ""));
+
       ($ as any)("#" + this.guid + "-gallery").unitegallery({
         gallery_theme: "grid",
         slider_enable_arrows: this.properties.enableArrows,
@@ -152,8 +156,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
         gallery_play_interval: this.properties.speed,
         gallery_pause_on_mouseover: this.properties.pauseOnMouseover,
         tile_enable_icons: this.properties.enableIcons,
-        thumb_width: this.properties.tileWidth,
-        thumb_height: this.properties.tileHeight,
+        thumb_width: width,
+        thumb_height: height,
         grid_num_cols: this.properties.numCols,
         slider_textpanel_title_font_size: this.properties.textPanelFontSize != null ? this.properties.textPanelFontSize.replace("px", "") : ''
       });
@@ -206,7 +210,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   max: 100,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "gridGallerySPListField"
                 })
               ]
             },
@@ -249,17 +254,17 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                 PropertyPaneToggle('controlsAlwaysOn', {
                   label: strings.ControlsAlwaysOn
                 }),
-                PropertyPaneSlider('tileWidth', {
-                  label: strings.TileWidth,
-                  min: 1,
-                  max: 500,
-                  step: 1
-                }),
-                PropertyPaneSlider('tileHeight', {
-                  label: strings.TileHeight,
-                  min: 1,
-                  max: 500,
-                  step: 1
+                PropertyFieldDimensionPicker('tileDimension', {
+                  label: strings.TileDimension,
+                  initialValue: this.properties.tileDimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'gridGalleryDimensionFieldId'
                 })
               ]
             },
@@ -306,13 +311,15 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "gridGalleryAlignField"
                 }),
                 PropertyFieldFontPicker('textPanelFont', {
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "gridGalleryFontField"
                 }),
                 PropertyFieldFontSizePicker('textPanelFontSize', {
                   label: strings.TextPanelFontSizeFieldLabel,
@@ -320,19 +327,22 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "gridGalleryFontSizeField"
                 }),
                 PropertyFieldColorPicker('textPanelFontColor', {
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "gridGalleryFontColorField"
                 }),
                 PropertyFieldColorPicker('textPanelBackgroundColor', {
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "gridGalleryBgColorField"
                 })
               ]
             }
@@ -359,7 +369,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   label: strings.BorderColorFieldLabel,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "gridGalleryBorderColorField"
                 })
               ]
             }

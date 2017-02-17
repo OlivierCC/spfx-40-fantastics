@@ -4,14 +4,14 @@
   "id": "47b0d836-1229-4d96-99bd-8c094c3a824c",
   "alias": "SimplePoll",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "6b1bd026-d733-4828-85ba-41fdae288a45",
-    "group": { "default": "Under Development" },
+    "groupId": "1df557f4-e29a-4d2d-b1bf-a6b0b68aae90",
+    "group": { "default": "Tools" },
     "title": { "default": "Simple Poll" },
-    "description": { "default": "Simple Poll Web Part" },
+    "description": { "default": "Insert a simple poll (one question) based on a SharePoint survey list. This Web Part is perfect for simple surveys to insert on a homepage for example. Users can vote in 1 click and see the results in the form of a pie or bar chart." },
     "officeFabricIconFontName": "CustomList",
     "properties": {
       "chartType": "pie",

@@ -159,7 +159,8 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'mediaPlayerListField'
                 })
               ]
             }

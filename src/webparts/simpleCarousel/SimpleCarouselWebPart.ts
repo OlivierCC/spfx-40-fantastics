@@ -26,6 +26,7 @@ import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 require('jquery');
 import * as $ from 'jquery';
@@ -127,6 +128,9 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
 
   private renderContents(): void {
 
+    var width: number = Number(this.properties.tileDimension.width.replace("px", "").replace("%", ""));
+    var height: number = Number(this.properties.tileDimension.height.replace("px", "").replace("%", ""));
+
       ($ as any)("#" + this.guid + "-gallery").unitegallery({
         gallery_theme: "carousel",
         theme_enable_navigation: this.properties.enableArrows,
@@ -144,8 +148,8 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
         carousel_autoplay_timeout: this.properties.speed,
         carousel_autoplay_pause_onhover: this.properties.pauseOnMouseover,
         tile_enable_icons: this.properties.enableIcons,
-        tile_width: this.properties.tileWidth,
-        tile_height: this.properties.tileHeight,
+        tile_width: width,
+        tile_height: height,
         tile_textpanel_title_font_size: this.properties.textPanelFontSize != null ? this.properties.textPanelFontSize.replace("px", "") : ''
       });
   }
@@ -197,7 +201,8 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
                   max: 100,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'simpleCarouselQueryField'
                 })
               ]
             },
@@ -210,17 +215,17 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
                 PropertyPaneToggle('enableIcons', {
                   label: strings.EnableIconsFieldLabel
                 }),
-                PropertyPaneSlider('tileWidth', {
-                  label: strings.TileWidth,
-                  min: 1,
-                  max: 500,
-                  step: 1
-                }),
-                PropertyPaneSlider('tileHeight', {
-                  label: strings.TileHeight,
-                  min: 1,
-                  max: 500,
-                  step: 1
+                PropertyFieldDimensionPicker('tileDimension', {
+                  label: strings.Dimension,
+                  initialValue: this.properties.tileDimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'simpleCarouselDimensionFieldId'
                 })
               ]
             },

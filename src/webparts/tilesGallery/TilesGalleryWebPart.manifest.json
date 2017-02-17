@@ -4,14 +4,14 @@
   "id": "4fae8f7d-099d-44b6-8450-17312bb0b275",
   "alias": "TilesGallery",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "4fae8f7d-099d-44b6-8450-17312bb0b275",
-    "group": { "default": "Under Development" },
+    "groupId": "a509fe47-209d-48b7-b27a-6f3841c4033a",
+    "group": { "default": "Images Galleries and Tools" },
     "title": { "default": "Tiles Gallery" },
-    "description": { "default": "TilesGallery description" },
+    "description": { "default": "From any library of images of your SharePoint site, generate a gallery of pictures in tiles mode. You can click on the images to open them in a web viewer in lightbox view. You can choose the appearance of your tiles, colors, texts, width, height, etc. Your tiles could be justified (classical tiles mode) or vertical (like Delve dashboard)." },
     "officeFabricIconFontName": "ViewAll2",
     "properties": {
       "justified": true,

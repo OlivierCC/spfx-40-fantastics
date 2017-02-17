@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 /**
  * @file
  * QR Code Web Part for SharePoint Framework SPFx
@@ -8,8 +10,7 @@
 export interface IAudioEqualizerWebPartProps {
   audio: string;
   audioType: string;
-  width: number;
-  height: number;
+  dimension: IPropertyFieldDimension;
   color: string;
   color1: string;
   color2: string;

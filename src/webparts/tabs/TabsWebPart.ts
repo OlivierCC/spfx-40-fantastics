@@ -444,7 +444,8 @@ Main components
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'tabsListField'
                 })
               ]
             },
@@ -478,13 +479,15 @@ Main components
                   label: strings.DisableColor,
                   initialColor: this.properties.disableColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'tabsDisableColorField'
                 }),
                 PropertyFieldColorPicker('selectedColor', {
                   label: strings.SelectedColor,
                   initialColor: this.properties.selectedColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'tabsSelectedColorField'
                 })
               ]
             }

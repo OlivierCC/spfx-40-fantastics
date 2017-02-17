@@ -233,7 +233,8 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "carousel3DListField"
                 }),
                 PropertyPaneSlider('itemHeight', {
                   label: strings.ItemHeightFieldLabel,
@@ -355,7 +356,8 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "carousel3DFontField"
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSizeFieldLabel,
@@ -363,13 +365,15 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "carousel3DFontSizeField"
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "carousel3DFontColorField"
                 })
               ]
             }

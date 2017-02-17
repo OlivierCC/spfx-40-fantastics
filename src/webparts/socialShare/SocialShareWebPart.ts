@@ -471,7 +471,8 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
                   ],
                   initialValue: this.properties.services,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'socialShareServicesField'
                 }),
                 PropertyPaneToggle('yammer', {
                   label: strings.Yammer

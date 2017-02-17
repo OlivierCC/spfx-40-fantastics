@@ -9,13 +9,14 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
-  PropertyPaneSlider,
   IWebPartContext
 } from '@microsoft/sp-webpart-base';
 import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'StockInfoStrings';
 import { IStockInfoWebPartProps } from './IStockInfoWebPartProps';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 
 export default class StockInfoWebPart extends BaseClientSideWebPart<IStockInfoWebPartProps> {
 
@@ -62,7 +63,10 @@ export default class StockInfoWebPart extends BaseClientSideWebPart<IStockInfoWe
       return;
     }
 
-    var html = '<img src="//chart.finance.yahoo.com/t?s=' + this.properties.stock + '&amp;lang=' + this.properties.lang + '&amp;region=' + this.properties.region + '&amp;width=' + this.properties.width + '&amp;height=' + this.properties.height + '" alt="" width="' + this.properties.width + '" height="' + this.properties.height + '">';
+    var width: number = Number(this.properties.dimension.width.replace("px", "").replace("%", ""));
+    var height: number = Number(this.properties.dimension.height.replace("px", "").replace("%", ""));
+
+    var html = '<img src="//chart.finance.yahoo.com/t?s=' + this.properties.stock + '&amp;lang=' + this.properties.lang + '&amp;region=' + this.properties.region + '&amp;width=' + width + '&amp;height=' + height + '" alt="" width="' + width + '" height="' + height + '">';
 
     this.domElement.innerHTML = html;
   }
@@ -86,17 +90,17 @@ export default class StockInfoWebPart extends BaseClientSideWebPart<IStockInfoWe
                 PropertyPaneTextField('stock', {
                   label: strings.Stock
                 }),
-                PropertyPaneSlider('width', {
-                  label: strings.Width,
-                  min: 1,
-                  max: 800,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.Height,
-                  min: 1,
-                  max: 800,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.Dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'stockInfoDimensionFieldId'
                 }),
                  PropertyPaneTextField('lang', {
                   label: strings.Lang

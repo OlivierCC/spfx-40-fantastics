@@ -43,8 +43,8 @@ declare interface ISimpleCarouselStrings {
   Carousel: string;
   Autoplay: string;
   Speed: string;
-  TileWidth: string;
-  TileHeight: string;
+
+  Dimension: string;
 }
 
 declare module 'simpleCarouselStrings' {

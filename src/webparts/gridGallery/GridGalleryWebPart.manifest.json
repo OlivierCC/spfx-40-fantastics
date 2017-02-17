@@ -4,14 +4,14 @@
   "id": "3f3e8f3d-033d-34b6-8450-1731c427c275",
   "alias": "GridGallery",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "4fae8f7d-099d-44b6-8450-17312bb0b275",
-    "group": { "default": "Under Development" },
+    "groupId": "a509fe47-209d-48b7-b27a-6f3841c4033a",
+    "group": { "default": "Images Galleries and Tools" },
     "title": { "default": "Grid Gallery" },
-    "description": { "default": "Carousel description" },
+    "description": { "default": "From any library of images of your SharePoint site, you can generate an image gallery with thumbnails that scroll automatically. You can click on an image to enlarge. This Web Pat is responsive." },
     "officeFabricIconFontName": "PictureLibrary",
     "properties": {
       "enableArrows": true,
@@ -25,8 +25,10 @@
       "enableBorder": false,
       "borderColor": "#CCCCCC",
       "border": 0,
-      "tileWidth": 88,
-      "tileHeight": 50,
+      "tileDimension": {
+        "width": "88px",
+        "height": "50px"
+      },
       "autoplay": true,
       "speed": 4000,
       "textPanelEnable": true,

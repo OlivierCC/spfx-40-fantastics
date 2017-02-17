@@ -43,8 +43,7 @@ declare interface IGridGalleryStrings {
   Carousel: string;
   Autoplay: string;
   Speed: string;
-  TileWidth: string;
-  TileHeight: string;
+  TileDimension: string;
   Position: string;
   NumCols: string;
 }

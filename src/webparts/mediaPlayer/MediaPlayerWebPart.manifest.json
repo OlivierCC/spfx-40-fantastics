@@ -4,14 +4,14 @@
   "id": "b27e9f72-10b4-4880-95e3-5ca8fb223a1c",
   "alias": "MediaPlayer",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "9054c3f7-ed44-4b45-bb29-97c6253d3ae4",
+    "group": { "default": "Video and Audio" },
     "title": { "default": "Media Player" },
-    "description": { "default": "MediaPlayer description" },
+    "description": { "default": "This Web Part is an alternative player for videos or audio files. This player allows you to play video files in HTML5 mode, with streamed videos to different formats and also from Youtube or Vimeo. This player is elegant and also lets you add subtitles to videos in different languages." },
     "officeFabricIconFontName": "MusicInCollectionFill",
     "properties": {
       "player": "youtube",

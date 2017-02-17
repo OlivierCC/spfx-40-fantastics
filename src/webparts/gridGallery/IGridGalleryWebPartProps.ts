@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 export interface IGridGalleryWebPartProps {
 
   query: string;
@@ -34,8 +36,7 @@ export interface IGridGalleryWebPartProps {
   borderColor: string;
   border: number;
 
-  tileWidth: number;
-  tileHeight: number;
+  tileDimension: IPropertyFieldDimension;
 
   position: string;
   numCols: number;

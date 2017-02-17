@@ -19,6 +19,7 @@ import { IAudioEqualizerWebPartProps } from './IAudioEqualizerWebPartProps';
 
 //Imports the property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 //Loads JQuery, Reverseorder & equalizer JavaScript libs
 require('jquery');
@@ -89,10 +90,13 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
     `;
     this.domElement.innerHTML = html;
 
+    var width: number = Number(this.properties.dimension.width.replace("px", "").replace("%", ""));
+    var height: number = Number(this.properties.dimension.height.replace("px", "").replace("%", ""));
+
     //Calls the Equalizer JavaScript plugin init method
     ($ as any)('#' + this.guid).equalizer({
-        width: this.properties.width, // in pixels - default is 600 pixels
-        height: this.properties.height, // in pixels - default is 150 pixels
+        width: width, // in pixels - default is 600 pixels
+        height: height, // in pixels - default is 150 pixels
         color: this.properties.color, // in hexadecimal - default is #800080
         color1: this.properties.color1, // in hexadecimal - default is #B837F2
         color2: this.properties.color2, // in hexadecimal - default is #009AD9
@@ -146,17 +150,17 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                 PropertyPaneTextField('audioType', {
                   label: strings.audioType
                 }),
-                PropertyPaneSlider('width', {
-                  label: strings.width,
-                  min: 1,
-                  max: 800,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.height,
-                  min: 1,
-                  max: 800,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'audioEqualizerDimensionFieldId'
                 }),
                 PropertyPaneSlider('bars', {
                   label: strings.bars,
@@ -165,13 +169,13 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                   step: 1
                 }),
                 PropertyPaneSlider('barMargin', {
-                  label: strings.bars,
+                  label: strings.barMargin,
                   min: 1,
                   max: 10,
                   step: 0.5
                 }),
                 PropertyPaneSlider('components', {
-                  label: strings.bars,
+                  label: strings.components,
                   min: 1,
                   max: 20,
                   step: 1
@@ -198,19 +202,22 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                   label: strings.color,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "audioEqualizerColorField"
                 }),
                 PropertyFieldColorPicker('color1', {
                   label: strings.color1,
                   initialColor: this.properties.color1,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "audioEqualizerColor1Field"
                 }),
                 PropertyFieldColorPicker('color2', {
                   label: strings.color2,
                   initialColor: this.properties.color2,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "audioEqualizerColor2Field"
                 })
               ]
             }

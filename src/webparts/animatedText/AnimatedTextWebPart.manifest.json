@@ -4,14 +4,14 @@
   "id": "a4aacd2d-2a55-475c-5483-51a37437b388",
   "alias": "AnimatedText",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "4a6dc2e5-7bd2-4ab7-a830-8107d2b7ee5a",
+    "group": { "default": "Text Tools" },
     "title": { "default": "Animated Text" },
-    "description": { "default": "AnimatedText description" },
+    "description": { "default": "This Web Part allows you to add a text with an animation. You can choose among a large number of animation (fade, resizing, time, rotation, etc.), choose do it, color, size, etc." },
     "officeFabricIconFontName": "FontSize",
     "properties": {
       "text": "Lipsum lipsum",

@@ -42,8 +42,7 @@ define([], function() {
     "EffectsGroupName": "Effects",
     "Transition": "Transition",
     "EnableProgressIndicator": "Enable Progress Indicator",
-    "TileWidth": "Tile Width",
-    "TileHeight": "Tile Height",
+    "TileDimension": "Tile Size",
     "ManageItems": "Manage News Items",
     "Items": "News Items"
   }

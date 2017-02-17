@@ -3,8 +3,7 @@ declare interface IAudioEqualizerStrings {
   BasicGroupName: string;
   audio: string;
   audioType: string;
-  width: string;
-  height: string;
+  dimension: string;
   color: string;
   color1: string;
   color2: string;

@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 export interface INewsSliderWebPartProps {
 
   items: any[];
@@ -34,7 +36,6 @@ export interface INewsSliderWebPartProps {
   borderColor: string;
   border: number;
 
-  tileWidth: number;
-  tileHeight: number;
+  tileDimension: IPropertyFieldDimension;
 
 }

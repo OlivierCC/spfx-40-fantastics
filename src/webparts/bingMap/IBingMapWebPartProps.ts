@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 /**
  * @file
  * QR Code Web Part for SharePoint Framework SPFx
@@ -7,8 +9,7 @@
  */
 export interface IBingMapWebPartProps {
   api: string;
-  width: number;
-  height: number;
+  dimension: IPropertyFieldDimension;
 
   position: string;
   address: number;

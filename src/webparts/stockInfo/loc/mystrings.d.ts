@@ -2,8 +2,7 @@ declare interface IStockInfoStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   Stock: string;
-  Width: string;
-  Height: string;
+  Dimension: string;
   Region: string;
   Lang: string;
   ErrorSelectStock: string;

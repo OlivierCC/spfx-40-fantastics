@@ -3,8 +3,7 @@ define([], function() {
     "PropertyPaneDescription": "Customize your stock viewer",
     "BasicGroupName": "Settings",
     "Stock": "Stock Symbol (ex: MSFT)",
-    "Width": "Width",
-    "Height": "Height",
+    "Dimension": "Size",
     "Region": "Region",
     "Lang": "Lang",
     "ErrorSelectStock": "Please edit this web part and select a stock value"

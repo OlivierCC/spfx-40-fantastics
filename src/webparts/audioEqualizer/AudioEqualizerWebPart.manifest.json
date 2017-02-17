@@ -4,20 +4,22 @@
   "id": "e762c85a-f068-4067-a8c0-b5cdbf4fcce7",
   "alias": "AudioEqualizer",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "9054c3f7-ed44-4b45-bb29-97c6253d3ae4",
+    "group": { "default": "Video and Audio" },
     "title": { "default": "Audio Equalizer" },
-    "description": { "default": "Audio Equalizer description" },
+    "description": { "default": "Instead of the classic audio player, you can use a fun player with an equalizer. The equalizer adds an effect on music that drives your page and the user experience. You can configure your equalizer by modifying the columns, color, speed, etc." },
     "officeFabricIconFontName": "Equalizer",
     "properties": {
       "audio": "",
       "audioType": "audio/mp3",
-      "width": 600,
-      "height": 150,
+      "dimension": {
+        "width": "600px",
+        "height": "150px"
+      },
       "color": "#800080",
       "color1": "#B837F2",
       "color2": "#009AD9",

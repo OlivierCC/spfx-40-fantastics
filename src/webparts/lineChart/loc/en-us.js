@@ -2,8 +2,7 @@ define([], function() {
   return {
     "PropertyPaneDescription": "Customize your Line Chart",
     "BasicGroupName": "Data",
-    "Width": "Width",
-    "Height": "Height",
+    "Dimension": "Size",
     "Items": "Items",
     "ManageItems": "Manage Line Chart Items",
     "Label": "Label",

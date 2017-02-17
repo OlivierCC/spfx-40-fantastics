@@ -118,7 +118,7 @@ export default class PhotopileWebPart extends React.Component<IPhotopileWebPartP
                           altText = object.File.Name;
                         //Render the item
                         return (
-                          <li>
+                          <li key={i}>
                             <a href={object.File.ServerRelativeUrl}>
                               <img src={object.File.ThumbnailServerUrl} alt={altText}  width="133" height="100"/>
                             </a>

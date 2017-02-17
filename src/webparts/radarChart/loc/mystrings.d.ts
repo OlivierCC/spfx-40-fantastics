@@ -1,8 +1,7 @@
 declare interface IRadarChartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  Width: string;
-  Height: string;
+  Dimension: string;
   Items: string;
   ManageItems: string;
   Label: string;

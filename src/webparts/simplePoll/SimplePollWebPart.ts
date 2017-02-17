@@ -94,7 +94,8 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   orderBy: PropertyFieldSPListPickerOrderBy.Title,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'simplePollListField'
                 }),
                 PropertyPaneDropdown('chartType', {
                   label: strings.chartType,
@@ -117,7 +118,8 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'simplePollFontField'
                 }),
                 PropertyFieldFontSizePicker('size', {
                   label: strings.FontSizeFieldLabel,
@@ -125,13 +127,15 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   preview: true,
                   initialValue: this.properties.size,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'simplePollSizeField'
                 }),
                 PropertyFieldColorPicker('color', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'simplePollColorField'
                 })
               ]
             }

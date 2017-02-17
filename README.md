@@ -7,7 +7,7 @@ You can find here different kind of high visual web parts as carousel, images ga
 These WebParts are mainly based on best-class jQuery, React or Angular plugins and use the [sp-client-custom-fields library](https://github.com/OlivierCC/sp-client-custom-fields) to optimize the edit experience.
 Oh, and Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
 
-**Current Version**: v0.9.3
+**Current Version**: v0.9.4
 
 **Current SPFx Drop support** - [RC0](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-RC0)
 
@@ -22,7 +22,7 @@ Overview |  Web Part |  Description
 ![3d carousel](./assets/overview3dcarousel_final.png) | [**3D Carousel**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/3D-Carousel) | Insert a 3D Carousel in your SharePoint pages. With this Web Part, you can manage your menu items and create automatically a 3D carousel.
 ![Coverflow](./assets/overviewcoverflow_final.png) | [**Coverflow**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Coverflow) | Generates a Coverflow Apple like menu in your pages. Manage your menu items with title and picture and create a cool coverflow menu.
 ![News Slider](./assets/overviewnewsslider.png) | [**News Slider**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Slider) | Insert a News Slider Tiles control to your pages. In a few clicks you can create a slider with buttons allowing you to navigate horizontally in tiles. You can define your elements and customize the look and feel of your slider. This Web Part is responsive.
-![News Ticker](./assets/overviewnewsticker.png) | [**News Ticker**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Ticker) | Insert a simple vertical News Ticker to display news as a simple ribbon. This web part is usefull if you want to display Breaking News BBC like information in your site
+![News Ticker](./assets/overviewnewsticker.png) | [**News Ticker**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/News-Ticker) | Insert a simple horizontal News Ticker to display news as a simple ribbon. This web part is usefull if you want to display Breaking News BBC like information in your site
 
 ## Social Tools
 
@@ -37,11 +37,11 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![Bing Map](./assets/overviewbingmap.png) | [**Bing Map**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Map) | A Web Part for insert a Bing map on your page. With this Web Part, you can customize your card (size, toolbar, 2D/3D, etc.) and indicate a location and default zoom. You can enter your own key Bing to use all the features of mapping.
+![Bing Map](./assets/overviewbingmap.png) | [**Bing Map**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Map) | A Web Part to insert a Bing map on your page. With this Web Part, you can customize your card (size, toolbar, 2D/3D, etc.) and indicate a location and default zoom. You can enter your own key Bing to use all the features of mapping.
 ![Vertical Timeline](./assets/overviewverticaltimeline.png) | [**Vertical Timeline**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Vertical-Timeline) |  A web part to generate a Facebook like vertical Timeline from SharePoint Calendar list items. For example, this Web Part is very convenient to build a synthetic view on your major project milestones. This Web Part uses CSS3 to optimize the user experience.
 ![Pie Chart](./assets/overviewpiechart.png) | [**Pie Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Pie-Chart) |  Insert a Pie chart with a few clicks in your SharePoint page. You can edit the data, choose values, colors, legends and all the graphics. You can generate graphs to fixed sizes or responsive mode.
 ![Bar Chart](./assets/overviewbarchart.png) | [**Bar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bar-Chart) |  To generate a chart in the form of a vertical or horizontal diagram. You can simply edit the data of the chart, change the values, labels, or colors. Create simply and effectively elegant and effective dashboards for your employees.
-![Line Chart](./assets/overviewlinechart.png) | [**Line Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Line-Chart) | A Web Part simple and effective to generate a line chart in a page. You can choose the points on the line, set the line and fill, color, etc. Convenient to view financial results for example.
+![Line Chart](./assets/overviewlinechart.png) | [**Line Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Line-Chart) | A simple and effective Web Part to generate a line chart in a page. You can choose the points on the line, set the line and fill, color, etc. Convenient to view financial results for example.
 ![Radar Chart](./assets/overviewradarchart.png) | [**Radar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Radar-Chart) |  Offer elegant and alternative views to your data with this Web part. With the radar chart, you can for example easily see comparisons between data.
 ![Polar Chart](./assets/overviewpolarchart.png) | [**Polar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Polar-Chart) |  A web part to insert a polar chart, modify the data and the render. Very easy & quick to use in a SharePoint page.
 

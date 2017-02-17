@@ -423,7 +423,8 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   max: 100,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'verticalTimelineQueryField'
                 })
               ]
             },
@@ -435,19 +436,22 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   initialValue: this.properties.icon,
                   orderAlphabetical: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'verticalTimelineIconField'
                 }),
                 PropertyFieldColorPicker('color', {
                   label: strings.color,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'verticalTimelineColorField'
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'verticalTimelineBgColorField'
                 })
               ]
             }

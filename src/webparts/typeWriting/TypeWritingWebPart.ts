@@ -162,7 +162,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   label: strings.CursorColor,
                   initialColor: this.properties.cursorColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'typeWritingCursorColorField'
                 })
               ]
             },
@@ -175,7 +176,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'typeWritingFontField'
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSize,
@@ -183,19 +185,22 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'typeWritingFontSizeField'
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'typeWritingFontColorField'
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'typeWritingBgColorField'
                 })
               ]
             }

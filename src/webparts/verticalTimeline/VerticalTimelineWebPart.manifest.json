@@ -4,14 +4,14 @@
   "id": "40ff328d-4e5e-4a07-9f71-7c17f42744e2",
   "alias": "VerticalTimeline",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "7a7091d9-d176-450b-a04f-9fa48ca1981b",
+    "group": { "default": "Charts, Graphs and Maps" },
     "title": { "default": "Vertical Timeline" },
-    "description": { "default": "Vertical Timeline description" },
+    "description": { "default": "A web part to generate a Facebook like vertical Timeline from SharePoint Calendar list items. For example, this Web Part is very convenient to build a synthetic view on your major project milestones. This Web Part uses CSS3 to optimize the user experience." },
     "officeFabricIconFontName": "Timeline",
     "properties": {
       "icon": "ms-Icon--Calendar",

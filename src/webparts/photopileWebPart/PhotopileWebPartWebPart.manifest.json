@@ -4,14 +4,14 @@
   "id": "4b1150be-30a9-42a7-9bd4-55d50bbd9473",
   "alias": "Photopile",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "4b1150be-30a9-42a7-9bd4-55d50bbd9473",
-    "group": { "default": "Default" },
+    "groupId": "a509fe47-209d-48b7-b27a-6f3841c4033a",
+    "group": { "default": "Images Galleries and Tools" },
     "title": { "default": "Photopile" },
-    "description": { "default": "PhotopileWebPart description" },
+    "description": { "default": "From a SharePoint library, this Web Part generates a stack of photos on a table effect. This gives an aspect of photo gallery of Polaroid, for example. Click on the photos to enlarge to full screen." },
     "officeFabricIconFontName": "StackIndicator",
     "properties": {
       "listName": "",

@@ -22,6 +22,7 @@ import { IBingMapWebPartProps } from './IBingMapWebPartProps';
 
 //Imports the property pane custom fields
 import { PropertyFieldMapPicker } from 'sp-client-custom-fields/lib/PropertyFieldMapPicker';
+import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 //Loads JQuery end Bingmap.js lib
 require('jquery');
@@ -68,10 +69,13 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
     var html = '<div id="' + this.guid + '"></div>';
     this.domElement.innerHTML = html;
 
+    var width: number = Number(this.properties.dimension.width.replace("px", "").replace("%", ""));
+    var height: number = Number(this.properties.dimension.height.replace("px", "").replace("%", ""));
+
     //Calls the Bingmap.js JQuery plugin init method
     ($ as any)("#" + this.guid).BingMap({
-        Height: this.properties.height,
-        Width: this.properties.width,
+        Height: height,
+        Width: width,
         Latitude: this.properties.position != null ? this.properties.position.substr(this.properties.position.indexOf(",") + 1, this.properties.position.length - this.properties.position.indexOf(",")) : '0',
         Longitude: this.properties.position != null ? this.properties.position.substr(0, this.properties.position.indexOf(",")) : '0',
         Address: this.properties.address,
@@ -151,24 +155,25 @@ export default class BingMapWebPart extends BaseClientSideWebPart<IBingMapWebPar
                   longitude: this.properties.position != null ? this.properties.position.substr(0, this.properties.position.indexOf(",")) : '0',
                   latitude: this.properties.position != null ? this.properties.position.substr(this.properties.position.indexOf(",") + 1, this.properties.position.length - this.properties.position.indexOf(",")) : '0',
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "bingMapPositionField"
                 })
               ]
             },
             {
               groupName: strings.MapGroupName,
               groupFields: [
-                PropertyPaneSlider('width', {
-                  label: strings.Width,
-                  min: 1,
-                  max: 800,
-                  step: 1
-                }),
-                PropertyPaneSlider('height', {
-                  label: strings.Height,
-                  min: 1,
-                  max: 800,
-                  step: 1
+                PropertyFieldDimensionPicker('dimension', {
+                  label: strings.Dimension,
+                  initialValue: this.properties.dimension,
+                  preserveRatio: true,
+                  preserveRatioEnabled: true,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'bingMapDimensionFieldId'
                 }),
                 PropertyPaneSlider('zoomLevel', {
                   label: strings.ZoomLevel,

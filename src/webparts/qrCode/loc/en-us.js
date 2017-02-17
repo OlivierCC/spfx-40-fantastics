@@ -4,7 +4,6 @@ define([], function() {
     "BasicGroupName": "Settings",
     "Text": "Text",
     "Mode": "Mode",
-    "Width": "Width",
-    "Height": "Height"
+    "Dimension": "Size"
   }
 });

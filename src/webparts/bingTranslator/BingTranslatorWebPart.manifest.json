@@ -4,14 +4,14 @@
   "id": "81146368-785c-47c2-b313-66d83f1bb4f8",
   "alias": "BingTranslator",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "1df557f4-e29a-4d2d-b1bf-a6b0b68aae90",
+    "group": { "default": "Tools" },
     "title": { "default": "Bing Translator" },
-    "description": { "default": "Bing Translator description" },
+    "description": { "default": "Insert a Bing Translator widget to automatically translate the current page in another language. This WebPart is going to add to your page a \"Translate\" button. When user click on this button, it can translate in-place and automatically the content of the page in the language of his choice." },
     "officeFabricIconFontName": "BingLogo",
     "properties": {
       "theme": "Dark",

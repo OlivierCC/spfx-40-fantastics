@@ -4,14 +4,14 @@
   "id": "1d2f44ed-0aa7-499b-a99b-9e23a7351499",
   "alias": "TextRotator",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "4a6dc2e5-7bd2-4ab7-a830-8107d2b7ee5a",
+    "group": { "default": "Text Tools" },
     "title": { "default": "Text Rotator" },
-    "description": { "default": "Text Rotator description" },
+    "description": { "default": "This Web Part allows you to display several sentences one after the other with a transition effect." },
     "officeFabricIconFontName": "Rotate",
     "properties": {
       "text": "Lipsum lipsum\ncorpus vae vista",

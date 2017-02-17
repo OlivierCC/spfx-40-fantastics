@@ -4,14 +4,14 @@
   "id": "d0f9e0eb-7a28-4c30-8459-e04a48beda2a",
   "alias": "TweetsFeed",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "8be34b8b-4fe8-4adb-b4b6-cc88a51f8646",
+    "group": { "default": "Social Tools" },
     "title": { "default": "Tweets Feed" },
-    "description": { "default": "Tweets Feed description" },
+    "description": { "default": "With this Web Part, you can easily add a Twitter feed to any page. You have to specify the Twitter account you want to view messages, configure the Visual rendering, and twitter will be integrated into your site." },
     "officeFabricIconFontName": "Share",
     "properties": {
       "autoLimit": true,

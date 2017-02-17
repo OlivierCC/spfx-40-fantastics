@@ -344,7 +344,8 @@ export default class ImageColorWebPart extends BaseClientSideWebPart<IImageColor
                   initialValue: this.properties.image,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: "imageColorPictureField"
                 }),
                 PropertyPaneDropdown('color', {
                   label: strings.Color,

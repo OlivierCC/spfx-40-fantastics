@@ -184,7 +184,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerListField'
                 }),
                 PropertyPaneSlider('speed', {
                   label: strings.Speed,
@@ -216,7 +217,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerBgColorField'
                 })
               ]
             },
@@ -230,7 +232,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.Font,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerFontField'
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSize,
@@ -238,13 +241,15 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerFontSizeField'
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerFontColorField'
                 })
               ]
             },
@@ -255,7 +260,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.Font,
                   initialValue: this.properties.fontMssg,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerFontMssgField'
                 }),
                 PropertyFieldFontSizePicker('fontSizeMssg', {
                   label: strings.FontSize,
@@ -263,13 +269,15 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerFontSizeMssgField'
                 }),
                 PropertyFieldColorPicker('fontColorMssg', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColorMssg,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'newsTickerFontColorMssgField'
                 })
               ]
             }

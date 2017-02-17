@@ -4,14 +4,14 @@
   "id": "60564c9b-8561-489d-9ff7-1846c8358964",
   "alias": "NewsTicker",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "72505c62-b3c0-4cc3-89d8-f2adc8d962a0",
+    "group": { "default": "News Management" },
     "title": { "default": "News Ticker" },
-    "description": { "default": "News Ticker description" },
+    "description": { "default": "Insert a simple horizontal News Ticker to display news as a simple ribbon. This web part is usefull if you want to display Breaking News BBC like information in your site" },
     "officeFabricIconFontName": "NumberedList",
     "properties": {
       "title": "Latest News",

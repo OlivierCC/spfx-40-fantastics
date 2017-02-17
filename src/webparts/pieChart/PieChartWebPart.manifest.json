@@ -4,19 +4,21 @@
   "id": "6510e024-b86d-479b-8a75-39b439bfc34d",
   "alias": "PieChart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "7a7091d9-d176-450b-a04f-9fa48ca1981b",
+    "group": { "default": "Charts, Graphs and Maps" },
     "title": { "default": "Pie Chart" },
-    "description": { "default": "Pie Chart description" },
+    "description": { "default": "Insert a Pie chart with a few clicks in your SharePoint page. You can edit the data, choose values, colors, legends and all the graphics. You can generate graphs to fixed sizes or responsive mode." },
     "officeFabricIconFontName": "PieDouble",
     "properties": {
         "responsive": false,
-        "width": 400,
-        "height": 400,
+        "dimension": {
+          "width": "400px",
+          "height": "400px"
+        },
         "cutoutPercentage": 0,
         "animateRotate": true,
         "animateScale": false,

@@ -4,14 +4,14 @@
   "id": "1431cddd-2c55-475c-5483-51aa74c7bc88",
   "alias": "TypeWriting",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "4a6dc2e5-7bd2-4ab7-a830-8107d2b7ee5a",
+    "group": { "default": "Text Tools" },
     "title": { "default": "Type Writing" },
-    "description": { "default": "Type Writing description" },
+    "description": { "default": "Insert a text with a typwriter effect. It will simulate a mechanical or electromechanical machine for writing in characters similar to those produced by printer." },
     "officeFabricIconFontName": "Underline",
     "properties": {
       "text": "Lipsum",

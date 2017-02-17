@@ -4,19 +4,21 @@
   "id": "89bdfa67-e90d-4b2b-b2db-18dbba2c71cd",
   "alias": "QRCode",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "1df557f4-e29a-4d2d-b1bf-a6b0b68aae90",
+    "group": { "default": "Tools" },
     "title": { "default": "QR Code" },
-    "description": { "default": "QrCode description" },
+    "description": { "default": "Insert a QR Code in your SharePoint pages and modify the associated text, size, etc. A QRCode is very handy for example to allow your users to access simply and quickly to a page on your Intranet from a smartphone." },
     "officeFabricIconFontName": "Camera",
     "properties": {
       "text": "https://contoso.sharepoint.com",
-      "width": 250,
-      "height": 250,
+      "dimension": {
+        "width": "250px",
+        "height": "250px"
+      },
       "mode": "canvas"
     }
   }]

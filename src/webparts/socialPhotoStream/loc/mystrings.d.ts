@@ -5,8 +5,7 @@ declare interface ISocialPhotoStreamStrings {
   userName: string;
   limit: string;
   overlay: string;
-  width: string;
-  height: string;
+  dimension: string;
   spacing: string;
 }
 

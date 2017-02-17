@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 /**
  * @file
  * QR Code Web Part for SharePoint Framework SPFx
@@ -8,6 +10,5 @@
 export interface IQrCodeWebPartProps {
   text: string;
   mode: string;
-  width: number;
-  height: number;
+  dimension: IPropertyFieldDimension;
 }

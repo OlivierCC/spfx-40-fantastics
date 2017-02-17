@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 /**
  * @file
  * Radar Chart Web Part for SharePoint Framework SPFx
@@ -8,8 +10,7 @@
 export interface IRadarChartWebPartProps {
   items: any[];
   responsive: boolean;
-  width: number;
-  height: number;
+  dimension: IPropertyFieldDimension;
   horizontal: boolean;
   titleEnable: boolean;
   title: string;

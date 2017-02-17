@@ -42,7 +42,6 @@ define([], function() {
     "EffectsGroupName": "Effects",
     "Transition": "Transition",
     "EnableProgressIndicator": "Enable Progress Indicator",
-    "TileWidth": "Tile Width",
-    "TileHeight": "Tile Height"
+    "Dimension": "Tile Size"
   }
 });

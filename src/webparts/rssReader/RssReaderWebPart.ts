@@ -162,7 +162,8 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                   label: strings.font,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'rssReaderFontField'
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.fontSize,
@@ -170,19 +171,22 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'rssReaderFontSizeField'
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.fontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'rssReaderFontColorField'
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'rssReaderBgColorField'
                 })
               ]
             }

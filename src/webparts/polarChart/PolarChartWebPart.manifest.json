@@ -4,19 +4,21 @@
   "id": "cc3483eb-bb8b-45ac-95f5-8dd8529a2a5c",
   "alias": "PolarChart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "7a7091d9-d176-450b-a04f-9fa48ca1981b",
+    "group": { "default": "Charts, Graphs and Maps" },
     "title": { "default": "Polar Chart" },
-    "description": { "default": "Polar Chart description" },
+    "description": { "default": "A web part to insert a polar chart, modify the data and the render. Very easy & quick to use in a SharePoint page." },
     "officeFabricIconFontName": "MarketDown",
     "properties": {
         "responsive": false,
-        "width": 450,
-        "height": 450,
+        "dimension": {
+          "width": "450px",
+          "height": "450px"
+        },
         "animateRotate": true,
         "animateScale": false,
         "position": "top",

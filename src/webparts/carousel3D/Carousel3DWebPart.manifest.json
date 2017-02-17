@@ -4,14 +4,14 @@
   "id": "b6330715-c92a-479c-ae83-510474079988",
   "alias": "3DCarousel",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "72505c62-b3c0-4cc3-89d8-f2adc8d962a0",
+    "group": { "default": "News Management" },
     "title": { "default": "3D Carousel" },
-    "description": { "default": "Carousel3d description" },
+    "description": { "default": "Insert a 3D Carousel in your SharePoint pages. With this Web Part, you can manage your menu items and create automatically a 3D carousel." },
     "officeFabricIconFontName": "Sync",
     "properties": {
       "speed": 6,

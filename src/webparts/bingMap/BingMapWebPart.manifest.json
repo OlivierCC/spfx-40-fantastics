@@ -4,19 +4,21 @@
   "id": "984ed076-d223-4a06-b7a2-0d47cbd815ce",
   "alias": "BingMap",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "7a7091d9-d176-450b-a04f-9fa48ca1981b",
+    "group": { "default": "Charts, Graphs and Maps" },
     "title": { "default": "Bing Map" },
-    "description": { "default": "Bing Map description" },
+    "description": { "default": "A Web Part to insert a Bing map on your page. With this Web Part, you can customize your card (size, toolbar, 2D/3D, etc.) and indicate a location and default zoom. You can enter your own key Bing to use all the features of mapping." },
     "officeFabricIconFontName": "POI",
     "properties": {
       "api": "",
-      "width": 800,
-      "height": 600,
+      "dimension": {
+        "width": "800px",
+        "height": "600px"
+      },
       "zoomLevel": 10,
       "mapMode": "2D",
       "mapStyle": "Road",

@@ -4,22 +4,24 @@
   "id": "fd2d0897-88b8-42a8-a825-1ec3bf68277f",
   "alias": "RadarChart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "b6330715-c92a-479c-ae83-510474079988",
-    "group": { "default": "Under Development" },
+    "groupId": "7a7091d9-d176-450b-a04f-9fa48ca1981b",
+    "group": { "default": "Charts, Graphs and Maps" },
     "title": { "default": "Radar Chart" },
-    "description": { "default": "Radar Chart description" },
+    "description": { "default": "Offer elegant and alternative views to your data with this Web part. With the radar chart, you can for example easily see comparisons between data." },
     "officeFabricIconFontName": "Starburst",
     "properties": {
         "responsive": false,
         "horizontal": true,
         "xAxesEnable": true,
         "yAxesEnable": true,
-        "width": 450,
-        "height": 450,
+        "dimension": {
+          "width": "450px",
+          "height": "450px"
+        },
         "position": "top",
         "title": "Months Radar",
         "titleEnable": true,

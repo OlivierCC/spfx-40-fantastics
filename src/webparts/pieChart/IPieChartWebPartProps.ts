@@ -1,3 +1,5 @@
+import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
 /**
  * @file
  * Pie Chart Web Part for SharePoint Framework SPFx
@@ -8,8 +10,7 @@
 export interface IPieChartWebPartProps {
   items: any[];
   responsive: boolean;
-  width: number;
-  height: number;
+  dimension: IPropertyFieldDimension;
   cutoutPercentage: number;
   rotation: number;
   circumference: number;

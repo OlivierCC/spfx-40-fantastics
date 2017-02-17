@@ -42,8 +42,7 @@ define([], function() {
     "EffectsGroupName": "Effects",
     "Transition": "Transition",
     "EnableProgressIndicator": "Enable Progress Indicator",
-    "TileWidth": "Tile Width",
-    "TileHeight": "Tile Height",
+    "TileDimension": "Tiles Size",
     "Position": "Grid Panel Position",
     "NumCols": "Number of columns"
   }

@@ -104,7 +104,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   initialValue: this.properties.icon,
                   orderAlphabetical: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'messageBarIconField'
                 }),
                 PropertyFieldRichTextBox('text', {
                   label: strings.Text,
@@ -113,7 +114,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   minHeight: 100,
                   mode: 'basic',
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'messageBarRichTextBoxField'
                 })
               ]
             },
@@ -126,7 +128,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'messageBarFontField'
                 }),
                 PropertyFieldFontSizePicker('fontSize', {
                   label: strings.FontSize,
@@ -134,19 +137,22 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'messageBarFontSizeField'
                 }),
                 PropertyFieldColorPicker('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'messageBarFontColorField'
                 }),
                 PropertyFieldColorPicker('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
-                  properties: this.properties
+                  properties: this.properties,
+                  key: 'messageBarBgColorField'
                 })
               ]
             }
