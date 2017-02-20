@@ -249,8 +249,7 @@
     },
     "chartjs": {
       "path": "src/javascripts/chartjs/Chart.min.js",
-      "globalName": "Chart",
-      "globalDependencies": [ ]
+      "globalName": "Chart"
     },
     "qrcode": {
       "path": "src/javascripts/qrcode/jquery.qrcode.min.js",
@@ -259,8 +258,7 @@
     },
     "typewriting": {
       "path": "node_modules/typewriting/dist/typewriting.min.js",
-      "globalName": "TypeWriting",
-      "globalDependencies": [ ]
+      "globalName": "TypeWriting"
     },
     "moment": {
       "path": "src/javascripts/rssReader/moment.min.js",
@@ -279,23 +277,19 @@
     },
     "twitter": {
       "path": "src/javascripts/twitter/widgets.js",
-      "globalName": "twttr",
-      "globalDependencies": [ ]
+      "globalName": "twttr"
     },
     "plyr": {
       "path": "src/javascripts/mediaPlayer/plyr.js",
-      "globalName": "plyr",
-      "globalDependencies": [ ]
+      "globalName": "plyr"
     },
     "simplemde": {
       "path": "src/javascripts/simplemde/simplemde.min.js",
-      "globalName": "SimpleMDE",
-      "globalDependencies": [ ]
+      "globalName": "SimpleMDE"
     },
     "showdown": {
       "path": "src/javascripts/showdown/showdown.min.js",
-      "globalName": "showdown",
-      "globalDependencies": [ ]
+      "globalName": "showdown"
     },
     "letterfx": {
       "path": "src/javascripts/letterfx/letterfx.js",
@@ -351,8 +345,7 @@
     "photopileModule": "src/javascripts/photopile/photopile.js",
     "syntaxHighlighter": {
       "path": "src/javascripts/syntaxHighlighter/shCore.min.js",
-      "globalName": "SyntaxHighlighter",
-      "globalDependencies": [ ]
+      "globalName": "SyntaxHighlighter"
     },
     "shBrushAS3": {
       "path": "src/javascripts/syntaxHighlighter/shBrushAS3.min.js",

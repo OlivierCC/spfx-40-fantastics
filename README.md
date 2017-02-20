@@ -31,7 +31,7 @@ Overview |  Web Part |  Description
 ![Tweets Feed](./assets/overviewtweedsfeed.png) | [**Tweets Feed**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Tweets-Feed) |  With this Web Part, you can easily add a Twitter feed to any page. You have to specify the Twitter account you want to view messages, configure the Visual rendering, and twitter will be integrated into your site.
 ![Social Share](./assets/overviewtsocialshare.png) | [**Social Share**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Share) |  A web part to insert social share buttons as Yammer, Linkedin, Twitter, Facebook and more than 100 other social providers thanks to the Addthis services.
 ![RSS Reader](./assets/overviewrssreader.png) | [**RSS Reader**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Rss-Reader) |  A web part to insert a full client side RSS/Atom Feed in your SharePoint pages. You can easily integrated a topical or competitive intelligence stream into your pages to your favorite RSS feeds.
-![Social Photo Stream](./assets/overviewsocialphotostream.png) | [**Social Photo Stream**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Photo-Stream) |  A web part to insert a list of photo from populars photos sharing plateforms as Instagram, Pinterest, Flickr, Deviantart, Dribbble, Picasa, Youtube & Newsfeed.
+![Social Photo Stream](./assets/overviewsocialphotostream.png) | [**Social Photo Stream**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Social-Photo-Stream) |  A web part to insert a list of photo from populars photos sharing plateforms as Instagram, Pinterest, Flickr, Deviantart, Dribbble, & Picasa.
 
 ## Maps, Charts & Graphs
 

@@ -1,7 +1,7 @@
 {
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
-  "id": "4b1150be-30a9-42a7-9bd4-55d50bbd9473",
+  "id": "44a6136a-dcc5-45dd-95a6-747430624042",
   "alias": "Photopile",
   "componentType": "WebPart",
   "version": "1.0.0",
