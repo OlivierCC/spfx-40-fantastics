@@ -17,7 +17,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'AnimatedTextStrings';
 import { IAnimatedTextWebPartProps } from './IAnimatedTextWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports the property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -25,9 +24,12 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
-//Loads JQuery
-require('jquery');
+//Loads external JS libs
 import * as $ from 'jquery';
+require('letterfx');
+
+//Loads external CSS
+require('../../css/letterfx/letterfx.scss');
 
 /**
  * @class
@@ -36,7 +38,6 @@ import * as $ from 'jquery';
 export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimatedTextWebPartProps> {
 
   private guid: string;
-  private scriptLoaded: boolean;
 
   /**
    * @function
@@ -51,10 +52,6 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
 
     //Inits the WebParts GUID
     this.guid = this.getGuid();
-    this.scriptLoaded = false;
-
-    //Loads the LetterFX Jquery plugin CSS file
-    SPComponentLoader.loadCss('//tuxsudo.com/letterfx/letterfx.css');
   }
 
   /**
@@ -87,17 +84,7 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
     var html = "<div " + style + " id='" + this.guid + "-AnimatedText'>" + this.properties.text + "</div>";
     this.domElement.innerHTML = html;
 
-    if (this.renderedOnce === false || this.scriptLoaded === false) {
-      //loads the letterfx.Js plugin from the CDN
-      SPComponentLoader.loadScript('//tuxsudo.com/letterfx/letterfx.js', { globalExportsName: '$' }).then((): void => {
-        this.renderContent();
-      });
-      this.scriptLoaded = true;
-    }
-    else {
-      this.renderContent();
-    }
-
+    this.renderContent();
   }
 
   /**

@@ -17,7 +17,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'TextRotatorStrings';
 import { ITextRotatorWebPartProps } from './ITextRotatorWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -25,13 +24,17 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
-require('jquery');
+//Loads external JS lib
 import * as $ from 'jquery';
+require('morphext');
+
+//Loads CSS
+require('../../css/animate/animate.scss');
+require('../../css/morphext/morphext.scss');
 
 export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotatorWebPartProps> {
 
   private guid: string;
-  private scriptLoaded: boolean;
 
   /**
    * @function
@@ -45,10 +48,6 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
     this.guid = this.getGuid();
-    this.scriptLoaded = false;
-
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
-    SPComponentLoader.loadCss('//morphext.fyianlai.com/assets/css/morphext.css');
   }
 
   /**
@@ -80,16 +79,7 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
     var html = "<div " + style + " id='" + this.guid + "-TextRotator'>" + this.properties.text + "</div>";
     this.domElement.innerHTML = html;
 
-    if (this.renderedOnce === false || this.scriptLoaded === false) {
-      SPComponentLoader.loadScript('//morphext.fyianlai.com/assets/js/morphext.js', { globalExportsName: 'jQuery' }).then((): void => {
-        this.renderContent();
-      });
-      this.scriptLoaded = true;
-    }
-    else {
-      this.renderContent();
-    }
-
+    this.renderContent();
   }
 
   private renderContent(): void {

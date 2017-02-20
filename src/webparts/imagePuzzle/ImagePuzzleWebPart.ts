@@ -21,10 +21,8 @@ import { IImagePuzzleWebPartProps } from './IImagePuzzleWebPartProps';
 import { PropertyFieldPicturePicker } from 'sp-client-custom-fields/lib/PropertyFieldPicturePicker';
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
-require('jquery');
-require('jigsaw');
-
 import * as $ from 'jquery';
+require('jigsaw');
 
 export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzzleWebPartProps> {
 

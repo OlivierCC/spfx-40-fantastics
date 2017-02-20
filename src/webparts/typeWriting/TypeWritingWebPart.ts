@@ -23,7 +23,6 @@ import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
-
 var TypeWriting: any = require('typewriting');
 
 export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWritingWebPartProps> {

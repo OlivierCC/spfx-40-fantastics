@@ -17,7 +17,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'PolarChartStrings';
 import { IPolarChartWebPartProps } from './IPolarChartWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
@@ -25,6 +24,8 @@ import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
+var Chart: any = require('chartjs');
 
 export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChartWebPartProps> {
 
@@ -69,8 +70,6 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
     var html = '<canvas id="' + this.guid + '" width="' + this.properties.dimension.width + '" height="' + this.properties.dimension.height + '"></canvas>';
     this.domElement.innerHTML = html;
 
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', { globalExportsName: 'Chart' }).then((Chart?: any): void => {
-
         var data = {
         labels: this.getDataTab(strings.Label),
         datasets: [
@@ -111,9 +110,6 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
           data: data,
           options: options
       });
-
-    });
-
 
   }
 

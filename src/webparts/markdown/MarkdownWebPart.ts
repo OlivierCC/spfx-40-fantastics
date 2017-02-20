@@ -15,7 +15,13 @@ import { DisplayMode, Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'MarkdownStrings';
 import { IMarkdownWebPartProps } from './IMarkdownWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
+
+//Loads external CSS
+require('../../css/simplemde/simplemde.min.scss');
+
+//Loads exrnal JS Libs
+var SimpleMDE: any = require('simplemde');
+var showdown: any = require('showdown');
 
 /**
  * @class
@@ -33,9 +39,6 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
     super();
 
     this.guid = this.getGuid();
-
-    //Loads the CSS styles of the Markdown editor
-    SPComponentLoader.loadCss('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css');
   }
 
   /**
@@ -60,8 +63,6 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
       html += "<textarea id='" + this.guid + "-editor'>" + this.properties.text + "</textarea>";
       this.domElement.innerHTML = html;
 
-      //Loads Simplemde.js from cdn
-      SPComponentLoader.loadScript('//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js', { globalExportsName: 'SimpleMDE' }).then((SimpleMDE?: any): void => {
         var simplemde;
         if (this.properties.toolbar === false) {
           if (this.properties.status === false) {
@@ -107,17 +108,13 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
           //Function executed when the text change in rich editor
           this.properties.text = simplemde.value();
         }.bind(this));
-      });
     }
     else {
       //Read Mode
-      //Loads the showdown.js library to render MD code as HTML
-      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/showdown/1.4.3/showdown.min.js', { globalExportsName: 'showdown' }).then((showdown?: any): void => {
-        //Inits the converter
-        var converter = new showdown.Converter();
-        //Converts MD to HTML
-        this.domElement.innerHTML = converter.makeHtml(this.properties.text);
-      });
+      //Inits the converter
+      var converter = new showdown.Converter();
+      //Converts MD to HTML
+      this.domElement.innerHTML = converter.makeHtml(this.properties.text);
     }
   }
 

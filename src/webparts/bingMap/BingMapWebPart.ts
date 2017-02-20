@@ -25,7 +25,6 @@ import { PropertyFieldMapPicker } from 'sp-client-custom-fields/lib/PropertyFiel
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 //Loads JQuery end Bingmap.js lib
-require('jquery');
 import * as $ from 'jquery';
 require('bingmap');
 

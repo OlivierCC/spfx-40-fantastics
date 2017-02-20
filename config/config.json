@@ -208,48 +208,268 @@
       "globalName": "jQuery"
     },
     "jqueryreflection": {
-      "path": "src/webparts/carousel3D/js/jquery.reflection.js",
+      "path": "src/javascripts/reflection/jquery.reflection.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
     "cloud9carousel": {
-      "path": "src/webparts/carousel3D/js/jquery.cloud9carousel.js",
+      "path": "src/javascripts/cloud9carousel/jquery.cloud9carousel.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery", "jqueryreflection" ]
     },
     "arctext": {
-      "path": "src/webparts/arcText/js/jquery.arctext.js",
+      "path": "src/javascripts/arcText/jquery.arctext.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
     "jigsaw": {
-      "path": "src/webparts/imagePuzzle/js/jquery.image-jigsaw.min.js",
+      "path": "src/javascripts/imagePuzzle/jquery.image-jigsaw.min.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
     "bingmap": {
-      "path": "src/webparts/bingMap/js/BingMap.1.1-min.js",
+      "path": "src/javascripts/bingMap/BingMap.1.1-min.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
     "equalizer": {
-      "path": "src/webparts/audioEqualizer/js/jquery.equalizer.js",
+      "path": "src/javascripts/audioEqualizer/jquery.equalizer.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
     "reverseorder": {
-      "path": "src/webparts/audioEqualizer/js/jquery.reverseorder.js",
+      "path": "src/javascripts/audioEqualizer/jquery.reverseorder.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
     "socialstream": {
-      "path": "src/webparts/socialPhotoStream/js/socialstream.jquery.js",
+      "path": "src/javascripts/socialStream/socialstream.jquery.js",
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
-    "typewriting": "node_modules/typewriting/build/typewriting.min.js",
+    "chartjs": {
+      "path": "src/javascripts/chartjs/Chart.min.js",
+      "globalName": "Chart",
+      "globalDependencies": [ ]
+    },
+    "qrcode": {
+      "path": "src/javascripts/qrcode/jquery.qrcode.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "typewriting": {
+      "path": "node_modules/typewriting/dist/typewriting.min.js",
+      "globalName": "TypeWriting",
+      "globalDependencies": [ ]
+    },
+    "moment": {
+      "path": "src/javascripts/rssReader/moment.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "feedek": {
+      "path": "src/javascripts/rssReader/FeedEk.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery", "moment" ]
+    },
+    "morphext": {
+      "path": "src/javascripts/morphext/morphext.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "twitter": {
+      "path": "src/javascripts/twitter/widgets.js",
+      "globalName": "twttr",
+      "globalDependencies": [ ]
+    },
+    "plyr": {
+      "path": "src/javascripts/mediaPlayer/plyr.js",
+      "globalName": "plyr",
+      "globalDependencies": [ ]
+    },
+    "simplemde": {
+      "path": "src/javascripts/simplemde/simplemde.min.js",
+      "globalName": "SimpleMDE",
+      "globalDependencies": [ ]
+    },
+    "showdown": {
+      "path": "src/javascripts/showdown/showdown.min.js",
+      "globalName": "showdown",
+      "globalDependencies": [ ]
+    },
+    "letterfx": {
+      "path": "src/javascripts/letterfx/letterfx.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "coverflow": {
+      "path": "src/javascripts/coverflow/jquery.coverflow.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "interpolate": {
+      "path": "src/javascripts/coverflow/jquery.interpolate.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "touchSwipe": {
+      "path": "src/javascripts/coverflow/jquery.touchSwipe.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "unitegallery": {
+      "path": "src/javascripts/unitegallery/unitegallery.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
+    "ug-theme-grid": {
+      "path": "src/javascripts/unitegallery/ug-theme-grid.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery", "unitegallery" ]
+    },
+    "ug-theme-slider": {
+      "path": "src/javascripts/unitegallery/ug-theme-slider.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery", "unitegallery" ]
+    },
+    "ug-theme-tiles": {
+      "path": "src/javascripts/unitegallery/ug-theme-tiles.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery", "unitegallery" ]
+    },
+    "ug-theme-carousel": {
+      "path": "src/javascripts/unitegallery/ug-theme-carousel.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery", "unitegallery" ]
+    },
+    "socialStream": {
+      "path": "src/javascripts/socialStream/socialstream.jquery.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
     "jqueryui": "node_modules/jqueryui/jquery-ui.js",
-    "photopileModule": "src/webparts/photopileWebPart/js/photopile.js"
+    "photopileModule": "src/javascripts/photopile/photopile.js",
+    "syntaxHighlighter": {
+      "path": "src/javascripts/syntaxHighlighter/shCore.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ ]
+    },
+    "shBrushAS3": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushAS3.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushBash": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushBash.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushColdFusion": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushColdFusion.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushCpp": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushCpp.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushCSharp": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushCSharp.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushCss": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushCss.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushDelphi": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushDelphi.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushDiff": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushDiff.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushErlang": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushErlang.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushGroovy": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushGroovy.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushJava": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushJava.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushJavaFX": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushJavaFX.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushJScript": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushJScript.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushPerl": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushPerl.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushPhp": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushPhp.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushPlain": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushPlain.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushPowerShell": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushPowerShell.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushPython": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushPython.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushRuby": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushRuby.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushScala": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushScala.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushSql": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushSql.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushVb": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushVb.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    },
+    "shBrushXml": {
+      "path": "src/javascripts/syntaxHighlighter/shBrushXml.min.js",
+      "globalName": "SyntaxHighlighter",
+      "globalDependencies": [ "syntaxHighlighter" ]
+    }
+
   },
   "localizedResources": {
     "sp-client-custom-fields/strings": "../node_modules/sp-client-custom-fields/lib/loc/{locale}.js",

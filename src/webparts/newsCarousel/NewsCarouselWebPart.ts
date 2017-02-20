@@ -17,7 +17,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'NewsCarouselStrings';
 import { INewsCarouselWebPartProps } from './INewsCarouselWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
@@ -26,9 +25,14 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
-require('jquery');
-
+//Loads external JS libs
 import * as $ from 'jquery';
+require('unitegallery');
+require('ug-theme-slider');
+
+//Loads external CSS files
+require('../../css/unitegallery/unite-gallery.scss');
+require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCarouselWebPartProps> {
 
@@ -44,9 +48,6 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
     this.guid = this.getGuid();
 
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
-
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
   }
 
   /**
@@ -106,11 +107,7 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
     outputHtml += '</div>';
     this.domElement.innerHTML = outputHtml;
 
-      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/slider/ug-theme-slider.js', { globalExportsName: 'jQuery' }).then((): void => {
-          this.renderContents();
-        });
-      });
+    this.renderContents();
   }
 
   private renderContents(): void {

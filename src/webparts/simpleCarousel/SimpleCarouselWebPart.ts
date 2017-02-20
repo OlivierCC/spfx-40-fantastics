@@ -16,7 +16,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'simpleCarouselStrings';
 import { ISimpleCarouselWebPartProps } from './ISimpleCarouselWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 import { SPPicturesListService } from './SPPicturesListService';
 import { ISPListItem } from './ISPList';
 
@@ -28,13 +27,18 @@ import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/Propert
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
-require('jquery');
+//Loads external JS libs
 import * as $ from 'jquery';
+require('unitegallery');
+require('ug-theme-carousel');
+
+//Loads external CSS files
+require('../../css/unitegallery/unite-gallery.scss');
+require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimpleCarouselWebPartProps> {
 
   private guid: string;
-  private scriptLoaded: boolean = false;
 
   /**
    * @function
@@ -46,9 +50,6 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
     this.guid = this.getGuid();
 
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
-
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
   }
 
   /**
@@ -82,14 +83,7 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
       return;
     }
 
-    if (this.renderedOnce === false || this.scriptLoaded === false) {
-      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/carousel/ug-theme-carousel.js', { globalExportsName: 'jQuery' }).then((): void => {
-          this.renderContents();
-        });
-      });
-      this.scriptLoaded = true;
-    }
+    this.renderContents();
 
     const picturesListService: SPPicturesListService = new SPPicturesListService(this.properties, this.context);
       //Load the list of pictures from the current lib

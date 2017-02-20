@@ -7,7 +7,7 @@ You can find here different kind of high visual web parts as carousel, images ga
 These WebParts are mainly based on best-class jQuery, React or Angular plugins and use the [sp-client-custom-fields library](https://github.com/OlivierCC/sp-client-custom-fields) to optimize the edit experience.
 Oh, and Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
 
-**Current Version**: v0.9.4
+**Current Version**: v0.9.5
 
 **Current SPFx Drop support** - [RC0](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-RC0)
 

@@ -8,7 +8,6 @@
 export interface ISyntaxHighlighterWebPartProps {
   code: string;
   language: string;
-  theme: string;
   toolbar: boolean;
   gutter: boolean;
   autoLinks: boolean;

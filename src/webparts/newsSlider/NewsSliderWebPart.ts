@@ -16,7 +16,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'NewsSliderStrings';
 import { INewsSliderWebPartProps } from './INewsSliderWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
@@ -26,9 +25,14 @@ import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/Propert
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
-require('jquery');
-
+//Loads external JS libs
 import * as $ from 'jquery';
+require('unitegallery');
+require('ug-theme-carousel');
+
+//Loads external CSS files
+require('../../css/unitegallery/unite-gallery.scss');
+require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSliderWebPartProps> {
 
@@ -44,9 +48,6 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     this.guid = this.getGuid();
 
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
-
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
   }
 
   /**
@@ -107,11 +108,7 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
     outputHtml += '</div>';
     this.domElement.innerHTML = outputHtml;
 
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/carousel/ug-theme-carousel.js', { globalExportsName: 'jQuery' }).then((): void => {
-          this.renderContents();
-        });
-    });
+    this.renderContents();
   }
 
   private renderContents(): void {

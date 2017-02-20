@@ -16,7 +16,6 @@
     "properties": {
       "code": "function hello(){\n  console.writeLine('hello !');\n}",
       "language": "js",
-      "theme": "shThemeDefault.min.css",
       "toolbar": true,
       "gutter": true,
       "autoLinks": true,

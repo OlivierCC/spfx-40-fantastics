@@ -14,12 +14,14 @@ import * as strings from 'mystrings';
 import styles from '../PhotopileWebPart.module.scss';
 import { SPPicturesListService } from '../SPPicturesListService';
 import { ISPListItem } from '../ISPList';
+
+//Loads external JS libs
+import 'jquery';
+import 'jqueryui';
 import * as photopile from 'photopileModule';
 
-require('jquery');
-require('jqueryui');
-require('../css/photopile.scss');
-require('photopileModule');
+//Loads external CSS
+require('../../../css/photopile/photopile.scss');
 
 /**
  * @interface

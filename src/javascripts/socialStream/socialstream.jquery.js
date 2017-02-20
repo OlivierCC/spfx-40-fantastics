@@ -1,6 +1,6 @@
-/* 
+/*
  * Widgets for Social Network photo stream.
- * 
+ *
  * Author: Pixel Industry
  * Website: http://pixel-industry.com
  * Version: 1.4
@@ -59,7 +59,7 @@
                     break;
                 case 'pinterest':
                     var url = 'http://pinterest.com/' + options.username + '/feed.rss'
-                    var api = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent(url) + "&num=" + options.limit + "&output=json_xml";
+                    var api = "https://ajax.googleapis.com/ajax/services/feed/find?v=1.0&callback=?&q=" + encodeURIComponent(url) + "&num=" + options.limit + "&output=json_xml";
 
                     // Send request
                     $.getJSON(api, function (data) {
@@ -90,6 +90,7 @@
 
                         }
                     });
+
                     break;
                 case 'instagram':
                     object.append("<ul class=\"instagram-list\"></ul>")
@@ -184,7 +185,7 @@
                     break;
                 case 'deviantart':
                     var url = 'http://backend.deviantart.com/rss.xml?type=deviation&q=by%3A' + options.username + '+sort%3Atime+meta%3Aall';
-                    var api = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent(url) + "&num=" + options.limit + "&output=json_xml";
+                    var api = "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent(url) + "&num=" + options.limit + "&output=json_xml";
 
                     $.getJSON(api, function (data) {
                         if (data.responseStatus == 200) {
@@ -345,7 +346,7 @@
                     break;
 
                 case 'newsfeed':
-                    var api = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent(options.username) + "&num=" + options.limit + "&output=json_xml";
+                    var api = "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent(options.username) + "&num=" + options.limit + "&output=json_xml";
 
                     $.getJSON(api, function (data) {
                         if (data.responseStatus == 200) {

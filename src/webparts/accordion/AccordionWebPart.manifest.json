@@ -14,9 +14,7 @@
     "description": { "default": "Accordion description" },
     "officeFabricIconFontName": "DoubleChevronDown",
     "properties": {
-      "inline": false,
-      "mode": "full",
-      "theme": "kama",
+      "inline": true,
       "collapsible": false,
       "animate": true,
       "speed": 200,

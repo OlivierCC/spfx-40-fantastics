@@ -17,7 +17,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'tilesGalleryStrings';
 import { ITilesGalleryWebPartProps } from './ITilesGalleryWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 import { SPPicturesListService } from './SPPicturesListService';
 import { ISPListItem } from './ISPList';
 
@@ -28,13 +27,18 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
-require('jquery');
+//Loads external JS libs
 import * as $ from 'jquery';
+require('unitegallery');
+require('ug-theme-tiles');
+
+//Loads external CSS files
+require('../../css/unitegallery/unite-gallery.scss');
+require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGalleryWebPartProps> {
 
   private guid: string;
-  private scriptLoaded: boolean = false;
 
   /**
    * @function
@@ -46,9 +50,6 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
     this.guid = this.getGuid();
 
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
-
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
   }
 
   /**
@@ -82,14 +83,7 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
       return;
     }
 
-    if (this.renderedOnce === false || this.scriptLoaded === false) {
-      SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/tiles/ug-theme-tiles.js', { globalExportsName: 'jQuery' }).then((): void => {
-          this.renderContents();
-        });
-      });
-      this.scriptLoaded = true;
-    }
+    this.renderContents();
 
     const picturesListService: SPPicturesListService = new SPPicturesListService(this.properties, this.context);
       //Load the list of pictures from the current lib

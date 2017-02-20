@@ -17,7 +17,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'TilesMenuStrings';
 import { ITilesMenuWebPartProps } from './ITilesMenuWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
@@ -26,8 +25,14 @@ import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/Propert
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 
-require('jquery');
+//Loads external JS libs
 import * as $ from 'jquery';
+require('unitegallery');
+require('ug-theme-tiles');
+
+//Loads external CSS files
+require('../../css/unitegallery/unite-gallery.scss');
+require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWebPartProps> {
 
@@ -43,9 +48,6 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
     this.guid = this.getGuid();
 
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
-
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/css/unite-gallery.css');
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/default/ug-theme-default.css');
   }
 
   /**
@@ -79,11 +81,7 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
       return;
     }
 
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/js/unitegallery.min.js', { globalExportsName: 'jQuery' }).then((): void => {
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/unitegallery/1.7.28/themes/tiles/ug-theme-tiles.js', { globalExportsName: 'jQuery' }).then((): void => {
-          this.renderContents();
-        });
-    });
+    this.renderContents();
 
     var outputHtml: string = '';
     outputHtml += `

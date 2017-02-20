@@ -9,7 +9,6 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   IWebPartContext,
-  PropertyPaneDropdown,
   PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
 import { DisplayMode, Version } from '@microsoft/sp-core-library';
@@ -56,18 +55,15 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
       html += "<textarea name='" + this.guid + "-editor' id='" + this.guid + "-editor'>" + this.properties.text + "</textarea>";
       this.domElement.innerHTML = html;
 
-      var fMode = 'standard';
-      if (this.properties.mode != null)
-        fMode = this.properties.mode;
-      var ckEditorCdn: string = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
+      var ckEditorCdn: string = '//cdn.ckeditor.com/4.6.2/full/ckeditor.js';
       SPComponentLoader.loadScript(ckEditorCdn, { globalExportsName: 'CKEDITOR' }).then((CKEDITOR: any): void => {
         if (this.properties.inline == null || this.properties.inline === false)
           CKEDITOR.replace( this.guid + '-editor', {
-              skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
+              skin: 'moono-lisa,//cdn.ckeditor.com/4.6.2/full-all/skins/moono-lisa/'
           }  );
         else
           CKEDITOR.inline( this.guid + '-editor', {
-              skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
+              skin: 'moono-lisa,//cdn.ckeditor.com/4.6.2/full-all/skins/moono-lisa/'
           }   );
 
         for (var i in CKEDITOR.instances) {
@@ -126,21 +122,6 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
               groupFields: [
                 PropertyPaneToggle('inline', {
                   label: strings.Inline,
-                }),
-                PropertyPaneDropdown('mode', {
-                  label: strings.Mode,
-                  options: [
-                    {key: 'basic', text: 'basic'},
-                    {key: 'standard', text: 'standard'},
-                    {key: 'full', text: 'full'}
-                  ]
-                }),
-                PropertyPaneDropdown('theme', {
-                  label: strings.Theme,
-                  options: [
-                    {key: 'kama', text: 'kama'},
-                    {key: 'moono', text: 'moono'}
-                  ]
                 })
               ]
             }

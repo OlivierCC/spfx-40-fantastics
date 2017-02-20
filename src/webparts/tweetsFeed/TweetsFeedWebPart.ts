@@ -17,14 +17,13 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'TweetsFeedStrings';
 import { ITweetsFeedWebPartProps } from './ITweetsFeedWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 
-export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeedWebPartProps> {
+var twttr: any = require('twitter');
 
-  private twttr: any;
+export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeedWebPartProps> {
 
   /**
    * @function
@@ -88,14 +87,7 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
     var html = '<a class="twitter-timeline" data-link-color="' + this.properties.linkColor + '" data-border-color="' + this.properties.borderColor + '" height="' + this.properties.height + '" width="' + this.properties.width + '" ' + limit + ' data-chrome="' + dataChrome + '" href="https://twitter.com/' + this.properties.account + '">Tweets by ' + this.properties.account + '</a>';
     this.domElement.innerHTML = html;
 
-    if (this.twttr == null) {
-      SPComponentLoader.loadScript('//platform.twitter.com/widgets.js', { globalExportsName: 'twttr' }).then((twttr?: any)=> {
-        this.twttr = twttr;
-      });
-    }
-    else {
-      this.twttr.widgets.load();
-    }
+    twttr.widgets.load();
   }
 
   /**

@@ -15,8 +15,37 @@ import {
 
 import * as strings from 'SyntaxHighlighterStrings';
 import { ISyntaxHighlighterWebPartProps } from './ISyntaxHighlighterWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 import { DisplayMode, Version } from '@microsoft/sp-core-library';
+
+//Loads external CSS
+require('../../css/syntaxHighlighter/shCore.min.scss');
+require('../../css/syntaxHighlighter/shThemeDefault.min.scss');
+
+//Loads external JS files
+var SyntaxHighlighter: any = require('syntaxHighlighter');
+require('shBrushAS3');
+require('shBrushBash');
+require('shBrushColdFusion');
+require('shBrushCpp');
+require('shBrushCSharp');
+require('shBrushCss');
+require('shBrushDelphi');
+require('shBrushDiff');
+require('shBrushErlang');
+require('shBrushGroovy');
+require('shBrushJava');
+require('shBrushJavaFX');
+require('shBrushJScript');
+require('shBrushPerl');
+require('shBrushPhp');
+require('shBrushPlain');
+require('shBrushPowerShell');
+require('shBrushPython');
+require('shBrushRuby');
+require('shBrushScala');
+require('shBrushSql');
+require('shBrushVb');
+require('shBrushXml');
 
 /**
  * @class
@@ -26,48 +55,9 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
 
   /**
    * @var
-   * Boolean to define if the scripts are already loaded or not
-   */
-  private scriptLoaded: boolean;
-  /**
-   * @var
-   * Syntax Highlighter JS object instance
-   */
-  private SyntaxHighlighter: any;
-  /**
-   * @var
    * Unique ID of this Web Part instance
    */
   private guid: string;
-  /**
-   * @var
-   * Collection of brushes (languages) with matching table between alias and JS file
-   */
-  private allBrushes: any[] = [
-                      {key: 'as3', text: 'shBrushAS3.js'},
-                      {key: 'bash', text: 'shBrushBash.js'},
-                      {key: 'cf', text: '	shBrushColdFusion.js'},
-                      {key: 'csharp', text: 'shBrushCSharp.js'},
-                      {key: 'cpp', text: 'shBrushCpp.js'},
-                      {key: 'css', text: 'shBrushCss.js'},
-                      {key: 'delphi', text: '	shBrushDelphi.js'},
-                      {key: 'diff', text: 'shBrushDiff.js'},
-                      {key: 'erl', text: 'shBrushErlang.js'},
-                      {key: 'groovy', text: 'shBrushGroovy.js'},
-                      {key: 'js', text: 'shBrushJScript.js'},
-                      {key: 'java', text: 'shBrushJava.js'},
-                      {key: 'jfx', text: 'shBrushJavaFX.js'},
-                      {key: 'perl', text: 'shBrushPerl.js'},
-                      {key: 'php', text: 'shBrushPhp.js'},
-                      {key: 'plain', text: 'shBrushPlain.js'},
-                      {key: 'ps', text: 'shBrushPowerShell.js'},
-                      {key: 'py', text: 'shBrushPython.js'},
-                      {key: 'rails', text: 'shBrushRuby.js'},
-                      {key: 'scala', text: 'shBrushScala.js'},
-                      {key: 'sql', text: 'shBrushSql.js'},
-                      {key: 'vb', text: 'shBrushVb.js'},
-                      {key: 'xml', text: 'shBrushXml.js'}
-  ];
 
   /**
    * @function
@@ -79,15 +69,10 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
-    this.renderContent = this.renderContent.bind(this);
     this.onSyntaxHighlighterChanged = this.onSyntaxHighlighterChanged.bind(this);
 
     //Inits the unique ID
     this.guid = this.getGuid();
-    this.scriptLoaded = false;
-
-    //Load the SyntaxHighlighter core CSS styles
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css');
   }
 
   /**
@@ -96,23 +81,6 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
    */
   protected get dataVersion(): Version {
     return Version.parse('1.0');
-  }
-
-  /**
-   * @function
-   * Get the JS brush path from an alias
-   */
-  private getBrushPath(alias?: string): string {
-    if (alias == null)
-      alias = 'js';
-    for (var i = 0; i < this.allBrushes.length; i++) {
-      if (this.allBrushes[i].key === alias) {
-        //Brushes found, return it
-        return this.allBrushes[i].text;
-      }
-    }
-    //By default, returns JS brush path
-    return 'shBrushJScript.js';
   }
 
   /**
@@ -141,28 +109,7 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
       var html = "<pre class='brush: " + ((this.properties.language != null) ? this.properties.language : 'js') + "; toolbar: " + toolbar + "; gutter: " + ruler + "; smart-tabs: " + smartTabs + "; auto-links: " + autoLink + "'>" + this.properties.code + "</pre>";
       this.domElement.innerHTML = html;
 
-      //Loads the CSS Style for the selected Theme from cloudfare CDN
-      var theme = this.properties.theme;
-      if (theme == null || theme == '')
-        theme = 'shThemeDefault.min.css';
-      SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/' + theme);
-
-      //Checks if the scripts has been already loaded
-      if (this.scriptLoaded === false) {
-        //If not, load the SyntaxHightligter core JS lib from CDN
-        SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js', { globalExportsName: 'SyntaxHighlighter' }).then((SyntaxHighlighter?: any): void => {
-          //Saves the SyntaxHighlighter object instance
-          this.SyntaxHighlighter = SyntaxHighlighter;
-          //Calls the render JS method
-          this.renderContent();
-        });
-        this.scriptLoaded = true;
-      }
-      else {
-        //Only calls the render
-        this.renderContent();
-      }
-
+      SyntaxHighlighter.highlight();
     }
     else {
       //Edit mode -> we only need to generate a textarea and get the changed event
@@ -179,20 +126,6 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
    */
   private onSyntaxHighlighterChanged(elm?: any) {
     this.properties.code = elm.currentTarget.value;
-  }
-
-  /**
-   * @function
-   * JavaScript SyntaxHighlighter render
-   */
-  private renderContent(): void {
-    //Gets the selected brush from current selected language
-    var brush = this.getBrushPath(this.properties.language);
-    //Loads the SyntaxHighlighter brush JavaScript lib from CDN
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/' + brush, { globalExportsName: 'SyntaxHighlighter' }).then((SyntaxHighlighter?: any): void => {
-      //Calls the SyntaxHighlighter highlight method
-      this.SyntaxHighlighter.highlight();
-    });
   }
 
   /**
@@ -256,19 +189,6 @@ export default class SyntaxHighlighterWebPart extends BaseClientSideWebPart<ISyn
                       {key: 'sql', text: 'SQL'},
                       {key: 'vb', text: 'Visual Basic'},
                       {key: 'xml', text: 'XML'}
-                    ]
-                  }),
-                  PropertyPaneDropdown('theme', {
-                    label: strings.Theme,
-                    options: [
-                      {key: 'shThemeDefault.min.css', text: 'Default'},
-                      {key: 'shThemeDjango.min.css', text: 'Django'},
-                      {key: 'shThemeEclipse.min.css', text: 'Eclipse'},
-                      {key: 'shThemeEmacs.min.css', text: 'Emacs'},
-                      {key: 'shThemeFadeToGrey.min.css', text: 'Fade to Grey'},
-                      {key: 'shThemeMDUltra.min.css', text: 'MD Ultra'},
-                      {key: 'shThemeMidnight.min.css', text: 'Midnight'},
-                      {key: 'shThemeRDark.min.css', text: 'RDark'}
                     ]
                   }),
                   PropertyPaneToggle('toolbar', {

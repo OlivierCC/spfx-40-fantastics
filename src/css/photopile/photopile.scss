@@ -28,9 +28,9 @@
   *  shuffling around of elements before the gallery has rendered.
   *----------------------------------------------------------------------------*/
 
- div.photopile-wrapper {
-      /*min-height : 500px;*/
-  }
+ /*div.photopile-wrapper {
+      min-height : 500px;
+  }*/
 
   /*-----------------------------------------------------------------------------
   *  Make sure path to navigation sprite is correct
@@ -65,6 +65,7 @@
       margin: 2px;
       padding: 0;
       -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
   }
   ul.photopile li a {
       display: block;

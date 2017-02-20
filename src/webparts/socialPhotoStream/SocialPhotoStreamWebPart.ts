@@ -18,12 +18,11 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'SocialPhotoStreamStrings';
 import { ISocialPhotoStreamWebPartProps } from './ISocialPhotoStreamWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
-require('jquery');
 import * as $ from 'jquery';
+require('socialStream');
 
 export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISocialPhotoStreamWebPartProps> {
 
@@ -89,7 +88,6 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
 
     this.domElement.innerHTML = html;
 
-     SPComponentLoader.loadScript('//www.jqueryscript.net/demo/jQuery-Plugin-To-Show-Photo-Streams-Form-Social-Networks/socialstream.jquery.js', { globalExportsName: 'jQuery' }).then((): void => {
       ($ as any)('#' + this.guid).socialstream({
         socialnetwork: this.properties.network,
         limit: this.properties.limit,
@@ -97,7 +95,6 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
         overlay: this.properties.overlay,
         apikey: false
       });
-     });
   }
 
   /**
@@ -144,7 +141,6 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
                     {key: 'picasa', text: 'Picasa'},
                     {key: 'deviantart', text: 'Deviantart'},
                     {key: 'dribbble', text: 'Dribbble'},
-                    {key: 'youtube', text: 'Youtube'},
                     {key: 'newsfeed', text: 'Newsfeed'}
                   ]
                 }),

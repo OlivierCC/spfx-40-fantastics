@@ -23,11 +23,10 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 
-require('jquery');
+//Loads external JS libs
+import * as $ from 'jquery';
 require('jqueryreflection');
 require('cloud9carousel');
-
-import * as $ from 'jquery';
 
 export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3DWebPartProps> {
 

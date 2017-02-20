@@ -16,10 +16,14 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'MediaPlayerStrings';
 import { IMediaPlayerWebPartProps } from './IMediaPlayerWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
+
+//Loads external CSS
+require('../../css/mediaPlayer/plyr.scss');
+
+var plyr: any = require('plyr');
 
 export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlayerWebPartProps> {
 
@@ -37,8 +41,6 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
-
-    SPComponentLoader.loadCss('//cdn.plyr.io/2.0.9/plyr.css');
   }
 
   /**
@@ -84,9 +86,7 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
     }
     this.domElement.innerHTML = html;
 
-    SPComponentLoader.loadScript('//cdn.plyr.io/2.0.9/plyr.js', { globalExportsName: 'plyr' }).then((plyr?: any): void => {
-      plyr.setup();
-    });
+    plyr.setup();
   }
 
   /**

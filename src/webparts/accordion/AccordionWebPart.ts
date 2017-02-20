@@ -101,17 +101,14 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
 
     if (this.displayMode == DisplayMode.Edit) {
         //If the display mode is Edit, loads the CK Editor plugin
-        var fMode = 'standard';
-        if (this.properties.mode != null)
-          fMode = this.properties.mode;
-        var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
+        var ckEditorCdn = '//cdn.ckeditor.com/4.6.2/full/ckeditor.js';
         //Loads the Javascript from the CKEditor CDN
         SPComponentLoader.loadScript(ckEditorCdn, { globalExportsName: 'CKEDITOR' }).then((CKEDITOR: any): void => {
           if (this.properties.inline == null || this.properties.inline === false) {
             //If mode is not inline, loads the script with the replace method
             for (var tab = 0; tab < this.properties.tabs.length; tab++) {
               CKEDITOR.replace( this.guid + '-editor-' + tab, {
-                    skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
+                    skin: 'moono-lisa,//cdn.ckeditor.com/4.6.2/full-all/skins/moono-lisa/'
               });
             }
 
@@ -120,7 +117,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
             //Mode is inline, so loads the script with the inline method
             for (var tab2 = 0; tab2 < this.properties.tabs.length; tab2++) {
               CKEDITOR.inline( this.guid + '-editor-' + tab2, {
-                    skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
+                    skin: 'moono-lisa,//cdn.ckeditor.com/4.6.2/full-all/skins/moono-lisa/'
               });
             }
           }
@@ -216,21 +213,6 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
               groupFields: [
                 PropertyPaneToggle('inline', {
                   label: strings.Inline,
-                }),
-                PropertyPaneDropdown('mode', {
-                  label: strings.Mode,
-                  options: [
-                    {key: 'basic', text: 'basic'},
-                    {key: 'standard', text: 'standard'},
-                    {key: 'full', text: 'full'}
-                  ]
-                }),
-                PropertyPaneDropdown('theme', {
-                  label: strings.Theme,
-                  options: [
-                    {key: 'kama', text: 'kama'},
-                    {key: 'moono', text: 'moono'}
-                  ]
                 })
               ]
             }

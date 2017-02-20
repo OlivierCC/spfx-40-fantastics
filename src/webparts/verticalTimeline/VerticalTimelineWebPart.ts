@@ -22,7 +22,6 @@ import { PropertyFieldSPListQuery, PropertyFieldSPListQueryOrderBy } from 'sp-cl
 import { PropertyFieldIconPicker } from 'sp-client-custom-fields/lib/PropertyFieldIconPicker';
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 
-require('jquery');
 import * as $ from 'jquery';
 
 export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVerticalTimelineWebPartProps> {

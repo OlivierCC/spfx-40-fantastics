@@ -17,15 +17,15 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'RssReaderStrings';
 import { IRssReaderWebPartProps } from './IRssReaderWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports property pane custom fields
 import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
-require('jquery');
 import * as $ from 'jquery';
+require('moment');
+require('feedek');
 
 export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWebPartProps> {
 
@@ -72,8 +72,6 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
     `;
     this.domElement.innerHTML = html;
 
-     SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js', { globalExportsName: 'jQuery' }).then((): void => {
-       SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/js/FeedEk.min.js', { globalExportsName: 'jQuery' }).then((): void => {
         ($ as any)('#' + this.guid).FeedEk({
             FeedUrl: this.properties.feedUrl,
             MaxCount : this.properties.maxCount,
@@ -84,8 +82,6 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
             DateFormat: this.properties.dateFormat,
             DateFormatLang: this.properties.dateFormatLang
         });
-      });
-    });
   }
 
   /**

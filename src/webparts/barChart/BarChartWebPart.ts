@@ -17,7 +17,6 @@ import { Version } from '@microsoft/sp-core-library';
 
 import * as strings from 'BarChartStrings';
 import { IBarChartWebPartProps } from './IBarChartWebPartProps';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 
 //Imports the property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
@@ -25,6 +24,8 @@ import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+
+var Chart: any = require('chartjs');
 
 /**
  * @class
@@ -78,9 +79,6 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
     var html = '<canvas id="' + this.guid + '" width="' + this.properties.dimension.width + '" height="' + this.properties.dimension.height + '"></canvas>';
     this.domElement.innerHTML = html;
 
-    //Loads the Chart.js lib from the cdnjs.cloudflare.com CDN
-    SPComponentLoader.loadScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js', { globalExportsName: 'Chart' }).then((Chart?: any): void => {
-
       //Inits the data
       var data = {
         labels: this.getDataTab(strings.Label),
@@ -133,9 +131,6 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
           data: data,
           options: options
       });
-
-    });
-
 
   }
 
