@@ -93,6 +93,7 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
         limit: this.properties.limit,
         username: this.properties.userName,
         overlay: this.properties.overlay,
+        accessToken: this.properties.accessKey,
         apikey: false
       });
   }
@@ -140,12 +141,14 @@ export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISoc
                     {key: 'flickr', text: 'Flickr'},
                     {key: 'picasa', text: 'Picasa'},
                     {key: 'deviantart', text: 'Deviantart'},
-                    {key: 'dribbble', text: 'Dribbble'},
-                    {key: 'newsfeed', text: 'Newsfeed'}
+                    {key: 'dribbble', text: 'Dribbble'}
                   ]
                 }),
                 PropertyPaneTextField('userName', {
                   label: strings.userName
+                }),
+                PropertyPaneTextField('accessKey', {
+                  label: strings.accessKey
                 }),
                 PropertyPaneSlider('limit', {
                   label: strings.limit,

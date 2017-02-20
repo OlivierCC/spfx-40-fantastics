@@ -59,35 +59,30 @@
                     break;
                 case 'pinterest':
                     var url = 'http://pinterest.com/' + options.username + '/feed.rss'
-                    var api = "https://ajax.googleapis.com/ajax/services/feed/find?v=1.0&callback=?&q=" + encodeURIComponent(url) + "&num=" + options.limit + "&output=json_xml";
 
-                    // Send request
-                    $.getJSON(api, function (data) {
-                        if (data.responseStatus == 200) {
-                            var photofeed = data.responseData.feed;
-                            var overlay_div = "";
-                            if (!photofeed) {
-                                return false;
+                    var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + url + '" LIMIT ' + options.limit;
+                    $.ajax({
+                        url: "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(YQLstr) + "&format=json&diagnostics=false&callback=?",
+                        dataType: "json",
+                        success: function (data) {
+                            if (!(data.query.results.rss instanceof Array)) {
+                                data.query.results.rss = [data.query.results.rss];
                             }
                             var html_code = '<ul class=\"pinterest-list\">';
-
-                            for (var i = 0; i < photofeed.entries.length; i++) {
-                                var entry = photofeed.entries[i];
+                            $.each(data.query.results.rss, function (e, itm) {
+                                var itemDesc = itm.channel.item.description;
                                 var $container = $("<div></div>");
-                                $container.append(entry.content);
+                                $container.append(itemDesc);
                                 var url = "http://www.pinterest.com" + $container.find('a').attr('href');
                                 var photo_url = $container.find('img').attr('src');
                                 var photo_title = $container.find('p:nth-child(2)').html();
                                 if (options.overlay) {
                                     var overlay_div = '<div class="img-overlay"></div>';
                                 }
-
                                 html_code += '<li><a target="_blank" href="' + url + '" title="' + photo_title + '"><img src="' + photo_url + '"/>' + overlay_div + '</a></li>'
-                            }
+                            });
                             html_code += '</ul>';
-
                             $(object).append(html_code);
-
                         }
                     });
 
@@ -184,42 +179,52 @@
                     });
                     break;
                 case 'deviantart':
-                    var url = 'http://backend.deviantart.com/rss.xml?type=deviation&q=by%3A' + options.username + '+sort%3Atime+meta%3Aall';
-                    var api = "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent(url) + "&num=" + options.limit + "&output=json_xml";
+                    var url = 'https://backend.deviantart.com/rss.xml?type=deviation&q=by%3A' + options.username + '+sort%3Atime+meta%3Aall';
 
-                    $.getJSON(api, function (data) {
-                        if (data.responseStatus == 200) {
-                            var photofeed = data.responseData.feed;
-                            var overlay_div = "";
-                            if (!photofeed) {
-                                return false;
-
+                    var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + url + '" LIMIT ' + options.limit;
+                    $.ajax({
+                        url: "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(YQLstr) + "&format=json&diagnostics=false&callback=?",
+                        dataType: "json",
+                        success: function (data) {
+                            if (!(data.query.results.rss instanceof Array)) {
+                                data.query.results.rss = [data.query.results.rss];
                             }
                             var html_code = '<ul class=\"deviantart-list\">';
+                            $.each(data.query.results.rss, function (e, itm) {
+                                var itemDesc = itm.channel.item.description;
 
-                            for (var i = 0; i < photofeed.entries.length; i++) {
-                                var entry = photofeed.entries[i];
                                 var $container = $("<div></div>");
-                                $container.append(entry.content);
-                                var url = entry.link;
+                                $container.append(itemDesc);
+                                var url = itm.channel.item.link;
                                 var photo_url = $container.find('img').attr('src');
 
+                                if (photo_url == null || photo_url === undefined)
+                                    return;
+
                                 // ignore smiley images
-                                if (photo_url.indexOf("smile.gif") >= 0) {
-                                    continue;
+                                if (photo_url != null && photo_url !== undefined && photo_url.indexOf("smile.gif") >= 0) {
+                                    return;
                                 }
 
-                                var photo_title = entry.title.replace(/.jpg/g, "").replace(/-/g, " ").replace(/_/g, " ");
+                                photo_url = photo_url.replace("http://", "https://");
+
+                                var photo_title = '';
+                                if (itm.channel.item.title !== undefined && itm.channel.item.title != null && itm.channel.item.title != '') {
+                                    photo_title = itm.channel.item.title;
+                                }
+                                if( Object.prototype.toString.call(photo_title) === '[object Array]' ) {
+                                    if (photo_title.length > 0)
+                                        photo_title = photo_title[0];
+                                }
+                                var photo_title = photo_title.replace(/.jpg/g, "").replace(/-/g, " ").replace(/_/g, " ");
                                 if (options.overlay) {
                                     var overlay_div = '<div class="img-overlay"></div>';
                                 }
 
                                 html_code += '<li><a target="_blank" href="' + url + '" title="' + photo_title + '"><img src="' + photo_url + '"/>' + overlay_div + '</a></li>'
-                            }
+                            });
                             html_code += '</ul>';
-
                             $(object).append(html_code);
-
                         }
                     });
 
@@ -268,114 +273,7 @@
                         }
                     });
                     break;
-                case 'youtube':
-                    var pid;
-                    if (options.apikey) {
 
-                        // Get Uploads Playlist
-                        $.get(
-                                "https://www.googleapis.com/youtube/v3/channels", {
-                                    part: 'contentDetails',
-                                    id: options.username,
-                                    key: options.apikey
-                                },
-                        function (data) {
-
-                            $.each(data.items, function (i, item) {
-                                //playlist id
-                                pid = item.contentDetails.relatedPlaylists.uploads;
-                                youtubeGetVids(pid);
-                            });
-
-                        }
-                        );
-
-                    }
-
-                    //Get Videos
-                    function youtubeGetVids(pid) {
-                        $.get(
-                                "https://www.googleapis.com/youtube/v3/playlistItems", {
-                                    part: 'snippet',
-                                    maxResults: options.limit,
-                                    playlistId: pid,
-                                    key: options.apikey
-                                },
-                        function (data) {
-                            var results;
-
-                            var html_code = '<ul class=\"youtube-list\">';
-
-                            // loop through videos
-                            $.each(data.items, function (i, item) {
-
-                                var photofeed = item.snippet.thumbnails.default.url;
-                                var overlay_div = "";
-                                if (!photofeed) {
-                                    return false;
-                                }
-
-                                // create container
-                                var $container = $("<div></div>");
-
-                                // get image url
-                                var url = 'https://www.youtube.com/watch?v=' + item.snippet.resourceId.videoId;
-
-                                // video title
-                                var photo_title = item.snippet.title;
-                                if (options.overlay) {
-                                    var overlay_div = '<div class="img-overlay"></div>';
-                                }
-
-                                // create html
-                                html_code += '<li><a target="_blank" href="' + url + '" title="' + photo_title + '"><img src="' + photofeed + '"/>' + overlay_div + '</a></li>'
-
-                            });
-
-                            html_code += '</ul>';
-
-                            // append html
-                            $(object).append(html_code);
-                        }
-                        );
-                    }
-
-
-
-
-                    break;
-
-                case 'newsfeed':
-                    var api = "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent(options.username) + "&num=" + options.limit + "&output=json_xml";
-
-                    $.getJSON(api, function (data) {
-                        if (data.responseStatus == 200) {
-                            var photofeed = data.responseData.feed;
-                            var overlay_div = "";
-                            if (!photofeed) {
-                                return false;
-                            }
-                            var html_code = '<ul class=\"social-feed\">';
-
-                            for (var i = 0; i < photofeed.entries.length; i++) {
-                                var entry = photofeed.entries[i];
-                                var $container = $("<div></div>");
-                                $container.append(entry.content);
-                                var url = entry.link;
-                                var photo_url = $container.find('img').attr('src');
-                                var photo_title = entry.title.replace(/.jpg/g, "").replace(/-/g, " ").replace(/_/g, " ");
-                                if (options.overlay) {
-                                    var overlay_div = '<div class="img-overlay"></div>';
-                                }
-
-                                html_code += '<li><a target="_blank" href="' + url + '" title="' + photo_title + '"><img src="' + photo_url + '"/>' + overlay_div + '</a></li>'
-                            }
-                            html_code += '</ul>';
-
-                            $(object).append(html_code);
-                        }
-                    });
-                    break;
             }
         });
     };

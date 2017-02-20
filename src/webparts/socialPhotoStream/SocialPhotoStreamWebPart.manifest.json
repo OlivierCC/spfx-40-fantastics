@@ -16,6 +16,7 @@
     "properties": {
       "network": "pinterest",
       "userName": "microsoft",
+      "accessKey": "",
       "limit": 20,
       "overlay": true,
       "dimension": {

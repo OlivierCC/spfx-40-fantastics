@@ -10,6 +10,7 @@ import { IPropertyFieldDimension } from 'sp-client-custom-fields/lib/PropertyFie
 export interface ISocialPhotoStreamWebPartProps {
   network: string;
   userName: string;
+  accessKey: string;
   limit: number;
   overlay: boolean;
   dimension: IPropertyFieldDimension;
