@@ -6,8 +6,6 @@ define([], function() {
     "LayoutGroupName": "Layout",
     "DescriptionFieldLabel": "Description Field",
     "Inline": "Inline",
-    "Mode": "Toolbar (must refresh page)",
-    "Theme": "Theme (must refresh page)",
     "ManageTabs": "Manage Tabs",
     "Tabs": "Tabs",
     "DisableColor": "Inactive Tab Color",

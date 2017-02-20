@@ -7,8 +7,6 @@
  */
 export interface ITabsWebPartProps {
   text: string;
-  theme: string;
-  mode: string;
   inline: boolean;
   tabs: any[];
   disableColor: string;

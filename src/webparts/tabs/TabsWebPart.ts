@@ -311,15 +311,12 @@ Main components
 
     if (this.displayMode == DisplayMode.Edit) {
 
-        var fMode = 'standard';
-        if (this.properties.mode != null)
-          fMode = this.properties.mode;
-        var ckEditorCdn = '//cdn.ckeditor.com/4.5.11/{0}/ckeditor.js'.replace("{0}", fMode);
+        var ckEditorCdn = '//cdn.ckeditor.com/4.6.2/full/ckeditor.js';
         SPComponentLoader.loadScript(ckEditorCdn, { globalExportsName: 'CKEDITOR' }).then((CKEDITOR: any): void => {
           if (this.properties.inline == null || this.properties.inline === false) {
             for (var tab = 0; tab < this.properties.tabs.length; tab++) {
               CKEDITOR.replace( this.guid + '-editor-' + tab, {
-                    skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
+                    skin: 'moono-lisa,//cdn.ckeditor.com/4.6.2/full-all/skins/moono-lisa/'
               }  );
             }
 
@@ -327,7 +324,7 @@ Main components
           else {
             for (var tab2 = 0; tab2 < this.properties.tabs.length; tab2++) {
               CKEDITOR.inline( this.guid + '-editor-' + tab2, {
-                    skin: 'kama,//cdn.ckeditor.com/4.4.3/full-all/skins/' + this.properties.theme + '/'
+                    skin: 'moono-lisa,//cdn.ckeditor.com/4.4.3/full-all/skins/moono-lisa/'
               }   );
             }
           }

@@ -14,9 +14,7 @@
     "description": { "default": "You can dynamically create sections to view your content in the form of tabs. In edit mode, you can directly modify the contents of each tab with a WYSIWYG editor and preview your Web Part in your page. The tabs are responsives and adapt with the size of the screen." },
     "officeFabricIconFontName": "Sections",
     "properties": {
-      "inline": false,
-      "mode": "full",
-      "theme": "kama",
+      "inline": true,
       "disableColor": "#f8f7ee",
       "selectedColor": "#9cc943",
       "tabs": [
