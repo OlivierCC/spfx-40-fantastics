@@ -34,7 +34,6 @@ require('ug-theme-tiles');
 
 //Loads external CSS files
 require('../../css/unitegallery/unite-gallery.scss');
-require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGalleryWebPartProps> {
 
@@ -82,8 +81,6 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
       `;
       return;
     }
-
-    this.renderContents();
 
     const picturesListService: SPPicturesListService = new SPPicturesListService(this.properties, this.context);
       //Load the list of pictures from the current lib

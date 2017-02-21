@@ -34,7 +34,6 @@ require('ug-theme-carousel');
 
 //Loads external CSS files
 require('../../css/unitegallery/unite-gallery.scss');
-require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimpleCarouselWebPartProps> {
 
@@ -82,8 +81,6 @@ export default class SimpleCarouselWebPart extends BaseClientSideWebPart<ISimple
       `;
       return;
     }
-
-    this.renderContents();
 
     const picturesListService: SPPicturesListService = new SPPicturesListService(this.properties, this.context);
       //Load the list of pictures from the current lib

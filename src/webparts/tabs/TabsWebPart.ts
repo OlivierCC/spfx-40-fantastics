@@ -9,7 +9,6 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   IWebPartContext,
-  PropertyPaneDropdown,
   PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
 import { DisplayMode, Version } from '@microsoft/sp-core-library';
@@ -450,21 +449,6 @@ Main components
               groupFields: [
                 PropertyPaneToggle('inline', {
                   label: strings.Inline,
-                }),
-                PropertyPaneDropdown('mode', {
-                  label: strings.Mode,
-                  options: [
-                    {key: 'basic', text: 'basic'},
-                    {key: 'standard', text: 'standard'},
-                    {key: 'full', text: 'full'}
-                  ]
-                }),
-                PropertyPaneDropdown('theme', {
-                  label: strings.Theme,
-                  options: [
-                    {key: 'kama', text: 'kama'},
-                    {key: 'moono', text: 'moono'}
-                  ]
                 })
               ]
             },

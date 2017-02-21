@@ -7,7 +7,7 @@ You can find here different kind of high visual web parts as carousel, images ga
 These WebParts are mainly based on best-class jQuery, React or Angular plugins and use the [sp-client-custom-fields library](https://github.com/OlivierCC/sp-client-custom-fields) to optimize the edit experience.
 Oh, and Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
 
-**Current Version**: v0.9.5
+**Current Version**: v0.9.6
 
 **Current SPFx Drop support** - [RC0](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-RC0)
 
@@ -37,7 +37,6 @@ Overview |  Web Part |  Description
 
 Overview |  Web Part |  Description
 ------------ | ----------- | -----------
-![Bing Map](./assets/overviewbingmap.png) | [**Bing Map**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bing-Map) | A Web Part to insert a Bing map on your page. With this Web Part, you can customize your card (size, toolbar, 2D/3D, etc.) and indicate a location and default zoom. You can enter your own key Bing to use all the features of mapping.
 ![Vertical Timeline](./assets/overviewverticaltimeline.png) | [**Vertical Timeline**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Vertical-Timeline) |  A web part to generate a Facebook like vertical Timeline from SharePoint Calendar list items. For example, this Web Part is very convenient to build a synthetic view on your major project milestones. This Web Part uses CSS3 to optimize the user experience.
 ![Pie Chart](./assets/overviewpiechart.png) | [**Pie Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Pie-Chart) |  Insert a Pie chart with a few clicks in your SharePoint page. You can edit the data, choose values, colors, legends and all the graphics. You can generate graphs to fixed sizes or responsive mode.
 ![Bar Chart](./assets/overviewbarchart.png) | [**Bar Chart**](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Bar-Chart) |  To generate a chart in the form of a vertical or horizontal diagram. You can simply edit the data of the chart, change the values, labels, or colors. Create simply and effectively elegant and effective dashboards for your employees.

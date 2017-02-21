@@ -156,8 +156,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "01.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/01.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/01.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/01.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/01.jpg"
                       }
                     },
                     {
@@ -165,8 +165,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "02.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/02.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/02.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/02.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/02.jpg"
                       }
                     },
                     {
@@ -174,8 +174,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "03.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/03.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/03.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/03.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/03.jpg"
                       }
                     },
                     {
@@ -183,8 +183,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "04.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/04.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/04.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/04.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/04.jpg"
                       }
                     },
                     {
@@ -192,8 +192,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "05.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/05.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/05.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/05.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/05.jpg"
                       }
                     },
                     {
@@ -201,8 +201,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "06.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/06.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/06.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/06.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/06.jpg"
                       }
                     },
                     {
@@ -210,8 +210,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "07.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/07.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/07.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/07.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/07.jpg"
                       }
                     },
                     {
@@ -219,8 +219,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "08.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/08.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/08.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/08.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/08.jpg"
                       }
                     },
                     {
@@ -228,8 +228,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "09.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/09.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/09.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/09.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/09.jpg"
                       }
                     },
                     {
@@ -237,8 +237,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "10.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/10.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/10.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/10.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/10.jpg"
                       }
                     }
                 ]
@@ -253,8 +253,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "11.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/11.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/11.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/11.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/11.jpg"
                       }
                     },
                     {
@@ -262,8 +262,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "12.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/12.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/12.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/12.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/12.jpg"
                       }
                     },
                     {
@@ -271,8 +271,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "13.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/13.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/13.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/13.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/13.jpg"
                       }
                     },
                     {
@@ -280,8 +280,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "14.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/14.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/14.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/14.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/14.jpg"
                       }
                     },
                     {
@@ -289,8 +289,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "15.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/15.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/15.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/15.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/15.jpg"
                       }
                     },
                     {
@@ -298,8 +298,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "16.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/16.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/16.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/16.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/16.jpg"
                       }
                     },
                     {
@@ -307,8 +307,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "17.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/17.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/17.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/17.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/17.jpg"
                       }
                     },
                     {
@@ -316,8 +316,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "18.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/18.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/18.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/18.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/18.jpg"
                       }
                     },
                     {
@@ -325,8 +325,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "19.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/19.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/19.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/19.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/19.jpg"
                       }
                     },
                     {
@@ -334,8 +334,8 @@ export class SPPicturesListService implements ISPPicturesListService {
                       "File":
                       {
                         "Name": "20.jpg",
-                        "ServerRelativeUrl": "../src/webparts/photopileWebPart/images/fullsize/20.jpg",
-                        "ThumbnailServerUrl": "../src/webparts/photopileWebPart/images/thumbs/20.jpg"
+                        "ServerRelativeUrl": "../src/webparts/photopile/images/fullsize/20.jpg",
+                        "ThumbnailServerUrl": "../src/webparts/photopile/images/thumbs/20.jpg"
                       }
                     }
                 ]

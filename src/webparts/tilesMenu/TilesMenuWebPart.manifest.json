@@ -31,42 +31,42 @@
           "Enable": "true",
           "Description": "Smart, fast & easy: discover the new work station",
           "Link Url": "#",
-          "Picture": "//static.pexels.com/photos/204611/pexels-photo-204611-large.jpeg"
+          "Picture": "//spfx40fantastics.azureedge.net/spfx40fantastics/images/menu/pexels-photo-204611-large.jpeg"
         },
         {
           "Title": "All the Intranet in your Smart Phone",
           "Enable": "true",
           "Description": "Stay connected with the Intranet App",
           "Link Url": "#",
-          "Picture": "//static.pexels.com/photos/7423/pexels-photo-large.jpg"
+          "Picture": "//spfx40fantastics.azureedge.net/spfx40fantastics/images/menu/pexels-photo-large.jpg"
         },
         {
           "Title": "Take a break!",
           "Enable": "true",
           "Description": "Discover the new coffees selection",
           "Link Url": "#",
-          "Picture": "//static.pexels.com/photos/70221/pexels-photo-70221-large.jpeg"
+          "Picture": "//spfx40fantastics.azureedge.net/spfx40fantastics/images/menu/pexels-photo-70221-large.jpeg"
         },
         {
           "Title": "Discover the new meeting areas",
           "Enable": "true",
           "Description": "New meeting areas available at Level 2",
           "Link Url": "#",
-          "Picture": "//static.pexels.com/photos/7070/space-desk-workspace-coworking-large.jpg"
+          "Picture": "//spfx40fantastics.azureedge.net/spfx40fantastics/images/menu/space-desk-workspace-coworking-large.jpg"
         },
         {
           "Title": "New travel policies",
           "Enable": "true",
           "Description": "The new travel policies are available",
           "Link Url": "#",
-          "Picture": "//static.pexels.com/photos/21014/pexels-photo-large.jpg"
+          "Picture": "//spfx40fantastics.azureedge.net/spfx40fantastics/images/menu/pexels-photo-large-car.jpg"
         },
         {
           "Title": "New commons",
           "Enable": "false",
           "Description": "View the video of the new commons",
           "Link Url": "#",
-          "Picture": "//static.pexels.com/photos/58801/pexels-photo-58801-large.jpeg"
+          "Picture": "//spfx40fantastics.azureedge.net/spfx40fantastics/images/menu/pexels-photo-58801-large.jpeg"
         }
       ]
     }

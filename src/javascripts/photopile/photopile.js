@@ -38,7 +38,7 @@ define([], function() {
         var autoplaySpeed     = 5000;       // ms
 
         // Images
-        var loading    = '//photopilewebpart.blob.core.windows.net/photopile-web-part/loading.gif';  // path to img displayed while gallery/thumbnails loads
+        var loading    = '//spfx40fantastics.azureedge.net/spfx40fantastics/images/loading.gif';  // path to img displayed while gallery/thumbnails loads
 
         //---- END SETTINGS ----
 

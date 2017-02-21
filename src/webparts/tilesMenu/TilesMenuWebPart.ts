@@ -26,13 +26,13 @@ import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 
 //Loads external JS libs
+require('jquery');
 import * as $ from 'jquery';
 require('unitegallery');
 require('ug-theme-tiles');
 
 //Loads external CSS files
 require('../../css/unitegallery/unite-gallery.scss');
-require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWebPartProps> {
 
@@ -81,8 +81,6 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
       return;
     }
 
-    this.renderContents();
-
     var outputHtml: string = '';
     outputHtml += `
       <div id="${this.guid}-gallery" style="display:none;">
@@ -107,6 +105,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
     }
     outputHtml += '</div>';
     this.domElement.innerHTML = outputHtml;
+
+    this.renderContents();
   }
 
   private renderContents(): void {

@@ -35,7 +35,6 @@ require('ug-theme-grid');
 
 //Loads external CSS files
 require('../../css/unitegallery/unite-gallery.scss');
-require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalleryWebPartProps> {
 

@@ -32,7 +32,6 @@ require('ug-theme-slider');
 
 //Loads external CSS files
 require('../../css/unitegallery/unite-gallery.scss');
-require('../../css/unitegallery/ug-theme-default.scss');
 
 export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCarouselWebPartProps> {
 
