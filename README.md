@@ -11,6 +11,8 @@ Oh, and Yes, these web parts are free and open source, so have fun well to build
 
 **Current SPFx Drop support** - [RC0](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-RC0)
 
+For any question, you can also [read the FAQ](https://github.com/OlivierCC/spfx-40-fantastics/wiki/FAQ).
+
 ![Logo](./assets/logo_final.gif)
 
 ## Menu & Carousels & News Management
