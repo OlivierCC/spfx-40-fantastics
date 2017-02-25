@@ -27,7 +27,7 @@
     "orchestrator": "^0.3.8",
     "sp-client-custom-fields": "^1.1.4",
     "through2": "^2.0.3",
-    "typescript": "^2.1.5",
+    "typescript": "2.1.5",
     "typewriting": "^1.2.2"
   },
   "devDependencies": {
