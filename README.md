@@ -1,15 +1,17 @@
 # SPFx 40 Fantastics Web Parts
 
-> Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework client-side web parts are not currently supported for use in production environments.
+![release](https://img.shields.io/badge/release-v1.0.0.0-blue.svg)
+![status](https://img.shields.io/badge/status-stable-green.svg)
+![mit](https://img.shields.io/badge/license-MIT-yellow.svg)
 
 This package is a sample kit of 40 great Client Side Web Parts built on the SharePoint Framework SPFx.
 You can find here different kind of high visual web parts as carousel, images galleries, custom editors, polls, charts, map, animations, etc.
 These WebParts are mainly based on best-class jQuery, React or Angular plugins and use the [sp-client-custom-fields library](https://github.com/OlivierCC/sp-client-custom-fields) to optimize the edit experience.
-Oh, and Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
+And Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
 
-**Current Version**: v0.9.6 - [Click here to download and install](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Installation-process)
+**Current Version**: v1.0.0 - [Click here to download and install](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Installation-process)
 
-**Current SPFx Drop support** - ![drop](https://img.shields.io/badge/drop-rc0-red.svg)
+**Current SPFx Release support** - ![GA](https://img.shields.io/badge/SPFx-General%20Availability-red.svg) - [Release Note](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-GA)
 
 For any question, you can also [read the FAQ](https://github.com/OlivierCC/spfx-40-fantastics/wiki/FAQ).
 
