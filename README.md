@@ -9,7 +9,7 @@ Oh, and Yes, these web parts are free and open source, so have fun well to build
 
 **Current Version**: v0.9.6 - [Click here to download and install](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Installation-process)
 
-**Current SPFx Drop support** - [RC0](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-RC0)
+**Current SPFx Drop support** - ![drop](https://img.shields.io/badge/drop-rc0-red.svg)
 
 For any question, you can also [read the FAQ](https://github.com/OlivierCC/spfx-40-fantastics/wiki/FAQ).
 
