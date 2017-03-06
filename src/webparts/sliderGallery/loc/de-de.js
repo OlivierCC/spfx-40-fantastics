@@ -1,0 +1,32 @@
+define([], function() {
+  return {
+    "PropertyPageTextPanel": "Texttafel Einstellungen anpassen",
+    "PropertyPageGeneral": "Allgemeine Einstellungen anpassen",
+    "BasicGroupName": "Daten",
+    "GeneralGroupName": "Allgemeine",
+    "EnableArrows": "Pfeile zu ermöglichen",
+    "EnableBullets": "Kugeln zu ermöglichen",
+    "EnablePlayButton": "Aktivieren Sie \"Play\"",
+    "EnableFullscreenButton": "Aktivieren Sie \"Fullscreen\"",
+    "EnableZoomPanel": "Zoom Fenster aktivieren",
+    "ControlsAlwaysOn": "Steuerelemente, die immer auf",
+    "TextPanelGroupName": "Texttafel",
+    "TextPanelEnableFieldLabel": "Textpanel aktivieren",
+    "TextPanelAlwaysOnTopFieldLabel": "Immer im Vordergrund",
+    "TextPanelOpacityFieldLabel": "Deckkraft",
+    "TextPanelFontFieldLabel": "Schriftart",
+    "TextPanelFontSizeFieldLabel": "Schriftgröße",
+    "TextPanelBackgroundColorFieldLabel": "Hintergrundfarbe",
+    "TextPanelAlignFieldLabel": "Ausrichten von Text",
+    "TextPanelFontColorFieldLabel": "Schriftfarbe",
+    "ErrorSelectList": "Bitte bearbeiten Sie das Webpart und wählen Sie eine Bild-Bibliothek. Wenn die Bild Bibliothek Dropdown-Liste leer ist, erstellen Sie eine neue Bildbibliothek in der aktuellen Website.",
+    "EffectsGroupName": "Auswirkungen",
+    "Transition": "Übergang",
+    "EnableProgressIndicator": "Statusanzeige aktivieren",
+    "PreserveRatio": "Verhältnis zu bewahren",
+    "PauseOnMouseover": "Pause bei Mouseover",
+    "Carousel": "Karussell",
+    "Autoplay": "Autoplay",
+    "Speed": "Geschwindigkeit (Millisekunde)"
+  }
+});

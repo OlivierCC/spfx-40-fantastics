@@ -1,0 +1,32 @@
+define([], function() {
+  return {
+    "PropertyPageGeneral": "Allgemeine Einstellungen anpassen",
+    "PropertyPageTextPanel": "Texttafel Einstellungen anpassen",
+    "PropertyPageBorder": "Fliesen-Grenze-Einstellungen anpassen",
+    "BasicGroupName": "Daten",
+    "GeneralGroupName": "Allgemeine",
+    "BorderGroupName": "Grenze",
+    "EnableIconsFieldLabel": "Symbole aktivieren",
+    "TextPanelGroupName": "Texttafel",
+    "TextPanelEnableFieldLabel": "Texttafel aktivieren",
+    "TextPanelAlwaysOnTopFieldLabel": "Immer im Vordergrund",
+    "TextPanelOpacityFieldLabel": "Deckkraft",
+    "TextPanelFontFieldLabel": "Schriftart",
+    "TextPanelFontSizeFieldLabel": "Schriftgröße",
+    "TextPanelBackgroundColorFieldLabel": "Hintergrundfarbe",
+    "TextPanelAlignFieldLabel": "Textausrichtung",
+    "TextPanelFontColorFieldLabel": "Schriftfarbe",
+    "EnableBorderFieldLabel": "Grenze zu ermöglichen",
+    "BorderColorFieldLabel": "Rahmenfarbe",
+    "BorderFieldLabel": "Rahmengröße",
+    "ErrorSelectList": "Bitte bearbeiten Sie das Webpart und fügen Sie einige Nachrichten.",
+    "EffectsGroupName": "Auswirkungen",
+    "EnableArrows": "Pfeile zu ermöglichen",
+    "PauseOnMouseover": "Blieb auf Mausbewegung",
+    "Autoplay": "Autoplay",
+    "Speed": "Geschwindigkeit (ms)",
+    "TileDimension": "Kachelgröße",
+    "Items": "News-Artikel",
+    "ManageItems": "Verwalten von Nachrichten"
+  }
+});

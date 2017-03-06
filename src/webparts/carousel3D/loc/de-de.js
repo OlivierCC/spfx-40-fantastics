@@ -1,0 +1,32 @@
+define([], function() {
+  return {
+    "PropertyPaneDescription": "Passen Sie Ihre webpart",
+    "BasicGroupName": "Wiedergabe-Einstellungen",
+    "DescriptionFieldLabel": "Beschreibung",
+    "SpeedFieldLabel": "Geschwindigkeit",
+    "AutoplayFieldLabel": "AutoPlay",
+    "AutoplayDelayFieldLabel": "AutoPlay-Verzögerung",
+    "BringtoFrontFieldLabel": "In den Vordergrund",
+    "ShowButtonsFieldLabel": "Schaltflächen anzeigen",
+    "MirrorGapFieldLabel": "Spiegel-Lücke",
+    "MirrorHeightFieldLabel": "Spiegelhöhen",
+    "MirrorOpacityFieldLabel": "Spiegel-Deckkraft",
+    "YOriginFieldLabel": "Y-Ursprung",
+    "YRadiusFieldLabel": "Y-Radius",
+    "XOriginFieldLabel": "X-Ursprung",
+    "XRadiusFieldLabel": "X-Radius",
+    "MirrorGroupName": "Spiegel",
+    "GeneralGroupName": "Allgemeine",
+    "OriginGroupName": "Herkunft & Radius",
+    "ShowTitleFieldLabel": "Titel anzeigen",
+    "DataGroupName": "Daten",
+    "DataFieldLabel": "Karussell-Elemente",
+    "TitleGroupName": "Titel",
+    "FontFieldLabel": "Schriftart",
+    "FontSizeFieldLabel": "Schriftgröße",
+    "ColorFieldLabel": "Schriftfarbe",
+    "HeightFieldLabel": "Höhe",
+    "ItemHeightFieldLabel": "Element-Höhe",
+    "ReadMore": "Lesen Sie mehr"
+  }
+});

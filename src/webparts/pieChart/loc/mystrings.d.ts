@@ -1,17 +1,12 @@
 declare interface IPieChartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  Dimension: string;
   Items: string;
   ManageItems: string;
-  Label: string;
-  Value: string;
-  Color: string;
-  HoverColor: string;
+  Responsive: string;
+  Dimension: string;
   OptionsGroupName: string;
   CutoutPercentage: string;
-  Rotation: string;
-  Circumference: string;
   AnimateRotate: string;
   AnimateScale: string;
   TitleGroupName: string;
@@ -27,7 +22,6 @@ declare interface IPieChartStrings {
   LegendFont: string;
   LegendSize: string;
   LegendColor: string;
-  Responsive: string;
 }
 
 declare module 'PieChartStrings' {

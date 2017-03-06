@@ -1,0 +1,32 @@
+define([], function() {
+  return {
+    "PropertyPaneDescription": "Personnalisez votre web part",
+    "BasicGroupName": "Paramètres de lecture",
+    "DescriptionFieldLabel": "Description",
+    "SpeedFieldLabel": "Vitesse",
+    "AutoplayFieldLabel": "Lecture automatique",
+    "AutoplayDelayFieldLabel": "Délais de lecture automatique",
+    "BringtoFrontFieldLabel": "Placer au 1ier plan",
+    "ShowButtonsFieldLabel": "Afficher les boutons",
+    "MirrorGapFieldLabel": "Espacement",
+    "MirrorHeightFieldLabel": "Hauteur du mirroir",
+    "MirrorOpacityFieldLabel": "Opacité du mirroir",
+    "YOriginFieldLabel": "Origine Y",
+    "YRadiusFieldLabel": "Rayon Y",
+    "XOriginFieldLabel": "Origine X",
+    "XRadiusFieldLabel": "Rayon X",
+    "MirrorGroupName": "Mirroir",
+    "GeneralGroupName": "Général",
+    "OriginGroupName": "Origine & Rayon",
+    "ShowTitleFieldLabel": "Afficher le titre",
+    "DataGroupName": "Données",
+    "DataFieldLabel": "Eléments du caroussel",
+    "TitleGroupName": "Titre",
+    "FontFieldLabel": "Police",
+    "FontSizeFieldLabel": "Taille",
+    "ColorFieldLabel": "Couleur",
+    "HeightFieldLabel": "Hauteur",
+    "ItemHeightFieldLabel": "Hauteur des éléments",
+    "ReadMore": "En savoir plus"
+  }
+});

@@ -8,7 +8,6 @@
  *
  * Date: Mon Jan 23 2012
  */
-
 (function( $, undefined ) {
 
 	/*!
@@ -378,4 +377,4 @@
 
 	};
 
-})( jQuery );
+})(jQuery);

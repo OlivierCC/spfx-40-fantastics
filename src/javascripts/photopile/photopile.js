@@ -23,7 +23,7 @@ define([], function() {
         var thumbBorderWidth  = 2;          // border width (px)
         var thumbBorderColor  = 'white';    // border color
         var thumbBorderHover  = '#EAEAEA';  // border hover color
-        var draggable         = true;       // enable draggable thumbnails
+        var draggable         = false;       // enable draggable thumbnails
 
         // Photo container
         var fadeDuration      = 200;        // speed at which photo fades (ms)
@@ -176,6 +176,7 @@ define([], function() {
                 self.setRandomZ(thumb);
 
                 // make draggable
+                /*
                 if (draggable) {
 
                     var x = 0;
@@ -211,6 +212,7 @@ define([], function() {
                         }
                     });
                 }
+                */
                 thumb.css('background', thumbBorderColor );
             },
 

@@ -72,12 +72,12 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
     this.domElement.innerHTML = html;
 
         var data = {
-        labels: this.getDataTab(strings.Label),
+        labels: this.getDataTab("Label"),
         datasets: [
             {
-                data: this.getDataTab(strings.Value),
-                backgroundColor: this.getDataTab(strings.Color),
-                hoverBackgroundColor: this.getDataTab(strings.HoverColor)
+                data: this.getDataTab("Value"),
+                backgroundColor: this.getDataTab("Color"),
+                hoverBackgroundColor: this.getDataTab("Hover Color")
             }
         ]
       };
@@ -155,10 +155,10 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   value: this.properties.items,
                   headerText: strings.ManageItems,
                   fields: [
-                    { title: strings.Label, required: true, type: CustomListFieldType.string },
-                    { title: strings.Value, required: true, type: CustomListFieldType.number },
-                    { title: strings.Color, required: true, type: CustomListFieldType.color },
-                    { title: strings.HoverColor, required: true, type: CustomListFieldType.color }
+                    { title: "Label", required: true, type: CustomListFieldType.string },
+                    { title: "Value", required: true, type: CustomListFieldType.number },
+                    { title: "Color", required: true, type: CustomListFieldType.color },
+                    { title: "Hover Color", required: true, type: CustomListFieldType.color }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

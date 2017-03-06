@@ -1,0 +1,32 @@
+define([], function() {
+  return {
+    "PropertyPageGeneral": "Personnalisez les paramètres généraux",
+    "PropertyPageTextPanel": "Personnalisez les zones de texte",
+    "PropertyPageBorder": "Personnalisez les bordures",
+    "BasicGroupName": "Données",
+    "GeneralGroupName": "Général",
+    "BorderGroupName": "Bordures",
+    "EnableIconsFieldLabel": "Afficher les icônes",
+    "TextPanelGroupName": "Zones de texte",
+    "TextPanelEnableFieldLabel": "Afficher les textes",
+    "TextPanelAlwaysOnTopFieldLabel": "Toujours visible",
+    "TextPanelOpacityFieldLabel": "Opacité",
+    "TextPanelFontFieldLabel": "Police",
+    "TextPanelFontSizeFieldLabel": "Taille",
+    "TextPanelBackgroundColorFieldLabel": "Couleur de fond",
+    "TextPanelAlignFieldLabel": "Alignement des textes",
+    "TextPanelFontColorFieldLabel": "Couleur",
+    "EnableBorderFieldLabel": "Afficher les bords",
+    "BorderColorFieldLabel": "Couleur des bords",
+    "BorderFieldLabel": "Taille des bords",
+    "ErrorSelectList": "Veuillez éditer cette web part et ajouter des actualités.",
+    "EffectsGroupName": "Effets",
+    "EnableArrows": "Afficher les flèches",
+    "PauseOnMouseover": "Mettre en pause au survol de la souris",
+    "Autoplay": "Lecture automatique",
+    "Speed": "Vitesse (ms)",
+    "TileDimension": "Taille des vignettes",
+    "Items": "Actualités",
+    "ManageItems": "Gérer les actualités"
+  }
+});

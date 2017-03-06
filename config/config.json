@@ -217,6 +217,11 @@
       "globalName": "jQuery",
       "globalDependencies": [ "jquery" ]
     },
+    "letterfx": {
+      "path": "src/javascripts/letterfx/letterfx.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    },
     "jigsaw": {
       "path": "src/javascripts/imagePuzzle/jquery.image-jigsaw.min.js",
       "globalName": "jQuery",
@@ -280,11 +285,6 @@
     "showdown": {
       "path": "src/javascripts/showdown/showdown.min.js",
       "globalName": "showdown"
-    },
-    "letterfx": {
-      "path": "src/javascripts/letterfx/letterfx.js",
-      "globalName": "jQuery",
-      "globalDependencies": [ "jquery" ]
     },
     "coverflow": {
       "path": "src/javascripts/coverflow/jquery.coverflow.js",

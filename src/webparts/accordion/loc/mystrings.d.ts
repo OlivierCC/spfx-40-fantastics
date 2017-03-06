@@ -5,8 +5,6 @@ declare interface IAccordionStrings {
   LayoutGroupName: string;
   DescriptionFieldLabel: string;
   Inline: string;
-  Mode: string;
-  Theme: string;
   ManageAccordion: string;
   Accordion: string;
   DisableColor: string;

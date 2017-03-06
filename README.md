@@ -1,6 +1,6 @@
-# SPFx 40 Fantastics Web Parts
+# SPFx Fantastic 40 Web Parts
 
-![release](https://img.shields.io/badge/release-v1.0.0.0-blue.svg)
+![release](https://img.shields.io/badge/release-v1.0.1-blue.svg)
 ![status](https://img.shields.io/badge/status-stable-green.svg)
 ![mit](https://img.shields.io/badge/license-MIT-yellow.svg)
 
@@ -9,7 +9,11 @@ You can find here different kind of high visual web parts as carousel, images ga
 These WebParts are mainly based on best-class jQuery, React or Angular plugins and use the [sp-client-custom-fields library](https://github.com/OlivierCC/sp-client-custom-fields) to optimize the edit experience.
 And Yes, these web parts are free and open source, so have fun well to build effective SharePoint site.
 
-**Current Version**: v1.0.0 - [Click here to download and install](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Installation-process)
+These webparts are available: **English, French, Spanish, German**.
+
+**IMPORTANT NOTE: These web parts are not officially supported by Microsoft. Please use the "Issues" tab on this site to report bug or requests for development.**
+
+**Current Version**: v1.0.1 - [Click here to download and install](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Installation-process)
 
 **Current SPFx Release support** - ![GA](https://img.shields.io/badge/SPFx-General%20Availability-red.svg) - [Release Note](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-GA)
 

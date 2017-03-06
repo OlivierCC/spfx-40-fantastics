@@ -1,10 +1,8 @@
 declare interface ITilesGalleryStrings {
-  PropertyPaneDescription: string;
   PropertyPageGeneral: string;
   PropertyPageTextPanel: string;
   PropertyPageBorder: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
   GeneralGroupName: string;
   BorderGroupName: string;
   TilesTypeFieldLabel: string;
@@ -25,8 +23,6 @@ declare interface ITilesGalleryStrings {
   BorderColorFieldLabel: string;
   BorderFieldLabel: string;
   ErrorSelectList: string;
-  ErrorNoItems: string;
-  Loading: string;
 }
 
 declare module 'tilesGalleryStrings' {

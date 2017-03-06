@@ -1,32 +1,12 @@
 declare interface IDockMenuStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
   SpeedFieldLabel: string;
-  AutoplayFieldLabel: string;
-  AutoplayDelayFieldLabel: string;
-  BringtoFrontFieldLabel: string;
-  ShowButtonsFieldLabel: string;
-  MirrorGapFieldLabel: string;
-  MirrorHeightFieldLabel: string;
-  MirrorOpacityFieldLabel: string;
-  YOriginFieldLabel: string;
-  YRadiusFieldLabel: string;
-  XOriginFieldLabel: string;
-  XRadiusFieldLabel: string;
-  MirrorGroupName: string;
-  GeneralGroupName: string;
-  OriginGroupName: string;
-  ShowTitleFieldLabel: string;
   DataGroupName: string;
   DataFieldLabel: string;
-  TitleGroupName: string;
   FontFieldLabel: string;
   FontSizeFieldLabel: string;
   ColorFieldLabel: string;
-  HeightFieldLabel: string;
-  ItemHeightFieldLabel: string;
-  ItemWidthFieldLabel: string;
   ReadMore: string;
   Easing: string;
   Density: string;
@@ -44,7 +24,6 @@ declare interface IDockMenuStrings {
   TextPanelBackgroundColorFieldLabel: string;
   TextPanelAlignFieldLabel: string;
   TextPanelFontColorFieldLabel: string;
-
 }
 
 declare module 'dockMenuStrings' {

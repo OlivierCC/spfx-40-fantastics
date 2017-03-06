@@ -1,0 +1,30 @@
+define([], function() {
+  return {
+    "PropertyPageGeneral": "Personnalisez les paramètres généraux",
+    "PropertyPageTextPanel": "Personnalisez les zones de texte",
+    "PropertyPageBorder": "Personnalisez les bordures des vignettes",
+    "BasicGroupName": "Donneés",
+    "GeneralGroupName": "Général",
+    "BorderGroupName": "Bords",
+    "TilesTypeFieldLabel": "Justifié",
+    "EnableIconsFieldLabel": "Afficher les icônes",
+    "TextPanelGroupName": "Zones de texte",
+    "TextPanelEnableFieldLabel": "Afficher les textes",
+    "TextPanelAlwaysOnTopFieldLabel": "Toujours visible",
+    "TextPanelPositionFieldLabel": "Position",
+    "TextPanelOpacityFieldLabel": "Opacité",
+    "TextPanelFontFieldLabel": "Police",
+    "TextPanelFontSizeFieldLabel": "Taille",
+    "TextPanelBackgroundColorFieldLabel": "Couleur de fond",
+    "TextPanelAlignFieldLabel": "Alignement du texte",
+    "TextPanelFontColorFieldLabel": "Couleur",
+    "EnableShadowFieldLabel": "Afficher les ombres",
+    "EnableBorderFieldLabel": "Afficher les bords",
+    "SpaceBetweenColsFieldLabel": "Espace entre les colonnes",
+    "BorderColorFieldLabel": "Couleur des bords",
+    "BorderFieldLabel": "Taille",
+    "ErrorSelectList": "Veuillez éditer cette web part et ajouter de nouveaux éléments.",
+    "ManageItems": "Gérer les éléments du menu",
+    "Items": "Eléments du menu"
+  }
+});

@@ -72,10 +72,10 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
     this.domElement.innerHTML = html;
 
         var data = {
-        labels: this.getDataTab(strings.Label),
+        labels: this.getDataTab("Label"),
         datasets: [
             {
-                data: this.getDataTab(strings.Value),
+                data: this.getDataTab("Value"),
                 backgroundColor: this.properties.fillColor,
                 pointStyle: this.properties.pointStyle,
                 fill: this.properties.fill,
@@ -167,8 +167,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                   value: this.properties.items,
                   headerText: strings.ManageItems,
                   fields: [
-                    { title: strings.Label, required: true, type: CustomListFieldType.string },
-                    { title: strings.Value, required: true, type: CustomListFieldType.number }
+                    { title: "Label", required: true, type: CustomListFieldType.string },
+                    { title: "Value", required: true, type: CustomListFieldType.number }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

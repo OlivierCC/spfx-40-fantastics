@@ -3,9 +3,7 @@ define([], function() {
     "PropertyPageGeneral": "Customize the general settings",
     "PropertyPageTextPanel": "Customize the Text Panel settings",
     "PropertyPageBorder": "Customize the Tiles border settings",
-    "PropertyPaneDescription": "Description",
     "BasicGroupName": "Data",
-    "DescriptionFieldLabel": "Description Field",
     "GeneralGroupName": "General",
     "BorderGroupName": "Border",
     "TilesTypeFieldLabel": "Justified",
@@ -17,16 +15,14 @@ define([], function() {
     "TextPanelOpacityFieldLabel": "Opacity",
     "TextPanelFontFieldLabel": "Font",
     "TextPanelFontSizeFieldLabel": "Font Size",
-    "TextPanelFontColorFieldLabel": "Font Color",
     "TextPanelBackgroundColorFieldLabel": "Background Color",
     "TextPanelAlignFieldLabel": "Text align",
+    "TextPanelFontColorFieldLabel": "Font Color",
     "EnableShadowFieldLabel": "Enable shadow",
     "EnableBorderFieldLabel": "Enable border",
     "SpaceBetweenColsFieldLabel": "Space between columns",
     "BorderColorFieldLabel": "Border color",
     "BorderFieldLabel": "Border size",
-    "ErrorSelectList": "Please edit the webpart and select a picture library. If the picture library dropdown list is empty, please create a new Picture Library in the current web site.",
-    "ErrorNoItems": "No items found in the current library. Please insert inside or select another library.",
-    "Loading": "Loading pictures..."
+    "ErrorSelectList": "Please edit the webpart and select a picture library. If the picture library dropdown list is empty, please create a new Picture Library in the current web site."
   }
 });

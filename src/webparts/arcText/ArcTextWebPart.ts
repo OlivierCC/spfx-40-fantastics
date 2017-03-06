@@ -49,6 +49,7 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
     //Hack: to invoke correctly the onPropertyChange function outside this class
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
+    this.renderContents = this.renderContents.bind(this);
   }
 
   /**
@@ -74,14 +75,11 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
    * Renders JavaScript JQuery calls
    */
   private renderContents(): void {
-    if (($ as any)('#' + this.guid + '-arc') != null) {
-      //Calls the arctext plugin init method
-      ($ as any)('#' + this.guid + '-arc').arctext({
-          radius: this.properties.radius,
-          rotate: this.properties.rotateLetters,
-          dir: this.properties.reverse === true ? -1 : 1
-      });
-    }
+    ($ as any)('#' + this.guid + '-arc').arctext({
+        radius: this.properties.radius,
+        rotate: this.properties.rotateLetters,
+        dir: this.properties.reverse === true ? -1 : 1
+    });
   }
 
   /**

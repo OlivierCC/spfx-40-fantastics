@@ -2,17 +2,12 @@ define([], function() {
   return {
     "PropertyPaneDescription": "Customize your Pie Chart",
     "BasicGroupName": "Data",
-    "Dimension": "Size",
     "Items": "Items",
     "ManageItems": "Manage Pie Items",
-    "Label": "Label",
-    "Value": "Value",
-    "Color": "Color",
-    "HoverColor": "Hover Color",
+    "Responsive": "Responsive",
+    "Dimension": "Size",
     "OptionsGroupName": "Pie Settings",
     "CutoutPercentage": "Doughnut Percentage",
-    "Rotation": "Rotation",
-    "Circumference": "Circumference",
     "AnimateRotate": "Animate Rotate",
     "AnimateScale": "Animate Scale",
     "TitleGroupName": "Title Settings",
@@ -27,7 +22,6 @@ define([], function() {
     "LegendPosition": "Position",
     "LegendFont": "Font",
     "LegendSize": "Font Size",
-    "LegendColor": "Color",
-    "Responsive": "Responsive"
+    "LegendColor": "Color"
   }
 });

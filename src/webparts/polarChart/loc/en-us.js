@@ -2,13 +2,10 @@ define([], function() {
   return {
     "PropertyPaneDescription": "Customize your Polar Chart",
     "BasicGroupName": "Data",
-    "Dimension": "Size",
     "Items": "Items",
     "ManageItems": "Manage Polar Items",
-    "Label": "Label",
-    "Value": "Value",
-    "Color": "Color",
-    "HoverColor": "Hover Color",
+    "Responsive": "Responsive",
+    "Dimension": "Size",
     "OptionsGroupName": "Polar Settings",
     "AnimateRotate": "Animate Rotate",
     "AnimateScale": "Animate Scale",
@@ -24,7 +21,6 @@ define([], function() {
     "LegendPosition": "Position",
     "LegendFont": "Font",
     "LegendSize": "Font Size",
-    "LegendColor": "Color",
-    "Responsive": "Responsive"
+    "LegendColor": "Color"
   }
 });

@@ -8,7 +8,7 @@ define([], function() {
     "FontSize": "Font Size",
     "FontColor": "Font Color",
     "BackgroundColor": "Background Color",
-    "Effet": "Effet",
+    "Effet": "Effect",
     "Direction": "Direction",
     "Timing":  "Timing (ms)",
     "Duration":  "Duration (ms)",

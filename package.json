@@ -1,6 +1,6 @@
 {
   "name": "spfx-40-fantastics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "engines": {
     "node": ">=0.10.0"
@@ -18,12 +18,12 @@
     "@types/react-dom": "0.14.18",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
     "office-ui-fabric-react": "0.83.0",
-    "jquery": "^3.1.1",
+    "jquery": "2.2.4",
     "jqueryui": "^1.11.1",
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "orchestrator": "^0.3.8",
-    "sp-client-custom-fields": "^1.1.5",
+    "sp-client-custom-fields": "^1.1.7",
     "through2": "^2.0.3",
     "typewriting": "^1.2.2"
   },

@@ -1,13 +1,10 @@
 declare interface IPolarChartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  Dimension: string;
   Items: string;
   ManageItems: string;
-  Label: string;
-  Value: string;
-  Color: string;
-  HoverColor: string;
+  Responsive: string;
+  Dimension: string;
   OptionsGroupName: string;
   AnimateRotate: string;
   AnimateScale: string;
@@ -24,7 +21,6 @@ declare interface IPolarChartStrings {
   LegendFont: string;
   LegendSize: string;
   LegendColor: string;
-  Responsive: string;
 }
 
 declare module 'PolarChartStrings' {
