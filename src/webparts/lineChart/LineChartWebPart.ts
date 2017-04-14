@@ -167,8 +167,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   value: this.properties.items,
                   headerText: strings.ManageItems,
                   fields: [
-                    { title: "Label", required: true, type: CustomListFieldType.string },
-                    { title: "Value", required: true, type: CustomListFieldType.number }
+                    { id: 'Label', title: "Label", required: true, type: CustomListFieldType.string },
+                    { id: 'Value', title: "Value", required: true, type: CustomListFieldType.number }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

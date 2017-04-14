@@ -182,14 +182,11 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                   value: this.properties.items,
                   headerText: strings.ManageItems,
                   fields: [
-                    { title: 'Title', required: true, type: CustomListFieldType.string },
-                    { title: 'Enable', required: true, type: CustomListFieldType.boolean },
-                    /*{ title: 'Start Date', required: false, type: CustomListFieldType.date },
-                    { title: 'End Date', required: false, type: CustomListFieldType.date },
-                    */
-                    { title: 'Description', required: false, hidden: true, type: CustomListFieldType.string },
-                    { title: 'Picture', required: true, hidden: true, type: CustomListFieldType.string },
-                    { title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
+                    { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string },
+                    { id: 'Enable', title: 'Enable', required: true, type: CustomListFieldType.boolean },
+                    { id: 'Description', title: 'Description', required: false, hidden: true, type: CustomListFieldType.string },
+                    { id: 'Picture', title: 'Picture', required: true, hidden: true, type: CustomListFieldType.string },
+                    { id: 'Link Url', title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

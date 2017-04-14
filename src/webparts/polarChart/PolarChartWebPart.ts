@@ -153,10 +153,10 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   value: this.properties.items,
                   headerText: strings.ManageItems,
                   fields: [
-                    { title: "Label", required: true, type: CustomListFieldType.string },
-                    { title: "Value", required: true, type: CustomListFieldType.number },
-                    { title: "Color", required: true, type: CustomListFieldType.color },
-                    { title: "Hover Color", required: true, type: CustomListFieldType.color }
+                    { id: 'Label', title: "Label", required: true, type: CustomListFieldType.string },
+                    { id: 'Value', title: "Value", required: true, type: CustomListFieldType.number },
+                    { id: 'Color', title: "Color", required: true, type: CustomListFieldType.color },
+                    { id: 'Hover Color', title: "Hover Color", required: true, type: CustomListFieldType.color }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

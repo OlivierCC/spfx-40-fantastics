@@ -435,7 +435,7 @@ Main components
                   value: this.properties.tabs,
                   headerText: strings.ManageTabs,
                   fields: [
-                    { title: 'Title', required: true, type: CustomListFieldType.string }
+                    { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

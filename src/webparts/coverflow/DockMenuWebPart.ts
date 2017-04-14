@@ -179,12 +179,12 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   value: this.properties.items,
                   headerText: "Manage Items",
                   fields: [
-                    { title: 'Title', required: true, type: CustomListFieldType.string },
-                    { title: 'Enabled', required: true, type: CustomListFieldType.boolean },
-                    { title: 'Picture', required: true, type: CustomListFieldType.string },
+                    { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string },
+                    { id: 'Enabled', title: 'Enabled', required: true, type: CustomListFieldType.boolean },
+                    { id: 'Picture', title: 'Picture', required: true, type: CustomListFieldType.string },
                     //{ title: 'Picture', required: true, type: CustomListFieldType.picture },
-                    { title: 'Link Url', required: false, type: CustomListFieldType.string, hidden: true },
-                    { title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }
+                    { id: 'Link Url', title: 'Link Url', required: false, type: CustomListFieldType.string, hidden: true },
+                    { id: 'Link Text', title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

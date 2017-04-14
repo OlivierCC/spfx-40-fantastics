@@ -179,7 +179,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
                   value: this.properties.tabs,
                   headerText: strings.ManageAccordion,
                   fields: [
-                    { title: 'Title', required: true, type: CustomListFieldType.string }
+                    { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties,

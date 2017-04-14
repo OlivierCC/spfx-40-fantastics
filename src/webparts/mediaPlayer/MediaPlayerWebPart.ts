@@ -153,9 +153,9 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
                   value: this.properties.html5captions,
                   headerText: strings.html5captions,
                   fields: [
-                    { title: 'Title', required: true, type: CustomListFieldType.string },
-                    { title: 'SrcLen', required: false, hidden: false, type: CustomListFieldType.string },
-                    { title: 'Url', required: true, hidden: false, type: CustomListFieldType.string }
+                    { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string },
+                    { id: 'SrcLen', title: 'SrcLen', required: false, hidden: false, type: CustomListFieldType.string },
+                    { id: 'Url', title: 'Url', required: true, hidden: false, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,

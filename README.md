@@ -1,6 +1,6 @@
 # SPFx Fantastic 40 Web Parts
 
-![release](https://img.shields.io/badge/release-v1.0.2-blue.svg)
+![release](https://img.shields.io/badge/release-v1.0.3-blue.svg)
 ![status](https://img.shields.io/badge/status-stable-green.svg)
 ![mit](https://img.shields.io/badge/license-MIT-yellow.svg)
 
@@ -13,7 +13,7 @@ These webparts are available: **English, French, Spanish, German**.
 
 **IMPORTANT NOTE: These web parts are not officially supported by Microsoft. Please use the "Issues" tab on this site to report bug or requests for development.**
 
-**Current Version**: v1.0.2 - [Click here to download and install](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Installation-process)
+**Current Version**: v1.0.3 - [Click here to download and install](https://github.com/OlivierCC/spfx-40-fantastics/wiki/Installation-process)
 
 **Current SPFx Release support** - ![GA](https://img.shields.io/badge/SPFx-General%20Availability-red.svg) - [Release Note](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-GA)
 

@@ -2,7 +2,7 @@
   "solution": {
     "name": "SPFx Fantastic 40 WebParts",
     "id": "425c9654-a3f8-427e-827f-033979560b6b",
-    "version": "1.0.2.0"
+    "version": "1.0.3.0"
   },
   "paths": {
     "zippedPackage": "solution/spfx-fantastic-40.sppkg"

@@ -178,9 +178,9 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   value: this.properties.items,
                   headerText: strings.ManageItems,
                   fields: [
-                    { title: 'Title', required: true, type: CustomListFieldType.string },
-                    { title: 'Enable', required: true, type: CustomListFieldType.boolean },
-                    { title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
+                    { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string },
+                    { id: 'Enable', title: 'Enable', required: true, type: CustomListFieldType.boolean },
+                    { id: 'Link Url', title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   context: this.context,
