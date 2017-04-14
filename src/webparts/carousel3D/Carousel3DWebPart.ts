@@ -225,7 +225,7 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   fields: [
                     { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string },
                     { id: 'Enabled', title: 'Enabled', required: true, type: CustomListFieldType.boolean },
-                    { id: 'Picture', title: 'Picture', required: true, type: CustomListFieldType.string },
+                    { id: 'Picture', title: 'Picture', required: true, type: CustomListFieldType.picture },
                     //{ title: 'Picture', required: true, type: CustomListFieldType.picture },
                     { id: 'Link Url', title: 'Link Url', required: false, type: CustomListFieldType.string, hidden: true },
                     { id: 'Link Text', title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }

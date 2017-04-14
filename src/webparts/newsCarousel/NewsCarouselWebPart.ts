@@ -185,7 +185,7 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                     { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string },
                     { id: 'Enable', title: 'Enable', required: true, type: CustomListFieldType.boolean },
                     { id: 'Description', title: 'Description', required: false, hidden: true, type: CustomListFieldType.string },
-                    { id: 'Picture', title: 'Picture', required: true, hidden: true, type: CustomListFieldType.string },
+                    { id: 'Picture', title: 'Picture', required: true, hidden: true, type: CustomListFieldType.picture },
                     { id: 'Link Url', title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
