@@ -15,6 +15,7 @@ import {
 } from '@microsoft/sp-webpart-base';
 import { DisplayMode, Version } from '@microsoft/sp-core-library';
 import { SPComponentLoader } from '@microsoft/sp-loader';
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 
 import * as strings from 'AccordionStrings';
 import { IAccordionWebPartProps } from './IAccordionWebPartProps';
@@ -49,8 +50,10 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
     //we need to bind this object on it first
     this.onPropertyPaneFieldChanged = this.onPropertyPaneFieldChanged.bind(this);
 
-    //Load the JQuery smoothness CSS file
-    SPComponentLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+    if (Environment.type !== EnvironmentType.ClassicSharePoint) {
+      //Load the JQuery smoothness CSS file
+      SPComponentLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+    }
   }
 
   /**
@@ -66,6 +69,18 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
    * Renders HTML code
    */
   public render(): void {
+
+    if (Environment.type === EnvironmentType.ClassicSharePoint) {
+      var errorHtml = '';
+      errorHtml += '<div style="color: red;">';
+      errorHtml += '<div style="display:inline-block; vertical-align: middle;"><i class="ms-Icon ms-Icon--Error" style="font-size: 20px"></i></div>';
+      errorHtml += '<div style="display:inline-block; vertical-align: middle;margin-left:7px;"><span>';
+      errorHtml += strings.ErrorClassicSharePoint;
+      errorHtml += '</span></div>';
+      errorHtml += '</div>';
+      this.domElement.innerHTML = errorHtml;
+      return;
+    }
 
     var html = '';
 

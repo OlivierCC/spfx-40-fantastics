@@ -9,6 +9,7 @@ define([], function() {
     "ManageTabs": "Verwalten von Tabs",
     "Tabs": "Tabs",
     "DisableColor": "Inaktive Tab-Farbe",
-    "SelectedColor": "Ausgewählte Tabrandfarbe"
+    "SelectedColor": "Ausgewählte Tabrandfarbe",
+    "ErrorClassicSharePoint": "Sorry, aber das Web funktioniert nicht in einer Sharepoint -Website klassischen, aber nur in einem modernen Ort."
   }
 });

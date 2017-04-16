@@ -13,6 +13,7 @@ define([], function() {
     "Collapsible": "Rétractable",
     "Animate": "Animation",
     "Speed": "Vitesse (ms)",
-    "HeightStyle": "Hauteur"
+    "HeightStyle": "Hauteur",
+    "ErrorClassicSharePoint": "Désolé mais cette WebPart ne fonctionne pas dans un site SharePoint classique, mais uniquement dans un site moderne."
   }
 });

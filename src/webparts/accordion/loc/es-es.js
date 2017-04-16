@@ -13,6 +13,7 @@ define([], function() {
     "Collapsible": "Plegable",
     "Animate": "Animar",
     "Speed": "Velocidad (milisegundo)",
-    "HeightStyle": "Estilo de altura"
+    "HeightStyle": "Estilo de altura",
+    "ErrorClassicSharePoint": "Lo sentimos pero la web no funciona en un sitio de SharePoint clásico, pero sólo en un sitio moderno."
   }
 });

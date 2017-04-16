@@ -13,6 +13,7 @@ define([], function() {
     "Collapsible": "Collapsible",
     "Animate": "Animate",
     "Speed": "Speed (ms)",
-    "HeightStyle": "Height Style"
+    "HeightStyle": "Height Style",
+    "ErrorClassicSharePoint": "Sorry, but this Web Part does not work in a classic SharePoint site, but only in a modern site."
   }
 });

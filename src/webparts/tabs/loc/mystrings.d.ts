@@ -9,6 +9,7 @@ declare interface ITabsStrings {
   Tabs: string;
   DisableColor: string;
   SelectedColor: string;
+  ErrorClassicSharePoint: string;
 }
 
 declare module 'TabsStrings' {

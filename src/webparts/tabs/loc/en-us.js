@@ -9,6 +9,7 @@ define([], function() {
     "ManageTabs": "Manage Tabs",
     "Tabs": "Tabs",
     "DisableColor": "Inactive Tab Color",
-    "SelectedColor": "Selected Tab Border Color"
+    "SelectedColor": "Selected Tab Border Color",
+    "ErrorClassicSharePoint": "Sorry, but this Web Part does not work in a classic SharePoint site, but only in a modern site."
   }
 });

@@ -12,6 +12,7 @@ import {
   PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
 import { DisplayMode, Version } from '@microsoft/sp-core-library';
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 
 import * as strings from 'fckTextStrings';
 import { IFckTextWebPartProps } from './IFckTextWebPartProps';
@@ -48,6 +49,19 @@ export default class FckTextWebPart extends BaseClientSideWebPart<IFckTextWebPar
    * Renders HTML code
    */
   public render(): void {
+
+    if (Environment.type === EnvironmentType.ClassicSharePoint) {
+      var errorHtml = '';
+      errorHtml += '<div style="color: red;">';
+      errorHtml += '<div style="display:inline-block; vertical-align: middle;"><i class="ms-Icon ms-Icon--Error" style="font-size: 20px"></i></div>';
+      errorHtml += '<div style="display:inline-block; vertical-align: middle;margin-left:7px;"><span>';
+      errorHtml += strings.ErrorClassicSharePoint;
+      errorHtml += '</span></div>';
+      errorHtml += '</div>';
+      this.domElement.innerHTML = errorHtml;
+      return;
+    }
+
 
     if (this.displayMode == DisplayMode.Edit) {
       //Edit mode

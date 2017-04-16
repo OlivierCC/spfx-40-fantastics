@@ -13,6 +13,7 @@ declare interface IAccordionStrings {
   Animate: string;
   Speed: string;
   HeightStyle: string;
+  ErrorClassicSharePoint: string;
 }
 
 declare module 'AccordionStrings' {
