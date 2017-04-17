@@ -21,7 +21,7 @@ import { ILineChartWebPartProps } from './ILineChartWebPartProps';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
-import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
@@ -230,7 +230,7 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                     {key: 'dash', text: 'dash'}
                   ]
                 }),
-                PropertyFieldColorPicker('fillColor', {
+                PropertyFieldColorPickerMini('fillColor', {
                   label: strings.FillColor,
                   initialColor: this.properties.fillColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
@@ -275,7 +275,7 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   properties: this.properties,
                   key: 'lineChartTitleSizeField'
                 }),
-                PropertyFieldColorPicker('titleColor', {
+                PropertyFieldColorPickerMini('titleColor', {
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,

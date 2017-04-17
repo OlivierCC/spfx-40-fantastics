@@ -19,7 +19,7 @@ import * as strings from 'TweetsFeedStrings';
 import { ITweetsFeedWebPartProps } from './ITweetsFeedWebPartProps';
 
 //Imports property pane custom fields
-import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 
 var twttr: any = require('twitter');
 
@@ -144,14 +144,14 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
                 PropertyPaneToggle('transparent', {
                   label: strings.Transparent
                 }),
-                PropertyFieldColorPicker('linkColor', {
+                PropertyFieldColorPickerMini('linkColor', {
                   label: strings.LinkColor,
                   initialColor: this.properties.linkColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties,
                   key: 'tweetsFeedLinkColorField'
                 }),
-                PropertyFieldColorPicker('borderColor', {
+                PropertyFieldColorPickerMini('borderColor', {
                   label: strings.BorderColor,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,

@@ -19,7 +19,7 @@ import * as strings from 'TypeWritingStrings';
 import { ITypeWritingWebPartProps } from './ITypeWritingWebPartProps';
 
 //Imports property pane custom fields
-import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
@@ -157,7 +157,7 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   max: 5000,
                   step: 50
                 }),
-                PropertyFieldColorPicker('cursorColor', {
+                PropertyFieldColorPickerMini('cursorColor', {
                   label: strings.CursorColor,
                   initialColor: this.properties.cursorColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
@@ -187,14 +187,14 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   properties: this.properties,
                   key: 'typeWritingFontSizeField'
                 }),
-                PropertyFieldColorPicker('fontColor', {
+                PropertyFieldColorPickerMini('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties,
                   key: 'typeWritingFontColorField'
                 }),
-                PropertyFieldColorPicker('backgroundColor', {
+                PropertyFieldColorPickerMini('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,

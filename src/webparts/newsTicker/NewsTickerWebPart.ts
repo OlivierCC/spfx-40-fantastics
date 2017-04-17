@@ -20,7 +20,7 @@ import { INewsTickerWebPartProps } from './INewsTickerWebPartProps';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
-import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
@@ -213,7 +213,7 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   max: 10,
                   step: 1
                 }),
-                PropertyFieldColorPicker('backgroundColor', {
+                PropertyFieldColorPickerMini('backgroundColor', {
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
@@ -244,7 +244,7 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   properties: this.properties,
                   key: 'newsTickerFontSizeField'
                 }),
-                PropertyFieldColorPicker('fontColor', {
+                PropertyFieldColorPickerMini('fontColor', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
@@ -272,7 +272,7 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   properties: this.properties,
                   key: 'newsTickerFontSizeMssgField'
                 }),
-                PropertyFieldColorPicker('fontColorMssg', {
+                PropertyFieldColorPickerMini('fontColorMssg', {
                   label: strings.FontColor,
                   initialColor: this.properties.fontColorMssg,
                   onPropertyChange: this.onPropertyPaneFieldChanged,

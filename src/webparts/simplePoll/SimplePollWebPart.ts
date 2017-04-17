@@ -21,7 +21,7 @@ import { ISimplePollWebPartProps } from './ISimplePollWebPartProps';
 import SimplePollWebPartHost from './components/SimplePollWebPartHost';
 
 //Imports property pane custom fields
-import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldSPListPicker, PropertyFieldSPListPickerOrderBy } from 'sp-client-custom-fields/lib/PropertyFieldSPListPicker';
@@ -130,7 +130,7 @@ export default class SimplePollWebPart extends BaseClientSideWebPart<ISimplePoll
                   properties: this.properties,
                   key: 'simplePollSizeField'
                 }),
-                PropertyFieldColorPicker('color', {
+                PropertyFieldColorPickerMini('color', {
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,

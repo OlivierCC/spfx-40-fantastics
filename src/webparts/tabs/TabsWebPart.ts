@@ -20,7 +20,7 @@ import { ITabsWebPartProps } from './ITabsWebPartProps';
 
 //Imports property pane custom fields
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
-import { PropertyFieldColorPicker } from 'sp-client-custom-fields/lib/PropertyFieldColorPicker';
+import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 
 import * as $ from 'jquery';
 
@@ -468,14 +468,14 @@ Main components
             {
               groupName: strings.LayoutGroupName,
               groupFields: [
-                PropertyFieldColorPicker('disableColor', {
+                PropertyFieldColorPickerMini('disableColor', {
                   label: strings.DisableColor,
                   initialColor: this.properties.disableColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties,
                   key: 'tabsDisableColorField'
                 }),
-                PropertyFieldColorPicker('selectedColor', {
+                PropertyFieldColorPickerMini('selectedColor', {
                   label: strings.SelectedColor,
                   initialColor: this.properties.selectedColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
