@@ -183,6 +183,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                     { id: 'Link Url', title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'newsTickerListField'
@@ -217,6 +219,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsTickerBgColorField'
                 })
@@ -232,6 +236,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.Font,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsTickerFontField'
                 }),
@@ -241,6 +247,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsTickerFontSizeField'
                 }),
@@ -248,6 +256,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsTickerFontColorField'
                 })
@@ -260,6 +270,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.Font,
                   initialValue: this.properties.fontMssg,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsTickerFontMssgField'
                 }),
@@ -269,6 +281,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsTickerFontSizeMssgField'
                 }),
@@ -276,6 +290,8 @@ export default class NewsTickerWebPart extends BaseClientSideWebPart<INewsTicker
                   label: strings.FontColor,
                   initialColor: this.properties.fontColorMssg,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsTickerFontColorMssgField'
                 })

@@ -153,6 +153,8 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "arcTextFontField"
                 }),
@@ -162,6 +164,8 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
                   preview: true,
                   initialValue: this.properties.size,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "arcTextFontSizeField"
                 }),
@@ -169,6 +173,8 @@ export default class ArcTextWebPart extends BaseClientSideWebPart<IArcTextWebPar
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "arcTextColorField"
                 })

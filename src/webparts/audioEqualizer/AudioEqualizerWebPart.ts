@@ -155,6 +155,8 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,
@@ -201,6 +203,8 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                   label: strings.color,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "audioEqualizerColorField"
                 }),
@@ -208,6 +212,8 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                   label: strings.color1,
                   initialColor: this.properties.color1,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "audioEqualizerColor1Field"
                 }),
@@ -215,6 +221,8 @@ export default class AudioEqualizerWebPart extends BaseClientSideWebPart<IAudioE
                   label: strings.color2,
                   initialColor: this.properties.color2,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "audioEqualizerColor2Field"
                 })

@@ -158,6 +158,8 @@ export default class MediaPlayerWebPart extends BaseClientSideWebPart<IMediaPlay
                     { id: 'Url', title: 'Url', required: true, hidden: false, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'mediaPlayerListField'

@@ -171,6 +171,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                     { id: 'Value', title: "Value", required: true, type: CustomListFieldType.number }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'radarChartListField'
@@ -184,6 +186,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,
@@ -228,6 +232,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                   label: strings.FillColor,
                   initialColor: this.properties.fillColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'radarChartFillColorField'
                 })
@@ -257,6 +263,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'radarChartTitleFontField'
                 }),
@@ -266,6 +274,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                   preview: true,
                   initialValue: this.properties.titleSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'radarChartTitleSizeField'
                 }),
@@ -273,6 +283,8 @@ export default class RadarChartWebPart extends BaseClientSideWebPart<IRadarChart
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'radarChartTitleColorField'
                 })

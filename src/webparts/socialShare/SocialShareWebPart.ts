@@ -471,6 +471,8 @@ export default class SocialShareWebPart extends BaseClientSideWebPart<ISocialSha
                   ],
                   initialValue: this.properties.services,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'socialShareServicesField'
                 }),

@@ -189,6 +189,8 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                     { id: 'Link Url', title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'newsCarouselListField'
@@ -277,6 +279,8 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsCarouselAlignField'
                 }),
@@ -284,6 +288,8 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsCarouselFontField'
                 }),
@@ -293,6 +299,8 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsCarouselFontSizeField'
                 }),
@@ -300,6 +308,8 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsCarouselFontColorField'
                 }),
@@ -307,6 +317,8 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsCarouselBgColorField'
                 })

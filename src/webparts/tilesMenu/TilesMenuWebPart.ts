@@ -179,6 +179,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
                     { id: 'Link Url', title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'tilesMenuListField'
@@ -241,6 +243,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesMenuAlignField'
                 }),
@@ -248,6 +252,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesMenuFontField'
                 }),
@@ -257,6 +263,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesMenuFontSizeField'
                 }),
@@ -264,6 +272,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesMenuFontColorField'
                 }),
@@ -271,6 +281,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesMenuBgColorField'
                 })
@@ -299,6 +311,8 @@ export default class TilesMenuWebPart extends BaseClientSideWebPart<ITilesMenuWe
                   label: strings.BorderColorFieldLabel,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesMenuBorderColorField'
                 })

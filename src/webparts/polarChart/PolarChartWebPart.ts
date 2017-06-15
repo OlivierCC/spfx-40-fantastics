@@ -159,6 +159,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                     { id: 'Hover Color', title: "Hover Color", required: true, type: CustomListFieldType.color }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'polarChartListField'
@@ -172,6 +174,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,
@@ -215,6 +219,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'polarChartTitleFontField'
                 }),
@@ -224,6 +230,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   preview: true,
                   initialValue: this.properties.titleSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'polarChartTitleSizeField'
                 }),
@@ -231,6 +239,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'polarChartTitleColorField'
                 })
@@ -257,6 +267,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   previewFonts: true,
                   initialValue: this.properties.legendFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'polarChartLegendFontField'
                 }),
@@ -266,6 +278,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   preview: true,
                   initialValue: this.properties.legendSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'polarChartLegendSizeField'
                 }),
@@ -273,6 +287,8 @@ export default class PolarChartWebPart extends BaseClientSideWebPart<IPolarChart
                   label: strings.LegendColor,
                   initialColor: this.properties.legendColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'polarChartLegendColorField'
                 })

@@ -104,6 +104,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   initialValue: this.properties.icon,
                   orderAlphabetical: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'messageBarIconField'
                 }),
@@ -114,6 +116,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   minHeight: 100,
                   mode: 'basic',
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'messageBarRichTextBoxField'
                 })
@@ -128,6 +132,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'messageBarFontField'
                 }),
@@ -137,6 +143,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'messageBarFontSizeField'
                 }),
@@ -144,6 +152,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'messageBarFontColorField'
                 }),
@@ -151,6 +161,8 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'messageBarBgColorField'
                 })

@@ -187,6 +187,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                     { id: 'Link Text', title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: "coverflowListField"
@@ -282,6 +284,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "coverflowAlignField"
                 }),
@@ -289,6 +293,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "coverflowFontField"
                 }),
@@ -298,6 +304,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "coverflowFontSizeField"
                 }),
@@ -305,6 +313,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "coverflowFontColorField"
                 }),
@@ -312,6 +322,8 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "coverflowBackgroundColorField"
                 })

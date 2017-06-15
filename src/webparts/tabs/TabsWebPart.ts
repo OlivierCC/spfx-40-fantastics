@@ -451,6 +451,8 @@ Main components
                     { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'tabsListField'
@@ -472,6 +474,8 @@ Main components
                   label: strings.DisableColor,
                   initialColor: this.properties.disableColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tabsDisableColorField'
                 }),
@@ -479,6 +483,8 @@ Main components
                   label: strings.SelectedColor,
                   initialColor: this.properties.selectedColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tabsSelectedColorField'
                 })

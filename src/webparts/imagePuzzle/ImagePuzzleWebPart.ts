@@ -128,6 +128,8 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
                   label: strings.Image,
                   initialValue: this.properties.image,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: "imagePuzzlePictureField"
@@ -138,6 +140,8 @@ export default class ImagePuzzleWebPart extends BaseClientSideWebPart<IImagePuzz
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,

@@ -161,6 +161,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   label: strings.CursorColor,
                   initialColor: this.properties.cursorColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'typeWritingCursorColorField'
                 })
@@ -175,6 +177,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'typeWritingFontField'
                 }),
@@ -184,6 +188,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'typeWritingFontSizeField'
                 }),
@@ -191,6 +197,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'typeWritingFontColorField'
                 }),
@@ -198,6 +206,8 @@ export default class TypeWritingWebPart extends BaseClientSideWebPart<ITypeWriti
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'typeWritingBgColorField'
                 })

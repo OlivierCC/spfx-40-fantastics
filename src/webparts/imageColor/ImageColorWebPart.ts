@@ -343,6 +343,8 @@ export default class ImageColorWebPart extends BaseClientSideWebPart<IImageColor
                   label: strings.Image,
                   initialValue: this.properties.image,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: "imageColorPictureField"

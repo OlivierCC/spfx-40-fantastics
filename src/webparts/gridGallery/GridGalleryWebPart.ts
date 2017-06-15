@@ -202,6 +202,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   showFilters: true,
                   max: 100,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: "gridGallerySPListField"
@@ -253,6 +255,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,
@@ -304,6 +308,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "gridGalleryAlignField"
                 }),
@@ -311,6 +317,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "gridGalleryFontField"
                 }),
@@ -320,6 +328,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "gridGalleryFontSizeField"
                 }),
@@ -327,6 +337,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "gridGalleryFontColorField"
                 }),
@@ -334,6 +346,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "gridGalleryBgColorField"
                 })
@@ -362,6 +376,8 @@ export default class GridGalleryWebPart extends BaseClientSideWebPart<IGridGalle
                   label: strings.BorderColorFieldLabel,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "gridGalleryBorderColorField"
                 })

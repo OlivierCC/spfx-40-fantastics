@@ -161,6 +161,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                     { id: 'Hover Color', title: "Hover Color", required: true, type: CustomListFieldType.color }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'pieChartListField'
@@ -174,6 +176,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,
@@ -223,6 +227,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'pieChartTitleFontField'
                 }),
@@ -232,6 +238,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   preview: true,
                   initialValue: this.properties.titleSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'pieChartTitleSizeField'
                 }),
@@ -239,6 +247,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'pieChartTitleColorField'
                 })
@@ -265,6 +275,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   previewFonts: true,
                   initialValue: this.properties.legendFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'pieChartLegendFontField'
                 }),
@@ -274,6 +286,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   preview: true,
                   initialValue: this.properties.legendSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'pieChartLegendSizeField'
                 }),
@@ -281,6 +295,8 @@ export default class PieChartWebPart extends BaseClientSideWebPart<IPieChartWebP
                   label: strings.LegendColor,
                   initialColor: this.properties.legendColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'pieChartLegendColorField'
                 })

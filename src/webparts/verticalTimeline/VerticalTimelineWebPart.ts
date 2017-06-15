@@ -421,6 +421,8 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   showFilters: true,
                   max: 100,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'verticalTimelineQueryField'
@@ -435,6 +437,8 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   initialValue: this.properties.icon,
                   orderAlphabetical: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'verticalTimelineIconField'
                 }),
@@ -442,6 +446,8 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   label: strings.color,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'verticalTimelineColorField'
                 }),
@@ -449,6 +455,8 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'verticalTimelineBgColorField'
                 })

@@ -231,6 +231,8 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                     { id: 'Link Text', title: 'Link Text', required: false, type: CustomListFieldType.string, hidden: true }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: "carousel3DListField"
@@ -355,6 +357,8 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "carousel3DFontField"
                 }),
@@ -364,6 +368,8 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "carousel3DFontSizeField"
                 }),
@@ -371,6 +377,8 @@ export default class Carousel3DWebPart extends BaseClientSideWebPart<ICarousel3D
                   label: strings.ColorFieldLabel,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "carousel3DFontColorField"
                 })

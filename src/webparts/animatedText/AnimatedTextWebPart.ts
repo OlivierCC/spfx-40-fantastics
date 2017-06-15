@@ -203,6 +203,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   label: strings.Align,
                   initialValue: this.properties.align,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "animatedTextAlignField"
                 }),
@@ -212,6 +214,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "animatedTextFontField"
                 }),
@@ -221,6 +225,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "animatedTextFontSizeField"
                 }),
@@ -228,6 +234,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "animatedTextFontColorField"
                 }),
@@ -235,6 +243,8 @@ export default class AnimatedTextWebPart extends BaseClientSideWebPart<IAnimated
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "animatedTextBgColorField"
                 })

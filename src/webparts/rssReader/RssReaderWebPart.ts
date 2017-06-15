@@ -158,6 +158,8 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                   label: strings.font,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'rssReaderFontField'
                 }),
@@ -167,6 +169,8 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'rssReaderFontSizeField'
                 }),
@@ -174,6 +178,8 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                   label: strings.fontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'rssReaderFontColorField'
                 }),
@@ -181,6 +187,8 @@ export default class RssReaderWebPart extends BaseClientSideWebPart<IRssReaderWe
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'rssReaderBgColorField'
                 })

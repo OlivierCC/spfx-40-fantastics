@@ -230,6 +230,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   label: strings.Align,
                   initialValue: this.properties.align,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'textRotatorAlignField'
                 }),
@@ -239,6 +241,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   previewFonts: true,
                   initialValue: this.properties.font,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'textRotatorFontField'
                 }),
@@ -248,6 +252,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   preview: true,
                   initialValue: this.properties.fontSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'textRotatorFontSizeField'
                 }),
@@ -255,6 +261,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   label: strings.FontColor,
                   initialColor: this.properties.fontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'textRotatorFontColorField'
                 }),
@@ -262,6 +270,8 @@ export default class TextRotatorWebPart extends BaseClientSideWebPart<ITextRotat
                   label: strings.BackgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'textRotatorBgColorField'
                 })

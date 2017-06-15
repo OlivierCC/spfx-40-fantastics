@@ -186,6 +186,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                     { id: 'Link Url', title: 'Link Url', required: true, hidden: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'newsSliderListField'
@@ -207,6 +209,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,
@@ -258,6 +262,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsSliderAlignField'
                 }),
@@ -265,6 +271,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsSliderFontField'
                 }),
@@ -274,6 +282,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsSliderFontSizeField'
                 }),
@@ -281,6 +291,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsSliderFontColorField'
                 }),
@@ -288,6 +300,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsSliderBgColorField'
                 })
@@ -316,6 +330,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
                   label: strings.BorderColorFieldLabel,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'newsSliderBorderColorField'
                 })

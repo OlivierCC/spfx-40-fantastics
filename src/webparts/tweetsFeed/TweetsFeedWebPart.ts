@@ -148,6 +148,8 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
                   label: strings.LinkColor,
                   initialColor: this.properties.linkColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tweetsFeedLinkColorField'
                 }),
@@ -155,6 +157,8 @@ export default class TweetsFeedWebPart extends BaseClientSideWebPart<ITweetsFeed
                   label: strings.BorderColor,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tweetsFeedBorderColorField'
                 })

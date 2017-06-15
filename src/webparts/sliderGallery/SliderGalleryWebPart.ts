@@ -191,6 +191,8 @@ export default class SliderGalleryWebPart extends BaseClientSideWebPart<ISliderG
                   showFilters: true,
                   max: 100,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'sliderGalleryQueryField'
@@ -279,6 +281,8 @@ export default class SliderGalleryWebPart extends BaseClientSideWebPart<ISliderG
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'sliderGalleryAlignField'
                 }),
@@ -286,6 +290,8 @@ export default class SliderGalleryWebPart extends BaseClientSideWebPart<ISliderG
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'sliderGalleryFontField'
                 }),
@@ -295,6 +301,8 @@ export default class SliderGalleryWebPart extends BaseClientSideWebPart<ISliderG
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'sliderGalleryFontSizeField'
                 }),
@@ -302,6 +310,8 @@ export default class SliderGalleryWebPart extends BaseClientSideWebPart<ISliderG
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'sliderGalleryFontColorField'
                 }),
@@ -309,6 +319,8 @@ export default class SliderGalleryWebPart extends BaseClientSideWebPart<ISliderG
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'sliderGalleryBgColorField'
                 })

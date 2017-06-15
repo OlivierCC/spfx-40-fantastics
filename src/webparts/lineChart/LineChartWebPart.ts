@@ -171,6 +171,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                     { id: 'Value', title: "Value", required: true, type: CustomListFieldType.number }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'lineChartListField'
@@ -184,6 +186,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   preserveRatio: true,
                   preserveRatioEnabled: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   disabled: false,
                   onGetErrorMessage: null,
@@ -234,6 +238,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   label: strings.FillColor,
                   initialColor: this.properties.fillColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'lineChartFillColorField'
                 })
@@ -263,6 +269,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   previewFonts: true,
                   initialValue: this.properties.titleFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'lineChartTitleFontField'
                 }),
@@ -272,6 +280,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   preview: true,
                   initialValue: this.properties.titleSize,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'lineChartTitleSizeField'
                 }),
@@ -279,6 +289,8 @@ export default class LineChartWebPart extends BaseClientSideWebPart<ILineChartWe
                   label: strings.TitleColor,
                   initialColor: this.properties.titleColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'lineChartTitleColorField'
                 })

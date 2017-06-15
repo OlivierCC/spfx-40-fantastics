@@ -185,6 +185,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
                   showFilters: true,
                   max: 100,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   context: this.context,
                   properties: this.properties,
                   key: 'tilesGalleryQueryField'
@@ -247,6 +249,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
                   label: strings.TextPanelAlignFieldLabel,
                   initialValue: this.properties.textPanelAlign,
                   onPropertyChanged: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesGalleryAlignField'
                 }),
@@ -254,6 +258,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
                   label: strings.TextPanelFontFieldLabel,
                   initialValue: this.properties.textPanelFont,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesGalleryFontField'
                 }),
@@ -263,6 +269,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
                   usePixels: true,
                   preview: true,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesGalleryFontSizeField'
                 }),
@@ -270,6 +278,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
                   label: strings.TextPanelFontColorFieldLabel,
                   initialColor: this.properties.textPanelFontColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesGalleryFontColorField'
                 }),
@@ -277,6 +287,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
                   label: strings.TextPanelBackgroundColorFieldLabel,
                   initialColor: this.properties.textPanelBackgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesGalleryBgColorField'
                 })
@@ -305,6 +317,8 @@ export default class TilesGalleryWebPart extends BaseClientSideWebPart<ITilesGal
                   label: strings.BorderColorFieldLabel,
                   initialColor: this.properties.borderColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: 'tilesGalleryBorderColorField'
                 })

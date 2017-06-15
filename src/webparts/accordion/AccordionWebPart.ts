@@ -197,6 +197,8 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
                     { id: 'Title', title: 'Title', required: true, type: CustomListFieldType.string }
                   ],
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   context: this.context,
                   key: "accordionCustomListField"

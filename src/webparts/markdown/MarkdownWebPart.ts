@@ -113,6 +113,10 @@ export default class MarkdownWebPart extends BaseClientSideWebPart<IMarkdownWebP
       //Read Mode
       //Inits the converter
       var converter = new showdown.Converter();
+      converter.setOption('tables', true);
+      converter.setOption('tasklists', true);
+      converter.setOption('smoothLivePreview', true);
+      converter.setOption('encodeEmails', true);
       //Converts MD to HTML
       this.domElement.innerHTML = converter.makeHtml(this.properties.text);
     }

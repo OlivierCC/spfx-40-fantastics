@@ -180,6 +180,8 @@ export default class BingTranslatorWebPart extends BaseClientSideWebPart<IBingTr
                   label: strings.color,
                   initialColor: this.properties.color,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "bingTranslatorColorField"
                 }),
@@ -187,6 +189,8 @@ export default class BingTranslatorWebPart extends BaseClientSideWebPart<IBingTr
                   label: strings.backgroundColor,
                   initialColor: this.properties.backgroundColor,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
+                  render: this.render.bind(this),
+                  disableReactivePropertyChanges: this.disableReactivePropertyChanges,
                   properties: this.properties,
                   key: "bingTranslatorBgColorField"
                 })
