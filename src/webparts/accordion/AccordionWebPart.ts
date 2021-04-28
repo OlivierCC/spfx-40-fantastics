@@ -112,7 +112,7 @@ export default class AccordionWebPart extends BaseClientSideWebPart<IAccordionWe
       heightStyle: this.properties.heightStyle
     };
     //Call the JQuery UI accordion plugin on main div
-    $('#' + this.guid).accordion(accordionOptions);
+    ($('#' + this.guid)as any).accordion(accordionOptions);
 
     if (this.displayMode == DisplayMode.Edit) {
         //If the display mode is Edit, loads the CK Editor plugin

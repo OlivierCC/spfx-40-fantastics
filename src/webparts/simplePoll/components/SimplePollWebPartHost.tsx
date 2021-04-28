@@ -206,55 +206,63 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
   }
 
   private onVoteChanged(elm?: any): void {
-    this.state.selectedValue = elm.currentTarget.value;
+    //this.state.selectedValue = elm.currentTarget.value;
     //this.setState(this.state);
+    this.setState({selectedValue:elm.currentTarget.value});
   }
 
   private vote(elm?: any): void {
     //Check if a value has been selected
     if (this.state.selectedValue == null || this.state.selectedValue == '') {
-      this.state.popupErrorOpened = true;
-      this.setState(this.state);
+      //this.state.popupErrorOpened = true;
+      this.setState({popupErrorOpened:true});
     }
     else {
       const listService: SPSurveyService = new SPSurveyService(this.props, this.myPageContext);
       listService.postVote(this.props.surveyList, this.state.questionInternalName, this.state.selectedValue).then((response) => {
-        this.state.popupOpened = true;
-        this.state.resultsLoaded = false;
-        this.state.results = [];
-        this.setState(this.state);
+        //this.state.popupOpened = true;
+        //this.state.resultsLoaded = false;
+        //this.state.results = [];
+        this.setState({popupOpened:true,
+                       resultsLoaded: false,
+                       results:[]});
       });
     }
   }
 
   private closeError(): void {
-    this.state.popupErrorOpened = false;
-    this.setState(this.state);
+    //this.state.popupErrorOpened = false;
+    this.setState({popupErrorOpened:false});
   }
 
   private closeVote(): void {
-    this.state.popupOpened = false;
-    this.state.alreadyVote = true;
-    this.setState(this.state);
+    //this.state.popupOpened = false;
+    //this.state.alreadyVote = true;
+    this.setState({
+      popupOpened:false,
+      alreadyVote: true
+    });
   }
 
   private viewResultsBack(elm?: any): void {
-    this.state.viewResults = false;
-    this.setState(this.state);
+    //this.state.viewResults = false;
+    this.setState({viewResults:false});
   }
 
   private viewResults(elm?: any): void {
 
-    this.state.viewResults = true;
+    //this.state.viewResults = true;
 
     if (this.state.resultsLoaded != true) {
-      this.state.loaded = false;
-      this.setState(this.state);
+      //this.state.loaded = false;
+      this.setState({loaded:false,
+                      viewResults:true});
       const listService: SPSurveyService = new SPSurveyService(this.props, this.myPageContext);
       listService.getResults(this.props.surveyList, this.state.questionInternalName, this.state.choices).then((num: number[]) => {
-        this.state.results = num;
-          this.state.loaded = true;
-          this.setState(this.state);
+          //this.state.results = num;
+          //this.state.loaded = true;
+          this.setState({results:num,
+                          loaded:true});
           this.loadChart();
       });
     }
@@ -378,8 +386,8 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
         });
       }
 
-      this.state.resultsLoaded = true;
-      this.setState(this.state);
+      //this.state.resultsLoaded = true;
+      this.setState({resultsLoaded:true});
   }
 
   private loadQuestions(props: ISimplePollWebPartProps): void {
@@ -393,23 +401,33 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
       if (responseVal == null || responseVal.length == 0)
         return;
       var item = responseVal[0];
-      this.state.choices = item.Choices;
-      this.state.question = item.Title;
-      this.state.questionInternalName = item.StaticName;
+      //this.state.choices = item.Choices;
+      //this.state.question = item.Title;
+      //this.state.questionInternalName = item.StaticName;
 
       //Request the existing votes to get current user voting status
       listService.getVoteForUser(props.surveyList, item.StaticName, this.myPageContext.pageContext.user.loginName).then((responseVote) => {
         var responseVoteVal = responseVote.value;
-
+        let tmp_alreadyVote;
+        let tmp_selectedValue;
         if (responseVoteVal.length > 0) {
-          this.state.alreadyVote = true;
-          this.state.selectedValue = responseVoteVal[0].Title;
+          tmp_alreadyVote = true;
+          //this.state.alreadyVote = true;
+          //this.state.selectedValue = responseVoteVal[0].Title;
+          tmp_selectedValue = responseVoteVal[0].Title;
         }
         else
-          this.state.alreadyVote = false;
+          //this.state.alreadyVote = false;
 
-        this.state.loaded = true;
-        this.setState(this.state);
+        //this.state.loaded = true;
+        this.setState({
+          choices:item.Choices,
+          question:item.Title,
+          questionInternalName:item.StaticName,
+          alreadyVote:tmp_alreadyVote,
+          selectedValue:tmp_selectedValue,
+          loaded:true
+                      });
       });
     });
   }
@@ -428,9 +446,10 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
    * Function called when the web part properties has changed
    */
 	public componentWillReceiveProps(nextProps: ISimplePollWebPartProps): void {
-    this.state.resultsLoaded = false;
-    this.state.results = [];
-    this.setState(this.state);
+    //this.state.resultsLoaded = false;
+    //this.state.results = [];
+    this.setState({resultsLoaded:false,
+                    results:[]});
     this.loadQuestions(nextProps);
 	}
 

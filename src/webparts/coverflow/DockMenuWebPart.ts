@@ -108,7 +108,7 @@ export default class DockMenuWebPart extends BaseClientSideWebPart<IDockMenuWebP
 
     if (($ as any)('#' + this.guid + '-bigCarousel') != null) {
 
-      if (this.properties.shadow === true && $.fn.reflect) {
+      if (this.properties.shadow === true && ($ as any).fn.reflect) {
         ($ as any)('#' + this.guid + '-bigCarousel .cover').reflect();
       }
 

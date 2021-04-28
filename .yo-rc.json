@@ -1,7 +1,24 @@
 {
+  "@pnp/generator-spfx": {
+    "framework": "react",
+    "pnpFramework": "reactjs.plus",
+    "pnp-libraries": [
+      "jquery@3",
+      "@pnp/spfx-property-controls"
+    ],
+    "pnp-ci": "no-devops",
+    "pnp-vetting": [],
+    "spfxenv": "onprem19",
+    "pnp-testing": []
+  },
   "@microsoft/generator-sharepoint": {
-    "libraryName": "spfx-40-fantastics",
-    "libraryId": "425c9654-a3f8-427e-827f-033979560b6b",
-    "framework": "react"
+    "environment": "onprem19",
+    "framework": "react",
+    "isCreatingSolution": true,
+    "version": "1.11.0",
+    "libraryName": "spfx-40-webparts",
+    "libraryId": "96e42fea-1d1c-46d3-8a14-06f0fd629c6f",
+    "packageManager": "npm",
+    "componentType": "webpart"
   }
 }

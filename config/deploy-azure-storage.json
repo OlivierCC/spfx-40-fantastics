@@ -1,6 +1,7 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/deploy-azure-storage.schema.json",
   "workingDir": "./temp/deploy/",
-  "account": "spfx40fantastics",
-  "container": "spfx40fantastics",
-  "accessKey": ""
+  "account": "<!-- STORAGE ACCOUNT NAME -->",
+  "container": "spfx-40-webparts",
+  "accessKey": "<!-- ACCESS KEY -->"
 }

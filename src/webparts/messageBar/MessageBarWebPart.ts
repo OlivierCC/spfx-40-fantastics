@@ -111,6 +111,7 @@ export default class MessageBarWebPart extends BaseClientSideWebPart<IMessageBar
                 }),
                 PropertyFieldRichTextBox('text', {
                   label: strings.Text,
+                  context: this.context,
                   initialValue: this.properties.text,
                   inline: false,
                   minHeight: 100,

@@ -370,7 +370,7 @@ export default class VerticalTimelineWebPart extends BaseClientSideWebPart<IVert
         bottom_of_object = $(this).position().top + $(this).outerHeight();
         bottom_of_window = $('#pageContent').scrollTop() + $('#pageContent').height();
         if (bottom_of_window > bottom_of_object) {
-          return $(this).addClass("active");
+          if (!$(this).addClass("active")){return false;}
         }
     });
   }
