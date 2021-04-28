@@ -22,7 +22,7 @@ import { ITabsWebPartProps } from './ITabsWebPartProps';
 import { PropertyFieldCustomList, CustomListFieldType } from 'sp-client-custom-fields/lib/PropertyFieldCustomList';
 import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 
-import * as $ from 'jquery';
+require('jquery');
 
 export default class TabsWebPart extends BaseClientSideWebPart<ITabsWebPartProps> {
 

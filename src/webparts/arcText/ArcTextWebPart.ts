@@ -25,7 +25,7 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
 //Loads JQuery & Arctext Javascript libraries
-import * as $ from 'jquery';
+require('jquery');
 require('arctext');
 
 /**

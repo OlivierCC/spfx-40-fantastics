@@ -27,7 +27,8 @@ import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/Proper
 import { PropertyFieldNumber } from '@pnp/spfx-property-controls/lib/PropertyFieldNumber';
 
 //Loads external JS libs
-import * as $ from 'jquery';
+require('jquery');
+require('jqueryui');
 require('unitegallery');
 require('ug-theme-carousel');
 

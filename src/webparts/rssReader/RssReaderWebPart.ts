@@ -23,7 +23,7 @@ import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/Proper
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 
-import * as $ from 'jquery';
+require('jquery');
 require('moment');
 require('feedek');
 

@@ -28,7 +28,7 @@ import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFi
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 //Loads external JS libs
-import * as $ from 'jquery';
+require('jquery');
 require('unitegallery');
 require('ug-theme-carousel');
 

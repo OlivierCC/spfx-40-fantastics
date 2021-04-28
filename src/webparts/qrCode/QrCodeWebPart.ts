@@ -19,7 +19,7 @@ import { IQrCodeWebPartProps } from './IQrCodeWebPartProps';
 
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
-import * as $ from 'jquery';
+require('jquery');
 require('qrcode');
 
 export default class QrCodeWebPart extends BaseClientSideWebPart<IQrCodeWebPartProps> {

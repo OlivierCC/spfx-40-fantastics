@@ -22,7 +22,7 @@ import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/Proper
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
 //Loads JQuery, Reverseorder & equalizer JavaScript libs
-import * as $ from 'jquery';
+require('jquery');
 require('reverseorder');
 require('equalizer');
 

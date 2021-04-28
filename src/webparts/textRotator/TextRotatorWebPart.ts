@@ -25,7 +25,7 @@ import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/Propert
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 
 //Loads external JS lib
-import * as $ from 'jquery';
+require('jquery');
 require('morphext');
 
 //Loads CSS

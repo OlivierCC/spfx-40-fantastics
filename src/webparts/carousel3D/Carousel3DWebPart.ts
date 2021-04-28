@@ -24,7 +24,7 @@ import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/Propert
 import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/PropertyFieldColorPickerMini';
 
 //Loads external JS libs
-import * as $ from 'jquery';
+require('jquery');
 require('jqueryreflection');
 require('cloud9carousel');
 

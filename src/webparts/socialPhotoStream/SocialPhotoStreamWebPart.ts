@@ -21,7 +21,7 @@ import { ISocialPhotoStreamWebPartProps } from './ISocialPhotoStreamWebPartProps
 
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
 
-import * as $ from 'jquery';
+require('jquery');
 require('socialStream');
 
 export default class SocialPhotoStreamWebPart extends BaseClientSideWebPart<ISocialPhotoStreamWebPartProps> {
