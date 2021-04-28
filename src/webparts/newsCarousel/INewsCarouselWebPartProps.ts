@@ -19,6 +19,9 @@ export interface INewsCarouselWebPartProps {
   bulletsAlignHor: string;
   backgroundColor: string;
 
+  width: number;
+  height: number;
+
   textPanelEnable: boolean;
   textPanelAlwaysOnTop: boolean;
   textPanelPosition: string;

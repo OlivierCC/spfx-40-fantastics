@@ -14,6 +14,8 @@
     "description": { "default": "Insert a classical, responsive, cool & touch ready News Carousel. With this web part, you can add easily news focus in your SharePoint site. The users can easily navigate in news items, with buttons or with touch." },
     "officeFabricIconFontName": "News",
     "properties": {
+      "width": 900,
+      "height": 500,
       "enableArrows": true,
       "enableBullets": true,
       "enablePlayButton": false,

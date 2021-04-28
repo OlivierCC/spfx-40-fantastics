@@ -114,6 +114,8 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
     try {
       ($ as any)("#" + this.guid + "-gallery").unitegallery({
         gallery_theme: "slider",
+        gallery_width: this.properties.width,
+        gallery_height: this.properties.height,
         slider_enable_arrows: this.properties.enableArrows,
         slider_enable_bullets: this.properties.enableBullets,
         slider_transition: this.properties.transition,
