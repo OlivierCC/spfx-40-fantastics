@@ -11,7 +11,8 @@ import {
   IWebPartContext,
   PropertyPaneDropdown,
   PropertyPaneToggle,
-  PropertyPaneSlider
+  PropertyPaneSlider,
+  PropertyPaneCustomField
 } from '@microsoft/sp-webpart-base';
 import { Version } from '@microsoft/sp-core-library';
 
@@ -24,6 +25,7 @@ import { PropertyFieldColorPickerMini } from 'sp-client-custom-fields/lib/Proper
 import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFieldFontPicker';
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
+import { PropertyFieldNumber } from '@pnp/spfx-property-controls/lib/PropertyFieldNumber';
 
 //Loads external JS libs
 import * as $ from 'jquery';
@@ -202,6 +204,16 @@ export default class NewsCarouselWebPart extends BaseClientSideWebPart<INewsCaro
             {
               groupName: strings.GeneralGroupName,
               groupFields: [
+                PropertyFieldNumber('width', {
+                  key: 'width',
+                  label: strings.Width,
+                  value: this.properties.width
+                }),
+                PropertyFieldNumber('height', {
+                  key: 'height',
+                  label: strings.Height,
+                  value: this.properties.height
+                }),
                 PropertyPaneToggle('enableArrows', {
                   label: strings.EnableArrows
                 }),

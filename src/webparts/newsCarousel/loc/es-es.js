@@ -29,6 +29,8 @@ define([], function() {
     "Autoplay": "Función de reproducción automática",
     "Speed": "Velocidad (ms)",
     "Items": "Noticias",
-    "ManageItems": "Administrar noticias"
+    "ManageItems": "Administrar noticias",
+    "Width": "Ancho",
+    "Height": "Altura"
   }
 });

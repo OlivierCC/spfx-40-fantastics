@@ -29,6 +29,8 @@ declare interface INewsCarouselStrings {
   Speed: string;
   Items: string;
   ManageItems: string;
+  Width: string;
+  Height: string;
 }
 
 declare module 'NewsCarouselStrings' {

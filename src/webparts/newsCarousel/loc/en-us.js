@@ -29,6 +29,8 @@ define([], function() {
     "Autoplay": "Autoplay",
     "Speed": "Speed (ms)",
     "Items": "News Items",
-    "ManageItems": "Manage News Items"
+    "ManageItems": "Manage News Items",
+    "Width": "Width",
+    "Height": "Height"
   }
 });
