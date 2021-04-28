@@ -1,201 +1,363 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/carousel3D/Carousel3DWebPart.js",
-      "manifest": "./src/webparts/carousel3D/Carousel3DWebPart.manifest.json",
-      "outputPath": "./dist/carousel-3-d.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "carousel-3-d-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/carousel3D/Carousel3DWebPart.js",
+          "manifest": "./src/webparts/carousel3D/Carousel3DWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/arcText/ArcTextWebPart.js",
-      "manifest": "./src/webparts/arcText/ArcTextWebPart.manifest.json",
-      "outputPath": "./dist/arc-text.bundle.js"
+    "arc-text-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/arcText/ArcTextWebPart.js",
+          "manifest": "./src/webparts/arcText/ArcTextWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/tilesGallery/TilesGalleryWebPart.js",
-      "manifest": "./src/webparts/tilesGallery/TilesGalleryWebPart.manifest.json",
-      "outputPath": "./dist/tiles-gallery.bundle.js"
+    "tiles-gallery-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/tilesGallery/TilesGalleryWebPart.js",
+          "manifest": "./src/webparts/tilesGallery/TilesGalleryWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/sliderGallery/SliderGalleryWebPart.js",
-      "manifest": "./src/webparts/sliderGallery/SliderGalleryWebPart.manifest.json",
-      "outputPath": "./dist/slider-gallery.bundle.js"
+    "slider-gallery-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sliderGallery/SliderGalleryWebPart.js",
+          "manifest": "./src/webparts/sliderGallery/SliderGalleryWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/simpleCarousel/SimpleCarouselWebPart.js",
-      "manifest": "./src/webparts/simpleCarousel/SimpleCarouselWebPart.manifest.json",
-      "outputPath": "./dist/simple-carousel.bundle.js"
+    "simple-carousel-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/simpleCarousel/SimpleCarouselWebPart.js",
+          "manifest": "./src/webparts/simpleCarousel/SimpleCarouselWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/gridGallery/GridGalleryWebPart.js",
-      "manifest": "./src/webparts/gridGallery/GridGalleryWebPart.manifest.json",
-      "outputPath": "./dist/grid-gallery.bundle.js"
+    "grid-gallery-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/gridGallery/GridGalleryWebPart.js",
+          "manifest": "./src/webparts/gridGallery/GridGalleryWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/coverflow/DockMenuWebPart.js",
-      "manifest": "./src/webparts/coverflow/DockMenuWebPart.manifest.json",
-      "outputPath": "./dist/coverflow.bundle.js"
+    "coverflow-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/coverflow/DockMenuWebPart.js",
+          "manifest": "./src/webparts/coverflow/DockMenuWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/fckText/FckTextWebPart.js",
-      "manifest": "./src/webparts/fckText/FckTextWebPart.manifest.json",
-      "outputPath": "./dist/fckText.bundle.js"
+    "fcktext-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/fckText/FckTextWebPart.js",
+          "manifest": "./src/webparts/fckText/FckTextWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/markdown/MarkdownWebPart.js",
-      "manifest": "./src/webparts/markdown/MarkdownWebPart.manifest.json",
-      "outputPath": "./dist/markdown.bundle.js"
+    "markdown-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/markdown/MarkdownWebPart.js",
+          "manifest": "./src/webparts/markdown/MarkdownWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/typeWriting/TypeWritingWebPart.js",
-      "manifest": "./src/webparts/typeWriting/TypeWritingWebPart.manifest.json",
-      "outputPath": "./dist/typeWriting.bundle.js"
+    "typewriting-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/typeWriting/TypeWritingWebPart.js",
+          "manifest": "./src/webparts/typeWriting/TypeWritingWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/animatedText/AnimatedTextWebPart.js",
-      "manifest": "./src/webparts/animatedText/AnimatedTextWebPart.manifest.json",
-      "outputPath": "./dist/animatedText.bundle.js"
+    "animatedtext-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/animatedText/AnimatedTextWebPart.js",
+          "manifest": "./src/webparts/animatedText/AnimatedTextWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/syntaxHighlighter/SyntaxHighlighterWebPart.js",
-      "manifest": "./src/webparts/syntaxHighlighter/SyntaxHighlighterWebPart.manifest.json",
-      "outputPath": "./dist/syntaxHighlighter.bundle.js"
+    "syntaxhighlighter-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/syntaxHighlighter/SyntaxHighlighterWebPart.js",
+          "manifest": "./src/webparts/syntaxHighlighter/SyntaxHighlighterWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/messageBar/MessageBarWebPart.js",
-      "manifest": "./src/webparts/messageBar/MessageBarWebPart.manifest.json",
-      "outputPath": "./dist/messageBar.bundle.js"
+    "messagebar-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/messageBar/MessageBarWebPart.js",
+          "manifest": "./src/webparts/messageBar/MessageBarWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/textRotator/TextRotatorWebPart.js",
-      "manifest": "./src/webparts/textRotator/TextRotatorWebPart.manifest.json",
-      "outputPath": "./dist/textRotator.bundle.js"
+    "textrotator-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/textRotator/TextRotatorWebPart.js",
+          "manifest": "./src/webparts/textRotator/TextRotatorWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/imageColor/ImageColorWebPart.js",
-      "manifest": "./src/webparts/imageColor/ImageColorWebPart.manifest.json",
-      "outputPath": "./dist/imageColor.bundle.js"
+    "imagecolor-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/imageColor/ImageColorWebPart.js",
+          "manifest": "./src/webparts/imageColor/ImageColorWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/imagePuzzle/ImagePuzzleWebPart.js",
-      "manifest": "./src/webparts/imagePuzzle/ImagePuzzleWebPart.manifest.json",
-      "outputPath": "./dist/imagePuzzle.bundle.js"
+    "imagepuzzle-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/imagePuzzle/ImagePuzzleWebPart.js",
+          "manifest": "./src/webparts/imagePuzzle/ImagePuzzleWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/qrCode/QrCodeWebPart.js",
-      "manifest": "./src/webparts/qrCode/QrCodeWebPart.manifest.json",
-      "outputPath": "./dist/qrCode.bundle.js"
+    "qrcode-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/qrCode/QrCodeWebPart.js",
+          "manifest": "./src/webparts/qrCode/QrCodeWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/tweetsFeed/TweetsFeedWebPart.js",
-      "manifest": "./src/webparts/tweetsFeed/TweetsFeedWebPart.manifest.json",
-      "outputPath": "./dist/tweetsFeed.bundle.js"
+    "tweetsfeed-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/tweetsFeed/TweetsFeedWebPart.js",
+          "manifest": "./src/webparts/tweetsFeed/TweetsFeedWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/socialShare/SocialShareWebPart.js",
-      "manifest": "./src/webparts/socialShare/SocialShareWebPart.manifest.json",
-      "outputPath": "./dist/socialShare.bundle.js"
+    "socialshare-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/socialShare/SocialShareWebPart.js",
+          "manifest": "./src/webparts/socialShare/SocialShareWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/pieChart/PieChartWebPart.js",
-      "manifest": "./src/webparts/pieChart/PieChartWebPart.manifest.json",
-      "outputPath": "./dist/pieChart.bundle.js"
+    "piechart-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/pieChart/PieChartWebPart.js",
+          "manifest": "./src/webparts/pieChart/PieChartWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/barChart/BarChartWebPart.js",
-      "manifest": "./src/webparts/barChart/BarChartWebPart.manifest.json",
-      "outputPath": "./dist/barChart.bundle.js"
+    "barchart-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/barChart/BarChartWebPart.js",
+          "manifest": "./src/webparts/barChart/BarChartWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/polarChart/PolarChartWebPart.js",
-      "manifest": "./src/webparts/polarChart/PolarChartWebPart.manifest.json",
-      "outputPath": "./dist/polarChart.bundle.js"
+    "polarchart-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/polarChart/PolarChartWebPart.js",
+          "manifest": "./src/webparts/polarChart/PolarChartWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/lineChart/LineChartWebPart.js",
-      "manifest": "./src/webparts/lineChart/LineChartWebPart.manifest.json",
-      "outputPath": "./dist/lineChart.bundle.js"
+    "linechart-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/lineChart/LineChartWebPart.js",
+          "manifest": "./src/webparts/lineChart/LineChartWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/radarChart/RadarChartWebPart.js",
-      "manifest": "./src/webparts/radarChart/RadarChartWebPart.manifest.json",
-      "outputPath": "./dist/radarChart.bundle.js"
+    "radarchart-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/radarChart/RadarChartWebPart.js",
+          "manifest": "./src/webparts/radarChart/RadarChartWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/stockInfo/StockInfoWebPart.js",
-      "manifest": "./src/webparts/stockInfo/StockInfoWebPart.manifest.json",
-      "outputPath": "./dist/stockInfo.bundle.js"
+    "stockinfo-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/stockInfo/StockInfoWebPart.js",
+          "manifest": "./src/webparts/stockInfo/StockInfoWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/tabs/TabsWebPart.js",
-      "manifest": "./src/webparts/tabs/TabsWebPart.manifest.json",
-      "outputPath": "./dist/tabs.bundle.js"
+    "tabs-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/tabs/TabsWebPart.js",
+          "manifest": "./src/webparts/tabs/TabsWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/accordion/AccordionWebPart.js",
-      "manifest": "./src/webparts/accordion/AccordionWebPart.manifest.json",
-      "outputPath": "./dist/accordion.bundle.js"
+    "accordion-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/accordion/AccordionWebPart.js",
+          "manifest": "./src/webparts/accordion/AccordionWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/newsCarousel/NewsCarouselWebPart.js",
-      "manifest": "./src/webparts/newsCarousel/NewsCarouselWebPart.manifest.json",
-      "outputPath": "./dist/newsCarousel.bundle.js"
+    "newscarousel-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/newsCarousel/NewsCarouselWebPart.js",
+          "manifest": "./src/webparts/newsCarousel/NewsCarouselWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/tilesMenu/TilesMenuWebPart.js",
-      "manifest": "./src/webparts/tilesMenu/TilesMenuWebPart.manifest.json",
-      "outputPath": "./dist/tilesMenu.bundle.js"
+    "tilesmenu-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/tilesMenu/TilesMenuWebPart.js",
+          "manifest": "./src/webparts/tilesMenu/TilesMenuWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/simplePoll/SimplePollWebPart.js",
-      "manifest": "./src/webparts/simplePoll/SimplePollWebPart.manifest.json",
-      "outputPath": "./dist/simplePoll.bundle.js"
+    "simplepoll-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/simplePoll/SimplePollWebPart.js",
+          "manifest": "./src/webparts/simplePoll/SimplePollWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/newsTicker/NewsTickerWebPart.js",
-      "manifest": "./src/webparts/newsTicker/NewsTickerWebPart.manifest.json",
-      "outputPath": "./dist/newsTicker.bundle.js"
+    "newsticker-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/newsTicker/NewsTickerWebPart.js",
+          "manifest": "./src/webparts/newsTicker/NewsTickerWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/newsSlider/NewsSliderWebPart.js",
-      "manifest": "./src/webparts/newsSlider/NewsSliderWebPart.manifest.json",
-      "outputPath": "./dist/newsSlider.bundle.js"
+    "newsslider-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/newsSlider/NewsSliderWebPart.js",
+          "manifest": "./src/webparts/newsSlider/NewsSliderWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/rssReader/RssReaderWebPart.js",
-      "manifest": "./src/webparts/rssReader/RssReaderWebPart.manifest.json",
-      "outputPath": "./dist/rssReader.bundle.js"
+    "rssreader-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/rssReader/RssReaderWebPart.js",
+          "manifest": "./src/webparts/rssReader/RssReaderWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/mediaPlayer/MediaPlayerWebPart.js",
-      "manifest": "./src/webparts/mediaPlayer/MediaPlayerWebPart.manifest.json",
-      "outputPath": "./dist/mediaPlayer.bundle.js"
+    "mediaplayer-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/mediaPlayer/MediaPlayerWebPart.js",
+          "manifest": "./src/webparts/mediaPlayer/MediaPlayerWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/audioEqualizer/AudioEqualizerWebPart.js",
-      "manifest": "./src/webparts/audioEqualizer/AudioEqualizerWebPart.manifest.json",
-      "outputPath": "./dist/audioEqualizer.bundle.js"
+    "audioequalizer-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/audioEqualizer/AudioEqualizerWebPart.js",
+          "manifest": "./src/webparts/audioEqualizer/AudioEqualizerWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/bingTranslator/BingTranslatorWebPart.js",
-      "manifest": "./src/webparts/bingTranslator/BingTranslatorWebPart.manifest.json",
-      "outputPath": "./dist/bingTranslator.bundle.js"
+    "bingtranslator-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/bingTranslator/BingTranslatorWebPart.js",
+          "manifest": "./src/webparts/bingTranslator/BingTranslatorWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/socialPhotoStream/SocialPhotoStreamWebPart.js",
-      "manifest": "./src/webparts/socialPhotoStream/SocialPhotoStreamWebPart.manifest.json",
-      "outputPath": "./dist/socialPhotoStream.bundle.js"
+    "socialphotostream-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/socialPhotoStream/SocialPhotoStreamWebPart.js",
+          "manifest": "./src/webparts/socialPhotoStream/SocialPhotoStreamWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/verticalTimeline/VerticalTimelineWebPart.js",
-      "manifest": "./src/webparts/verticalTimeline/VerticalTimelineWebPart.manifest.json",
-      "outputPath": "./dist/verticalTimeline.bundle.js"
+    "verticaltimeline-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/verticalTimeline/VerticalTimelineWebPart.js",
+          "manifest": "./src/webparts/verticalTimeline/VerticalTimelineWebPart.manifest.json"
+        }
+      ]
     },
-    {
-      "entry": "./lib/webparts/photopile/PhotopileWebPartWebPart.js",
-      "manifest": "./src/webparts/photopile/PhotopileWebPartWebPart.manifest.json",
-      "outputPath": "./dist/photopile.bundle.js"
+    "photopile-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/photopile/PhotopileWebPartWebPart.js",
+          "manifest": "./src/webparts/photopile/PhotopileWebPartWebPart.manifest.json"
+        }
+      ]
     }
-  ],
+  },
+  "localizedResources": {
+    "sp-client-custom-fields/strings": "node_modules/sp-client-custom-fields/lib/loc/{locale}.js",
+    "carousel3DStrings": "lib/webparts/carousel3D/loc/{locale}.js",
+    "arcTextStrings": "lib/webparts/arcText/loc/{locale}.js",
+    "tilesGalleryStrings": "lib/webparts/tilesGallery/loc/{locale}.js",
+    "sliderGalleryStrings": "lib/webparts/sliderGallery/loc/{locale}.js",
+    "simpleCarouselStrings": "lib/webparts/simpleCarousel/loc/{locale}.js",
+    "gridGalleryStrings": "lib/webparts/gridGallery/loc/{locale}.js",
+    "dockMenuStrings": "lib/webparts/coverflow/loc/{locale}.js",
+    "fckTextStrings": "lib/webparts/fckText/loc/{locale}.js",
+    "MarkdownStrings": "lib/webparts/markdown/loc/{locale}.js",
+    "TypeWritingStrings": "lib/webparts/typeWriting/loc/{locale}.js",
+    "AnimatedTextStrings": "lib/webparts/animatedText/loc/{locale}.js",
+    "SyntaxHighlighterStrings": "lib/webparts/syntaxHighlighter/loc/{locale}.js",
+    "MessageBarStrings": "lib/webparts/messageBar/loc/{locale}.js",
+    "TextRotatorStrings": "lib/webparts/textRotator/loc/{locale}.js",
+    "ImageColorStrings": "lib/webparts/imageColor/loc/{locale}.js",
+    "ImagePuzzleStrings": "lib/webparts/imagePuzzle/loc/{locale}.js",
+    "QrCodeStrings": "lib/webparts/qrCode/loc/{locale}.js",
+    "TweetsFeedStrings": "lib/webparts/tweetsFeed/loc/{locale}.js",
+    "SocialShareStrings": "lib/webparts/socialShare/loc/{locale}.js",
+    "PieChartStrings": "lib/webparts/pieChart/loc/{locale}.js",
+    "BarChartStrings": "lib/webparts/barChart/loc/{locale}.js",
+    "PolarChartStrings": "lib/webparts/polarChart/loc/{locale}.js",
+    "LineChartStrings": "lib/webparts/lineChart/loc/{locale}.js",
+    "RadarChartStrings": "lib/webparts/radarChart/loc/{locale}.js",
+    "StockInfoStrings": "lib/webparts/stockInfo/loc/{locale}.js",
+    "TabsStrings": "lib/webparts/tabs/loc/{locale}.js",
+    "AccordionStrings": "lib/webparts/accordion/loc/{locale}.js",
+    "NewsCarouselStrings": "lib/webparts/newsCarousel/loc/{locale}.js",
+    "TilesMenuStrings": "lib/webparts/tilesMenu/loc/{locale}.js",
+    "SimplePollStrings": "lib/webparts/simplePoll/loc/{locale}.js",
+    "NewsTickerStrings": "lib/webparts/newsTicker/loc/{locale}.js",
+    "NewsSliderStrings": "lib/webparts/newsSlider/loc/{locale}.js",
+    "RssReaderStrings": "lib/webparts/rssReader/loc/{locale}.js",
+    "MediaPlayerStrings": "lib/webparts/mediaPlayer/loc/{locale}.js",
+    "AudioEqualizerStrings": "lib/webparts/audioEqualizer/loc/{locale}.js",
+    "BingTranslatorStrings": "lib/webparts/bingTranslator/loc/{locale}.js",
+    "SocialPhotoStreamStrings": "lib/webparts/socialPhotoStream/loc/{locale}.js",
+    "VerticalTimelineStrings": "lib/webparts/verticalTimeline/loc/{locale}.js",
+    "mystrings": "lib/webparts/photopile/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  },
   "externals": {
     "sp-client-custom-fields": "node_modules/sp-client-custom-fields/dist/sp-client-custom-fields.bundle.js",
     "jquery": {
@@ -546,48 +708,5 @@
         "syntaxHighlighter"
       ]
     }
-  },
-  "localizedResources": {
-    "sp-client-custom-fields/strings": "../node_modules/sp-client-custom-fields/lib/loc/{locale}.js",
-    "carousel3DStrings": "webparts/carousel3D/loc/{locale}.js",
-    "arcTextStrings": "webparts/arcText/loc/{locale}.js",
-    "tilesGalleryStrings": "webparts/tilesGallery/loc/{locale}.js",
-    "sliderGalleryStrings": "webparts/sliderGallery/loc/{locale}.js",
-    "simpleCarouselStrings": "webparts/simpleCarousel/loc/{locale}.js",
-    "gridGalleryStrings": "webparts/gridGallery/loc/{locale}.js",
-    "dockMenuStrings": "webparts/coverflow/loc/{locale}.js",
-    "fckTextStrings": "webparts/fckText/loc/{locale}.js",
-    "MarkdownStrings": "webparts/markdown/loc/{locale}.js",
-    "TypeWritingStrings": "webparts/typeWriting/loc/{locale}.js",
-    "AnimatedTextStrings": "webparts/animatedText/loc/{locale}.js",
-    "SyntaxHighlighterStrings": "webparts/syntaxHighlighter/loc/{locale}.js",
-    "MessageBarStrings": "webparts/messageBar/loc/{locale}.js",
-    "TextRotatorStrings": "webparts/textRotator/loc/{locale}.js",
-    "ImageColorStrings": "webparts/imageColor/loc/{locale}.js",
-    "ImagePuzzleStrings": "webparts/imagePuzzle/loc/{locale}.js",
-    "QrCodeStrings": "webparts/qrCode/loc/{locale}.js",
-    "TweetsFeedStrings": "webparts/tweetsFeed/loc/{locale}.js",
-    "SocialShareStrings": "webparts/socialShare/loc/{locale}.js",
-    "PieChartStrings": "webparts/pieChart/loc/{locale}.js",
-    "BarChartStrings": "webparts/barChart/loc/{locale}.js",
-    "PolarChartStrings": "webparts/polarChart/loc/{locale}.js",
-    "LineChartStrings": "webparts/lineChart/loc/{locale}.js",
-    "RadarChartStrings": "webparts/radarChart/loc/{locale}.js",
-    "StockInfoStrings": "webparts/stockInfo/loc/{locale}.js",
-    "TabsStrings": "webparts/tabs/loc/{locale}.js",
-    "AccordionStrings": "webparts/accordion/loc/{locale}.js",
-    "NewsCarouselStrings": "webparts/newsCarousel/loc/{locale}.js",
-    "TilesMenuStrings": "webparts/tilesMenu/loc/{locale}.js",
-    "SimplePollStrings": "webparts/simplePoll/loc/{locale}.js",
-    "NewsTickerStrings": "webparts/newsTicker/loc/{locale}.js",
-    "NewsSliderStrings": "webparts/newsSlider/loc/{locale}.js",
-    "RssReaderStrings": "webparts/rssReader/loc/{locale}.js",
-    "MediaPlayerStrings": "webparts/mediaPlayer/loc/{locale}.js",
-    "AudioEqualizerStrings": "webparts/audioEqualizer/loc/{locale}.js",
-    "BingTranslatorStrings": "webparts/bingTranslator/loc/{locale}.js",
-    "SocialPhotoStreamStrings": "webparts/socialPhotoStream/loc/{locale}.js",
-    "VerticalTimelineStrings": "webparts/verticalTimeline/loc/{locale}.js",
-    "mystrings": "webparts/photopile/loc/{locale}.js",
-    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
   }
 }

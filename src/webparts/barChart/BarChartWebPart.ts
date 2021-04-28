@@ -126,7 +126,7 @@ export default class BarChartWebPart extends BaseClientSideWebPart<IBarChartWebP
       //Inits the context for the canvas html element
       var ctx = document.getElementById(this.guid);
       //Create the Chart object with data & options
-      new Chart(ctx, {
+      var chart = new Chart(ctx, {
           type: this.properties.horizontal === true ? 'horizontalBar' : 'bar',
           data: data,
           options: options

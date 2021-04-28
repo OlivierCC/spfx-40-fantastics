@@ -54,7 +54,7 @@ export default class PhotopileWebPart extends React.Component<IPhotopileWebPartP
 			results: [],
       loaded: false
 		};
-	};
+	}
 
   /**
    * @function

@@ -80,7 +80,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
     this.closeError = this.closeError.bind(this);
     this.onVoteChanged = this.onVoteChanged.bind(this);
     this.loadQuestions = this.loadQuestions.bind(this);
-	};
+	}
 
   /**
    * @function
@@ -339,7 +339,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
             }
           };
         var ctx = document.getElementById(this.guid + '-chart');
-        new Chart(ctx, {
+        var chart = new Chart(ctx, {
               type: 'pie',
               data: data,
               options: options
@@ -379,7 +379,7 @@ export default class SimplePollWebPartHost extends React.Component<ISimplePollWe
           }
         };
         var ctx2 = document.getElementById(this.guid + '-chart');
-        new Chart(ctx2, {
+        var chart2 = new Chart(ctx2, {
             type:  'horizontalBar',
             data: data2,
             options: options2
