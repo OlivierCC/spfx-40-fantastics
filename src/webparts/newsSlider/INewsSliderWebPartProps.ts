@@ -32,6 +32,9 @@ export interface INewsSliderWebPartProps {
   textPanelBackgroundColor: string;
   textPanelAlign: string;
 
+  width: number;
+  height: number;
+
   enableBorder: boolean;
   borderColor: string;
   border: number;

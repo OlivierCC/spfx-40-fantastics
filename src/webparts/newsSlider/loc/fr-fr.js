@@ -27,6 +27,8 @@ define([], function() {
     "Speed": "Vitesse (ms)",
     "TileDimension": "Taille des vignettes",
     "Items": "Actualités",
-    "ManageItems": "Gérer les actualités"
+    "ManageItems": "Gérer les actualités",
+    "Width": "Largeur",
+    "Height": "Taille"
   }
 });

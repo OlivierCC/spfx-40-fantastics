@@ -27,6 +27,8 @@ define([], function() {
     "Speed": "Velocidad (ms)",
     "TileDimension": "Tamaño del azulejo",
     "Items": "Noticias",
-    "ManageItems": "Administrar noticias"
+    "ManageItems": "Administrar noticias",
+    "Width": "Ancho",
+    "Height": "Altura"
   }
 });

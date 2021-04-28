@@ -27,6 +27,8 @@ define([], function() {
     "Speed": "Geschwindigkeit (ms)",
     "TileDimension": "Kachelgröße",
     "Items": "News-Artikel",
-    "ManageItems": "Verwalten von Nachrichten"
+    "ManageItems": "Verwalten von Nachrichten",
+    "Width": "Breite",
+    "Height": "Höhe"
   }
 });

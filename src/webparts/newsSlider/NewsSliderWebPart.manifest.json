@@ -14,6 +14,8 @@
     "description": { "default": "Insert a News Slider Tiles control to your pages. In a few clicks you can create a slider with buttons allowing you to navigate horizontally in tiles. You can define your elements and customize the look and feel of your slider. This Web Part is responsive." },
     "officeFabricIconFontName": "PageRight",
     "properties": {
+      "width": 900,
+      "height": 200,
       "enableArrows": true,
       "enableBorder": false,
       "enableIcons": false,

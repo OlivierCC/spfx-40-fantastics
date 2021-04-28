@@ -27,6 +27,8 @@ declare interface INewsSliderStrings {
   TileDimension: string;
   Items: string;
   ManageItems: string;
+  Width: string;
+  Height: string;
 }
 
 declare module 'NewsSliderStrings' {

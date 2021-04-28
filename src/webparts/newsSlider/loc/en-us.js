@@ -27,6 +27,8 @@ define([], function() {
     "Speed": "Speed (ms)",
     "TileDimension": "Tile Size",
     "Items": "News Items",
-    "ManageItems": "Manage News Items"
+    "ManageItems": "Manage News Items",
+    "Width": "Width",
+    "Height": "Height"
   }
 });

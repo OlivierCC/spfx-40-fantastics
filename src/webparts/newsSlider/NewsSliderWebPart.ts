@@ -24,6 +24,7 @@ import { PropertyFieldFontPicker } from 'sp-client-custom-fields/lib/PropertyFie
 import { PropertyFieldFontSizePicker } from 'sp-client-custom-fields/lib/PropertyFieldFontSizePicker';
 import { PropertyFieldAlignPicker } from 'sp-client-custom-fields/lib/PropertyFieldAlignPicker';
 import { PropertyFieldDimensionPicker } from 'sp-client-custom-fields/lib/PropertyFieldDimensionPicker';
+import { PropertyFieldNumber } from '@pnp/spfx-property-controls/lib/PropertyFieldNumber';
 
 //Loads external JS libs
 import * as $ from 'jquery';
@@ -117,6 +118,8 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
 
       ($ as any)("#" + this.guid + "-gallery").unitegallery({
         gallery_theme: "carousel",
+        gallery_width: this.properties.width,
+        gallery_height: this.properties.height,
         tile_as_link: true,
         theme_enable_navigation: this.properties.enableArrows,
         carousel_autoplay: this.properties.autoplay,
@@ -197,6 +200,16 @@ export default class NewsSliderWebPart extends BaseClientSideWebPart<INewsSlider
             {
               groupName: strings.GeneralGroupName,
               groupFields: [
+                PropertyFieldNumber('width', {
+                  key: 'width',
+                  label: strings.Width,
+                  value: this.properties.width
+                }),
+                PropertyFieldNumber('height', {
+                  key: 'height',
+                  label: strings.Height,
+                  value: this.properties.height
+                }),
                 PropertyPaneToggle('enableArrows', {
                   label: strings.EnableArrows
                 }),
